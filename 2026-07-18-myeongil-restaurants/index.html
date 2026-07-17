@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="네이버·다이닝코드·Google 지도를 교차 확인한 서울 강동구 명일동 맛집 10곳">
+  <meta property="og:title" content="명일동 맛집 10선 · Bovis Visuals">
+  <meta property="og:description" content="플랫폼 점수를 섞지 않고, 출처와 평가 수를 함께 보는 명일동 맛집 가이드">
+  <title>명일동 맛집 10선 · Bovis Visuals</title>
+  <style>
+    :root{
+      --ink:#2b211d;--muted:#756a64;--paper:#fffaf3;--card:#fff;--line:#eaded2;
+      --tomato:#e84a3c;--tomato-dark:#b8322a;--mint:#347c6b;--mustard:#e2aa2d;
+      --shadow:0 16px 40px rgba(82,49,30,.10);--radius:26px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);font-family:Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at 8% 4%,rgba(232,74,60,.11),transparent 28rem),
+      radial-gradient(circle at 92% 13%,rgba(226,170,45,.13),transparent 26rem),var(--paper)}
+    a{color:inherit} button{font:inherit}
+    .wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+    header{padding:34px 0 22px}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .brand{text-decoration:none;font-weight:900;letter-spacing:-.04em}.brand span{color:var(--tomato)}
+    .back{padding:10px 15px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:rgba(255,255,255,.72);font-size:14px}
+    .hero{padding:74px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--tomato-dark);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--tomato);box-shadow:0 0 0 6px rgba(232,74,60,.1)}
+    h1{margin:18px 0 20px;font-size:clamp(52px,8.3vw,102px);line-height:.92;letter-spacing:-.075em}
+    h1 em{display:block;color:var(--tomato);font-style:normal}
+    .lead{max-width:680px;margin:0;color:var(--muted);font-size:18px;line-height:1.75;word-break:keep-all}
+    .hero-art{position:relative;min-height:350px;border-radius:42% 58% 52% 48%/50% 43% 57% 50%;background:var(--tomato);box-shadow:var(--shadow);overflow:hidden;transform:rotate(2deg)}
+    .plate{position:absolute;inset:48px;border-radius:50%;background:#fff7e9;box-shadow:inset 0 0 0 22px #f7e1c6,0 20px 30px rgba(80,30,20,.18)}
+    .noodles{position:absolute;inset:92px;border-radius:50%;background:repeating-radial-gradient(ellipse at 52% 48%,#e8b85d 0 7px,#f6d486 8px 14px,#e8b85d 15px 19px);box-shadow:inset 0 0 28px rgba(111,57,18,.25)}
+    .garnish,.garnish:before,.garnish:after{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--mint);content:""}
+    .garnish{top:41%;left:45%}.garnish:before{left:39px;top:12px;background:var(--tomato)}.garnish:after{left:17px;top:42px;background:#fff0c4}
+    .stamp{position:absolute;right:18px;bottom:22px;width:102px;height:102px;border:3px solid #fff;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;text-align:center;line-height:1.1;transform:rotate(-10deg)}
+    .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 66px}
+    .stat{padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.72)}
+    .stat strong{display:block;font-size:28px;letter-spacing:-.05em}.stat span{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 0 22px}
+    h2{margin:0;font-size:clamp(30px,5vw,48px);letter-spacing:-.055em}.section-head p{max-width:540px;margin:0;color:var(--muted);line-height:1.65;font-size:14px}
+    .filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 25px}
+    .filter{border:1px solid var(--line);background:#fff;padding:10px 15px;border-radius:999px;cursor:pointer;color:var(--muted)}
+    .filter:hover,.filter.active{border-color:var(--tomato);background:var(--tomato);color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{position:relative;padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:0 8px 24px rgba(80,49,30,.055);transition:.22s ease;overflow:hidden}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.card[hidden]{display:none}
+    .card:after{content:"";position:absolute;width:130px;height:130px;right:-65px;top:-70px;border-radius:50%;background:var(--wash,rgba(232,74,60,.11))}
+    .card-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    .number{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--tone,var(--tomato));color:#fff;font-weight:900}
+    .emoji{font-size:39px;line-height:1;filter:drop-shadow(0 5px 6px rgba(50,30,20,.12))}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 10px}.tag{padding:5px 9px;border-radius:999px;background:#f7efe7;color:#705e52;font-size:12px;font-weight:750}
+    h3{margin:0;font-size:27px;letter-spacing:-.045em}.kind{margin:7px 0 14px;color:var(--tomato-dark);font-weight:800;font-size:14px}
+    .desc{min-height:52px;margin:0 0 17px;color:var(--muted);line-height:1.6;font-size:14px}
+    .address{display:flex;gap:8px;margin:0 0 19px;color:#5d514a;font-size:13px;line-height:1.5}
+    .scores{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:18px}
+    .score{padding:12px 13px;border-radius:14px;background:#fbf7f2}.score small{display:block;color:var(--muted);font-size:11px}.score strong{display:block;margin-top:4px;font-size:16px}.score em{font-style:normal;color:var(--mustard)}
+    .source-status{display:flex;align-items:center;gap:6px;margin-bottom:17px;color:var(--mint);font-size:12px;font-weight:800}.check{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#e5f3ee}
+    .links{display:flex;flex-wrap:wrap;gap:8px}.links a{padding:9px 11px;border:1px solid var(--line);border-radius:11px;text-decoration:none;font-size:12px;font-weight:750;background:#fff}.links a:hover{border-color:var(--tomato);color:var(--tomato)}
+    .method{margin:78px 0 0;padding:34px;border-radius:30px;background:#2f2926;color:#fff}
+    .method h2{font-size:36px}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.step{padding:19px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(255,255,255,.055)}.step b{display:block;color:#ffd178;margin-bottom:7px}.step p{margin:0;color:#d6cbc5;font-size:13px;line-height:1.65}
+    .notice{margin-top:17px;padding:15px 17px;border-left:3px solid var(--mustard);background:rgba(255,255,255,.055);color:#e9dfd9;font-size:13px;line-height:1.65}
+    footer{padding:46px 0 62px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{min-height:270px}.summary{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.desc{min-height:0}}
+    @media(max-width:480px){.wrap{width:min(100% - 24px,1160px)}header{padding-top:20px}.hero-art{min-height:230px}.plate{inset:35px}.noodles{inset:67px}.card{padding:22px}.scores{grid-template-columns:1fr}.summary{gap:8px}.stat{padding:17px 15px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap"><nav class="nav"><a class="brand" href="../">Bovis <span>Visuals</span></a><a class="back" href="../">← 포털로 돌아가기</a></nav></header>
+  <main>
+    <section class="hero wrap">
+      <div><div class="eyebrow"><span class="dot"></span> Seoul · Gangdong · 2026.07.18</div><h1>명일동<em>맛집 10선</em></h1><p class="lead">검색 상위 노출만 복사하지 않았습니다. 네이버 검색·플레이스 단서, 다이닝코드 상세 평가, Google 지도 장소 정보를 같은 상호와 주소로 맞춰 본 뒤, 명일동 안에서 메뉴가 겹치지 않도록 골랐습니다.</p></div>
+      <div class="hero-art" aria-label="국수 그릇을 추상화한 일러스트"><div class="plate"></div><div class="noodles"><span class="garnish"></span></div><div class="stamp">LOCAL<br>PICKS<br>10</div></div>
+    </section>
+
+    <section class="wrap summary" aria-label="선정 요약">
+      <div class="stat"><strong>10</strong><span>최종 선정 업소</span></div><div class="stat"><strong>7</strong><span>3개 출처 장소 확인</span></div><div class="stat"><strong>3</strong><span>2개 출처 확인</span></div><div class="stat"><strong>8</strong><span>서로 다른 음식 카테고리</span></div>
+    </section>
+
+    <section class="wrap" id="picks">
+      <div class="section-head"><h2>오늘 어디 갈까?</h2><p>번호는 순위가 아니라 탐색용입니다. 플랫폼별 평점 척도와 리뷰 풀이 달라 단순 평균이나 임의의 ‘종합점수’를 만들지 않았습니다.</p></div>
+      <div class="filters" role="group" aria-label="음식 종류 필터"><button class="filter active" data-filter="all">전체 10</button><button class="filter" data-filter="noodle">면·국물</button><button class="filter" data-filter="japanese">일식</button><button class="filter" data-filter="spicy">매운맛</button><button class="filter" data-filter="casual">분식</button><button class="filter" data-filter="meat">고기</button><button class="filter" data-filter="western">양식·주점</button></div>
+      <div class="grid">
+        <article class="card" data-cat="noodle" style="--tone:#d56436;--wash:rgba(213,100,54,.13)"><div class="card-top"><span class="number">01</span><span class="emoji">🍜</span></div><div class="tags"><span class="tag">칼국수</span><span class="tag">동네 터줏대감</span></div><h3>고향집손칼국수</h3><div class="kind">손칼국수 · 수제비</div><p class="desc">푸짐한 칼국수와 겉절이 조합으로 오래 언급되는 곳. 고덕역과 명일동 경계 생활권의 대표 면 요리 후보입니다.</p><p class="address">📍 서울 강동구 동남로73길 23</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.6 · 15명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.2</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/고향집손칼국수%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=9KRglRp1EZ9y" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=고향집손칼국수%20명일동" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="japanese" style="--tone:#6d6ca8;--wash:rgba(109,108,168,.13)"><div class="card-top"><span class="number">02</span><span class="emoji">🍜</span></div><div class="tags"><span class="tag">마제소바</span><span class="tag">라멘</span></div><h3>스키마야</h3><div class="kind">일식 면요리</div><p class="desc">마제소바와 라멘을 찾을 때 유력한 선택지. Google 리뷰 표본도 비교적 크고 세 출처에서 동일 주소가 확인됐습니다.</p><p class="address">📍 서울 강동구 동남로71길 20-9 파라빌딩 1층</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.3 · 16명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.2 · 89개</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/스키마야%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=fKhJUSO52OZX" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=스키마야%20명일동" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="japanese" style="--tone:#277e8a;--wash:rgba(39,126,138,.12)"><div class="card-top"><span class="number">03</span><span class="emoji">🍣</span></div><div class="tags"><span class="tag">초밥</span><span class="tag">가성비</span></div><h3>와사비</h3><div class="kind">초밥 · 회덮밥 · 모밀</div><p class="desc">오래된 동네 초밥집으로 반복 노출된 곳. Google 리뷰 수가 205개로 이번 목록에서 가장 큰 축에 듭니다.</p><p class="address">📍 서울 강동구 동남로75길 13-21 신동빌딩</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.3 · 12명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.2 · 205개</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/와사비%20명일동%20초밥" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=0VQTf8h59tCN" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=와사비%20명일동%20초밥" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="spicy" style="--tone:#e04436;--wash:rgba(224,68,54,.13)"><div class="card-top"><span class="number">04</span><span class="emoji">🌶️</span></div><div class="tags"><span class="tag">닭발</span><span class="tag">야식</span></div><h3>명일닭발</h3><div class="kind">닭발 · 야끼만두</div><p class="desc">명일역 야식 대표 후보. 세 플랫폼에서 상호와 명일동 주소가 맞고, Google 리뷰가 264개로 검증 신호가 두텁습니다.</p><p class="address">📍 서울 강동구 상암로47길 86</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.2 · 14명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.0 · 264개</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/명일닭발%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=6IiMxxMtirEJ" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=명일닭발%20서울%20강동구" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="noodle spicy" style="--tone:#9d5537;--wash:rgba(157,85,55,.12)"><div class="card-top"><span class="number">05</span><span class="emoji">🥘</span></div><div class="tags"><span class="tag">감자탕</span><span class="tag">푸짐함</span></div><h3>청년감자탕 명일역점</h3><div class="kind">감자탕 · 뼈해장국</div><p class="desc">높게 쌓아 내는 감자탕과 넉넉한 고기 양이 반복 언급됩니다. Google 표본은 작아 다이닝코드 수치와 분리해 봐야 합니다.</p><p class="address">📍 서울 강동구 상암로47길 90 1층</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.8 · 7명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.3 · 3개</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/청년감자탕%20명일역점" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=LBizIVFs2dLd" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=청년감자탕%20명일역점" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="casual" style="--tone:#d68e20;--wash:rgba(214,142,32,.14)"><div class="card-top"><span class="number">06</span><span class="emoji">🍲</span></div><div class="tags"><span class="tag">즉석떡볶이</span><span class="tag">30년 전통</span></div><h3>꾸러기분식</h3><div class="kind">짜장 모듬떡볶이</div><p class="desc">매콤달콤한 짜장떡볶이와 볶음밥으로 알려진 노포형 분식집. 상호·전화·도로명 주소가 세 출처에서 일치합니다.</p><p class="address">📍 서울 강동구 구천면로 389-1</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.8 · 11명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 4.0 · 45개</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/꾸러기분식%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=bCmESZQNV4AC" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=꾸러기분식%20명일동" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="western" style="--tone:#4b7968;--wash:rgba(75,121,104,.13)"><div class="card-top"><span class="number">07</span><span class="emoji">🍶</span></div><div class="tags"><span class="tag">퓨전주점</span><span class="tag">숙성연어</span></div><h3>술곳간</h3><div class="kind">한식 퓨전 안주</div><p class="desc">치즈 감자전, 숙성연어, 조개술찜 등 식사형 안주가 강점. 늦은 저녁 모임이나 한잔할 곳을 찾을 때 어울립니다.</p><p class="address">📍 서울 강동구 양재대로143길 17 1층</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.6 · 4명</strong></div><div class="score"><small>Google 지도</small><strong>장소 링크로 확인</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 확인</div><div class="links"><a href="https://map.naver.com/p/search/술곳간%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=g5OYi2pyn1mk" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=술곳간%20명일동" target="_blank" rel="noopener">Google 검색</a></div></article>
+
+        <article class="card" data-cat="noodle" style="--tone:#a46f31;--wash:rgba(164,111,49,.13)"><div class="card-top"><span class="number">08</span><span class="emoji">🥣</span></div><div class="tags"><span class="tag">백년가게</span><span class="tag">손칼국수</span></div><h3>별미손칼국수</h3><div class="kind">칼국수 · 수제비</div><p class="desc">사골 베이스 국물과 직접 만든 면, 겉절이 조합이 핵심. 오랜 영업 이력과 지역 주민 리뷰를 우선해 포함했습니다.</p><p class="address">📍 서울 강동구 양재대로141길 9</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.3 · 5명</strong></div><div class="score"><small>Google 지도</small><strong>장소 링크로 확인</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 확인</div><div class="links"><a href="https://map.naver.com/p/search/별미손칼국수%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=BWRqOAKOLpO6" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=별미손칼국수%20명일동" target="_blank" rel="noopener">Google 검색</a></div></article>
+
+        <article class="card" data-cat="meat" style="--tone:#8e3d32;--wash:rgba(142,61,50,.13)"><div class="card-top"><span class="number">09</span><span class="emoji">🥩</span></div><div class="tags"><span class="tag">돼지갈비</span><span class="tag">가족외식</span></div><h3>명일참숯불갈비</h3><div class="kind">숯불 돼지갈비</div><p class="desc">과하게 달지 않은 양념과 1인분 300g의 넉넉함, 직접 만든 듯한 밑반찬이 반복적으로 좋은 평가를 받았습니다.</p><p class="address">📍 서울 강동구 양재대로143길 5</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 4.7 · 4명</strong></div><div class="score"><small>Google 지도</small><strong><em>★</em> 5.0</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 · Google 확인</div><div class="links"><a href="https://map.naver.com/p/search/명일참숯불갈비" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=uY7bXxjMZ57P" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=명일참숯불갈비" target="_blank" rel="noopener">Google 지도</a></div></article>
+
+        <article class="card" data-cat="western" style="--tone:#3e896e;--wash:rgba(62,137,110,.13)"><div class="card-top"><span class="number">10</span><span class="emoji">🍝</span></div><div class="tags"><span class="tag">파스타</span><span class="tag">가족·데이트</span></div><h3>르칵투스</h3><div class="kind">파스타 · 리조또</div><p class="desc">미나리 들기름 파스타와 한식 재료를 응용한 메뉴가 특징. 테라스와 룸이 있어 가족 식사와 데이트 수요를 함께 받습니다.</p><p class="address">📍 서울 강동구 양재대로134길 49 1·2층</p><div class="scores"><div class="score"><small>다이닝코드</small><strong><em>★</em> 5.0 · 4명</strong></div><div class="score"><small>Google 지도</small><strong>장소 링크로 확인</strong></div></div><div class="source-status"><span class="check">✓</span>네이버 · 다이닝코드 확인</div><div class="links"><a href="https://map.naver.com/p/search/르칵투스%20명일동" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.diningcode.com/profile.php?rid=s2ANRuluL1d7" target="_blank" rel="noopener">다이닝코드</a><a href="https://www.google.com/maps/search/?api=1&amp;query=르칵투스%20명일동" target="_blank" rel="noopener">Google 검색</a></div></article>
+      </div>
+    </section>
+
+    <section class="wrap method"><h2>어떻게 골랐나</h2><div class="method-grid"><div class="step"><b>01 · 지역 확인</b><p>도로명·지번 주소가 명일동이거나 명일동 생활권인지 확인하고, 명백히 다른 동네인 후보는 제외했습니다.</p></div><div class="step"><b>02 · 상호 매칭</b><p>네이버 검색/플레이스 단서, 다이닝코드 상세 페이지, Google 지도의 상호·주소·전화가 같은 업소인지 대조했습니다.</p></div><div class="step"><b>03 · 신호 분리</b><p>평점은 플랫폼별로 따로 표시하고 반드시 평가 수를 함께 적었습니다. 업종 다양성과 지역 내 반복 언급도 고려했습니다.</p></div></div><div class="notice"><strong>읽기 전 주의:</strong> 평점과 리뷰 수는 2026년 7월 18일 조사 시점의 공개 정보이며 이후 바뀔 수 있습니다. 특히 4~7명 표본의 높은 평점은 참고 신호일 뿐 절대 순위가 아닙니다. 영업시간·휴무·메뉴 가격은 방문 전 각 지도 링크에서 다시 확인하세요.</div></section>
+  </main>
+  <footer class="wrap"><span>Research & visualization by Bovis</span><span>Sources: NAVER · DiningCode · Google Maps · checked 2026.07.18</span></footer>
+  <script>
+    const buttons=[...document.querySelectorAll('.filter')];const cards=[...document.querySelectorAll('.card')];
+    buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const f=button.dataset.filter;cards.forEach(card=>card.hidden=f!=='all'&&!card.dataset.cat.split(' ').includes(f));}));
+  </script>
+</body>
+</html>
