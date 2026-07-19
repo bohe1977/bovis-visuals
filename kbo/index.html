@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2026-07-18 KBO 전체 경기 결과와 경기별 주요 포인트">
-  <title>2026-07-18 KBO 경기별 주요 포인트</title>
+  <meta name="description" content="2026-07-18 KBO 전체 경기 결과와 관심 선수 기록 통합 리포트">
+  <title>2026-07-18 KBO 경기·관심 선수 통합 리포트</title>
   <style>
     :root{--ink:#242424;--body:#666;--muted:#898989;--surface:#fff;--soft:#f7f7f7;--line:#e8e8e8;--link:#0068d6;--win:#16794b;--loss:#9b2c2c}
     *{box-sizing:border-box}html{background:#fff;color:var(--ink)}body{margin:0;background:#fff;color:var(--ink);font-family:Geist,Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
@@ -16,15 +16,16 @@
     .scoreboard{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;text-align:center}.team{display:flex;align-items:center;gap:8px;min-width:0}.team-name{display:inline-block;font-size:21px;font-weight:600;letter-spacing:-.025em;overflow-wrap:anywhere}.away{justify-content:flex-end;flex-direction:row-reverse;text-align:right}.home{justify-content:flex-start;text-align:left}.score{display:flex;align-items:center;gap:12px;font:650 34px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:-.04em}.score i{color:#c7c7c7;font-style:normal;font-weight:400}.winner{display:inline-flex;flex:0 0 auto;padding:4px 7px;border-radius:6px;background:#eff8f3;color:var(--win);font-family:inherit;font-size:11px;font-weight:600;line-height:1.2;letter-spacing:0}
     .headline{margin:22px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:17px;font-weight:600;line-height:1.5;letter-spacing:-.018em}.record{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:14px}.record span{padding:5px 8px;border-radius:6px;background:var(--soft);color:var(--body);font-size:12px;line-height:1.3}.label{display:block;margin:22px 0 10px;color:var(--muted);font:600 11px/1.3 "Geist Mono",ui-monospace,monospace;letter-spacing:.04em}.points{margin:0;padding-left:19px;color:var(--body);font-size:14px;line-height:1.65}.points li+li{margin-top:7px}.effort{margin-top:16px;padding:14px 15px;border-radius:10px;background:var(--soft);color:var(--body);font-size:13px;line-height:1.6}.effort strong{color:var(--ink)}.sources{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin-top:8px}.source{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-size:12px;text-underline-offset:3px}
     .method{max-width:760px;margin:54px auto 0;padding:22px 24px;border-radius:10px;background:var(--soft)}.method h2{margin:0;font-size:16px}.method p{margin:10px 0 0;color:var(--body);font-size:13px;line-height:1.65}footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font:500 11px/1.7 "Geist Mono",ui-monospace,monospace;text-align:left}
-    @media(max-width:760px){.wrap{width:min(100% - 28px,1120px)}main{padding:56px 0}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));margin:36px auto 18px}.quick,.games{grid-template-columns:1fr}.quick{margin-bottom:50px}.game{padding:22px}.scoreboard{gap:10px}.score{gap:9px;font-size:30px}.team-name{font-size:19px}.section-head{align-items:center}}
-    @media(max-width:390px){.score{font-size:27px}.game{padding:19px}.metrics{gap:8px}.metric{padding:16px 8px}.method{padding:19px}}
+    .players-section{margin-top:68px}.player-card{padding:24px;border-radius:14px;background:#fff;box-shadow:rgba(0,0,0,.08) 0 0 0 1px,rgba(0,0,0,.04) 0 2px 8px}.player-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.identity{display:flex;align-items:center;gap:10px}.identity h3{margin:0;font-size:22px;letter-spacing:-.03em}.player-team{padding:4px 7px;border-radius:6px;background:var(--soft);color:var(--muted);font-size:11px}.state{padding:5px 8px;border-radius:7px;background:#eff8f4;color:#13795b;font-size:11px;font-weight:700}.state.loss{background:#fff8e6;color:#8a5d00}.player-stat-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}.player-stat{min-width:0;padding:15px 10px;background:#fff;text-align:center}.player-stat strong{display:block;font-size:18px;line-height:1.15;white-space:nowrap;overflow-wrap:normal}.player-stat span{display:block;margin-top:6px;color:var(--muted);font-size:11px}.pitch-note{margin:16px 0 0;color:var(--body);font-size:13px;line-height:1.6}.inactive{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.inactive-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:54px;padding:12px 14px;border:1px solid var(--line);border-radius:10px}.inactive-row strong{font-size:14px}.inactive-row small{margin-left:7px;color:var(--muted)}.none{color:var(--muted);font-size:12px}.batters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.batter .player-stat strong{font-size:15px}.batter .player-head{margin-bottom:18px}.player-subsection{margin-top:48px}
+    @media(max-width:760px){.wrap{width:min(100% - 28px,1120px)}main{padding:56px 0}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));margin:36px auto 18px}.quick,.games,.batters{grid-template-columns:1fr}.quick{margin-bottom:50px}.game{padding:22px}.scoreboard{gap:10px}.score{gap:9px;font-size:30px}.team-name{font-size:19px}.section-head{align-items:center}.player-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.inactive{grid-template-columns:1fr}}
+    @media(max-width:430px){.score{font-size:27px}.game,.player-card{padding:19px}.metrics{gap:8px}.metric{padding:16px 8px}.method{padding:19px}.player-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.player-stat:last-child:nth-child(odd){grid-column:1/-1}.section-head>span{display:none}.player-head{align-items:flex-start}.inactive-row{min-height:50px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
 </head>
 <body>
   <header><nav class="nav wrap" aria-label="주요 탐색"><a class="brand" href="../">Bovis Visuals</a><time class="date" datetime="2026-07-18">2026.07.18</time></nav></header>
   <main class="wrap">
-    <section class="hero" aria-labelledby="page-title"><p class="eyebrow">KBO · DAILY GAME POINTS</p><h1 id="page-title">2026-07-18 KBO 경기별 주요 포인트</h1><p>점수만이 아니라 승부를 가른 투구와 타격, 패한 팀의 분전까지 한 카드에 정리했습니다.</p></section>
+    <section class="hero" aria-labelledby="page-title"><p class="eyebrow">KBO · DAILY INTEGRATED REPORT</p><h1 id="page-title">2026-07-18 KBO 경기·관심 선수</h1><p>전날 전체 경기 결과와 승부처를 먼저 보고, 관심 투수와 타자의 기록을 이어서 확인하는 통합 리포트입니다.</p></section>
     <section class="metrics" aria-label="경기 요약"><div class="metric"><strong>5</strong><span>경기 수</span></div><div class="metric"><strong>56</strong><span>총 득점</span></div><div class="metric"><strong>3</strong><span>역전 승리</span></div><div class="metric"><strong>2</strong><span>두 자릿수 득점 팀</span></div></section>
     <section class="quick" aria-label="오늘의 핵심 기록"><article><small>BEST START</small><strong>삼성 크리스 페덱</strong><span>6이닝 1피안타 7K 무실점</span></article><article><small>BIG BAT</small><strong>두산 안재석</strong><span>2홈런 · 만루포 · 7타점</span></article><article><small>TEAM OFFENSE</small><strong>KIA 타이거즈</strong><span>18안타 · 12득점</span></article></section>
     <div class="section-head"><h2>전체 경기</h2><span>5 GAMES · VERIFIED</span></div>
@@ -35,8 +36,47 @@
       <article class="game" data-report-card data-game-id="20260718OBNC0"><div class="game-top"><span class="status">경기 종료</span><span class="venue">창원 · 18:00</span></div><div class="scoreboard"><div class="team away"><span class="team-name">두산</span><span class="winner">승리</span></div><div class="score"><span>12</span><i>:</i><span>9</span></div><div class="team home"><span class="team-name">NC</span></div></div><p class="headline">안재석 2홈런 7타점, 두산이 난타전 재역전</p><div class="record"><span>승 타카다</span><span>패 류진욱</span><span>세 이영하</span></div><span class="label">GAME POINTS</span><ul class="points"><li>두산 선발 잭로그는 3이닝 6피안타 1볼넷 3탈삼진 6실점(3자책), NC 선발 구창모는 6이닝 7피안타(3피홈런) 4사사구 3탈삼진 5실점으로 모두 승패 없이 물러났다.</li><li>두산은 6-5로 뒤진 7회 1사 만루에서 안재석의 결승 만루 홈런으로 9-6 재역전에 성공했다.</li><li>안재석은 4안타 2홈런 7타점, 박준순은 2홈런을 기록했고 조수행은 8회 2타점 적시타로 12-8까지 달아나게 했다.</li><li>타카다가 3⅓이닝 1실점으로 승리를 챙겼고, 이영하는 9회를 무실점으로 막아 세이브를 올렸다.</li></ul><div class="effort"><strong>NC의 분전</strong> · NC는 김휘집의 2점 홈런과 3회 집중타로 6-5 역전했고, 7회 한재환·박민우의 연속 홈런으로 다시 8-9까지 추격했다.</div><div class="sources"><a class="source" href="https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&amp;gameId=20260718OBNC0&amp;section=REVIEW" target="_blank" rel="noopener">KBO 경기 데이터 ↗</a><a class="source" href="https://v.daum.net/v/20260718215609124" target="_blank" rel="noopener">스포츠투데이 ↗</a></div></article>
       <article class="game" data-report-card data-game-id="20260718WOHH0"><div class="game-top"><span class="status">경기 종료</span><span class="venue">대전 · 18:00</span></div><div class="scoreboard"><div class="team away"><span class="team-name">키움</span><span class="winner">승리</span></div><div class="score"><span>4</span><i>:</i><span>2</span></div><div class="team home"><span class="team-name">한화</span></div></div><p class="headline">키움, 8회 데이비슨의 역전 2타점 적시타로 3연승</p><div class="record"><span>승 박지성</span><span>패 이상규</span><span>세 원종현</span></div><span class="label">GAME POINTS</span><ul class="points"><li>키움 선발 안우진은 6이닝 6피안타 2볼넷 3탈삼진 1실점으로 승리의 발판을 놓았다. 한화 선발 에르난데스는 1회 2사 뒤 데이비슨에게 헤드샷을 던져 8구 만에 퇴장됐다.</li><li>한화가 7회 김태연의 솔로 홈런으로 2-1 역전했지만, 키움은 8회 서건창의 적시타로 동점을 만들고 데이비슨의 결승 2타점 적시타로 4-2를 만들었다.</li><li>박찬혁은 2회 선제 솔로 홈런, 서건창은 8회 동점타, 데이비슨은 8회 결승 2타점으로 공격의 핵심을 맡았다.</li><li>카나쿠보가 8회를 무실점으로 막았고 원종현이 9회 한화의 추격을 끊어 세이브를 올렸다.</li></ul><div class="effort"><strong>한화의 분전</strong> · 한화는 긴급 등판한 박준영이 4⅓이닝 2피안타 1실점으로 버텼고 최인호의 5회 동점 적시타, 김태연의 7회 역전 솔로포로 7회까지 2-1로 앞섰다.</div><div class="sources"><a class="source" href="https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&amp;gameId=20260718WOHH0&amp;section=REVIEW" target="_blank" rel="noopener">KBO 경기 데이터 ↗</a><a class="source" href="https://m.newspim.com/news/view/20260718000092" target="_blank" rel="noopener">뉴스핌 ↗</a><a class="source" href="https://www.koreadaily.com/article/20260718094046261" target="_blank" rel="noopener">OSEN ↗</a></div></article>
     </section>
-    <section class="method" aria-labelledby="method-title"><h2 id="method-title">정리 기준</h2><p>KBO 경기 데이터로 스코어·구장·승패 투수를 확인하고, 경기 기사에서 선발 투구 내용·결정적인 이닝·주요 타자·패한 팀의 분전을 교차 확인했습니다. 기사에서 확인되지 않은 세부 기록은 넣지 않았습니다.</p></section>
-    <footer>Sources: KBO game data via kbo-game · 스포츠투데이 · 연합뉴스 · 뉴스핌 · OSEN<br>Generated 2026-07-19 10:22 KST · stable report URL</footer>
+
+    <section class="players-section" aria-labelledby="pitchers-title" data-section="pitchers">
+      <div class="section-head"><h2 id="pitchers-title">관심 투수</h2><span id="pitcher-count">불러오는 중</span></div>
+      <div id="pitcher-active"></div>
+      <div id="pitcher-inactive" class="inactive" aria-label="등판하지 않은 관심 투수"></div>
+    </section>
+
+    <section class="player-subsection" aria-labelledby="batters-title" data-section="batters">
+      <div class="section-head"><h2 id="batters-title">관심 타자</h2><span id="batter-count">불러오는 중</span></div>
+      <div id="batters" class="batters"></div>
+    </section>
+
+    <section class="method" aria-labelledby="method-title"><h2 id="method-title">정리 기준</h2><p>KBO 경기 데이터로 스코어·구장·승패 투수를 확인하고, 경기 기사에서 선발 투구 내용·결정적인 이닝·주요 타자·패한 팀의 분전을 교차 확인했습니다. 관심 선수 기록은 KBO 공식 상세기록표를 기준으로 네이버스포츠 공개 기록 API와 다음스포츠 박스스코어에서 확인 가능한 필드를 대조했습니다.</p></section>
+    <footer>Sources: KBO 공식 · KBO game data via kbo-game · 네이버스포츠 · 다음스포츠 · 경기 보도<br>Generated 2026-07-19 14:00 KST · stable integrated report URL</footer>
   </main>
+  <script>
+    const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const stat=(value,label)=>`<div class="player-stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`;
+    const inactiveRow=(player,status)=>`<div class="inactive-row" data-player-card data-player="${esc(player.name)}"><span><strong>${esc(player.name)}</strong><small>${esc(player.team)}</small></span><span class="none">${status}</span></div>`;
+
+    fetch('../kbo-players/data.json',{cache:'no-store'})
+      .then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()})
+      .then(data=>{
+        const pageDate=document.querySelector('header time')?.dateTime;
+        if(pageDate&&data.report_date!==pageDate)throw new Error('경기와 선수 기록 날짜가 일치하지 않습니다.');
+        const activePitchers=data.pitchers.filter(player=>player.appeared);
+        const inactivePitchers=data.pitchers.filter(player=>!player.appeared);
+        document.querySelector('#pitcher-count').textContent=`등판 ${activePitchers.length} · 등판 없음 ${inactivePitchers.length}`;
+        document.querySelector('#pitcher-active').innerHTML=activePitchers.map(player=>`<article class="player-card" data-player-card data-player="${esc(player.name)}"><div class="player-head"><div class="identity"><h3>${esc(player.name)}</h3><span class="player-team">${esc(player.team)}</span></div><span class="state ${player.decision==='패'?'loss':''}">${esc(player.decision?`${player.decision}전`:'등판')}</span></div><div class="player-stat-grid">${stat(player.innings,'이닝')}${stat(player.hits,'피안타')}${stat(player.runs,'실점')}${stat(player.earned_runs,'자책')}${stat(player.walks_hbp,'4사구')}${stat(player.strikeouts,'삼진')}${stat(player.home_runs,'피홈런')}${stat(player.pitches,'투구수')}${stat(player.season_record,'시즌 성적')}${stat(player.era,'평균자책점')}</div></article>`).join('');
+        document.querySelector('#pitcher-inactive').innerHTML=inactivePitchers.map(player=>inactiveRow(player,'등판 없음')).join('');
+
+        const activeBatters=data.batters.filter(player=>player.appeared);
+        const inactiveBatters=data.batters.filter(player=>!player.appeared);
+        document.querySelector('#batter-count').textContent=`출전 ${activeBatters.length} · 출전 없음 ${inactiveBatters.length}`;
+        document.querySelector('#batters').innerHTML=activeBatters.map(player=>`<article class="player-card batter" data-player-card data-player="${esc(player.name)}"><div class="player-head"><div class="identity"><h3>${esc(player.name)}</h3><span class="player-team">${esc(player.team)}</span></div><span class="state">출전</span></div><div class="player-stat-grid">${stat(player.at_bats,'타수')}${stat(player.hits,'안타')}${stat(player.rbi,'타점')}${stat(player.runs,'득점')}${stat(player.home_runs,'홈런')}${stat(player.walks,'볼넷')}${stat(player.strikeouts,'삼진')}${stat(player.avg,'시즌 타율')}${stat(player.obp,'출루율')}${stat(player.ops,'OPS')}</div></article>`).join('')+inactiveBatters.map(player=>inactiveRow(player,'출전 없음')).join('');
+      })
+      .catch(error=>{
+        document.querySelector('#pitcher-count').textContent='확인 지연';
+        document.querySelector('#batter-count').textContent='확인 지연';
+        document.querySelector('#pitcher-active').innerHTML=`<p class="pitch-note">관심 선수 기록을 불러오지 못했습니다: ${esc(error.message)}</p>`;
+      });
+  </script>
 </body>
 </html>
