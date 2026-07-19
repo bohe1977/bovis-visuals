@@ -1,10 +1,10 @@
 {
   "report_date_kst": "2026-07-18",
   "official_date_mlb": "2026-07-17",
-  "generated_at": "2026-07-19T12:24:27+09:00",
+  "generated_at": "2026-07-19T12:46:02+09:00",
   "verification": {
     "status": "MLB 공식 기준 · 네이버스포츠 · 다음스포츠 대조 완료",
-    "method": "KST 2026-07-18에 시작한 MLB 경기를 MLB officialDate 2026-07-17 경기군과 대응시켰다. MLB 공식 Stats API를 기준값으로 적용하고 네이버·다음의 KST 일정 및 박스스코어를 대조했다.",
+    "method": "KST 2026-07-18에 시작한 MLB 경기를 MLB officialDate 2026-07-17 경기군과 대응시켰다. MLB 공식 Stats API를 기준값으로 적용하고 네이버·다음의 KST 일정 및 박스스코어를 대조했다. 시즌 누계는 MLB byDateRange로 officialDate 2026-07-17 종료 시점까지 잘라 적용했다.",
     "notes": [
       "출전한 관심 타자 6명의 타수·안타·득점·타점·홈런·볼넷·삼진이 세 출처에서 일치했다.",
       "오타니 쇼헤이는 지명타자로만 출전했고 투수 등판 기록은 세 출처 모두 없다.",
@@ -40,10 +40,10 @@
   },
   "batters": [
     {"name":"오타니 쇼헤이","team":"LA 다저스","mlbam_id":660271,"status":"출전","position":"DH","at_bats":4,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":0,"avg":".289","obp":".400","ops":".943","daily_note":"1번 지명타자 · 4타수 무안타"},
-    {"name":"이정후","team":"샌프란시스코","mlbam_id":808982,"status":"출전","position":"RF","at_bats":4,"hits":3,"rbi":0,"runs":2,"home_runs":0,"walks":0,"strikeouts":0,"avg":".304","obp":".336","ops":".764","daily_note":"6번 우익수 · 4타수 3안타 2득점 · 몸에 맞는 공 1"},
-    {"name":"바비 위트 주니어","team":"캔자스시티","mlbam_id":677951,"status":"출전","position":"SS","at_bats":4,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":".280","obp":".350","ops":".801","daily_note":"2번 유격수 · 4타수 무안타 1볼넷"},
-    {"name":"마이크 트라웃","team":"LA 에인절스","mlbam_id":545361,"status":"출전","position":"CF","at_bats":4,"hits":1,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":2,"avg":".235","obp":".386","ops":".857","daily_note":"2번 중견수 · 2루타 1개"},
-    {"name":"무라카미 무네타카","team":"시카고 화이트삭스","mlbam_id":808959,"status":"출전","position":"1B","at_bats":4,"hits":1,"rbi":0,"runs":1,"home_runs":0,"walks":1,"strikeouts":1,"avg":".234","obp":".373","ops":".910","daily_note":"2번 1루수 · 4타수 1안타 1볼넷 1득점"},
+    {"name":"이정후","team":"샌프란시스코","mlbam_id":808982,"status":"출전","position":"RF","at_bats":4,"hits":3,"rbi":0,"runs":2,"home_runs":0,"walks":0,"strikeouts":0,"avg":".307","obp":".340","ops":".773","daily_note":"6번 우익수 · 4타수 3안타 2득점 · 몸에 맞는 공 1"},
+    {"name":"바비 위트 주니어","team":"캔자스시티","mlbam_id":677951,"status":"출전","position":"SS","at_bats":4,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":".283","obp":".353","ops":".809","daily_note":"2번 유격수 · 4타수 무안타 1볼넷"},
+    {"name":"마이크 트라웃","team":"LA 에인절스","mlbam_id":545361,"status":"출전","position":"CF","at_bats":4,"hits":1,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":2,"avg":".237","obp":".388","ops":".862","daily_note":"2번 중견수 · 2루타 1개"},
+    {"name":"무라카미 무네타카","team":"시카고 화이트삭스","mlbam_id":808959,"status":"출전","position":"1B","at_bats":4,"hits":1,"rbi":0,"runs":1,"home_runs":0,"walks":1,"strikeouts":1,"avg":".233","obp":".371","ops":".906","daily_note":"2번 1루수 · 4타수 1안타 1볼넷 1득점"},
     {"name":"송성문","team":"샌디에이고","mlbam_id":823550,"status":"출전","position":"PH","at_bats":0,"hits":0,"rbi":0,"runs":1,"home_runs":0,"walks":0,"strikeouts":0,"avg":".212","obp":".316","ops":".598","daily_note":"대타 출전 · 희생번트 1 · 득점 1"},
     {"name":"김하성","team":"애틀랜타 / Gwinnett","mlbam_id":673490,"status":"MLB 출전 없음","position":"MiLB","at_bats":null,"hits":null,"rbi":null,"runs":null,"home_runs":null,"walks":null,"strikeouts":null,"avg":".068","obp":".171","ops":".239","daily_note":"현재 Gwinnett Stripers 소속 · 해당일 MLB 박스스코어 없음"},
     {"name":"김혜성","team":"LA 다저스 / Oklahoma City","mlbam_id":808975,"status":"MLB 출전 없음","position":"MiLB","at_bats":null,"hits":null,"rbi":null,"runs":null,"home_runs":null,"walks":null,"strikeouts":null,"avg":".259","obp":".323","ops":".651","daily_note":"현재 Oklahoma City Comets 소속 · 해당일 MLB 박스스코어 없음"}
