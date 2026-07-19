@@ -1,7 +1,7 @@
 {
   "report_date_kst": "2026-07-18",
   "official_date_mlb": "2026-07-17",
-  "generated_at": "2026-07-19T12:55:38+09:00",
+  "generated_at": "2026-07-19T13:58:08+09:00",
   "verification": {
     "status": "MLB 공식 기준 · 네이버스포츠 · 다음스포츠 대조 완료",
     "method": "KST 2026-07-18에 시작한 MLB 경기를 MLB officialDate 2026-07-17 경기군과 대응시켰다. MLB 공식 Stats API를 기준값으로 적용하고 네이버·다음의 KST 일정 및 박스스코어를 대조했다. 시즌 누계는 MLB byDateRange로 officialDate 2026-07-17 종료 시점까지 잘라 적용했다.",
@@ -86,8 +86,8 @@
     {"name":"김혜성","team":"LA 다저스 / Oklahoma City","mlbam_id":808975,"status":"MLB 출전 없음","position":"MiLB","at_bats":null,"hits":null,"rbi":null,"runs":null,"home_runs":null,"walks":null,"strikeouts":null,"avg":".259","obp":".323","ops":".651","daily_note":"현재 Oklahoma City Comets 소속 · 해당일 MLB 박스스코어 없음"}
   ],
   "pitchers": [
-    {"name":"오타니 쇼헤이","team":"LA 다저스","mlbam_id":660271,"appeared":false,"status":"등판 없음","reason":"지명타자로만 출전","season_record":"8승 2패","innings":"85.2","era":"1.79","strikeouts":95,"whip":"0.95"},
-    {"name":"폴 스킨스","team":"피츠버그","mlbam_id":694973,"appeared":false,"status":"경기 연기","reason":"클리블랜드전 대기질 문제로 연기","season_record":"8승 8패","innings":"108.1","era":"3.57","strikeouts":130,"whip":"1.02"}
+    {"name":"오타니 쇼헤이","team":"LA 다저스","mlbam_id":660271,"appeared":false,"status":"등판 없음"},
+    {"name":"폴 스킨스","team":"피츠버그","mlbam_id":694973,"appeared":false,"status":"등판 없음"}
   ],
   "sources": {
     "mlb_official": [
