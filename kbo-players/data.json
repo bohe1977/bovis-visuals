@@ -2,9 +2,9 @@
   "report_date": "2026-07-18",
   "generated_at": "2026-07-19T11:17:04+09:00",
   "verification": {
-    "status": "공개 표시 필드 일치 · 다음 일부 필드 미제공",
+    "status": "KBO 공식 기준 대조 완료 · 다음 일부 필드 차이/미제공",
     "sources": ["KBO 공식 게임센터", "네이버스포츠", "다음스포츠"],
-    "details": "KBO 공식값을 기준으로 대조했으며 확인 가능한 수치의 불일치는 없었다. 다음스포츠는 임찬규의 시즌 승-패를 표시하지 않고 타자의 볼넷을 사사구 합계로만 제공한다."
+    "details": "KBO 공식값을 기준으로 대조했다. 김도영 시즌 OPS는 KBO 공식·네이버 0.990, 다음 0.989로 0.001 차이가 있어 공식값을 적용했다. 다음스포츠는 임찬규의 시즌 승-패를 표시하지 않고 타자의 볼넷을 사사구 합계로만 제공한다."
   },
   "pitchers": [
     {"name":"원태인","team":"삼성","appeared":false},
@@ -20,9 +20,9 @@
     {"name":"정해영","team":"KIA","appeared":false}
   ],
   "batters": [
-    {"name":"강백호","team":"한화","appeared":true,"at_bats":3,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":"0.314"},
-    {"name":"노시환","team":"한화","appeared":true,"at_bats":4,"hits":2,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":1,"avg":"0.262"},
-    {"name":"김도영","team":"KIA","appeared":true,"at_bats":5,"hits":0,"rbi":2,"runs":2,"home_runs":0,"walks":1,"strikeouts":0,"avg":"0.293"}
+    {"name":"강백호","team":"한화","appeared":true,"at_bats":3,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":"0.314","obp":"0.384","ops":"0.977"},
+    {"name":"노시환","team":"한화","appeared":true,"at_bats":4,"hits":2,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":1,"avg":"0.262","obp":"0.344","ops":"0.829"},
+    {"name":"김도영","team":"KIA","appeared":true,"at_bats":5,"hits":0,"rbi":2,"runs":2,"home_runs":0,"walks":1,"strikeouts":0,"avg":"0.293","obp":"0.389","ops":"0.990"}
   ],
   "source_urls": {
     "kbo_official": [
