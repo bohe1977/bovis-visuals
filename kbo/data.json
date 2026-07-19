@@ -1,0 +1,106 @@
+{
+  "date": "2026-07-18",
+  "generated_at": "2026-07-19T10:00:29+09:00",
+  "games": [
+    {
+      "id": "20260718KTLG0",
+      "stadium": "잠실",
+      "start_time": "18:00",
+      "away": "KT",
+      "home": "LG",
+      "away_score": 8,
+      "home_score": 2,
+      "winner_pitcher": "사우어",
+      "loser_pitcher": "임찬규",
+      "headline": "17안타를 몰아친 KT, 6연승으로 LG를 0.5경기 차 추격",
+      "winner_points": [
+        "사우어가 6이닝 5피안타(1피홈런) 2실점으로 시즌 7승째를 거뒀다.",
+        "5회 김현수의 동점 적시타를 시작으로 4점을 뽑아 5-2로 뒤집었다.",
+        "허경민은 4안타 1타점 1득점, 힐리어드는 8회 쐐기 투런 홈런을 기록했다.",
+        "김현수는 2안타로 KBO 최초 17시즌 연속 100안타를 달성했다."
+      ],
+      "opponent_effort": "LG 문정빈이 2회 역전 투런 홈런을 쳤고 9회에도 2루타로 추격 기회를 만들었다.",
+      "source": "https://www.chosun.com/sports/baseball/2026/07/18/MY3DAZDDMJQWIMRXHE3WCNBWMM/"
+    },
+    {
+      "id": "20260718LTSS0",
+      "stadium": "대구",
+      "start_time": "18:00",
+      "away": "롯데",
+      "home": "삼성",
+      "away_score": 0,
+      "home_score": 5,
+      "winner_pitcher": "페덱",
+      "loser_pitcher": "나균안",
+      "headline": "페덱의 강렬한 KBO 데뷔, 삼성 3연승과 선두 수성",
+      "winner_points": [
+        "크리스 페덱이 KBO 데뷔전에서 6이닝 1피안타 1볼넷 7탈삼진 무실점으로 첫 승을 올렸다.",
+        "구자욱이 1회 중월 투런 홈런과 5회 2루타로 2안타 2타점 2득점을 기록했다.",
+        "김성윤이 3회 솔로 홈런을 보탰고 삼성 불펜이 남은 3이닝을 무실점으로 막았다."
+      ],
+      "opponent_effort": "롯데 레이예스가 1회 페덱에게 유일한 안타를 쳤지만 팀 타선은 2안타·12삼진에 그쳤다.",
+      "source": "https://www.yna.co.kr/amp/view/AKR20260718043051007"
+    },
+    {
+      "id": "20260718HTSK0",
+      "stadium": "문학",
+      "start_time": "18:00",
+      "away": "KIA",
+      "home": "SSG",
+      "away_score": 12,
+      "home_score": 2,
+      "winner_pitcher": "네일",
+      "loser_pitcher": "해치",
+      "headline": "KIA 18안타 폭발, 네일은 SSG전 7전 8기 끝 첫 승",
+      "winner_points": [
+        "네일이 7이닝 4피안타 2볼넷 5탈삼진 2실점으로 시즌 6승과 SSG전 첫 승을 거뒀다.",
+        "KIA가 3회 카스트로·나성범·김선빈·박상준의 적시타로 5점을 먼저 뽑았다.",
+        "김호령은 3안타 3득점 1도루와 5회 다이빙 캐치 뒤 병살 연결로 공수주를 지배했다.",
+        "8회 한준수의 2타점 2루타와 박정우의 3타점 3루타로 5점을 보태 승부를 끝냈다."
+      ],
+      "opponent_effort": "SSG 조형우가 3회 솔로 홈런, 박성한이 적시 2루타를 기록해 팀의 2점을 만들었다.",
+      "source": "https://www.yna.co.kr/amp/view/AKR20260718044800007"
+    },
+    {
+      "id": "20260718OBNC0",
+      "stadium": "창원",
+      "start_time": "18:00",
+      "away": "두산",
+      "home": "NC",
+      "away_score": 12,
+      "home_score": 9,
+      "winner_pitcher": "타카다",
+      "loser_pitcher": "류진욱",
+      "save_pitcher": "이영하",
+      "headline": "안재석 2홈런 7타점, 두산이 난타전 재역전",
+      "winner_points": [
+        "안재석이 2회 솔로 홈런과 7회 역전 만루 홈런을 포함해 7타점을 쓸어 담았다.",
+        "박찬호·박준순의 1회 연속 솔로 홈런과 박준순의 8회 추가 솔로포가 힘을 보탰다.",
+        "7회 1사 만루에서 나온 안재석의 그랜드슬램이 6-5로 뒤지던 흐름을 바꾼 결정타였다.",
+        "8회 조수행의 2타점 적시타로 NC의 추격을 다시 벌렸다."
+      ],
+      "opponent_effort": "NC는 김휘집의 2점 홈런과 3회 집중타로 6-5 역전에 성공했고, 7회 백투백 홈런으로 다시 1점 차까지 추격했다.",
+      "source": "https://www.maniareport.com/view.php?ud=2026071820290875526cf2d78c68_19"
+    },
+    {
+      "id": "20260718WOHH0",
+      "stadium": "대전",
+      "start_time": "18:00",
+      "away": "키움",
+      "home": "한화",
+      "away_score": 4,
+      "home_score": 2,
+      "winner_pitcher": "박지성",
+      "loser_pitcher": "이상규",
+      "save_pitcher": "원종현",
+      "headline": "키움, 8회 데이비슨의 역전 2타점 2루타로 3연승",
+      "winner_points": [
+        "안우진이 6이닝 6피안타 2볼넷 3탈삼진 1실점으로 승리의 발판을 놓았다.",
+        "8회 서건창이 1타점 2루타로 2-2 동점을 만들었다.",
+        "이어진 만루에서 데이비슨이 2타점 2루타를 날려 4-2로 경기를 뒤집었다."
+      ],
+      "opponent_effort": "한화는 선발 에르난데스가 1회 8구 만에 헤드샷 퇴장됐지만 최인호의 적시타와 김태연의 솔로 홈런으로 7회까지 2-1로 앞섰다. 8회 문현빈, 9회 정은원이 2루타를 쳤으나 후속타가 없었다.",
+      "source": "https://www.maniareport.com/view.php?ud=2026071820291354686cf2d78c68_19"
+    }
+  ]
+}
