@@ -1,7 +1,7 @@
 {
   "report_date_kst": "2026-07-18",
   "official_date_mlb": "2026-07-17",
-  "generated_at": "2026-07-19T13:58:08+09:00",
+  "generated_at": "2026-07-19T16:54:37+09:00",
   "verification": {
     "status": "MLB 공식 기준 · 네이버스포츠 · 다음스포츠 대조 완료",
     "method": "KST 2026-07-18에 시작한 MLB 경기를 MLB officialDate 2026-07-17 경기군과 대응시켰다. MLB 공식 Stats API를 기준값으로 적용하고 네이버·다음의 KST 일정 및 박스스코어를 대조했다. 시즌 누계는 MLB byDateRange로 officialDate 2026-07-17 종료 시점까지 잘라 적용했다.",
@@ -9,7 +9,9 @@
       "출전한 관심 타자 6명의 타수·안타·득점·타점·홈런·볼넷·삼진이 세 출처에서 일치했다.",
       "오타니 쇼헤이는 지명타자로만 출전했고 투수 등판 기록은 세 출처 모두 없다.",
       "폴 스킨스의 피츠버그–클리블랜드 경기는 대기질 문제로 연기되어 등판 기록이 없다.",
-      "김하성은 Gwinnett Stripers, 김혜성은 Oklahoma City Comets 소속으로 해당일 MLB 박스스코어에 기록이 없다. 시즌 누계는 2026 MLB 정규시즌 공식값이다."
+      "김하성은 Gwinnett Stripers, 김혜성은 Oklahoma City Comets 소속으로 해당일 MLB 박스스코어에 기록이 없다. 시즌 누계는 2026 MLB 정규시즌 공식값이다.",
+      "샌프란시스코의 실책은 MLB 공식·다음이 1개, 네이버 경기 메타데이터가 0개로 달랐다. 기준 출처인 MLB 공식값 1개를 적용했다.",
+      "다음 박스스코어의 경기 후 시즌 타율은 일부 관심 타자에서 MLB byDateRange·네이버 값과 달랐다. AVG·OBP·OPS는 officialDate 2026-07-17까지의 MLB 공식 byDateRange 값을 적용했다."
     ]
   },
   "team_games": [
@@ -111,7 +113,7 @@
       "https://sports.daum.net/match/80104751",
       "https://sports.daum.net/match/80104753",
       "https://sports.daum.net/match/80104744",
-      "https://sports.daum.net/match/80104747"
+      "https://sports.daum.net/match/80104745"
     ]
   }
 }
