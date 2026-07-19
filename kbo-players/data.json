@@ -1,47 +1,47 @@
 {
-  "report_date": "2026-07-18",
-  "generated_at": "2026-07-19T11:17:04+09:00",
+  "report_date": "2026-07-19",
+  "generated_at": "2026-07-20T06:25:06+09:00",
   "verification": {
-    "status": "KBO 공식 기준 대조 완료 · 다음 일부 필드 차이/미제공",
-    "sources": ["KBO 공식 게임센터", "네이버스포츠", "다음스포츠"],
-    "details": "KBO 공식값을 기준으로 대조했다. 김도영 시즌 OPS는 KBO 공식·네이버 0.990, 다음 0.989로 0.001 차이가 있어 공식값을 적용했다. 다음스포츠는 임찬규의 시즌 승-패를 표시하지 않고 타자의 볼넷을 사사구 합계로만 제공한다."
+    "status": "KBO 공식 기준 · 네이버 동일 · 다음 제공 범위 내 동일",
+    "sources": ["KBO 공식 게임센터", "네이버스포츠 공개 기록 API", "다음스포츠 박스스코어"],
+    "details": "당일 기록은 KBO 공식 상세기록표와 네이버 공개 기록 API가 모두 일치했다. 다음도 제공하는 당일 필드와 시즌 ERA·타율은 일치했으나, 투수 시즌 승패와 자책점은 제공하지 않고 타자 볼넷은 사사구 합계로 표시하므로 해당 필드는 독립 일치로 세지 않았다. 관심 타자 3명은 이날 사구가 없어 다음 사사구 수가 KBO·네이버 볼넷 수와 수치상 같았다. 시즌 OBP·OPS는 KBO 공식 선수 기록 기준이다.",
+    "conflicts": []
   },
   "pitchers": [
-    {"name":"원태인","team":"삼성","appeared":false},
-    {"name":"류현진","team":"한화","appeared":false},
+    {"name":"원태인","team":"삼성","appeared":true,"decision":"등판","innings":"5","hits":7,"runs":6,"earned_runs":6,"walks_hbp":3,"strikeouts":4,"home_runs":1,"pitches":83,"season_record":"4승 5패","era":"4.01"},
+    {"name":"류현진","team":"한화","appeared":true,"decision":"등판","innings":"5⅓","hits":8,"runs":4,"earned_runs":4,"walks_hbp":2,"strikeouts":7,"home_runs":0,"pitches":90,"season_record":"8승 2패","era":"2.90"},
     {"name":"제레미 비슬리","team":"롯데","appeared":false},
     {"name":"박세웅","team":"롯데","appeared":false},
-    {"name":"김진욱","team":"롯데","appeared":false},
-    {"name":"김원중","team":"롯데","appeared":false},
+    {"name":"김진욱","team":"롯데","appeared":true,"decision":"등판","innings":"5","hits":3,"runs":3,"earned_runs":3,"walks_hbp":4,"strikeouts":5,"home_runs":1,"pitches":79,"season_record":"5승 4패","era":"3.07"},
+    {"name":"김원중","team":"롯데","appeared":true,"decision":"승","innings":"1⅓","hits":2,"runs":0,"earned_runs":0,"walks_hbp":1,"strikeouts":1,"home_runs":0,"pitches":25,"season_record":"1승 2패","era":"3.09"},
     {"name":"박정민","team":"롯데","appeared":false},
     {"name":"엘빈 로드리게스","team":"롯데","appeared":false},
-    {"name":"임찬규","team":"LG","appeared":true,"decision":"패","innings":"4","hits":9,"runs":5,"earned_runs":5,"walks_hbp":1,"strikeouts":2,"home_runs":0,"pitches":75,"season_record":"9승 3패","era":"4.08"},
-    {"name":"박영현","team":"KT","appeared":false},
-    {"name":"정해영","team":"KIA","appeared":false}
+    {"name":"임찬규","team":"LG","appeared":false},
+    {"name":"박영현","team":"KT","appeared":true,"decision":"등판","innings":"1","hits":1,"runs":1,"earned_runs":1,"walks_hbp":0,"strikeouts":3,"home_runs":1,"pitches":18,"season_record":"6승 0패","era":"2.68"},
+    {"name":"정해영","team":"KIA","appeared":true,"decision":"등판","innings":"⅓","hits":4,"runs":4,"earned_runs":4,"walks_hbp":0,"strikeouts":0,"home_runs":2,"pitches":17,"season_record":"2승 1패","era":"5.87"}
   ],
   "batters": [
-    {"name":"강백호","team":"한화","appeared":true,"at_bats":3,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":"0.314","obp":"0.384","ops":"0.977"},
-    {"name":"노시환","team":"한화","appeared":true,"at_bats":4,"hits":2,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":1,"avg":"0.262","obp":"0.344","ops":"0.829"},
-    {"name":"김도영","team":"KIA","appeared":true,"at_bats":5,"hits":0,"rbi":2,"runs":2,"home_runs":0,"walks":1,"strikeouts":0,"avg":"0.293","obp":"0.389","ops":"0.990"}
+    {"name":"강백호","team":"한화","appeared":true,"at_bats":2,"hits":1,"rbi":1,"runs":1,"home_runs":0,"walks":2,"strikeouts":0,"avg":"0.315","obp":"0.388","ops":"0.980"},
+    {"name":"노시환","team":"한화","appeared":true,"at_bats":5,"hits":1,"rbi":4,"runs":2,"home_runs":1,"walks":1,"strikeouts":2,"avg":"0.261","obp":"0.344","ops":"0.834"},
+    {"name":"김도영","team":"KIA","appeared":true,"at_bats":4,"hits":2,"rbi":1,"runs":1,"home_runs":0,"walks":1,"strikeouts":0,"avg":"0.295","obp":"0.391","ops":"0.993"}
   ],
   "source_urls": {
     "kbo_official": [
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718KTLG0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718LTSS0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718HTSK0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718WOHH0&section=REVIEW"
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719KTLG0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719LTSS0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719HTSK0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719OBNC0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719WOHH0&section=REVIEW"
     ],
     "naver": [
-      "https://m.sports.naver.com/game/20260718KTLG02026/record",
-      "https://m.sports.naver.com/game/20260718LTSS02026/record",
-      "https://m.sports.naver.com/game/20260718HTSK02026/record",
-      "https://m.sports.naver.com/game/20260718WOHH02026/record"
+      "https://api-gw.sports.naver.com/schedule/games/20260719KTLG02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260719LTSS02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260719HTSK02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260719OBNC02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260719WOHH02026/record"
     ],
     "daum": [
-      "https://sports.daum.net/match/80100973",
-      "https://sports.daum.net/match/80100974",
-      "https://sports.daum.net/match/80100972",
-      "https://sports.daum.net/match/80100976"
+      "https://sports.daum.net/match/80100977", "https://sports.daum.net/match/80100978", "https://sports.daum.net/match/80100979", "https://sports.daum.net/match/80100980", "https://sports.daum.net/match/80100981"
     ]
   }
 }

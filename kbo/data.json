@@ -1,123 +1,89 @@
 {
-  "date": "2026-07-18",
-  "generated_at": "2026-07-19T10:22:25+09:00",
+  "date": "2026-07-19",
+  "generated_at": "2026-07-20T06:25:06+09:00",
   "games": [
     {
-      "id": "20260718KTLG0",
-      "stadium": "잠실",
-      "start_time": "18:00",
-      "away": "KT",
-      "home": "LG",
-      "away_score": 8,
-      "home_score": 2,
-      "winner_pitcher": "사우어",
-      "loser_pitcher": "임찬규",
-      "headline": "17안타를 몰아친 KT, 5회 재역전으로 6연승",
+      "id": "20260719KTLG0", "stadium": "잠실", "start_time": "18:00", "status": "경기 종료",
+      "away": "KT", "home": "LG", "away_score": 4, "home_score": 1,
+      "winner_pitcher": "고영표", "loser_pitcher": "송승기",
+      "headline": "고영표 6이닝 무실점, KT가 LG 4연전을 쓸어 담고 7연승",
       "winner_points": [
-        "KT 선발 사우어는 6이닝 5피안타 1볼넷 2탈삼진 2실점으로 2회 역전 투런 뒤 추가 실점을 막아 시즌 7승을 거뒀다. LG 선발 임찬규는 4이닝 9피안타 1사사구 2탈삼진 5실점으로 패전했다.",
-        "KT는 1-2로 뒤진 5회 김현수의 동점 적시타, 힐리어드와 허경민의 연속 적시타, 한승택의 희생플라이로 4점을 내 5-2로 뒤집었다.",
-        "허경민은 4안타 1타점 1득점, 힐리어드는 8회 쐐기 투런을 포함해 3안타 3타점을 기록했다.",
-        "김현수는 5회 적시타로 KBO 최초 17시즌 연속 100안타를 달성했다."
+        "KT 고영표는 6이닝 4피안타 무사사구 6탈삼진 무실점, LG 송승기는 4⅔이닝 5피안타 2사사구 1탈삼진 1실점했다.",
+        "2회 2사 1·2루 권동진의 중전 적시타가 결승타가 됐고, 장성우가 8회 솔로 홈런, KT가 9회 2점을 더해 승부를 갈랐다.",
+        "장성우는 4타수 2안타 1홈런 2타점, 권동진은 4타수 2안타 1타점, 최원준과 허경민도 2안타씩 기록했다.",
+        "KT 불펜은 7~8회를 무실점으로 이어갔고 박영현이 9회 박동원에게 솔로포를 허용했지만 3탈삼진으로 경기를 끝냈다."
       ],
-      "opponent_effort": "LG 문정빈이 2회 역전 투런 홈런을 쳤고 9회에도 2루타를 때려 무사 2·3루 추격 기회를 만들었으나 득점으로 이어지지 않았다.",
+      "opponent_effort": "LG 박동원이 9회 솔로 홈런으로 완봉패를 막았고 문성주는 4타수 2안타를 기록했다.",
       "sources": [
-        {"label": "KBO 경기 데이터", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718KTLG0&section=REVIEW"},
-        {"label": "스포츠투데이", "url": "https://sports.news.nate.com/view/20260718n10169"}
+        {"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719KTLG0&section=REVIEW"},
+        {"label":"연합뉴스","url":"https://www.yna.co.kr/amp/view/AKR20260719059000007"}
       ]
     },
     {
-      "id": "20260718LTSS0",
-      "stadium": "대구",
-      "start_time": "18:00",
-      "away": "롯데",
-      "home": "삼성",
-      "away_score": 0,
-      "home_score": 5,
-      "winner_pitcher": "페덱",
-      "loser_pitcher": "나균안",
-      "headline": "페덱의 강렬한 KBO 데뷔, 삼성 3연승과 선두 수성",
+      "id": "20260719LTSS0", "stadium": "대구", "start_time": "18:00", "status": "경기 종료",
+      "away": "롯데", "home": "삼성", "away_score": 11, "home_score": 8,
+      "winner_pitcher": "김원중", "loser_pitcher": "김재윤",
+      "headline": "7-3→7-8→11-8, 전민재가 9회 싹쓸이 결승 2루타",
       "winner_points": [
-        "삼성 선발 페덱은 6이닝 1피안타 1볼넷 7탈삼진 무실점으로 데뷔승을 올렸다. 롯데 선발 나균안은 5이닝 9피안타(2피홈런) 1볼넷 3탈삼진 4실점으로 패전했다.",
-        "구자욱이 1회 결승 중월 투런 홈런을 쳤고, 김성윤이 3회 우중간 솔로 홈런으로 3-0을 만들었다.",
-        "구자욱은 2안타 2타점 2득점, 김성윤은 2안타 1타점 2득점으로 공격을 이끌었다.",
-        "이승민부터 이어진 삼성 불펜은 남은 3이닝을 무실점으로 막아 완봉승을 완성했다."
+        "롯데 김진욱은 5이닝 3피안타 4사사구 5탈삼진 3실점, 삼성 원태인은 5이닝 7피안타 3사사구 4탈삼진 6실점으로 둘 다 승패 없이 물러났다.",
+        "7-8로 뒤진 9회 노진혁의 동점 적시타 뒤 2사 만루에서 전민재가 우중간 3타점 2루타를 날려 경기를 다시 뒤집었다.",
+        "전민재는 4타수 2안타 3타점 2득점 1볼넷, 나승엽은 4타수 3안타, 손성빈은 솔로 홈런 포함 2안타를 기록했다.",
+        "김원중은 8회 2사부터 1⅓이닝 2피안타 1사사구 1탈삼진 무실점으로 버티고 시즌 첫 승을 챙겼다."
       ],
-      "opponent_effort": "롯데 레이예스가 1회 페덱에게 유일한 안타를 쳤지만, 팀 타선은 2안타에 그치고 삼진 12개를 당했다.",
+      "opponent_effort": "삼성은 구자욱의 동점 3점포와 3안타 3타점 3득점, 디아즈의 2안타 2타점으로 7회 7-7, 8회 8-7 역전까지 만들었다.",
       "sources": [
-        {"label": "KBO 경기 데이터", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718LTSS0&section=REVIEW"},
-        {"label": "연합뉴스", "url": "https://www.yna.co.kr/amp/view/AKR20260718043051007"}
+        {"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719LTSS0&section=REVIEW"},
+        {"label":"스포츠투데이","url":"http://m.stoo.com/article_amp.php?aid=107824746153"}
       ]
     },
     {
-      "id": "20260718HTSK0",
-      "stadium": "문학",
-      "start_time": "18:00",
-      "away": "KIA",
-      "home": "SSG",
-      "away_score": 12,
-      "home_score": 2,
-      "winner_pitcher": "네일",
-      "loser_pitcher": "해치",
-      "headline": "KIA 18안타 폭발, 네일은 SSG전 7전 8기 끝 첫 승",
+      "id": "20260719HTSK0", "stadium": "문학", "start_time": "18:00", "status": "경기 종료",
+      "away": "KIA", "home": "SSG", "away_score": 9, "home_score": 5,
+      "winner_pitcher": "전상현", "loser_pitcher": "전영준",
+      "headline": "김도영 동점타·김호령 결승타·카스트로 쐐기포, KIA 3연승",
       "winner_points": [
-        "KIA 선발 네일은 7이닝 4피안타 2볼넷 5탈삼진 2실점으로 시즌 6승과 SSG전 첫 승을 거뒀다. SSG 선발 해치는 5이닝 10피안타 2사사구 3탈삼진 5실점으로 패전했다.",
-        "KIA는 3회 카스트로·나성범·김선빈·박상준의 적시타를 묶어 5점을 먼저 뽑았고, 8회 한준수의 2타점 2루타와 박정우의 3타점 3루타로 5점을 보탰다.",
-        "카스트로는 5타수 4안타, 김호령은 6타수 3안타 3득점 1도루를 기록했고 5회 다이빙 캐치 뒤 병살까지 연결했다.",
-        "네일이 7이닝을 책임진 뒤 KIA 불펜은 8·9회를 무실점으로 정리했다."
+        "KIA 양현종은 5이닝 3피안타 3사사구 5탈삼진 1실점, SSG 김건우는 5이닝 5피안타 4사사구 5탈삼진 4실점으로 둘 다 승패 없이 물러났다.",
+        "KIA는 5-4로 뒤진 7회 김도영의 적시 2루타로 동점을 만든 뒤 8회 김호령의 2타점 중전 결승타와 카스트로의 2점 홈런으로 4점을 뽑았다.",
+        "카스트로는 5타수 3안타 1홈런 2타점 3득점, 나성범은 3점 홈런, 김도영은 4타수 2안타 1타점 1득점 1볼넷을 기록했다.",
+        "정해영이 6회 4실점했지만 이의리·전상현·곽도규·조상우가 남은 3⅔이닝을 무실점으로 막았고 전상현이 승리했다."
       ],
-      "opponent_effort": "SSG 조형우가 3회 솔로 홈런, 박성한이 적시 2루타를 쳐 5-2로 추격했지만 이후 추가점을 내지 못했다.",
+      "opponent_effort": "SSG는 6회 최지훈의 솔로포와 김재환의 3점포로 1-4를 5-4로 뒤집었고 홍대인은 교체 출전해 2타수 2안타를 쳤다.",
       "sources": [
-        {"label": "KBO 경기 데이터", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718HTSK0&section=REVIEW"},
-        {"label": "연합뉴스", "url": "https://www.yna.co.kr/amp/view/AKR20260718044800007"}
+        {"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719HTSK0&section=REVIEW"},
+        {"label":"연합뉴스","url":"https://www.yna.co.kr/amp/view/AKR20260719057300007"}
       ]
     },
     {
-      "id": "20260718OBNC0",
-      "stadium": "창원",
-      "start_time": "18:00",
-      "away": "두산",
-      "home": "NC",
-      "away_score": 12,
-      "home_score": 9,
-      "winner_pitcher": "타카다",
-      "loser_pitcher": "류진욱",
-      "save_pitcher": "이영하",
-      "headline": "안재석 2홈런 7타점, 두산이 난타전 재역전",
+      "id": "20260719OBNC0", "stadium": "창원", "start_time": "18:00", "status": "경기 종료",
+      "away": "두산", "home": "NC", "away_score": 10, "home_score": 3,
+      "winner_pitcher": "최승용", "loser_pitcher": "토다",
+      "headline": "강승호 결승포 포함 4타점, 두산이 NC를 꺾고 3연승",
       "winner_points": [
-        "두산 선발 잭로그는 3이닝 6피안타 1볼넷 3탈삼진 6실점(3자책), NC 선발 구창모는 6이닝 7피안타(3피홈런) 4사사구 3탈삼진 5실점으로 모두 승패 없이 물러났다.",
-        "두산은 6-5로 뒤진 7회 1사 만루에서 안재석의 결승 만루 홈런으로 9-6 재역전에 성공했다.",
-        "안재석은 4안타 2홈런 7타점, 박준순은 2홈런을 기록했고 조수행은 8회 2타점 적시타로 12-8까지 달아나게 했다.",
-        "타카다가 3⅓이닝 1실점으로 승리를 챙겼고, 이영하는 9회를 무실점으로 막아 세이브를 올렸다."
+        "두산 최승용은 5⅔이닝 5피안타 2사사구 3탈삼진 2실점, NC 토다는 5⅓이닝 7피안타 2사사구 6탈삼진 5실점으로 각각 승리와 패전을 기록했다.",
+        "두산은 3회 강승호의 선제 결승 솔로포를 시작으로 4점을 냈고 7회 다시 4점을 보태 9-2로 달아났다.",
+        "강승호는 5타수 2안타 1홈런 4타점, 박찬호는 5타수 2안타 1타점 2득점, 박준순은 4타수 2안타 2타점을 기록했다.",
+        "김정우가 1이닝 3탈삼진 1실점으로 홀드를 기록했고, 두산 불펜은 7회 이후 추가 1실점만 허용했다."
       ],
-      "opponent_effort": "NC는 김휘집의 2점 홈런과 3회 집중타로 6-5 역전했고, 7회 한재환·박민우의 연속 홈런으로 다시 8-9까지 추격했다.",
+      "opponent_effort": "NC 블레인은 4타수 2안타 1타점 1득점, 이우성은 6회 2타점 2루타로 2-5까지 추격했다.",
       "sources": [
-        {"label": "KBO 경기 데이터", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718OBNC0&section=REVIEW"},
-        {"label": "스포츠투데이", "url": "https://v.daum.net/v/20260718215609124"}
+        {"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719OBNC0&section=REVIEW"},
+        {"label":"OSEN","url":"http://www.osen.co.kr/article/G1112842713"}
       ]
     },
     {
-      "id": "20260718WOHH0",
-      "stadium": "대전",
-      "start_time": "18:00",
-      "away": "키움",
-      "home": "한화",
-      "away_score": 4,
-      "home_score": 2,
-      "winner_pitcher": "박지성",
-      "loser_pitcher": "이상규",
-      "save_pitcher": "원종현",
-      "headline": "키움, 8회 데이비슨의 역전 2타점 적시타로 3연승",
+      "id": "20260719WOHH0", "stadium": "대전", "start_time": "18:00", "status": "경기 종료 · 연장 11회 무승부",
+      "away": "키움", "home": "한화", "away_score": 9, "home_score": 9,
+      "headline": "한화 8-1 리드를 키움이 따라잡아 연장 11회 9-9 무승부",
       "winner_points": [
-        "키움 선발 안우진은 6이닝 6피안타 2볼넷 3탈삼진 1실점으로 승리의 발판을 놓았다. 한화 선발 에르난데스는 1회 2사 뒤 데이비슨에게 헤드샷을 던져 8구 만에 퇴장됐다.",
-        "한화가 7회 김태연의 솔로 홈런으로 2-1 역전했지만, 키움은 8회 서건창의 적시타로 동점을 만들고 데이비슨의 결승 2타점 적시타로 4-2를 만들었다.",
-        "박찬혁은 2회 선제 솔로 홈런, 서건창은 8회 동점타, 데이비슨은 8회 결승 2타점으로 공격의 핵심을 맡았다.",
-        "카나쿠보가 8회를 무실점으로 막았고 원종현이 9회 한화의 추격을 끊어 세이브를 올렸다."
+        "키움 박준현은 2⅔이닝 2피안타 7사사구 4탈삼진 4실점, 한화 류현진은 5⅓이닝 8피안타 2사사구 7탈삼진 4실점으로 모두 승패 없이 물러났다.",
+        "한화는 노시환의 3회 만루포와 페라자의 4회 2점포로 5회 8-1까지 앞섰지만 키움이 6회 3점, 8회 5점을 내 9-9 동점을 만들었다.",
+        "키움 임병욱은 5타수 3안타 3득점, 박찬혁은 4타수 3안타 2득점, 김동헌은 2타점으로 추격을 이끌었다. 한화 노시환은 만루포로 4타점을 올렸다.",
+        "양 팀은 9~11회 무득점이었다. 한화 박상원이 3이닝 무피안타 무사사구 2탈삼진, 키움 유토가 11회를 무실점으로 막아 무승부를 확정했다."
       ],
-      "opponent_effort": "한화는 긴급 등판한 박준영이 4⅓이닝 2피안타 1실점으로 버텼고 최인호의 5회 동점 적시타, 김태연의 7회 역전 솔로포로 7회까지 2-1로 앞섰다.",
+      "opponent_effort": "승패가 없는 경기다. 키움은 7점 차를 따라잡았고, 한화는 류현진의 한미 통산 2,500탈삼진과 노시환 만루포를 기록했다.",
       "sources": [
-        {"label": "KBO 경기 데이터", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718WOHH0&section=REVIEW"},
-        {"label": "뉴스핌", "url": "https://m.newspim.com/news/view/20260718000092"},
-        {"label": "OSEN", "url": "https://www.koreadaily.com/article/20260718094046261"}
+        {"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260719&gameId=20260719WOHH0&section=REVIEW"},
+        {"label":"엑스포츠뉴스","url":"https://www.xportsnews.com/article/2173891"}
       ]
     }
   ]
