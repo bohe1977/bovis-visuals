@@ -1,7 +1,7 @@
 {
   "report_date_kst": "2026-07-18",
   "official_date_mlb": "2026-07-17",
-  "generated_at": "2026-07-19T12:46:02+09:00",
+  "generated_at": "2026-07-19T12:55:38+09:00",
   "verification": {
     "status": "MLB 공식 기준 · 네이버스포츠 · 다음스포츠 대조 완료",
     "method": "KST 2026-07-18에 시작한 MLB 경기를 MLB officialDate 2026-07-17 경기군과 대응시켰다. MLB 공식 Stats API를 기준값으로 적용하고 네이버·다음의 KST 일정 및 박스스코어를 대조했다. 시즌 누계는 MLB byDateRange로 officialDate 2026-07-17 종료 시점까지 잘라 적용했다.",
@@ -12,32 +12,69 @@
       "김하성은 Gwinnett Stripers, 김혜성은 Oklahoma City Comets 소속으로 해당일 MLB 박스스코어에 기록이 없다. 시즌 누계는 2026 MLB 정규시즌 공식값이다."
     ]
   },
-  "dodgers_game": {
-    "game_pk": 823524,
-    "naver_game_id": "20260718LANY0",
-    "daum_game_id": 80104743,
-    "venue": "양키 스타디움",
-    "start_time_kst": "08:05",
-    "away": "LA 다저스",
-    "home": "뉴욕 양키스",
-    "away_score": 2,
-    "home_score": 1,
-    "away_hits": 5,
-    "home_hits": 6,
-    "away_errors": 1,
-    "home_errors": 0,
-    "winner_pitcher": "잭 드레이어",
-    "loser_pitcher": "게릿 콜",
-    "save_pitcher": "태너 스콧",
-    "headline": "먼시의 7회 역전 투런, 다저스가 양키스에 2–1 승리",
-    "points": [
-      "다저스 선발 사사키 로키는 5⅔이닝 5피안타 1볼넷 5탈삼진 1실점(비자책)으로 버텼다. 양키스 선발 게릿 콜은 6이닝 4피안타 1볼넷 8탈삼진 2실점으로 패전했다.",
-      "0–1로 뒤진 7회초 맥스 먼시가 게릿 콜을 상대로 무키 베츠를 불러들이는 우월 2점 홈런을 쳐 단숨에 2–1로 뒤집었다.",
-      "잭 드레이어가 6회말 위기를 막아 승리를 챙겼고, 알렉스 베시아가 8회 2사 2루를 무실점으로 넘긴 뒤 태너 스콧이 9회를 삼자범퇴로 막아 시즌 14세이브를 올렸다.",
-      "오타니 쇼헤이는 1번 지명타자로 4타수 무안타였고, 다저스는 5안타 중 먼시의 홈런 하나로 필요한 2점을 모두 만들었다."
-    ],
-    "opponent_effort": "양키스는 4회 재슨 도밍게스의 2루타와 상대 중견수 실책으로 3루까지 간 뒤 포일로 선취점을 올렸지만, 6안타를 치고도 추가점을 내지 못했다."
-  },
+  "team_games": [
+    {
+      "section_title": "LA 다저스 경기",
+      "game_pk": 823524,
+      "naver_game_id": "20260718LANY0",
+      "daum_game_id": 80104743,
+      "venue": "양키 스타디움",
+      "start_time_kst": "08:05",
+      "status": "경기 종료",
+      "away": "LA 다저스",
+      "home": "뉴욕 양키스",
+      "winner_side": "away",
+      "away_score": 2,
+      "home_score": 1,
+      "away_hits": 5,
+      "home_hits": 6,
+      "away_errors": 1,
+      "home_errors": 0,
+      "winner_pitcher": "잭 드레이어",
+      "loser_pitcher": "게릿 콜",
+      "save_pitcher": "태너 스콧",
+      "headline": "먼시의 7회 역전 투런, 다저스가 양키스에 2–1 승리",
+      "points": [
+        "다저스 선발 사사키 로키는 5⅔이닝 5피안타 1볼넷 5탈삼진 1실점(비자책)으로 버텼다. 양키스 선발 게릿 콜은 6이닝 4피안타 1볼넷 8탈삼진 2실점으로 패전했다.",
+        "0–1로 뒤진 7회초 맥스 먼시가 게릿 콜을 상대로 무키 베츠를 불러들이는 우월 2점 홈런을 쳐 단숨에 2–1로 뒤집었다.",
+        "잭 드레이어가 6회말 위기를 막아 승리를 챙겼고, 알렉스 베시아가 8회 2사 2루를 무실점으로 넘긴 뒤 태너 스콧이 9회를 삼자범퇴로 막아 시즌 14세이브를 올렸다.",
+        "오타니 쇼헤이는 1번 지명타자로 4타수 무안타였고, 다저스는 5안타 중 먼시의 홈런 하나로 필요한 2점을 모두 만들었다."
+      ],
+      "opponent_label": "양키스의 분전",
+      "opponent_effort": "양키스는 4회 재슨 도밍게스의 2루타와 상대 중견수 실책으로 3루까지 간 뒤 포일로 선취점을 올렸지만, 6안타를 치고도 추가점을 내지 못했다."
+    },
+    {
+      "section_title": "샌프란시스코 자이언츠 경기",
+      "game_pk": 823115,
+      "naver_game_id": "20260718SFSE0",
+      "daum_game_id": 80104756,
+      "venue": "T-모바일 파크",
+      "start_time_kst": "11:10",
+      "status": "경기 종료",
+      "away": "샌프란시스코",
+      "home": "시애틀",
+      "winner_side": "away",
+      "away_score": 7,
+      "home_score": 0,
+      "away_hits": 12,
+      "home_hits": 2,
+      "away_errors": 1,
+      "home_errors": 2,
+      "winner_pitcher": "랜던 룹",
+      "loser_pitcher": "브라이스 밀러",
+      "save_pitcher": null,
+      "headline": "룹의 7이닝 무실점과 이정후의 3안타, 샌프란시스코가 7–0 완승",
+      "points": [
+        "샌프란시스코 선발 랜던 룹은 7이닝 2피안타 3볼넷 2탈삼진 무실점으로 시즌 7승째를 올렸다. 시애틀 선발 브라이스 밀러는 5⅔이닝 7피안타 1볼넷 6탈삼진 3실점(2자책)으로 패전했다.",
+        "5회초 브라이스 엘드리지가 드루 캐버노를 불러들이는 중월 2점 홈런을 쳐 결승점을 만들었다.",
+        "6회초 이정후가 야수선택과 상대 실책으로 2루까지 간 뒤 만루에서 나온 2루수 실책 때 홈을 밟아 3–0으로 달아났다.",
+        "7회초 윌리 아다메스가 만루홈런을 터뜨려 7–0으로 승부를 갈랐다. 사구로 출루한 이정후도 홈을 밟았고, 이정후는 4타수 3안타 1사구 2득점으로 경기를 마쳤다.",
+        "제이슨 폴리와 케일럽 킬리언이 마지막 2이닝을 무피안타로 막아 팀 완봉승을 완성했다."
+      ],
+      "opponent_label": "시애틀의 경기",
+      "opponent_effort": "시애틀은 브라이스 밀러가 6회 2사까지 버텼지만 타선이 2안타에 그쳤고, 수비 실책 2개와 7회 불펜의 4실점이 겹치며 반격하지 못했다."
+    }
+  ],
   "batters": [
     {"name":"오타니 쇼헤이","team":"LA 다저스","mlbam_id":660271,"status":"출전","position":"DH","at_bats":4,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":0,"avg":".289","obp":".400","ops":".943","daily_note":"1번 지명타자 · 4타수 무안타"},
     {"name":"이정후","team":"샌프란시스코","mlbam_id":808982,"status":"출전","position":"RF","at_bats":4,"hits":3,"rbi":0,"runs":2,"home_runs":0,"walks":0,"strikeouts":0,"avg":".307","obp":".340","ops":".773","daily_note":"6번 우익수 · 4타수 3안타 2득점 · 몸에 맞는 공 1"},
@@ -55,7 +92,9 @@
   "sources": {
     "mlb_official": [
       "https://www.mlb.com/gameday/dodgers-vs-yankees/2026/07/17/823524/final/box",
+      "https://www.mlb.com/gameday/giants-vs-mariners/2026/07/17/823115/final/box",
       "https://statsapi.mlb.com/api/v1/game/823524/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/823115/boxscore",
       "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-17"
     ],
     "naver": [
