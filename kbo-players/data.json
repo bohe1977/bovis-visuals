@@ -1,0 +1,46 @@
+{
+  "report_date": "2026-07-18",
+  "generated_at": "2026-07-19T11:10:00+09:00",
+  "verification": {
+    "status": "3개 출처 일치",
+    "sources": ["KBO 공식 게임센터", "네이버스포츠", "다음스포츠"]
+  },
+  "pitchers": [
+    {"name":"원태인","team":"삼성","appeared":false},
+    {"name":"류현진","team":"한화","appeared":false},
+    {"name":"제레미 비슬리","team":"롯데","appeared":false},
+    {"name":"박세웅","team":"롯데","appeared":false},
+    {"name":"김진욱","team":"롯데","appeared":false},
+    {"name":"김원중","team":"롯데","appeared":false},
+    {"name":"박정민","team":"롯데","appeared":false},
+    {"name":"엘빈 로드리게스","team":"롯데","appeared":false},
+    {"name":"임찬규","team":"LG","appeared":true,"decision":"패","innings":"4","hits":9,"runs":5,"earned_runs":5,"walks_hbp":1,"strikeouts":2,"home_runs":0,"pitches":75,"season_record":"9승 3패","era":"4.08"},
+    {"name":"박영현","team":"KT","appeared":false},
+    {"name":"정해영","team":"KIA","appeared":false}
+  ],
+  "batters": [
+    {"name":"강백호","team":"한화","appeared":true,"at_bats":3,"hits":0,"rbi":0,"runs":0,"home_runs":0,"walks":1,"strikeouts":2,"avg":"0.314"},
+    {"name":"노시환","team":"한화","appeared":true,"at_bats":4,"hits":2,"rbi":0,"runs":0,"home_runs":0,"walks":0,"strikeouts":1,"avg":"0.262"},
+    {"name":"김도영","team":"KIA","appeared":true,"at_bats":5,"hits":0,"rbi":2,"runs":2,"home_runs":0,"walks":1,"strikeouts":0,"avg":"0.293"}
+  ],
+  "source_urls": {
+    "kbo_official": [
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718KTLG0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718LTSS0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718HTSK0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260718&gameId=20260718WOHH0&section=REVIEW"
+    ],
+    "naver": [
+      "https://m.sports.naver.com/game/20260718KTLG02026/record",
+      "https://m.sports.naver.com/game/20260718LTSS02026/record",
+      "https://m.sports.naver.com/game/20260718HTSK02026/record",
+      "https://m.sports.naver.com/game/20260718WOHH02026/record"
+    ],
+    "daum": [
+      "https://sports.daum.net/match/80100973",
+      "https://sports.daum.net/match/80100974",
+      "https://sports.daum.net/match/80100972",
+      "https://sports.daum.net/match/80100976"
+    ]
+  }
+}
