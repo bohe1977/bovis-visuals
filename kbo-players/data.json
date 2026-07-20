@@ -13,11 +13,11 @@
     {"name":"제레미 비슬리","team":"롯데","appeared":false},
     {"name":"박세웅","team":"롯데","appeared":false},
     {"name":"김진욱","team":"롯데","appeared":true,"decision":"등판","innings":"5","hits":3,"runs":3,"earned_runs":3,"walks_hbp":4,"strikeouts":5,"home_runs":1,"pitches":79,"season_record":"5승 4패","era":"3.07"},
-    {"name":"김원중","team":"롯데","appeared":true,"decision":"승","innings":"1⅓","hits":2,"runs":0,"earned_runs":0,"walks_hbp":1,"strikeouts":1,"home_runs":0,"pitches":25,"season_record":"1승 2패","era":"3.09"},
+    {"name":"김원중","team":"롯데","appeared":true,"decision":"승","innings":"1⅓","hits":2,"runs":0,"earned_runs":0,"walks_hbp":1,"strikeouts":1,"home_runs":0,"pitches":25,"season_record":"1승 2패","season_saves":4,"era":"3.09"},
     {"name":"박정민","team":"롯데","appeared":false},
     {"name":"엘빈 로드리게스","team":"롯데","appeared":false},
     {"name":"임찬규","team":"LG","appeared":false},
-    {"name":"박영현","team":"KT","appeared":true,"decision":"등판","innings":"1","hits":1,"runs":1,"earned_runs":1,"walks_hbp":0,"strikeouts":3,"home_runs":1,"pitches":18,"season_record":"6승 0패","era":"2.68"},
+    {"name":"박영현","team":"KT","appeared":true,"decision":"등판","innings":"1","hits":1,"runs":1,"earned_runs":1,"walks_hbp":0,"strikeouts":3,"home_runs":1,"pitches":18,"season_record":"6승 0패","season_saves":18,"era":"2.68"},
     {"name":"정해영","team":"KIA","appeared":true,"decision":"등판","innings":"⅓","hits":4,"runs":4,"earned_runs":4,"walks_hbp":0,"strikeouts":0,"home_runs":2,"pitches":17,"season_record":"2승 1패","era":"5.87"}
   ],
   "batters": [
