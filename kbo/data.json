@@ -1,41 +1,41 @@
 {
-  "date": "2026-07-21",
-  "generated_at": "2026-07-22T06:20:39+09:00",
+  "date": "2026-07-22",
+  "generated_at": "2026-07-23T06:20:57+09:00",
   "games": [
     {
-      "id":"20260721NCLG0","stadium":"잠실","start_time":"18:30","status":"경기 종료","away":"NC","home":"LG","away_score":7,"home_score":5,"winner_pitcher":"전사민","loser_pitcher":"김윤식","save_pitcher":"임지민",
-      "headline":"김휘집 7회 결승 2점포, NC가 LG에 7-5 승리",
-      "winner_points":["NC 원종해는 5이닝 7피안타 2사사구 2탈삼진 4실점, LG 장현식은 4이닝 8피안타 무사사구 1탈삼진 3실점했다.","5-5 동점이던 7회 2사 1루에서 김휘집이 김윤식을 상대로 좌월 결승 2점 홈런을 쳤다.","김휘집은 5타수 2안타 1홈런 2타점, 김주원은 5타수 3안타 1타점 1득점, 박건우는 2타점을 기록했다.","전사민이 1⅔이닝 무실점으로 승리를 챙겼고, 임지민이 1이닝 무실점으로 세이브를 올렸다."],
-      "opponent_effort":"LG는 홍창기 2안타 1타점 2득점, 박해민 3안타를 앞세워 6회 5-5 동점까지 만들었다.",
-      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260721&gameId=20260721NCLG0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260721NCLG02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100983"}]
+      "id":"20260722SKLT0","stadium":"사직","start_time":"18:30","status":"경기 종료","away":"SSG","home":"롯데","away_score":7,"home_score":3,"winner_pitcher":"아빌라","loser_pitcher":"박세웅",
+      "headline":"마드리스 1회 결승타·3안타, SSG가 롯데에 7-3 승리",
+      "winner_points":["SSG 아빌라는 6이닝 4피안타 2사사구 6탈삼진 3실점으로 승리했고, 롯데 박세웅은 4이닝 7피안타 2사사구 3탈삼진 5실점으로 패전했다.","1회 1사 2루에서 마드리스의 중전 적시타가 결승타가 됐고, SSG는 3회 전의산의 2점 홈런과 5회 마드리스의 솔로포로 달아났다.","마드리스는 5타수 3안타 1홈런 2타점 2득점, 김재환은 5타수 3안타 1타점, 전의산은 2점 홈런을 기록했다.","김민·문승원·조병현이 각 1이닝 무실점으로 뒷문을 지켰고 조병현은 2탈삼진을 잡았다."],
+      "opponent_effort":"롯데는 고승민이 4타수 2안타 2타점 1득점으로 6회 추격의 중심에 섰고, 현도훈과 정철원이 합계 2⅓이닝 무실점으로 버텼다.",
+      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260722&gameId=20260722SKLT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260722SKLT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100990"}]
     },
     {
-      "id":"20260721SKLT0","stadium":"사직","start_time":"18:30","status":"경기 종료","away":"SSG","home":"롯데","away_score":2,"home_score":6,"winner_pitcher":"비슬리","loser_pitcher":"타케다",
-      "headline":"한동희 6회 결승 2루타, 비슬리 6이닝 호투로 롯데 승리",
-      "winner_points":["롯데 비슬리는 6이닝 5피안타 2사사구 7탈삼진 1실점으로 승리했고, SSG 타케다는 5⅔이닝 5피안타 1사사구 3탈삼진 3실점으로 패전했다.","0-0이던 6회 2사 1·3루에서 한동희의 좌중간 2루타가 결승타가 됐고 롯데가 그 이닝 4점을 냈다.","한태양은 4타수 3안타 2득점, 고승민은 4타수 2안타 2타점 1득점, 나승엽은 3타수 2안타 2타점을 기록했다.","이이무라가 7회 1이닝 무실점 홀드, 김원중은 9회 1이닝 2피안타 1실점으로 경기를 마무리했다."],
-      "opponent_effort":"SSG는 정준재가 4타수 2안타를 쳤고, 임근우가 9회 김원중에게 솔로 홈런을 날렸다.",
-      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260721&gameId=20260721SKLT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260721SKLT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100985"}]
+      "id":"20260722HHHT0","stadium":"광주","start_time":"18:30","status":"경기 종료","away":"한화","home":"KIA","away_score":7,"home_score":3,"winner_pitcher":"화이트","loser_pitcher":"올러",
+      "headline":"심우준 4타점·화이트 7이닝, 한화가 KIA에 7-3 승리",
+      "winner_points":["한화 화이트는 7이닝 4피안타 2사사구 5탈삼진 1실점으로 승리했고, KIA 올러는 5이닝 6피안타 4사사구 3탈삼진 4실점으로 패전했다.","1회 2사 1·2루에서 페라자의 2루수 안타가 결승타가 됐고, 심우준은 2회 3점 홈런을 포함해 5타수 3안타 4타점을 올렸다.","문현빈은 4타수 3안타 2득점, 페라자는 3타수 1안타 1타점, 허인서는 2타점을 기록했다.","화이트 뒤 조동욱·이상규·박상원이 각각 ⅔이닝씩을 맡았고, 박상원은 무실점으로 마무리했다."],
+      "opponent_effort":"KIA는 윤도현이 3타수 2안타 1홈런 1타점, 박상준이 솔로 홈런을 기록했고 8회에도 한 점을 보탰다.",
+      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260722&gameId=20260722HHHT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260722HHHT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100987"}]
     },
     {
-      "id":"20260721HHHT0","stadium":"광주","start_time":"18:30","status":"경기 종료","away":"한화","home":"KIA","away_score":3,"home_score":7,"winner_pitcher":"황동하","loser_pitcher":"박준영",
-      "headline":"한준수 결승 3점포·박재현 투런포, KIA가 한화 제압",
-      "winner_points":["KIA 황동하는 5이닝 7피안타 3사사구 4탈삼진 1실점으로 승리했고, 한화 박준영은 1이닝 3피안타 1사사구 1탈삼진 4실점으로 패전했다.","1회 1사 1·3루에서 한준수의 우월 3점 홈런이 결승타가 됐고, KIA는 2회 박재현의 2점포로 달아났다.","한준수는 4타수 2안타 1홈런 3타점, 박재현은 2점 홈런, 카스트로는 4타수 2안타 1홈런 1타점을 기록했다.","황동하 뒤 불펜이 4이닝 2실점으로 리드를 지켰고, 정해영은 ⅔이닝 3피안타 2실점을 기록했다."],
-      "opponent_effort":"한화는 오재원이 5타수 4안타 2득점, 최인호가 2안타 1득점, 노시환이 3타수 2안타로 맞섰다.",
-      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260721&gameId=20260721HHHT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260721HHHT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100982"}]
+      "id":"20260722SSWO0","stadium":"고척","start_time":"18:30","status":"경기 종료","away":"삼성","home":"키움","away_score":1,"home_score":3,"winner_pitcher":"박지성","loser_pitcher":"김백산","save_pitcher":"원종현",
+      "headline":"김웅빈 5회 결승포, 키움이 삼성에 3-1 승리",
+      "winner_points":["삼성 김백산은 4⅓이닝 5피안타 2사사구 3탈삼진 3실점으로 패전했고, 키움 알칸타라는 4이닝 3피안타 1사사구 2탈삼진 무실점으로 선발 역할을 했다.","0-0이던 5회 무사에서 김웅빈의 우중월 솔로 홈런이 결승타가 됐고, 키움은 그 이닝 3점을 냈다.","김웅빈은 4타수 2안타 1홈런 1타점 1득점, 추재현은 3타수 2안타, 박찬혁은 3타수 1안타 1득점을 기록했다.","박지성이 1이닝 무실점으로 승리를 챙겼고, 유토가 2이닝 1피안타 무실점 4탈삼진 홀드, 원종현이 1이닝 무실점 세이브를 기록했다."],
+      "opponent_effort":"삼성은 9회 김지찬의 안타와 볼넷으로 추격 기회를 만들었지만 원종현을 상대로 동점을 만들지 못했다.",
+      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260722&gameId=20260722SSWO0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260722SSWO02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100991"}]
     },
     {
-      "id":"20260721OBKT0","stadium":"수원","start_time":"18:30","status":"경기 종료 · 연장 11회 무승부","away":"두산","home":"KT","away_score":2,"home_score":2,
-      "headline":"두산과 KT, 9회 동점 뒤 연장 11회 2-2 무승부",
-      "winner_points":["두산 벤자민은 5이닝 7피안타 1사사구 5탈삼진 2실점(1자책), KT 오원석은 5이닝 4피안타 2사사구 7탈삼진 1실점으로 모두 승패가 없었다.","KT가 1회 선취점, 두산이 5회 동점, KT가 5회 다시 앞선 뒤 두산이 9회 1점을 내 2-2를 만들었다. 결승타는 없었다.","두산 박찬호는 6타수 3안타 1타점, 김민석은 5타수 2안타 1타점, KT 안현민은 2타수 1안타 1타점 2볼넷을 기록했다.","KT 박영현은 1⅓이닝 2피안타 1사사구 무실점, 양 팀 불펜은 연장 11회까지 추가 실점 없이 버텼다."],
-      "opponent_effort":"무승부 경기다. 두산은 9회 동점을 만들었고 KT는 선발 오원석의 7탈삼진과 불펜 무실점으로 맞섰다.",
-      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260721&gameId=20260721OBKT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260721OBKT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100984"}]
+      "id":"20260722NCLG0","stadium":"잠실","start_time":"18:30","status":"경기 취소","away":"NC","home":"LG","away_score":0,"home_score":0,
+      "headline":"NC-LG전 취소",
+      "winner_points":["KBO-derived kbo-game 일정 상태가 CANCELED이며, 다음 일정 API도 CANCEL로 표시했다."],
+      "opponent_effort":"경기 취소로 공식 기록과 개인 출전 기록이 없다.",
+      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260722&gameId=20260722NCLG0&section=REVIEW"},{"label":"다음 일정 API","url":"https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20260722&toDate=20260722"}]
     },
     {
-      "id":"20260721SSWO0","stadium":"고척","start_time":"18:30","status":"경기 종료","away":"삼성","home":"키움","away_score":8,"home_score":6,"winner_pitcher":"김태훈","loser_pitcher":"박정훈","save_pitcher":"김재윤",
-      "headline":"이재현 8회 결승포, 삼성 8-6 승리",
-      "winner_points":["삼성 최원태는 4⅔이닝 6피안타 1사사구 5탈삼진 4실점, 키움 배동현은 4이닝 10피안타 2사사구 3탈삼진 5실점했다.","삼성이 5회까지 6-0으로 앞섰지만 키움이 5~7회 6-6 동점을 만들었고, 이재현이 8회 무사에서 좌중월 솔로포로 결승점을 냈다.","김성윤은 5타수 4안타 1득점, 류지혁은 5타수 2안타 2타점 2득점, 구자욱은 2안타 2타점을 기록했다.","김태훈이 1⅔이닝 무실점으로 승리했고 김재윤이 1이닝 1피안타 1사사구 무실점으로 세이브를 올렸다."],
-      "opponent_effort":"키움은 데이비슨의 2점 홈런 포함 3타점과 김웅빈의 솔로포로 6점 차를 따라잡았다.",
-      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260721&gameId=20260721SSWO0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260721SSWO02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100986"}]
+      "id":"20260722OBKT0","stadium":"수원","start_time":"18:30","status":"경기 취소","away":"두산","home":"KT","away_score":0,"home_score":0,
+      "headline":"두산-KT전 취소",
+      "winner_points":["KBO-derived kbo-game 일정 상태가 CANCELED이며, 다음 일정 API도 CANCEL로 표시했다."],
+      "opponent_effort":"경기 취소로 공식 기록과 개인 출전 기록이 없다.",
+      "sources":[{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260722&gameId=20260722OBKT0&section=REVIEW"},{"label":"다음 일정 API","url":"https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20260722&toDate=20260722"}]
     }
   ]
 }

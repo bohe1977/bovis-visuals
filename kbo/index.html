@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="2026-07-21 KBO 전체 경기 결과와 관심 선수 기록 통합 리포트">
-  <title>2026-07-21 KBO 경기·관심 선수 통합 리포트</title>
+  <meta name="description" content="2026-07-22 KBO 전체 경기 결과와 관심 선수 기록 통합 리포트">
+  <title>2026-07-22 KBO 경기·관심 선수 통합 리포트</title>
   <style>
     :root{--ink:#202020;--body:#606060;--muted:#858585;--surface:#fff;--soft:#f7f7f7;--line:#e8e8e8;--link:#0672e5;--win:#13795b;--win-bg:#eff8f4;--amber:#8a5d00;--amber-bg:#fff8e6}
     *{box-sizing:border-box}html{background:#fff;color:var(--ink)}body{margin:0;background:#fff;color:var(--ink);font-family:Geist,Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
@@ -24,23 +24,23 @@
   </style>
 </head>
 <body>
-  <header><nav class="nav wrap" aria-label="주요 탐색"><a class="brand" href="../">Bovis Visuals</a><time class="date" datetime="2026-07-21">2026.07.21</time></nav></header>
+  <header><nav class="nav wrap" aria-label="주요 탐색"><a class="brand" href="../">Bovis Visuals</a><time class="date" datetime="2026-07-22">2026.07.22</time></nav></header>
   <main class="wrap">
-    <section class="hero" aria-labelledby="page-title"><p class="eyebrow">KBO · DAILY INTEGRATED REPORT</p><h1 id="page-title">2026-07-21 KBO 경기·관심 선수</h1><p>전날 전체 경기 결과와 승부처, 관심 투수·타자의 확정 기록을 한 페이지에 정리했습니다.</p></section>
+    <section class="hero" aria-labelledby="page-title"><p class="eyebrow">KBO · DAILY INTEGRATED REPORT</p><h1 id="page-title">2026-07-22 KBO 경기·관심 선수</h1><p>전날 전체 경기 결과와 승부처, 관심 투수·타자의 확정 기록을 한 페이지에 정리했습니다.</p></section>
     <section class="metrics" aria-label="리포트 요약"><div class="metric"><strong id="metric-games">—</strong><span>경기 수</span></div><div class="metric"><strong id="metric-runs">—</strong><span>총 득점</span></div><div class="metric"><strong id="metric-pitchers">—</strong><span>관심 투수 등판</span></div><div class="metric"><strong id="metric-batters">—</strong><span>관심 타자 출전</span></div></section>
     <section class="report-section" data-section="games" aria-labelledby="games-title"><div class="section-head"><h2 id="games-title">전체 경기</h2><span id="game-count">불러오는 중</span></div><div id="games" class="games"></div></section>
     <section class="players-section" data-section="pitchers" aria-labelledby="pitchers-title"><div class="section-head"><h2 id="pitchers-title">관심 투수</h2><span id="pitcher-count">불러오는 중</span></div><div id="pitcher-active" class="player-stack"></div><div id="pitcher-inactive" class="inactive"></div></section>
     <section class="players-section" data-section="batters" aria-labelledby="batters-title"><div class="section-head"><h2 id="batters-title">관심 타자</h2><span id="batter-count">불러오는 중</span></div><div id="batters" class="batters"></div></section>
     <section class="method" aria-labelledby="method-title"><h2 id="method-title">출처와 검증 범위</h2><p id="verification">KBO 공식 상세기록표를 기준으로 네이버스포츠 공개 기록 API와 다음스포츠 박스스코어를 대조했습니다.</p><div id="provenance" class="provenance"></div></section>
-    <footer>BOVIS · KBO DAILY INTEGRATED REPORT<br>Generated 2026-07-22 06:20 KST · stable public URL</footer>
+    <footer>BOVIS · KBO DAILY INTEGRATED REPORT<br>Generated 2026-07-23 06:20 KST · stable public URL</footer>
   </main>
   <script>
     const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const stat=(v,l)=>`<div class="player-stat"><strong data-stat-value>${esc(v)}</strong><span>${esc(l)}</span></div>`;
     const inactive=(p,s)=>`<div class="inactive-row" data-player-card data-player="${esc(p.name)}"><span><strong>${esc(p.name)}</strong><small>${esc(p.team)}</small></span><span class="none">${s}${p.season_saves!==undefined?` · 시즌 ${p.season_saves}세이브`:''}</span></div>`;
-    const gameCard=g=>{const draw=g.away_score===g.home_score,aw=g.away_score>g.home_score,home=g.home_score>g.away_score;return `<article class="game" data-game-card data-game-id="${esc(g.id)}"><div class="game-top"><span class="status">${esc(g.status)}</span><span class="venue">${esc(g.stadium)} · ${esc(g.start_time)}</span></div><div class="scoreboard"><div class="team away"><span class="team-name">${esc(g.away)}</span>${aw?'<span class="winner">승리</span>':draw?'<span class="draw">무</span>':''}</div><div class="score"><span>${g.away_score}</span><i>:</i><span>${g.home_score}</span></div><div class="team home"><span class="team-name">${esc(g.home)}</span>${home?'<span class="winner">승리</span>':draw?'<span class="draw">무</span>':''}</div></div><p class="headline">${esc(g.headline)}</p><div class="record">${g.winner_pitcher?`<span>승 ${esc(g.winner_pitcher)}</span>`:''}${g.loser_pitcher?`<span>패 ${esc(g.loser_pitcher)}</span>`:''}${g.save_pitcher?`<span>세 ${esc(g.save_pitcher)}</span>`:''}</div><span class="label">GAME POINTS</span><ul class="points">${g.winner_points.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="effort"><strong>${draw?'양 팀의 분전':esc(g.home_score>g.away_score?g.away:g.home)+'의 분전'}</strong> · ${esc(g.opponent_effort)}</div><div class="sources">${g.sources.map(s=>`<a class="source" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('')}</div></article>`};
+    const gameCard=g=>{const canceled=g.status.includes('취소'),draw=!canceled&&g.away_score===g.home_score,aw=g.away_score>g.home_score,home=g.home_score>g.away_score;return `<article class="game" data-game-card data-game-id="${esc(g.id)}"><div class="game-top"><span class="status">${esc(g.status)}</span><span class="venue">${esc(g.stadium)} · ${esc(g.start_time)}</span></div><div class="scoreboard"><div class="team away"><span class="team-name">${esc(g.away)}</span>${aw?'<span class="winner">승리</span>':draw?'<span class="draw">무</span>':''}</div><div class="score"><span>${canceled?'—':g.away_score}</span><i>:</i><span>${canceled?'—':g.home_score}</span></div><div class="team home"><span class="team-name">${esc(g.home)}</span>${home?'<span class="winner">승리</span>':draw?'<span class="draw">무</span>':''}</div></div><p class="headline">${esc(g.headline)}</p><div class="record">${g.winner_pitcher?`<span>승 ${esc(g.winner_pitcher)}</span>`:''}${g.loser_pitcher?`<span>패 ${esc(g.loser_pitcher)}</span>`:''}${g.save_pitcher?`<span>세 ${esc(g.save_pitcher)}</span>`:''}</div><span class="label">GAME POINTS</span><ul class="points">${g.winner_points.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="effort"><strong>${canceled?'경기 취소':draw?'양 팀의 분전':esc(g.home_score>g.away_score?g.away:g.home)+'의 분전'}</strong> · ${esc(g.opponent_effort)}</div><div class="sources">${g.sources.map(s=>`<a class="source" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('')}</div></article>`};
     Promise.all([fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`games HTTP ${r.status}`);return r.json()}),fetch('../kbo-players/data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`players HTTP ${r.status}`);return r.json()})]).then(([gdata,pdata])=>{
-      if(gdata.date!=='2026-07-21'||pdata.report_date!==gdata.date)throw Error('대상 날짜 불일치');
+      if(gdata.date!=='2026-07-22'||pdata.report_date!==gdata.date)throw Error('대상 날짜 불일치');
       document.querySelector('#games').innerHTML=gdata.games.length?gdata.games.map(gameCard).join(''):'<div class="empty">전날 KBO 경기 없음</div>';
       document.querySelector('#game-count').textContent=`${gdata.games.length} GAMES · FINAL`;
       const ap=pdata.pitchers.filter(p=>p.appeared),ip=pdata.pitchers.filter(p=>!p.appeared),ab=pdata.batters.filter(p=>p.appeared),ib=pdata.batters.filter(p=>!p.appeared);
