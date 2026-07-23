@@ -4,7 +4,7 @@
   "verification": {
     "status": "KBO 공식 기준 · 네이버 동일 · 다음 스코어 동일",
     "sources": ["KBO 공식 게임센터·선수 상세기록", "네이버스포츠 공개 기록 API", "다음스포츠 박스스코어"],
-    "details": "2026-07-22 편성 5경기 중 3경기는 최종 종료, NC-LG와 두산-KT는 취소로 KBO-derived kbo-game 일정과 다음 일정에서 일치했다. 종료 3경기의 최종 스코어와 관심 선수 당일 기록은 네이버 공개 기록 API 및 KBO 공식 게임센터 REVIEW를 기준으로 대조했다. 김원중과 박영현의 시즌 세이브·시즌 승패·ERA는 KBO 공식 선수 상세기록과, 두 선수가 직전 등판한 네이버 기록 API의 시즌 행에서 각각 대조했다. 김원중은 롯데 경기에서 등판하지 않았고 박영현의 KT 경기는 취소되어, 공식 현재값과 네이버 확인값은 각각 4세이브·1승 2패·3.25, 18세이브·6승 0패·2.59로 보존했다. 다음은 스코어·취소 상태를 보조 확인했으며 투수 시즌 승패/ERA 또는 타자 볼넷(HBP 분리)은 제공 범위 차이로 독립 일치 항목으로 세지 않았다.",
+    "details": "2026-07-22 편성 5경기 중 NC-LG와 두산-KT는 취소되어 리포트 경기 수와 카드에서 제외했다. 최종 종료한 3경기의 스코어와 관심 선수 당일 기록은 네이버 공개 기록 API 및 KBO 공식 게임센터 REVIEW를 기준으로 대조했다. 미등판 투수는 이름·팀·등판 여부만 보존하며, 시즌 성적은 당일 등판한 선수에 한해 표시한다. 다음은 스코어·취소 상태를 보조 확인했다.",
     "conflicts": []
   },
   "pitchers": [
@@ -13,11 +13,11 @@
     {"name":"제레미 비슬리","team":"롯데","appeared":false},
     {"name":"박세웅","team":"롯데","appeared":true,"decision":"패","innings":"4","hits":7,"runs":5,"earned_runs":5,"walks_hbp":2,"strikeouts":3,"home_runs":1,"pitches":88,"season_record":"2승 7패","era":"4.87"},
     {"name":"김진욱","team":"롯데","appeared":false},
-    {"name":"김원중","team":"롯데","appeared":false,"season_record":"1승 2패","season_saves":4,"era":"3.25"},
+    {"name":"김원중","team":"롯데","appeared":false},
     {"name":"박정민","team":"롯데","appeared":false},
     {"name":"엘빈 로드리게스","team":"롯데","appeared":false},
     {"name":"임찬규","team":"LG","appeared":false},
-    {"name":"박영현","team":"KT","appeared":false,"season_record":"6승 0패","season_saves":18,"era":"2.59"},
+    {"name":"박영현","team":"KT","appeared":false},
     {"name":"정해영","team":"KIA","appeared":false}
   ],
   "batters": [
