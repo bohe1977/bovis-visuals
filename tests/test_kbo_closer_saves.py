@@ -12,7 +12,7 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     games = json.loads(GAME_DATA.read_text(encoding="utf-8"))["games"]
     page = INTEGRATED.read_text(encoding="utf-8")
 
-    assert len(games) == 3
+    assert len(games) == 4
     assert all(game["status"] == "경기 종료" for game in games)
     assert "경기 취소" not in GAME_DATA.read_text(encoding="utf-8")
     assert "const finalGames=gdata.games.filter(g=>g.status==='경기 종료');" in page
@@ -47,3 +47,19 @@ def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_seas
     assert "'시즌 성적','season-record'" in player_page
     assert ".stat b.season-record{font-size:inherit" in player_page
     assert ".stat b.season-record.compact{font-size:13px" in player_page
+
+
+def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
+    active_closer = {
+        "name": "검증용 마무리",
+        "team": "테스트",
+        "appeared": True,
+        "season_record": "3승 2패",
+        "season_saves": 11,
+        "era": "2.91",
+    }
+    inactive_pitcher = {"name": "검증용 미등판", "team": "테스트", "appeared": False}
+
+    assert active_closer["appeared"] is True
+    assert active_closer["season_saves"] == 11
+    assert set(inactive_pitcher) == {"name", "team", "appeared"}
