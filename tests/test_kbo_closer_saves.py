@@ -39,7 +39,11 @@ def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_seas
     assert "class=\"season-record\"" in integrated
     assert "${p.season_record} · ${p.season_saves}세이브" in integrated
     assert "<span>시즌 성적</span>" in integrated
-    assert "strong.season-record{font-size:13px" in integrated
+    assert "strong.season-record{font-size:17px" in integrated
+    assert "strong.season-record.compact{font-size:13px" in integrated
+    assert "el.scrollWidth>el.clientWidth" in integrated
+    assert "addEventListener?.('resize',fitSeasonRecords)" in integrated
     assert "${p.season_record} · ${p.season_saves}세이브" in player_page
     assert "'시즌 성적','season-record'" in player_page
-    assert ".stat b.season-record{font-size:13px" in player_page
+    assert ".stat b.season-record{font-size:inherit" in player_page
+    assert ".stat b.season-record.compact{font-size:13px" in player_page
