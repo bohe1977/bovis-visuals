@@ -1,79 +1,79 @@
 {
-  "report_date_kst": "2026-07-22",
-  "official_date_mlb": "2026-07-21",
-  "generated_at": "2026-07-22T16:49:57+09:00",
+  "report_date_kst": "2026-07-23",
+  "official_date_mlb": "2026-07-22",
+  "generated_at": "2026-07-23T16:49:00+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 다음스포츠 KST 일정 교차확인 · 네이버스포츠 KST 일정 페이지 조회",
-    "method": "KST 2026-07-22 UTC 창(2026-07-21 15:00:00Z–2026-07-22 14:59:59Z)에 속한 경기를 MLB 공식 schedule의 미국 현지 2026-07-21·2026-07-22 일정에서 gameDate로 선별했다. 미국 현지 7월 21일 경기 15개가 대상이며, 7월 22일 schedule의 경기는 모두 KST 7월 23일 시작이라 제외했다. 경기·선수 수치는 MLB 공식 boxscore/Gameday와 byDateRange(endDate=2026-07-21) 시즌 컷오프를 기준으로 했다. 다음스포츠 20260722 전체 일정은 15경기 상태(다저스·자이언츠 종료, 피츠버그–양키스 연기)를 대조했다. 네이버스포츠 KST 일정 페이지는 조회했으나 이 환경에서 동적 경기 데이터가 렌더링되지 않아 수치 교차확인에는 사용하지 않았다.",
+    "method": "KST 2026-07-23 UTC 창(2026-07-22 15:00:00Z–2026-07-23 14:59:59Z)에 속한 경기를 MLB 공식 schedule의 미국 현지 2026-07-22·2026-07-23 일정에서 gameDate로 선별했다. 미국 현지 7월 22일 경기 17개가 대상이며, 7월 23일 schedule의 경기는 모두 KST 7월 24일 시작이라 제외했다. 선수 수치는 MLB 공식 boxscore/Gameday와 byDateRange(endDate=2026-07-22) 시즌 컷오프를 기준으로 했다. 다음스포츠 KST 20260723 일정 17경기와 대조했고, 네이버스포츠 KST 일정 페이지도 조회했다.",
     "notes": [
-      "다저스는 필라델피아에 2–1 승리, 자이언츠는 캔자스시티에 2–3 패배했다.",
-      "오타니는 4타수 1안타 2삼진, 이정후는 3타수 1안타 1볼넷 1삼진, 트라웃은 3타수 1안타 1볼넷 1득점, 무라카미는 3타수 1안타 1볼넷을 기록했다. 위트 주니어와 송성문은 팀 경기 boxscore에 타격 기록이 없어 비출전이다.",
-      "투수 판정은 MLBAM ID와 현재 팀 KST 대상일 gamePk를 대조했다. 오타니(660271)는 다저스 gamePk 823437의 투수 배열에 없었다. 스킨스(694973)의 피츠버그–양키스 gamePk 823519는 우천 연기다. 고우석(808970)은 currentTeam 세인트폴 gamePk 815724의 투수 배열과 MLB gameLog를 대조해 당일 등판이 없음을 확인했다.",
+      "다저스는 필라델피아에 9–5 승리, 자이언츠는 캔자스시티에 4–5 패배했다.",
+      "오타니는 4타수 무안타 1볼넷, 이정후는 4타수 1안타(3루타) 1타점 1득점, 트라웃은 3타수 1안타 1사구, 무라카미는 3타수 무안타 1볼넷 3삼진 1득점, 송성문은 대타로 1타수 무안타를 기록했다. 위트 주니어는 캔자스시티 boxscore에 타격 기록이 없어 비출전이다.",
+      "투수 판정은 MLBAM ID와 현재 팀 KST 대상일 모든 gamePk의 boxscore 투수 배열을 대조했다. 오타니(660271)는 다저스 gamePk 823438, 스킨스(694973)는 피츠버그 더블헤더 gamePk 823518·823519, 고우석(808970)은 세인트폴 gamePk 815729의 투수 배열에 없었다. 고우석 MLB 공식 gameLog에도 gamePk 815729 기록이 없어 미등판 판정과 모순이 없다.",
       "김하성은 Gwinnett Stripers, 김혜성은 Oklahoma City Comets가 MLB 공식 currentTeam으로 표시되어 KST 대상일 MLB 박스스코어 대상이 아니다."
     ]
   },
   "team_games": [
     {
       "section_title": "LA 다저스 경기",
-      "game_pk": 823437,
-      "officialDate": "2026-07-21",
-      "game_date_utc": "2026-07-21T22:40:00Z",
+      "game_pk": 823438,
+      "officialDate": "2026-07-22",
+      "game_date_utc": "2026-07-22T22:40:00Z",
       "naver_game_id": null,
-      "daum_game_id": "80104802",
+      "daum_game_id": null,
       "venue": "시티즌스 뱅크 파크",
       "start_time_kst": "07:40",
       "status": "경기 종료",
       "away": "LA 다저스",
       "home": "필라델피아",
       "winner_side": "away",
-      "away_score": 2,
-      "home_score": 1,
-      "away_hits": 5,
+      "away_score": 9,
+      "home_score": 5,
+      "away_hits": 11,
       "home_hits": 7,
-      "away_errors": 1,
+      "away_errors": 0,
       "home_errors": 0,
-      "winner_pitcher": "저스틴 로블레스키",
-      "loser_pitcher": "잭 휠러",
-      "save_pitcher": "태너 스콧",
-      "headline": "다저스, 필라델피아에 2–1 승리",
+      "winner_pitcher": "Eric Lauer",
+      "loser_pitcher": "Aaron Nola",
+      "save_pitcher": null,
+      "headline": "LA 다저스, 필라델피아에 9–5 승리",
       "points": [
-        "다저스는 5안타 2득점으로 필라델피아를 2–1로 제압했다.",
-        "오타니 쇼헤이는 지명타자로 4타수 1안타 2삼진을 기록했다.",
-        "공식 결정은 저스틴 로블레스키 승리, 잭 휠러 패전, 태너 스콧 세이브다."
+        "LA 다저스 11안타 9득점, 필라델피아 7안타 5득점.",
+        "오타니 쇼헤이는 지명타자로 4타수 무안타 1볼넷을 기록했다.",
+        "공식 결정: Eric Lauer 승리, Aaron Nola 패전."
       ],
       "opponent_label": "필라델피아",
-      "opponent_effort": "필라델피아는 7안타를 기록했지만 1득점에 그쳤다."
+      "opponent_effort": "필라델피아는 5득점을 기록했다."
     },
     {
       "section_title": "샌프란시스코 자이언츠 경기",
-      "game_pk": 824085,
-      "officialDate": "2026-07-21",
-      "game_date_utc": "2026-07-21T23:40:00Z",
+      "game_pk": 824083,
+      "officialDate": "2026-07-22",
+      "game_date_utc": "2026-07-22T18:10:00Z",
       "naver_game_id": null,
-      "daum_game_id": "80104809",
+      "daum_game_id": null,
       "venue": "코프먼 스타디움",
-      "start_time_kst": "08:40",
+      "start_time_kst": "03:10",
       "status": "경기 종료",
       "away": "샌프란시스코",
       "home": "캔자스시티",
       "winner_side": "home",
-      "away_score": 2,
-      "home_score": 3,
-      "away_hits": 5,
-      "home_hits": 8,
-      "away_errors": 0,
-      "home_errors": 1,
-      "winner_pitcher": "루인더 아빌라",
-      "loser_pitcher": "타일러 말리",
-      "save_pitcher": "알렉스 랭",
-      "headline": "자이언츠, 캔자스시티에 2–3 패배",
+      "away_score": 4,
+      "home_score": 5,
+      "away_hits": 4,
+      "home_hits": 9,
+      "away_errors": 1,
+      "home_errors": 0,
+      "winner_pitcher": "Seth Lugo",
+      "loser_pitcher": "Sam Hentges",
+      "save_pitcher": "Steven Cruz",
+      "headline": "샌프란시스코, 캔자스시티에 4–5 패배",
       "points": [
-        "자이언츠는 5안타 2득점, 캔자스시티는 8안타 3득점을 기록했다.",
-        "이정후는 우익수로 3타수 1안타 1볼넷 1삼진을 기록했다.",
-        "공식 결정은 루인더 아빌라 승리, 타일러 말리 패전, 알렉스 랭 세이브다."
+        "샌프란시스코 4안타 4득점, 캔자스시티 9안타 5득점.",
+        "이정후는 우익수로 4타수 1안타(3루타) 1타점 1득점을 기록했다.",
+        "공식 결정: Seth Lugo 승리, Sam Hentges 패전, Steven Cruz 세이브."
       ],
-      "opponent_label": "샌프란시스코",
-      "opponent_effort": "캔자스시티는 8안타로 3점을 내며 한 점 차 리드를 지켰다."
+      "opponent_label": "캔자스시티",
+      "opponent_effort": "캔자스시티는 5득점을 기록했다."
     }
   ],
   "batters": [
@@ -84,17 +84,17 @@
       "status": "출전",
       "position": "DH",
       "at_bats": 4,
-      "hits": 1,
+      "hits": 0,
       "rbi": 0,
       "runs": 0,
       "home_runs": 0,
-      "walks": 0,
-      "strikeouts": 2,
-      "avg": ".287",
-      "obp": ".394",
-      "ops": ".925",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "DH · 1-4 | 2 K"
+      "walks": 1,
+      "strikeouts": 0,
+      "avg": ".283",
+      "obp": ".392",
+      "ops": ".917",
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "DH · 0-4 | BB"
     },
     {
       "name": "이정후",
@@ -102,25 +102,25 @@
       "mlbam_id": 808982,
       "status": "출전",
       "position": "RF",
-      "at_bats": 3,
+      "at_bats": 4,
       "hits": 1,
-      "rbi": 0,
-      "runs": 0,
+      "rbi": 1,
+      "runs": 1,
       "home_runs": 0,
-      "walks": 1,
-      "strikeouts": 1,
-      "avg": ".303",
-      "obp": ".336",
-      "ops": ".759",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "RF · 1-3 | BB, K"
+      "walks": 0,
+      "strikeouts": 0,
+      "avg": ".302",
+      "obp": ".335",
+      "ops": ".762",
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "RF · 1-4 | 3B, RBI, R"
     },
     {
       "name": "바비 위트 주니어",
       "team": "캔자스시티",
       "mlbam_id": 677951,
       "status": "비출전",
-      "position": "SS",
+      "position": "—",
       "at_bats": null,
       "hits": null,
       "rbi": null,
@@ -131,8 +131,8 @@
       "avg": ".279",
       "obp": ".350",
       "ops": ".800",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "MLB 공식 boxscore gamePk 824085: 타격 기록 없음"
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "MLB 공식 boxscore gamePk 824083: 타격 기록 없음"
     },
     {
       "name": "마이크 트라웃",
@@ -143,15 +143,15 @@
       "at_bats": 3,
       "hits": 1,
       "rbi": 0,
-      "runs": 1,
+      "runs": 0,
       "home_runs": 0,
-      "walks": 1,
+      "walks": 0,
       "strikeouts": 0,
-      "avg": ".233",
-      "obp": ".387",
+      "avg": ".234",
+      "obp": ".388",
       "ops": ".847",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "CF · 1-3 | BB, R"
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "CF · 1-3 | HBP"
     },
     {
       "name": "무라카미 무네타카",
@@ -160,36 +160,36 @@
       "status": "출전",
       "position": "1B",
       "at_bats": 3,
-      "hits": 1,
+      "hits": 0,
       "rbi": 0,
-      "runs": 0,
+      "runs": 1,
       "home_runs": 0,
       "walks": 1,
-      "strikeouts": 0,
-      "avg": ".233",
-      "obp": ".377",
-      "ops": ".906",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "1B · 1-3 | BB"
+      "strikeouts": 3,
+      "avg": ".230",
+      "obp": ".375",
+      "ops": ".897",
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "1B · 0-3 | BB, 3 K, R"
     },
     {
       "name": "송성문",
       "team": "샌디에이고",
       "mlbam_id": 823550,
-      "status": "비출전",
-      "position": "2B",
-      "at_bats": null,
-      "hits": null,
-      "rbi": null,
-      "runs": null,
-      "home_runs": null,
-      "walks": null,
-      "strikeouts": null,
-      "avg": ".231",
-      "obp": ".327",
-      "ops": ".635",
-      "season_stats_cutoff": "2026-07-21",
-      "daily_note": "MLB 공식 boxscore gamePk 824895: 타격 기록 없음"
+      "status": "출전",
+      "position": "PH",
+      "at_bats": 1,
+      "hits": 0,
+      "rbi": 0,
+      "runs": 0,
+      "home_runs": 0,
+      "walks": 0,
+      "strikeouts": 0,
+      "avg": ".228",
+      "obp": ".324",
+      "ops": ".628",
+      "season_stats_cutoff": "2026-07-22",
+      "daily_note": "PH · 0-1"
     },
     {
       "name": "김하성",
@@ -207,7 +207,7 @@
       "avg": ".068",
       "obp": ".171",
       "ops": ".239",
-      "season_stats_cutoff": "2026-07-21",
+      "season_stats_cutoff": "2026-07-22",
       "daily_note": "MLB 공식 currentTeam: Gwinnett Stripers · KST 대상일 MLB 박스스코어 대상 없음"
     },
     {
@@ -226,7 +226,7 @@
       "avg": ".259",
       "obp": ".323",
       "ops": ".651",
-      "season_stats_cutoff": "2026-07-21",
+      "season_stats_cutoff": "2026-07-22",
       "daily_note": "MLB 공식 currentTeam: Oklahoma City Comets · KST 대상일 MLB 박스스코어 대상 없음"
     }
   ],
@@ -243,7 +243,7 @@
       "team": "피츠버그",
       "mlbam_id": 694973,
       "appeared": false,
-      "status": "연기"
+      "status": "등판 없음"
     },
     {
       "name": "고우석",
@@ -255,21 +255,21 @@
   ],
   "sources": {
     "mlb_official": [
-      "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-21",
       "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-22",
-      "https://statsapi.mlb.com/api/v1/game/823437/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/824085/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/823519/feed/live",
-      "https://statsapi.mlb.com/api/v1/game/815724/boxscore",
-      "https://statsapi.mlb.com/api/v1/people/808970/stats?stats=gameLog&group=pitching&season=2026",
-      "https://statsapi.mlb.com/api/v1/people?personIds=660271,808982,677951,545361,808959,823550,673490,808975,694973,808970&hydrate=currentTeam,rosterEntries"
+      "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-23",
+      "https://statsapi.mlb.com/api/v1/game/823438/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/824083/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/823518/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/823519/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/815729/boxscore",
+      "https://statsapi.mlb.com/api/v1/people/808970/stats?stats=gameLog&group=pitching&season=2026"
     ],
     "naver": [
-      "https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date=2026-07-22"
+      "https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date=2026-07-23"
     ],
     "daum": [
-      "https://sports.daum.net/schedule/mlb?date=20260722",
-      "https://sports.daum.net/prx/hermes/api/game/schedule.json?leagueCode=mlb&fromDate=20260722&toDate=20260722"
+      "https://sports.daum.net/schedule/mlb?date=20260723",
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?leagueCode=mlb&fromDate=20260723&toDate=20260723"
     ]
   }
 }
