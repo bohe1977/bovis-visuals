@@ -41,3 +41,5 @@ def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_seas
     assert "<span>시즌 성적</span>" in integrated
     assert "strong.season-record{font-size:13px" in integrated
     assert "${p.season_record} · ${p.season_saves}세이브" in player_page
+    assert "'시즌 성적','season-record'" in player_page
+    assert ".stat b.season-record{font-size:13px" in player_page
