@@ -23,6 +23,13 @@ def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'BOVIS MLB daily collector/1.0'})
     with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
 def api(path,**q):return get('https://statsapi.mlb.com/api/v1/'+path+('?' + urllib.parse.urlencode(q,doseq=True) if q else ''))
+def public_status(url):
+    try:
+      req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 BOVIS daily collector'})
+      with urllib.request.urlopen(req,timeout=45) as r:
+        return f'HTTP {r.status}'
+    except Exception as exc:
+      return f'조회 실패: {type(exc).__name__}'
 def iso(s):return datetime.fromisoformat(s.replace('Z','+00:00'))
 def games_for_date(date,sport=1,team=None):
     q={'sportId':sport,'date':date.isoformat(),'hydrate':'linescore,decisions'}
@@ -160,7 +167,11 @@ def main():
     # Cross-check endpoints are retained as provenance. Their dynamic IDs are not guessed.
     src=['https://statsapi.mlb.com/api/v1/schedule?sportId=1&date='+d.isoformat() for d in (REPORT-timedelta(days=1),REPORT)]
     src += [f'https://statsapi.mlb.com/api/v1/game/{pk}/boxscore' for pk in sorted(boxes)]
-    data={'report_date_kst':REPORT.isoformat(),'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),'generated_at':datetime.now(KST).isoformat(timespec='seconds'),'verification':{'status':'MLB 공식 Stats API/Gameday 기준 · 네이버·다음 KST 일정 교차조회','method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 네이버·다음 KST 일정 URL을 교차조회했으며 동적 페이지의 경기 ID는 추정하지 않았다.','notes':[f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했다.', '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.']+([f'고우석 gameLog와 팀 gamePk 대조: {"기록 없음으로 미등판 교차확인" if go_gamelog_verified else "해당 없음 또는 미검증"}.'] if go_gamelog_verified is not None else [])},'team_games':targets,'batters':batters,'pitchers':pitchers,'sources':{'mlb_official':src,'naver':[f'https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date={REPORT}'],'daum':[f'https://sports.daum.net/schedule/mlb?date={REPORT.strftime("%Y%m%d")}']}}
+    naver_url=f'https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date={REPORT}'
+    daum_url=f'https://sports.daum.net/schedule/mlb?date={REPORT.strftime("%Y%m%d")}'
+    naver_check=public_status(naver_url)
+    daum_check=public_status(daum_url)
+    data={'report_date_kst':REPORT.isoformat(),'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),'generated_at':datetime.now(KST).isoformat(timespec='seconds'),'verification':{'status':'MLB 공식 Stats API/Gameday 기준 · 네이버·다음 KST 일정 교차조회','method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 네이버·다음 KST 일정 URL을 교차조회했으며 동적 페이지의 경기 ID는 추정하지 않았다.','notes':[f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했다.', f'네이버 KST 일정 {naver_check}, 다음 KST 일정 {daum_check}.', '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.']+([f'고우석 gameLog와 팀 gamePk 대조: {"기록 없음으로 미등판 교차확인" if go_gamelog_verified else "해당 없음 또는 미검증"}.'] if go_gamelog_verified is not None else [])},'team_games':targets,'batters':batters,'pitchers':pitchers,'sources':{'mlb_official':src,'naver':[naver_url],'daum':[daum_url]}}
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

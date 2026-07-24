@@ -1,12 +1,13 @@
 {
   "report_date_kst": "2026-07-24",
   "official_date_mlb": "2026-07-23",
-  "generated_at": "2026-07-24T16:54:58+09:00",
+  "generated_at": "2026-07-24T16:58:32+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 네이버·다음 KST 일정 교차조회",
     "method": "KST 2026-07-24 UTC 창(2026-07-23T15:00:00Z–2026-07-24T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 네이버·다음 KST 일정 URL을 교차조회했으며 동적 페이지의 경기 ID는 추정하지 않았다.",
     "notes": [
       "MLB 공식 schedule에서 KST 대상 창에 5개 MLB 경기를 확인했다.",
+      "네이버 KST 일정 HTTP 200, 다음 KST 일정 HTTP 200.",
       "투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.",
       "고우석 gameLog와 팀 gamePk 대조: 기록 없음으로 미등판 교차확인."
     ]
