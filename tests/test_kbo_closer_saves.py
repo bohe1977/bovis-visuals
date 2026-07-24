@@ -49,6 +49,14 @@ def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_seas
     assert ".stat b.season-record.compact{font-size:13px" in player_page
 
 
+def test_kbo_integrated_report_hero_uses_player_then_all_team_result_title():
+    page = INTEGRATED.read_text(encoding="utf-8")
+
+    assert '<h1 id="page-title">KBO 관심 선수와<br>전체 팀 경기 결과</h1>' in page
+    assert '<title>2026-07-23 KBO 관심 선수와 전체 팀 경기 결과</title>' in page
+    assert 'KBO 경기·관심 선수</h1>' not in page
+
+
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
     active_closer = {
         "name": "검증용 마무리",
