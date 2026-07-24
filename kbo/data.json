@@ -1,108 +1,41 @@
 {
-  "date": "2026-07-23",
-  "generated_at": "2026-07-24T06:20:16+09:00",
+  "date": "2026-07-24",
+  "generated_at": "2026-07-25T06:20:32+09:00",
   "games": [
     {
-      "id": "20260723NCLG0",
-      "stadium": "잠실",
-      "start_time": "18:30",
-      "status": "경기 종료",
-      "away": "NC",
-      "home": "LG",
-      "away_score": 7,
-      "home_score": 5,
-      "winner_pitcher": "테일러",
-      "loser_pitcher": "웰스",
-      "save_pitcher": "임지민",
-      "headline": "블레인 5회 역전 3점포, NC가 LG에 7-5 승리",
-      "winner_points": [
-        "NC 테일러는 5⅓이닝 9피안타 6사사구 4탈삼진 4실점으로 승리했고, LG 웰스는 6이닝 8피안타 2사사구 1탈삼진 6실점으로 패전했다.",
-        "NC는 5회 1사 만루 박민우의 2루수 땅볼로 결승점을 냈고, 블레인이 이어 3점 홈런을 터뜨려 역전 흐름을 완성했다.",
-        "블레인은 5타수 3안타 1홈런 4타점 2득점, 안중열은 3타수 3안타 1득점을 기록했다.",
-        "김진호와 전사민이 홀드를 더했고, 임지민은 1⅔이닝 무피안타 1사사구 2탈삼진 무실점으로 5세이브를 기록했다."
-      ],
-      "opponent_effort": "LG는 구본혁이 4타수 3안타 1득점, 오지환이 3타수 2안타 2타점 1득점을 올렸고 8회에도 한 점을 추격했지만 동점에는 이르지 못했다.",
-      "sources": [
-        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260723&gameId=20260723NCLG0&section=REVIEW"},
-        {"label": "네이버 기록 API", "url": "https://api-gw.sports.naver.com/schedule/games/20260723NCLG02026/record"},
-        {"label": "다음 박스스코어", "url": "https://sports.daum.net/match/80100993"}
-      ]
+      "id": "20260724SSOB0", "stadium": "잠실", "start_time": "18:30", "status": "경기 종료", "away": "삼성", "home": "두산", "away_score": 15, "home_score": 4,
+      "winner_pitcher": "페덱", "loser_pitcher": "최민석", "headline": "삼성이 두산을 15-4로 꺾고 3회 9득점 빅이닝을 완성",
+      "winner_points": ["삼성 페덱은 6이닝 6피안타 무사사구 3탈삼진 2실점으로 승리했고, 두산 최민석은 2⅔이닝 7피안타 4사사구 1탈삼진 10실점(4자책)으로 패전했다.", "2회 2사 1루 이재현의 좌중간 2루타가 결승타가 됐고, 삼성은 3회 9점을 몰아내며 승기를 굳혔다.", "구자욱은 4타수 3안타 3타점 1득점, 디아즈는 5타수 2안타 2타점, 강민호는 3타수 2안타 2타점 3득점을 기록했다.", "삼성 불펜은 7회부터 3이닝 동안 두산에 2점만 내주며 큰 리드를 지켰다."],
+      "opponent_effort": "두산은 세베리노가 4타수 2안타 1타점, 김기연과 김대한이 각각 1타점을 올리며 8회 2점을 보탰지만 초반 대량 실점을 만회하지 못했다.",
+      "sources": [{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260724&gameId=20260724SSOB0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260724SSOB02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80101000"}]
     },
     {
-      "id": "20260723SKLT0",
-      "stadium": "사직",
-      "start_time": "18:30",
-      "status": "경기 종료",
-      "away": "SSG",
-      "home": "롯데",
-      "away_score": 5,
-      "home_score": 2,
-      "winner_pitcher": "김민준",
-      "loser_pitcher": "로드리게스",
-      "save_pitcher": "조병현",
-      "headline": "박성한 1회 결승 3루타, SSG가 롯데에 5-2 승리",
-      "winner_points": [
-        "SSG 김민준은 6이닝 2피안타 3사사구 5탈삼진 무실점으로 승리했고, 롯데 로드리게스는 6이닝 7피안타 3사사구 7탈삼진 3실점으로 패전했다.",
-        "1회 무사 1루에서 박성한의 우익수 3루타가 결승타가 됐고, SSG는 3회 김재환의 솔로 홈런과 8회 2득점으로 달아났다.",
-        "김재환은 3타수 2안타 1홈런 1타점 1득점, 조형우는 3타수 2안타 2타점을 기록했다.",
-        "노경은이 1이닝 무실점 홀드를 올렸고, 조병현은 ⅓이닝 무실점으로 11세이브를 기록했다."
-      ],
-      "opponent_effort": "롯데는 9회 나승엽의 볼넷과 윤동희·박승욱의 안타, 노진혁의 적시타를 묶어 2점을 냈지만 2회부터 8회까지 SSG 마운드를 공략하지 못했다.",
-      "sources": [
-        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260723&gameId=20260723SKLT0&section=REVIEW"},
-        {"label": "네이버 기록 API", "url": "https://api-gw.sports.naver.com/schedule/games/20260723SKLT02026/record"},
-        {"label": "다음 박스스코어", "url": "https://sports.daum.net/match/80100995"}
-      ]
+      "id": "20260724KTLT0", "stadium": "사직", "start_time": "18:30", "status": "경기 종료", "away": "KT", "home": "롯데", "away_score": 5, "home_score": 4,
+      "winner_pitcher": "로건", "loser_pitcher": "나균안", "save_pitcher": "박영현", "headline": "김상수의 4회 결승포로 KT가 롯데에 5-4 승리",
+      "winner_points": ["KT 로건은 6이닝 7피안타 2사사구 4탈삼진 2실점으로 승리했고, 롯데 나균안은 5⅔이닝 8피안타 2사사구 6탈삼진 5실점으로 패전했다.", "4회 1사에서 김상수의 좌월 솔로 홈런이 결승타가 됐고, KT는 그 이닝 2점과 6회 2점으로 격차를 만들었다.", "김상수는 3타수 3안타 1홈런 1타점 2득점, 허경민은 4타수 3안타 1타점, 한승택은 2타수 1안타 2타점을 기록했다.", "스기모토와 이상동이 홀드를 기록했고, 박영현은 1이닝 무피안타 1탈삼진 무실점으로 시즌 19세이브를 올렸다."],
+      "opponent_effort": "롯데는 한동희가 4타수 4안타 1홈런 3타점, 레이예스가 4타수 1안타 1타점을 기록하며 7회까지 4-5로 추격했지만 동점에는 닿지 못했다.",
+      "sources": [{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260724&gameId=20260724KTLT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260724KTLT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100997"}]
     },
     {
-      "id": "20260723HHHT0",
-      "stadium": "광주",
-      "start_time": "18:30",
-      "status": "경기 종료",
-      "away": "한화",
-      "home": "KIA",
-      "away_score": 9,
-      "home_score": 3,
-      "winner_pitcher": "왕옌청",
-      "loser_pitcher": "시라카와",
-      "headline": "페라자 결승타·문현빈·이도윤 홈런, 한화가 KIA에 9-3 승리",
-      "winner_points": [
-        "한화 왕옌청은 7이닝 5피안타 1사사구 7탈삼진 2실점으로 승리했고, KIA 시라카와는 3이닝 5피안타 3사사구 3탈삼진 5실점으로 패전했다.",
-        "3회 1사 2루에서 페라자의 우전 적시타가 결승타가 됐고, 문현빈의 2점 홈런으로 3점을 냈다. 한화는 4회와 7회 이도윤의 2점포까지 더했다.",
-        "페라자는 3타수 2안타 3타점 1득점, 오재원은 5타수 2안타 2타점 1득점, 이도윤은 4타수 2안타 1홈런 2타점 1득점을 기록했다.",
-        "왕옌청 뒤 장유호가 1이닝 무실점, 이민우가 1이닝 1실점으로 경기를 마무리했다."
-      ],
-      "opponent_effort": "KIA는 카스트로가 3타수 2안타 1홈런 2타점 1득점으로 4회 추격을 이끌었고, 이태양이 1이닝 무실점으로 불펜에서 버텼다.",
-      "sources": [
-        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260723&gameId=20260723HHHT0&section=REVIEW"},
-        {"label": "네이버 기록 API", "url": "https://api-gw.sports.naver.com/schedule/games/20260723HHHT02026/record"},
-        {"label": "다음 박스스코어", "url": "https://sports.daum.net/match/80100992"}
-      ]
+      "id": "20260724NCSK0", "stadium": "문학", "start_time": "18:30", "status": "경기 종료", "away": "NC", "home": "SSG", "away_score": 3, "home_score": 7,
+      "winner_pitcher": "해치", "loser_pitcher": "구창모", "save_pitcher": "조병현", "headline": "전의산의 1회 결승타를 앞세운 SSG, NC에 7-3 승리",
+      "winner_points": ["SSG 해치는 6이닝 4피안타 2사사구 6탈삼진 2실점(1자책)으로 승리했고, NC 구창모는 5이닝 8피안타 2사사구 8탈삼진 5실점으로 패전했다.", "1회 1사 만루에서 전의산의 좌중간 안타가 결승타가 됐고, SSG는 4회 3점을 더해 주도권을 넓혔다.", "전의산은 4타수 2안타 2타점, 임근우는 4타수 2안타 2타점 1득점, 마드리스는 3타수 1안타 2타점을 기록했다.", "문승원과 노경은이 홀드를 챙겼고, 조병현은 1이닝 1실점으로 시즌 12세이브를 기록했다."],
+      "opponent_effort": "NC는 박건우·김형준·박민우가 나란히 4타수 2안타를 기록했고, 9회 1점을 더했지만 초반 격차를 줄이지 못했다.",
+      "sources": [{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260724&gameId=20260724NCSK0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260724NCSK02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100999"}]
     },
     {
-      "id": "20260723SSWO0",
-      "stadium": "고척",
-      "start_time": "18:30",
-      "status": "경기 종료",
-      "away": "삼성",
-      "home": "키움",
-      "away_score": 3,
-      "home_score": 1,
-      "winner_pitcher": "김재윤",
-      "loser_pitcher": "김재웅",
-      "headline": "이재현 11회 결승 희생플라이, 삼성이 키움에 3-1 승리",
-      "winner_points": [
-        "삼성 양창섭은 6이닝 6피안타 무사사구 2탈삼진 무실점으로 선발 역할을 했고, 키움 하영민은 7이닝 5피안타 2사사구 6탈삼진 1실점(비자책)으로 맞섰다.",
-        "1-1로 맞선 11회 1사 2·3루에서 이재현의 우익수 희생플라이가 결승타가 됐고, 삼성은 그 이닝 2점을 냈다.",
-        "김성윤은 3타수 2안타 1볼넷, 김영웅은 5타수 2안타 1타점을 기록했다.",
-        "김재윤은 2⅔이닝 2피안타 무사사구 2탈삼진 무실점으로 승리를 챙겼고, 이승현·이승민이 나란히 홀드를 기록했다."
-      ],
-      "opponent_effort": "키움은 데이비슨이 5타수 2안타 1홈런 1타점 1득점으로 8회 동점 솔로포를 쳤고, 하영민의 7이닝 호투와 원종현·박지성의 합계 2이닝 무실점으로 연장 승부를 만들었다.",
-      "sources": [
-        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260723&gameId=20260723SSWO0&section=REVIEW"},
-        {"label": "네이버 기록 API", "url": "https://api-gw.sports.naver.com/schedule/games/20260723SSWO02026/record"},
-        {"label": "다음 박스스코어", "url": "https://sports.daum.net/match/80100996"}
-      ]
+      "id": "20260724WOHT0", "stadium": "광주", "start_time": "18:30", "status": "경기 종료", "away": "키움", "home": "KIA", "away_score": 8, "home_score": 5,
+      "winner_pitcher": "정다훈", "loser_pitcher": "조상우", "save_pitcher": "원종현", "headline": "안치홍의 9회 역전 3점포, 키움이 KIA에 8-5 승리",
+      "winner_points": ["키움 안우진은 5이닝 7피안타 3사사구 8탈삼진 5실점(2자책)으로 선발 역할을 했고, 정다훈이 1이닝 무실점으로 승리를 챙겼다. KIA 조상우는 1⅓이닝 2피안타 1사사구 1탈삼진 3실점으로 패전했다.", "5-5로 맞선 9회 2사 1·2루에서 안치홍의 좌월 3점 홈런이 결승타가 됐다.", "안치홍은 대타로 나와 1타수 1안타 1홈런 3타점 2득점, 김웅빈은 5타수 2안타 1홈런 2타점 2득점을 기록했다.", "원종현은 1이닝 무피안타 1탈삼진 무실점으로 시즌 6세이브를 올렸다."],
+      "opponent_effort": "KIA는 김도영이 4타수 3안타 1홈런 2타점 1득점, 카스트로가 5타수 4안타 1홈런 1타점 2득점으로 분전했지만 9회 역전을 막지 못했다.",
+      "sources": [{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260724&gameId=20260724WOHT0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260724WOHT02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80101001"}]
+    },
+    {
+      "id": "20260724LGHH0", "stadium": "대전", "start_time": "18:30", "status": "경기 종료", "away": "LG", "home": "한화", "away_score": 4, "home_score": 8,
+      "winner_pitcher": "장유호", "loser_pitcher": "임찬규", "headline": "5회 7득점으로 뒤집은 한화, LG에 8-4 승리",
+      "winner_points": ["한화 박준영은 4⅓이닝 4피안타 3사사구 5탈삼진 3실점했고, 장유호가 2이닝 무실점으로 승리를 챙겼다. LG 임찬규는 4이닝 6피안타 2사사구 2탈삼진 7실점으로 패전했다.", "1-3으로 뒤진 5회 무사 2·3루에서 오재원의 좌중간 2루타가 결승타가 됐고, 한화는 이 이닝 7득점으로 경기를 뒤집었다.", "노시환은 4타수 2안타 3타점 1득점, 오재원은 4타수 1안타 2타점 1득점, 김태연은 3타수 2안타 1타점 1득점을 기록했다.", "장유호가 5회 위기 뒤 2이닝을 무실점으로 막아 역전승의 흐름을 지켰다."],
+      "opponent_effort": "LG는 구본혁이 4타수 2안타 1타점 2득점, 박해민이 2타수 1안타 2타점 1볼넷을 기록하며 5회까지 앞섰지만 대량 실점을 극복하지 못했다.",
+      "sources": [{"label":"KBO 공식","url":"https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260724&gameId=20260724LGHH0&section=REVIEW"},{"label":"네이버 기록 API","url":"https://api-gw.sports.naver.com/schedule/games/20260724LGHH02026/record"},{"label":"다음 박스스코어","url":"https://sports.daum.net/match/80100998"}]
     }
   ]
 }

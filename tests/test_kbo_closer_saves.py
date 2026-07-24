@@ -12,7 +12,7 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     games = json.loads(GAME_DATA.read_text(encoding="utf-8"))["games"]
     page = INTEGRATED.read_text(encoding="utf-8")
 
-    assert len(games) == 4
+    assert len(games) == 5
     assert all(game["status"] == "경기 종료" for game in games)
     assert "경기 취소" not in GAME_DATA.read_text(encoding="utf-8")
     assert "const finalGames=gdata.games.filter(g=>g.status==='경기 종료');" in page
@@ -53,7 +53,7 @@ def test_kbo_integrated_report_hero_uses_player_then_all_team_result_title():
     page = INTEGRATED.read_text(encoding="utf-8")
 
     assert '<h1 id="page-title">KBO 관심 선수와<br>전체 팀 경기 결과</h1>' in page
-    assert '<title>2026-07-23 KBO 관심 선수와 전체 팀 경기 결과</title>' in page
+    assert '<title>2026-07-24 KBO 관심 선수와 전체 팀 경기 결과</title>' in page
     assert 'KBO 경기·관심 선수</h1>' not in page
 
 
