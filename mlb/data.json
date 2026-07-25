@@ -9,7 +9,7 @@
       "MLB 공식 schedule에서 KST 대상 창에 15개 MLB 경기를 확인했고 다음 KST schedule API도 15개 경기로 일치했다.",
       "다저스 gamePk 823601, 자이언츠 gamePk 823196의 점수·종료 상태는 MLB 공식 boxscore와 다음 KST 일정으로 대조했다.",
       "투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 배열과 대조했다.",
-      "고우석 gameLog와 세인트폴 gamePk 대조: 등판 상태."
+      "고우석 MLB 공식 Triple-A gameLog의 gamePk 815723 항목과 세인트폴 boxscore 투수 객체를 ID 808970으로 대조해 0.0이닝 등판을 교차확인했다."
     ]
   },
   "team_games": [
@@ -286,7 +286,8 @@
       "https://statsapi.mlb.com/api/v1/game/824248/boxscore",
       "https://statsapi.mlb.com/api/v1/game/824573/boxscore",
       "https://statsapi.mlb.com/api/v1/game/824733/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/824812/boxscore"
+      "https://statsapi.mlb.com/api/v1/game/824812/boxscore",
+      "https://statsapi.mlb.com/api/v1/people/808970/stats?stats=gameLog&group=pitching&season=2026&sportId=11"
     ],
     "naver": [
       "https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date=2026-07-25"
