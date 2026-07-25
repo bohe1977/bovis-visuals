@@ -56,7 +56,8 @@ def test_kbo_integrated_report_hero_uses_player_then_all_team_result_title():
     page = INTEGRATED.read_text(encoding="utf-8")
 
     assert '<h1 id="page-title">KBO 관심 선수와<br>전체 팀 경기 결과</h1>' in page
-    assert '<title>2026-07-24 KBO 관심 선수와 전체 팀 경기 결과</title>' in page
+    report_date = json.loads(GAME_DATA.read_text(encoding="utf-8"))["date"]
+    assert f'<title>{report_date} KBO 관심 선수와 전체 팀 경기 결과</title>' in page
     assert 'KBO 경기·관심 선수</h1>' not in page
 
 
