@@ -20,7 +20,7 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     assert "#metric-runs').textContent=finalGames.reduce" in page
 
 
-def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_season_line():
+def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season_record_label():
     pitchers = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["pitchers"]
     inactive = [pitcher for pitcher in pitchers if not pitcher["appeared"]]
     integrated = INTEGRATED.read_text(encoding="utf-8")
@@ -33,17 +33,20 @@ def test_inactive_pitchers_have_status_only_and_active_closers_have_compact_seas
     assert "<span class=\"none\">${s}</span>" in integrated
     assert "<span class=\"none\">${t}</span>" in player_page
     assert "inactive=(p,s)" in integrated
-    assert "p.season_saves!==undefined?` · 시즌" not in integrated
-    assert "p.season_saves!==undefined?` · 시즌" not in player_page
 
     assert "class=\"season-record\"" in integrated
-    assert "${p.season_record} · ${p.season_saves}세이브" in integrated
-    assert "<span>시즌 성적</span>" in integrated
+    assert "${p.season_record} ${p.season_saves}세이브" in integrated
+    assert "${p.season_record} · ${p.season_saves}세이브" not in integrated
+    assert "${p.season_record} ${p.season_saves}세이브" in player_page
+    assert "${p.season_record} · ${p.season_saves}세이브" not in player_page
+    assert "stat(p.season_record,'시즌 성적')" in integrated
+    assert "s(p.season_record,'시즌 성적')" in player_page
+    assert "시즌 승패" not in integrated
+    assert "시즌 승패" not in player_page
     assert "strong.season-record{font-size:17px" in integrated
     assert "strong.season-record.compact{font-size:13px" in integrated
     assert "el.scrollWidth>el.clientWidth" in integrated
     assert "addEventListener?.('resize',fitSeasonRecords)" in integrated
-    assert "${p.season_record} · ${p.season_saves}세이브" in player_page
     assert "'시즌 성적','season-record'" in player_page
     assert ".stat b.season-record{font-size:inherit" in player_page
     assert ".stat b.season-record.compact{font-size:13px" in player_page
