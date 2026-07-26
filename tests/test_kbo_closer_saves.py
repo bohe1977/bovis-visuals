@@ -6,6 +6,7 @@ PLAYER_DATA = ROOT / "kbo-players" / "data.json"
 GAME_DATA = ROOT / "kbo" / "data.json"
 INTEGRATED = ROOT / "kbo" / "index.html"
 PLAYER_PAGE = ROOT / "kbo-players" / "index.html"
+MLB_INTEGRATED = ROOT / "mlb" / "index.html"
 
 
 def test_kbo_report_excludes_canceled_games_from_data_and_display():
@@ -59,6 +60,16 @@ def test_kbo_integrated_report_hero_uses_player_then_all_team_result_title():
     report_date = json.loads(GAME_DATA.read_text(encoding="utf-8"))["date"]
     assert f'<title>{report_date} KBO 관심 선수와 전체 팀 경기 결과</title>' in page
     assert 'KBO 경기·관심 선수</h1>' not in page
+
+
+def test_game_note_headings_use_colon_in_kbo_and_mlb_reports():
+    kbo = INTEGRATED.read_text(encoding="utf-8")
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+
+    assert "</strong>: ${esc(g.opponent_effort)}</div>" in kbo
+    assert "</strong> · ${esc(g.opponent_effort)}</div>" not in kbo
+    assert "</strong>: ${esc(g.opponent_effort)}</div>" in mlb
+    assert "</strong> · ${esc(g.opponent_effort)}</div>" not in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
