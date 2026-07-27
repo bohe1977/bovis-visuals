@@ -7,6 +7,7 @@ GAME_DATA = ROOT / "kbo" / "data.json"
 INTEGRATED = ROOT / "kbo" / "index.html"
 PLAYER_PAGE = ROOT / "kbo-players" / "index.html"
 MLB_INTEGRATED = ROOT / "mlb" / "index.html"
+MLB_DATA = ROOT / "mlb" / "data.json"
 
 
 def test_kbo_report_excludes_canceled_games_from_data_and_display():
@@ -70,6 +71,27 @@ def test_game_note_headings_use_colon_in_kbo_and_mlb_reports():
     assert "</strong> · ${esc(g.opponent_effort)}</div>" not in kbo
     assert "</strong>: ${esc(g.opponent_effort)}</div>" in mlb
     assert "</strong> · ${esc(g.opponent_effort)}</div>" not in mlb
+
+
+def test_mlb_game_note_uses_source_label_not_opponent_team_name():
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+
+    assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' in mlb
+    assert '<strong>${esc(g.opponent_label)}</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
+
+
+def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
+    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+    excluded = [player for player in data["batters"] if player.get("minor_league_excluded")]
+
+    assert {player["name"] for player in excluded} == {"김하성", "김혜성"}
+    assert all(player["status"] == "출전 없음" for player in excluded)
+    assert all(player["daily_note"] == "MLB 경기 출전 없음" for player in excluded)
+    assert all(player["at_bats"] is None and player["hits"] is None for player in excluded)
+    assert "Gwinnett Stripers" not in MLB_DATA.read_text(encoding="utf-8")
+    assert "Oklahoma City Comets" not in MLB_DATA.read_text(encoding="utf-8")
+    assert "p.minor_league_excluded" in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
