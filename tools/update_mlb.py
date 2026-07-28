@@ -17,7 +17,7 @@ PLAYER_SPECS=[
  ('오타니 쇼헤이',660271,'batter'),('이정후',808982,'batter'),('바비 위트 주니어',677951,'batter'),('마이크 트라웃',545361,'batter'),
  ('무라카미 무네타카',808959,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
  ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
-TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Gwinnett Stripers':'Gwinnett Stripers','Oklahoma City Comets':'Oklahoma City Comets','St. Paul Saints':'세인트폴 세인츠'}
+TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키'}
 def ko_team(name): return TEAM_KO.get(name,name)
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'BOVIS MLB daily collector/1.0'})
@@ -114,17 +114,26 @@ def main():
       return boxes[pk]
     # Teams that may be in affiliated ball: determine schedule from currentTeam sport id, then restrict gameDate window.
     team_games={}
+    team_sports={}
     for pid,p in people.items():
       team=p.get('currentTeam',{}); tid=team.get('id')
       if tid:
         try:
           # The currentTeam hydration supplies team identity; the team resource supplies its league level.
           sport=api(f'teams/{tid}').get('teams',[{}])[0].get('sport',{}).get('id',1)
+          team_sports[pid]=sport
           team_games[pid]=window_games(sport,tid)
-        except Exception: team_games[pid]={}
+        except Exception:
+          team_sports[pid]=None
+          team_games[pid]={}
     batters=[]
     for name,pid,_ in PLAYER_SPECS[:8]:
       p=people[pid]; tg=team_games.get(pid,{})
+      # The report is MLB-only.  A current affiliated-minors assignment must
+      # not leak its club, game, or season totals into an MLB daily card.
+      if team_sports.get(pid) != 1:
+        batters.append({'name':name,'team':'','mlbam_id':pid,'minor_league_excluded':True,'status':'출전 없음','position':'—','at_bats':None,'hits':None,'rbi':None,'runs':None,'home_runs':None,'walks':None,'strikeouts':None,'avg':None,'obp':None,'ops':None,'season_stats_cutoff':None,'daily_note':'MLB 경기 출전 없음'})
+        continue
       appearances=[]
       for pk,g in tg.items():
         pp,_side=participant(box(pk),pid,'batting')
@@ -147,6 +156,12 @@ def main():
     go_gamelog_verified=None
     for name,pid,_ in PLAYER_SPECS[8:]:
       p=people[pid];tg=team_games.get(pid,{})
+      # Do not use affiliated-minors schedules, game logs, team names, or
+      # season records as MLB evidence.  The status remains a compact MLB
+      # report state without inventing an MLB appearance.
+      if team_sports.get(pid) != 1:
+        pitchers.append({'name':name,'team':'','mlbam_id':pid,'appeared':False,'status':'팀 경기 없음'})
+        continue
       apps=[]
       for pk,g in tg.items():
         pp,_side=participant(box(pk),pid,'pitching')
@@ -193,8 +208,29 @@ def main():
     daum_url=f'https://sports.daum.net/schedule/mlb?date={REPORT.strftime("%Y%m%d")}'
     naver_check=public_status(naver_url)
     daum_check=public_status(daum_url)
-    verified_targets=sum(bool(x.get('daum_verified')) for x in targets)
-    data={'report_date_kst':REPORT.isoformat(),'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),'generated_at':datetime.now(KST).isoformat(timespec='seconds'),'verification':{'status':'MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회','method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.','notes':[f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했고, 다음 KST schedule API는 {len(daum_rows)}개로 일치했다.', f'다저스·자이언츠 {verified_targets}/2경기의 점수·종료 상태를 다음 KST 일정과 대조했다. 네이버 KST 일정 페이지는 {naver_check} 응답 셸만 확인되어 경기 데이터 교차검증에는 사용하지 않았다.', '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.']+([f'고우석 gameLog와 팀 gamePk 대조: {"기록 없음으로 미등판 교차확인" if go_gamelog_verified else "해당 없음 또는 미검증"}.'] if go_gamelog_verified is not None else [])},'team_games':targets,'batters':batters,'pitchers':pitchers,'sources':{'mlb_official':src,'naver':[naver_url],'daum':[daum_url,daum_api]}}
+    actual_team_games=[x for x in targets if x.get('game_pk') is not None]
+    verified_targets=sum(bool(x.get('daum_verified')) for x in actual_team_games)
+    notes=[
+      f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했고, 다음 KST schedule API는 {len(daum_rows)}개로 일치했다.',
+      f'다저스·자이언츠의 실제 대상 경기 {verified_targets}/{len(actual_team_games)}경기를 다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 KST 일정 페이지는 {naver_check} 응답 셸만 확인되어 경기 데이터 교차검증에는 사용하지 않았다.',
+      '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.'
+    ]
+    if go_gamelog_verified is not None:
+      notes.append('고우석 gameLog와 팀 gamePk 대조: '+('기록 없음으로 미등판 교차확인.' if go_gamelog_verified else '해당 없음 또는 미검증.'))
+    data={
+      'report_date_kst':REPORT.isoformat(),
+      'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),
+      'generated_at':datetime.now(KST).isoformat(timespec='seconds'),
+      'verification':{
+        'status':'MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회',
+        'method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.',
+        'notes':notes
+      },
+      'team_games':targets,
+      'batters':batters,
+      'pitchers':pitchers,
+      'sources':{'mlb_official':src,'naver':[naver_url],'daum':[daum_url,daum_api]}
+    }
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
