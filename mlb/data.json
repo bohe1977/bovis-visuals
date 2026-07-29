@@ -34,13 +34,15 @@
       "winner_pitcher": "José A. Ferrer",
       "loser_pitcher": "Brock Stewart",
       "save_pitcher": "Andrés Muñoz",
+      "pitcher_record": "José A. Ferrer 승리, Brock Stewart 패전, Andrés Muñoz 세이브",
       "headline": "시애틀, LA 다저스에 7–6 승리",
       "points": [
-        "시애틀 10안타 7득점, LA 다저스 13안타 6득점.",
-        "공식 결정: José A. Ferrer 승리, Brock Stewart 패전, Andrés Muñoz 세이브."
+        "투수 기록: José A. Ferrer 승리, Brock Stewart 패전, Andrés Muñoz 세이브.",
+        "득점 흐름: 시애틀 10안타 7득점, LA 다저스 13안타 6득점.",
+        "경기 내용: LA 다저스는 13안타로 6점을 냈지만 1점 차로 패했다."
       ],
-      "opponent_label": "시애틀",
-      "opponent_effort": "MLB 공식 Stats API/Gameday 기준.",
+      "opponent_label": "LA 다저스",
+      "opponent_effort": "LA 다저스는 13안타 6득점으로 맞섰지만 시애틀에 7-6으로 패했다.",
       "daum_verified": true,
       "naver_verified": true
     },
@@ -66,13 +68,15 @@
       "winner_pitcher": "Logan Henderson",
       "loser_pitcher": "Landen Roupp",
       "save_pitcher": null,
+      "pitcher_record": "Logan Henderson 승리, Landen Roupp 패전",
       "headline": "밀워키, 샌프란시스코에 8–2 승리",
       "points": [
-        "밀워키 13안타 8득점, 샌프란시스코 7안타 2득점.",
-        "공식 결정: Logan Henderson 승리, Landen Roupp 패전."
+        "투수 기록: Logan Henderson 승리, Landen Roupp 패전.",
+        "득점 흐름: 밀워키 13안타 8득점, 샌프란시스코 7안타 2득점.",
+        "경기 내용: 샌프란시스코는 이정후의 4타수 1안타에도 8-2로 패했다."
       ],
-      "opponent_label": "밀워키",
-      "opponent_effort": "MLB 공식 Stats API/Gameday 기준.",
+      "opponent_label": "샌프란시스코",
+      "opponent_effort": "샌프란시스코는 이정후가 4타수 1안타를 기록했지만 7안타 2득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     }

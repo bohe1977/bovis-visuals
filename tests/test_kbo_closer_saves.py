@@ -73,11 +73,27 @@ def test_game_note_headings_use_colon_in_kbo_and_mlb_reports():
     assert "</strong> · ${esc(g.opponent_effort)}</div>" not in mlb
 
 
-def test_mlb_game_note_uses_source_label_not_opponent_team_name():
+def test_mlb_game_note_uses_losing_team_effort_like_kbo():
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
 
-    assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' in mlb
-    assert '<strong>${esc(g.opponent_label)}</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
+    assert '<strong>${esc(g.opponent_label)}의 분전</strong>: ${esc(g.opponent_effort)}</div>' in mlb
+    assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
+
+
+def test_mlb_game_cards_match_kbo_game_content_hierarchy():
+    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+
+    final_games = [game for game in data["team_games"] if game["status"] == "경기 종료"]
+    assert final_games
+    assert all(game.get("pitcher_record") for game in final_games)
+    assert all(len(game.get("points", [])) >= 3 for game in final_games)
+    assert all("공식 결정" not in " ".join(game["points"]) for game in final_games)
+    assert all(game.get("opponent_label") in {game["away"], game["home"]} for game in final_games)
+    assert '<div class="record">' in mlb
+    assert 'g.pitcher_record?' in mlb
+    assert '<strong>${esc(g.opponent_label)}의 분전</strong>' in mlb
+    assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
 
 
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():

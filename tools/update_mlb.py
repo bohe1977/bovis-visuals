@@ -112,21 +112,72 @@ def game_status(g):
     if 'Postponed' in detailed or 'Cancelled' in detailed:return '연기'
     return detailed or state or '상태 미확인'
 def decision(g,k):return g.get('decisions',{}).get(k,{}).get('fullName')
-def build_game(g,title,daum_rows,naver_rows):
+def pitcher_record(winner,loser,save):
+    parts=[]
+    if winner: parts.append(f'{winner} 승리')
+    if loser: parts.append(f'{loser} 패전')
+    if save: parts.append(f'{save} 세이브')
+    return ', '.join(parts)
+def batting_leader(box,side):
+    team=box.get('teams',{}).get(side,{})
+    candidates=[]
+    for pid in team.get('batters',[]):
+      p=team.get('players',{}).get('ID'+str(pid),{})
+      st=p.get('stats',{}).get('batting',{})
+      if st.get('atBats',0) or st.get('baseOnBalls',0): candidates.append((p,st))
+    if not candidates:return None
+    p,st=max(candidates,key=lambda x:(x[1].get('rbi',0),x[1].get('homeRuns',0),x[1].get('hits',0),x[1].get('runs',0)))
+    line=f"{p.get('person',{}).get('fullName','—')} {st.get('atBats',0)}타수 {st.get('hits',0)}안타"
+    if st.get('homeRuns',0): line+=f" {st['homeRuns']}홈런"
+    if st.get('rbi',0): line+=f" {st['rbi']}타점"
+    if st.get('runs',0): line+=f" {st['runs']}득점"
+    return line
+def permanent_lead_point(feed,winner_side):
+    if not feed:return None
+    plays=feed.get('liveData',{}).get('plays',{}).get('allPlays',[])
+    for idx,play in enumerate(plays):
+      if not play.get('about',{}).get('isScoringPlay'):continue
+      result=play.get('result',{}); aw=result.get('awayScore'); hw=result.get('homeScore')
+      if aw is None or hw is None:continue
+      winner_score=aw if winner_side=='away' else hw; loser_score=hw if winner_side=='away' else aw
+      if winner_score<=loser_score:continue
+      remaining=[(x.get('result',{}).get('awayScore'),x.get('result',{}).get('homeScore')) for x in plays[idx+1:] if x.get('about',{}).get('isScoringPlay')]
+      if all((a if winner_side=='away' else h)>(h if winner_side=='away' else a) for a,h in remaining if a is not None and h is not None):
+        return play
+    return None
+def point_event_ko(play):
+    events={'home_run':'홈런','double':'2루타','triple':'3루타','single':'안타','sac_fly':'희생플라이','walk':'볼넷','hit_by_pitch':'사구','field_error':'실책'}
+    return events.get(play.get('result',{}).get('eventType'),'득점타')
+def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     ls=g.get('linescore',{}); away=g['teams']['away']; home=g['teams']['home']; aw=away.get('score'); hw=home.get('score')
     ws=None
     if aw is not None and hw is not None and aw!=hw:ws='away' if aw>hw else 'home'
     a=ko_team(away['team']['name']); h=ko_team(home['team']['name']); status=game_status(g)
     winner=decision(g,'winner'); loser=decision(g,'loser'); save=decision(g,'save')
     outcome=(f'{a}, {h}에 {aw}–{hw} 승리' if ws=='away' else f'{a}, {h}에 {aw}–{hw} 패배' if ws=='home' else f'{a}–{h} {status}')
+    winner_side=ws or 'away'; winner_team=a if winner_side=='away' else h; loser_team=h if winner_side=='away' else a
+    winner_hits=ls.get('teams',{}).get(winner_side,{}).get('hits','—'); loser_hits=ls.get('teams',{}).get('home' if winner_side=='away' else 'away',{}).get('hits','—')
+    winner_runs=aw if winner_side=='away' else hw; loser_runs=hw if winner_side=='away' else aw
+    record=pitcher_record(winner,loser,save)
     points=[]
-    if aw is not None: points.append(f'{a} {ls.get("teams",{}).get("away",{}).get("hits","—")}안타 {aw}득점, {h} {ls.get("teams",{}).get("home",{}).get("hits","—")}안타 {hw}득점.')
-    if winner: points.append(f'공식 결정: {winner} 승리, {loser} 패전'+(f', {save} 세이브.' if save else '.'))
+    if record: points.append(f'투수 기록: {record}.')
+    lead=permanent_lead_point(feed,winner_side)
+    if lead:
+      inning=lead.get('about',{}).get('inning','—'); batter=lead.get('matchup',{}).get('batter',{}).get('fullName','—')
+      points.append(f'승부처: {inning}회 {winner_team} {batter}의 {point_event_ko(lead)}로 리드를 잡았다.')
+    elif aw is not None:
+      points.append(f'득점 흐름: {winner_team} {winner_hits}안타 {winner_runs}득점, {loser_team} {loser_hits}안타 {loser_runs}득점.')
+    if box:
+      leader=batting_leader(box,winner_side)
+      if leader: points.append(f'핵심 타자: {winner_team} {leader}.')
+    if len(points)<3 and aw is not None: points.append(f'{winner_team}이 {loser_team}에 {aw}–{hw}로 승리했다.')
+    losing_leader=batting_leader(box,'home' if winner_side=='away' else 'away') if box else None
+    effort=(f'{loser_team}는 {losing_leader}을 기록했지만 {loser_hits}안타 {loser_runs}득점에 그쳤다.' if losing_leader else f'{loser_team}는 {loser_hits}안타 {loser_runs}득점을 기록했지만 승부를 뒤집지 못했다.')
     daum=daum_match(g,daum_rows)
     naver=naver_match(g,naver_rows)
     verified=bool(daum and str(daum.get('awayResult'))==str(aw) and str(daum.get('homeResult'))==str(hw) and (daum.get('gameStatus')=='END')==(status=='경기 종료'))
     naver_verified=bool(naver and str(naver.get('awayTeamScore'))==str(aw) and str(naver.get('homeTeamScore'))==str(hw) and (naver.get('statusCode')=='RESULT')==(status=='경기 종료'))
-    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'headline':outcome,'points':points or [f'MLB 공식 상태: {status}.'],'opponent_label':h if a=='LA 다저스' or a=='샌프란시스코' else a,'opponent_effort':'MLB 공식 Stats API/Gameday 기준.','daum_verified':verified,'naver_verified':naver_verified}
+    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'pitcher_record':record,'headline':outcome,'points':points or [f'MLB 공식 상태: {status}.'],'opponent_label':loser_team,'opponent_effort':effort,'daum_verified':verified,'naver_verified':naver_verified}
 def main():
     # `currentTeam` is only present when explicitly hydrated; do not infer it from a roster name.
     people={}
@@ -137,6 +188,12 @@ def main():
     def box(pk):
       if pk not in boxes:boxes[pk]=api(f'game/{pk}/boxscore')
       return boxes[pk]
+    feeds={}
+    def feed(pk):
+      if pk not in feeds:
+        try: feeds[pk]=api(f'game/{pk}/feed/live')
+        except Exception: feeds[pk]={}
+      return feeds[pk]
     # Teams that may be in affiliated ball: determine schedule from currentTeam sport id, then restrict gameDate window.
     team_games={}
     team_sports={}
@@ -225,7 +282,7 @@ def main():
     targets=[]
     for title,teamid in [('LA 다저스 경기',119),('샌프란시스코 자이언츠 경기',137)]:
       ts=[g for g in mlb_games.values() if teamid in (g['teams']['away']['team']['id'],g['teams']['home']['team']['id'])]
-      if ts: targets.append(build_game(ts[0],title,daum_rows,naver_rows))
+      if ts: targets.append(build_game(ts[0],title,daum_rows,naver_rows,box=box(ts[0]['gamePk']),feed=feed(ts[0]['gamePk'])))
       else: targets.append({'section_title':title,'game_pk':None,'officialDate':None,'game_date_utc':None,'naver_game_id':None,'daum_game_id':None,'venue':'—','start_time_kst':'—','status':'팀 경기 없음','away':'LA 다저스' if teamid==119 else '샌프란시스코','home':'—','winner_side':None,'away_score':None,'home_score':None,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'headline':'KST 대상일 팀 경기 없음','points':['MLB 공식 schedule의 KST gameDate 기준.'],'opponent_label':'—','opponent_effort':'—'})
     # Cross-check endpoints are retained as provenance. Dynamic Naver game IDs are not guessed.
     src=['https://statsapi.mlb.com/api/v1/schedule?sportId=1&date='+d.isoformat() for d in (REPORT-timedelta(days=1),REPORT)]
