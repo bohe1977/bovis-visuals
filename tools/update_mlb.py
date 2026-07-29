@@ -17,7 +17,7 @@ PLAYER_SPECS=[
  ('오타니 쇼헤이',660271,'batter'),('이정후',808982,'batter'),('바비 위트 주니어',677951,'batter'),('마이크 트라웃',545361,'batter'),
  ('무라카미 무네타카',808959,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
  ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
-TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키'}
+TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀'}
 def ko_team(name): return TEAM_KO.get(name,name)
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'BOVIS MLB daily collector/1.0'})
@@ -47,6 +47,29 @@ def daum_match(game,rows):
     start=iso(game['gameDate']).astimezone(KST).strftime('%H%M')
     for row in rows:
       if row.get('startTime')==start and row.get('awayTeamName','').replace(' ','')==away and row.get('homeTeamName','').replace(' ','')==home:
+        return row
+    return None
+def naver_schedule():
+    """Fetch every page of Naver's public KST schedule API, not its HTML shell."""
+    base='https://api-gw.sports.naver.com/schedule/games'
+    url=base+'?'+urllib.parse.urlencode({'categoryId':'mlb','gameDate':REPORT.isoformat()})
+    try:
+      rows=[]; page=1
+      while True:
+        payload=get(url+'&page='+str(page))
+        games=payload.get('result',{}).get('games',[])
+        rows.extend(games)
+        if not games or len(rows)>=payload.get('result',{}).get('gameTotalCount',0): break
+        page+=1
+      return rows,url
+    except Exception:
+      return [],url
+def naver_match(game,rows):
+    away=ko_team(game['teams']['away']['team']['name']).replace(' ','')
+    home=ko_team(game['teams']['home']['team']['name']).replace(' ','')
+    start=iso(game['gameDate']).astimezone(KST).strftime('%H:%M')
+    for row in rows:
+      if row.get('gameDateTime','').endswith('T'+start+':00') and row.get('awayTeamName','').replace(' ','')==away and row.get('homeTeamName','').replace(' ','')==home:
         return row
     return None
 def iso(s):return datetime.fromisoformat(s.replace('Z','+00:00'))
@@ -89,7 +112,7 @@ def game_status(g):
     if 'Postponed' in detailed or 'Cancelled' in detailed:return '연기'
     return detailed or state or '상태 미확인'
 def decision(g,k):return g.get('decisions',{}).get(k,{}).get('fullName')
-def build_game(g,title,daum_rows):
+def build_game(g,title,daum_rows,naver_rows):
     ls=g.get('linescore',{}); away=g['teams']['away']; home=g['teams']['home']; aw=away.get('score'); hw=home.get('score')
     ws=None
     if aw is not None and hw is not None and aw!=hw:ws='away' if aw>hw else 'home'
@@ -100,8 +123,10 @@ def build_game(g,title,daum_rows):
     if aw is not None: points.append(f'{a} {ls.get("teams",{}).get("away",{}).get("hits","—")}안타 {aw}득점, {h} {ls.get("teams",{}).get("home",{}).get("hits","—")}안타 {hw}득점.')
     if winner: points.append(f'공식 결정: {winner} 승리, {loser} 패전'+(f', {save} 세이브.' if save else '.'))
     daum=daum_match(g,daum_rows)
+    naver=naver_match(g,naver_rows)
     verified=bool(daum and str(daum.get('awayResult'))==str(aw) and str(daum.get('homeResult'))==str(hw) and (daum.get('gameStatus')=='END')==(status=='경기 종료'))
-    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'headline':outcome,'points':points or [f'MLB 공식 상태: {status}.'],'opponent_label':h if a=='LA 다저스' or a=='샌프란시스코' else a,'opponent_effort':'MLB 공식 Stats API/Gameday 기준.','daum_verified':verified}
+    naver_verified=bool(naver and str(naver.get('awayTeamScore'))==str(aw) and str(naver.get('homeTeamScore'))==str(hw) and (naver.get('statusCode')=='RESULT')==(status=='경기 종료'))
+    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'headline':outcome,'points':points or [f'MLB 공식 상태: {status}.'],'opponent_label':h if a=='LA 다저스' or a=='샌프란시스코' else a,'opponent_effort':'MLB 공식 Stats API/Gameday 기준.','daum_verified':verified,'naver_verified':naver_verified}
 def main():
     # `currentTeam` is only present when explicitly hydrated; do not infer it from a roster name.
     people={}
@@ -196,23 +221,24 @@ def main():
       else:
         pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':False,'status':'경기 진행/예정'})
     daum_rows,daum_api=daum_schedule()
+    naver_rows,naver_api=naver_schedule()
     targets=[]
     for title,teamid in [('LA 다저스 경기',119),('샌프란시스코 자이언츠 경기',137)]:
       ts=[g for g in mlb_games.values() if teamid in (g['teams']['away']['team']['id'],g['teams']['home']['team']['id'])]
-      if ts: targets.append(build_game(ts[0],title,daum_rows))
+      if ts: targets.append(build_game(ts[0],title,daum_rows,naver_rows))
       else: targets.append({'section_title':title,'game_pk':None,'officialDate':None,'game_date_utc':None,'naver_game_id':None,'daum_game_id':None,'venue':'—','start_time_kst':'—','status':'팀 경기 없음','away':'LA 다저스' if teamid==119 else '샌프란시스코','home':'—','winner_side':None,'away_score':None,'home_score':None,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'headline':'KST 대상일 팀 경기 없음','points':['MLB 공식 schedule의 KST gameDate 기준.'],'opponent_label':'—','opponent_effort':'—'})
     # Cross-check endpoints are retained as provenance. Dynamic Naver game IDs are not guessed.
     src=['https://statsapi.mlb.com/api/v1/schedule?sportId=1&date='+d.isoformat() for d in (REPORT-timedelta(days=1),REPORT)]
     src += [f'https://statsapi.mlb.com/api/v1/game/{pk}/boxscore' for pk in sorted(boxes)]
     naver_url=f'https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date={REPORT}'
     daum_url=f'https://sports.daum.net/schedule/mlb?date={REPORT.strftime("%Y%m%d")}'
-    naver_check=public_status(naver_url)
+    naver_check=public_status(naver_api)
     daum_check=public_status(daum_url)
     actual_team_games=[x for x in targets if x.get('game_pk') is not None]
-    verified_targets=sum(bool(x.get('daum_verified')) for x in actual_team_games)
+    verified_targets=sum(bool(x.get('daum_verified') and x.get('naver_verified')) for x in actual_team_games)
     notes=[
-      f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했고, 다음 KST schedule API는 {len(daum_rows)}개로 일치했다.',
-      f'다저스·자이언츠의 실제 대상 경기 {verified_targets}/{len(actual_team_games)}경기를 다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 KST 일정 페이지는 {naver_check} 응답 셸만 확인되어 경기 데이터 교차검증에는 사용하지 않았다.',
+      f'MLB 공식 schedule에서 KST 대상 창에 {len(mlb_games)}개 MLB 경기를 확인했고, 네이버·다음 KST schedule API는 각각 {len(naver_rows)}개·{len(daum_rows)}개로 일치했다.',
+      f'다저스·자이언츠의 실제 대상 경기 {verified_targets}/{len(actual_team_games)}경기를 네이버·다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 공개 API는 {naver_check} 응답을 확인했다.',
       '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.'
     ]
     if go_gamelog_verified is not None:
@@ -229,7 +255,7 @@ def main():
       'team_games':targets,
       'batters':batters,
       'pitchers':pitchers,
-      'sources':{'mlb_official':src,'naver':[naver_url],'daum':[daum_url,daum_api]}
+      'sources':{'mlb_official':src,'naver':[naver_url,naver_api],'daum':[daum_url,daum_api]}
     }
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
