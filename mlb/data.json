@@ -1,7 +1,7 @@
 {
   "report_date_kst": "2026-07-29",
   "official_date_mlb": "2026-07-28",
-  "generated_at": "2026-07-29T16:55:14+09:00",
+  "generated_at": "2026-07-29T18:04:22+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회",
     "method": "KST 2026-07-29 UTC 창(2026-07-28T15:00:00Z–2026-07-29T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.",
@@ -39,10 +39,10 @@
       "points": [
         "투수 기록: José A. Ferrer 승리, Brock Stewart 패전, Andrés Muñoz 세이브.",
         "득점 흐름: 시애틀 10안타 7득점, LA 다저스 13안타 6득점.",
-        "경기 내용: LA 다저스는 13안타로 6점을 냈지만 1점 차로 패했다."
+        "핵심 타자: 시애틀 Dominic Canzone 4타수 2안타 2홈런 3타점 2득점."
       ],
       "opponent_label": "LA 다저스",
-      "opponent_effort": "LA 다저스는 13안타 6득점으로 맞섰지만 시애틀에 7-6으로 패했다.",
+      "opponent_effort": "LA 다저스는 Shohei Ohtani 4타수 3안타 1홈런 3타점 1득점을 기록했지만 13안타 6득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     },
@@ -73,10 +73,10 @@
       "points": [
         "투수 기록: Logan Henderson 승리, Landen Roupp 패전.",
         "득점 흐름: 밀워키 13안타 8득점, 샌프란시스코 7안타 2득점.",
-        "경기 내용: 샌프란시스코는 이정후의 4타수 1안타에도 8-2로 패했다."
+        "핵심 타자: 밀워키 Luis Lara 4타수 1안타 3타점 1득점."
       ],
       "opponent_label": "샌프란시스코",
-      "opponent_effort": "샌프란시스코는 이정후가 4타수 1안타를 기록했지만 7안타 2득점에 그쳤다.",
+      "opponent_effort": "샌프란시스코는 Bryce Eldridge 4타수 1안타 1홈런 2타점 1득점을 기록했지만 7안타 2득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     }
