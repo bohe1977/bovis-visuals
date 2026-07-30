@@ -1,6 +1,6 @@
 {
-  "report_date": "2026-07-29",
-  "generated_at": "2026-07-30T06:20:58+09:00",
+  "report_date": "2026-07-30",
+  "generated_at": "2026-07-31T06:20:00+09:00",
   "verification": {
     "status": "KBO 공식 기준 · 네이버 동일 · 다음 스코어 동일",
     "sources": [
@@ -8,7 +8,7 @@
       "네이버스포츠 공개 기록 API",
       "다음스포츠 일정·박스스코어"
     ],
-    "details": "2026-07-29 KBO 편성 5경기는 모두 최종 종료했다. kbo-game의 공식 편성 결과를 기준으로 KBO 공식 게임센터·선수 상세기록과 네이버 공개 기록 API에서 스코어·관심 선수의 당일 및 시즌 기록을 대조했고, 다음 일정·박스스코어에서 5경기 종료·스코어를 보조 확인했다. 미등판 투수는 이름·팀·등판 여부만 보존한다.",
+    "details": "2026-07-30 KBO 편성 5경기는 모두 최종 종료했다. kbo-game의 공식 편성 결과를 기준으로 KBO 공식 게임센터·선수 상세기록과 네이버 공개 기록 API에서 스코어·관심 선수의 당일 및 시즌 기록을 대조했고, 다음 일정·박스스코어에서 5경기 종료·스코어를 보조 확인했다. 미등판 투수는 이름·팀·등판 여부만 보존한다.",
     "conflicts": []
   },
   "pitchers": [
@@ -40,7 +40,19 @@
     {
       "name": "김원중",
       "team": "롯데",
-      "appeared": false
+      "appeared": true,
+      "decision": "패",
+      "innings": "0⅓",
+      "hits": 2,
+      "runs": 2,
+      "earned_runs": 2,
+      "walks_hbp": 2,
+      "strikeouts": 0,
+      "home_runs": 0,
+      "pitches": 22,
+      "season_record": "1승 3패",
+      "season_saves": 4,
+      "era": "3.62"
     },
     {
       "name": "박정민",
@@ -50,23 +62,23 @@
     {
       "name": "로드리게스",
       "team": "롯데",
-      "appeared": true,
-      "decision": "패",
-      "innings": "5⅔",
-      "hits": 8,
-      "runs": 3,
-      "earned_runs": 3,
-      "walks_hbp": 2,
-      "strikeouts": 11,
-      "home_runs": 1,
-      "pitches": 119,
-      "season_record": "5승 8패",
-      "era": "4.33"
+      "appeared": false
     },
     {
       "name": "임찬규",
       "team": "LG",
-      "appeared": false
+      "appeared": true,
+      "decision": "승",
+      "innings": "6",
+      "hits": 5,
+      "runs": 3,
+      "earned_runs": 3,
+      "walks_hbp": 3,
+      "strikeouts": 4,
+      "home_runs": 0,
+      "pitches": 92,
+      "season_record": "10승 4패",
+      "era": "4.53"
     },
     {
       "name": "박영현",
@@ -76,7 +88,19 @@
     {
       "name": "정해영",
       "team": "KIA",
-      "appeared": false
+      "appeared": true,
+      "decision": "",
+      "innings": "1",
+      "hits": 2,
+      "runs": 0,
+      "earned_runs": 0,
+      "walks_hbp": 0,
+      "strikeouts": 1,
+      "home_runs": 0,
+      "pitches": 25,
+      "season_record": "2승 1패",
+      "season_saves": 2,
+      "era": "6.03"
     }
   ],
   "batters": [
@@ -89,60 +113,60 @@
       "name": "노시환",
       "team": "한화",
       "appeared": true,
-      "at_bats": 5,
+      "at_bats": 3,
       "hits": 1,
       "rbi": 0,
-      "runs": 0,
+      "runs": 1,
       "home_runs": 0,
-      "walks": 0,
-      "strikeouts": 2,
-      "avg": "0.269",
-      "obp": "0.347",
-      "ops": "0.843"
+      "walks": 1,
+      "strikeouts": 0,
+      "avg": "0.270",
+      "obp": "0.348",
+      "ops": "0.842"
     },
     {
       "name": "김도영",
       "team": "KIA",
       "appeared": true,
-      "at_bats": 5,
+      "at_bats": 3,
       "hits": 1,
-      "rbi": 3,
-      "runs": 1,
+      "rbi": 1,
+      "runs": 2,
       "home_runs": 1,
-      "walks": 0,
-      "strikeouts": 0,
+      "walks": 1,
+      "strikeouts": 2,
       "avg": "0.298",
-      "obp": "0.393",
-      "ops": "1.007"
+      "obp": "0.394",
+      "ops": "1.014"
     }
   ],
   "source_urls": {
     "kbo_official": [
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260729&gameId=20260729HTSS0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260729&gameId=20260729KTNC0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260729&gameId=20260729LTHH0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260729&gameId=20260729OBSK0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260729&gameId=20260729WOLG0&section=REVIEW",
-      "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=56531",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260730&gameId=20260730WOLG0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260730&gameId=20260730HTSS0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260730&gameId=20260730OBSK0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260730&gameId=20260730KTNC0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260730&gameId=20260730LTHH0&section=REVIEW",
+      "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=61101",
+      "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=62528",
+      "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=50662",
       "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=69737",
-      "https://www.koreabaseball.com/Record/Player/HitterDetail/Total.aspx?playerId=69737",
-      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605",
-      "https://www.koreabaseball.com/Record/Player/HitterDetail/Total.aspx?playerId=52605"
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
     ],
     "naver": [
-      "https://api-gw.sports.naver.com/schedule/games/20260729HTSS02026/record",
-      "https://api-gw.sports.naver.com/schedule/games/20260729KTNC02026/record",
-      "https://api-gw.sports.naver.com/schedule/games/20260729LTHH02026/record",
-      "https://api-gw.sports.naver.com/schedule/games/20260729OBSK02026/record",
-      "https://api-gw.sports.naver.com/schedule/games/20260729WOLG02026/record"
+      "https://api-gw.sports.naver.com/schedule/games/20260730WOLG02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260730HTSS02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260730OBSK02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260730KTNC02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260730LTHH02026/record"
     ],
     "daum": [
-      "https://sports.daum.net/match/80101017",
-      "https://sports.daum.net/match/80101018",
-      "https://sports.daum.net/match/80101019",
-      "https://sports.daum.net/match/80101020",
-      "https://sports.daum.net/match/80101021",
-      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20260729&toDate=20260729"
+      "https://sports.daum.net/match/80101026",
+      "https://sports.daum.net/match/80101022",
+      "https://sports.daum.net/match/80101025",
+      "https://sports.daum.net/match/80101023",
+      "https://sports.daum.net/match/80101024",
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20260730&toDate=20260730"
     ]
   }
 }
