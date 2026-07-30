@@ -82,25 +82,33 @@
       .stat { min-height:82px; border-right:0; border-bottom:1px solid var(--line); }
       .stat:last-child { border-bottom:0; }
       .stat-value { font-size:27px; }
-      .filters { display:block; margin:23px 0 27px; }
-      .filter-label { margin:25px 0 9px; text-align:center; }
+      .filters { display:block; margin:20px 0 24px; }
+      .filter-label { margin:21px 0 8px; text-align:center; }
       .filter-label:first-child { margin-top:0; }
-      .filter-group { display:grid; grid-template-columns:1fr; gap:7px; }
-      .filter { width:100%; min-height:56px; font-size:15px; }
+      .filter-group { display:grid; grid-template-columns:1fr; gap:5px; }
+      .filter { width:100%; min-height:52px; font-size:15px; }
       .quick-picks { grid-template-columns:1fr; gap:10px; }
       .quick { padding:21px 18px; }
       .marker-section { padding:21px 12px; }
       .marker-head { display:block; text-align:center; }
       .marker-head p { margin-top:7px; text-align:center; }
       .marker-grid { grid-template-columns:repeat(3,1fr); gap:19px 7px; }
+      .marker-grid::before { display:none; }
       .cards { grid-template-columns:1fr; gap:14px; }
-      .card { padding:29px 16px 20px; border-radius:17px; }
-      .card h2 { font-size:25px; }
-      .reason { margin:18px 8px; font-size:14px; }
-      .info { min-height:75px; }
-      .info span { font-size:11px; }
-      .rationale { font-size:12px; }
-      .action { min-height:42px; font-size:13px; }
+      .card { padding:33px 20px 24px; border-radius:22px; }
+      .rank { width:56px; height:56px; margin-bottom:17px; font-size:21px; }
+      .card h2 { font-size:29px; }
+      .meta { margin-top:14px; }
+      .chip { min-height:29px; padding:5px 10px; font-size:12px; }
+      .reason { margin:23px 9px; font-size:16px; }
+      .info-grid { grid-template-columns:1fr; gap:10px; }
+      .info { min-height:91px; padding:16px 12px; border-radius:16px; }
+      .info b { font-size:11px; }
+      .info span { font-size:15px; }
+      .menu { padding:7px 10px; font-size:12px; }
+      .accent-rule { margin:23px 0 17px; }
+      .rationale { min-height:0; font-size:14px; }
+      .action { min-height:48px; padding:0 16px; border-radius:12px; font-size:14px; }
     }
     @media (prefers-reduced-motion:reduce) { *, *::before, *::after { transition:none!important; scroll-behavior:auto!important; } }
   </style>
@@ -129,8 +137,9 @@
       <div class="filter-label">DISTANCE</div>
       <div class="filter-group" id="distanceFilters">
         <button class="filter is-active" type="button" data-distance="all"><span>전체</span></button>
-        <button class="filter" type="button" data-distance="200"><span class="filter-dot" style="--dot:#171717"></span>0~200m</button>
-        <button class="filter" type="button" data-distance="500"><span class="filter-dot" style="--dot:#171717"></span>200~500m</button>
+        <button class="filter" type="button" data-distance="100"><span class="filter-dot" style="--dot:#171717"></span>0~100m</button>
+        <button class="filter" type="button" data-distance="300"><span class="filter-dot" style="--dot:#171717"></span>100~300m</button>
+        <button class="filter" type="button" data-distance="500"><span class="filter-dot" style="--dot:#171717"></span>300~500m</button>
       </div>
       <div class="filter-label">FOOD</div>
       <div class="filter-group" id="foodFilters">
@@ -183,7 +192,7 @@
 
     function filteredVenues() {
       return venues[state.mode].filter((venue) => {
-        const distanceMatch = state.distance === 'all' || (state.distance === '200' ? venue.distance <= 200 : venue.distance > 200 && venue.distance <= 500);
+        const distanceMatch = state.distance === 'all' || (state.distance === '100' ? venue.distance <= 100 : state.distance === '300' ? venue.distance > 100 && venue.distance <= 300 : venue.distance > 300 && venue.distance <= 500);
         const foodMatch = state.food === 'all' || venue.category === state.food;
         return distanceMatch && foodMatch;
       }).sort((a, b) => a.distance - b.distance);
