@@ -11,7 +11,7 @@
     html { background:#fff; }
     body { margin:0; color:var(--ink); background:#fff; font-family:Inter, Pretendard, "Noto Sans KR", Arial, sans-serif; -webkit-font-smoothing:antialiased; }
     button, a { font:inherit; }
-    .page { width:min(100% - 32px, 1180px); margin:0 auto; padding:44px 0 74px; }
+    .page { width:min(100% - 52px, 1440px); margin:0 auto; padding:44px 0 74px; }
     .hero { text-align:center; margin:10px auto 34px; max-width:940px; }
     .eyebrow { display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border-radius:999px; color:#9b470d; background:#fff4ec; font:700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.04em; }
     .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#e56b12; }
@@ -52,7 +52,7 @@
     .marker-name { display:block; overflow:hidden; margin-top:1px; text-overflow:ellipsis; white-space:nowrap; font-weight:700; }
     .empty { display:none; padding:42px 18px; border:1px dashed #d5d5d5; border-radius:16px; color:#777; text-align:center; line-height:1.7; }
     .cards { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
-    .card { position:relative; padding:26px 18px 20px; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#fff; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }
+    .card { position:relative; padding:23px 18px 18px; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#fff; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }
     .rank { display:grid; place-items:center; width:39px; height:39px; margin:0 auto 11px; border-radius:50%; color:#fff; background:var(--accent); font:800 15px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
     .card h2 { margin:0; font-size:23px; line-height:1.22; letter-spacing:-.065em; }
     .meta, .menus { display:flex; flex-wrap:wrap; justify-content:center; gap:5px; }
@@ -229,7 +229,7 @@
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
       $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '성수역에서 가까운 순서';
       $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${venue.name}</span></div>`).join('');
-      $('#cardList').innerHTML = list.map(cardMarkup).join('');
+      $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
       $('#emptyState').style.display = list.length ? 'none' : 'block';
       $('#quickClosest').innerHTML = list.length ? `<strong>${list[0].name} ${list[0].distance}m</strong>. 이동을 최소화하고 싶다면 가장 가까운 이 후보부터 확인하세요.` : '필터를 바꾸면 가장 가까운 후보를 다시 보여드립니다.';
       const foodPick = list.find((venue) => venue.category === '이자카야/사시미' || venue.category === '퓨전요리' || venue.category === '포차/전골');
