@@ -54,6 +54,36 @@ def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season
     assert ".stat b.season-record.compact{font-size:13px" in player_page
 
 
+def test_pitcher_badges_use_verified_role_specific_game_decisions():
+    pitchers = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["pitchers"]
+    integrated = INTEGRATED.read_text(encoding="utf-8")
+    player_page = PLAYER_PAGE.read_text(encoding="utf-8")
+    active = {pitcher["name"]: pitcher for pitcher in pitchers if pitcher["appeared"]}
+
+    assert active["원태인"]["role"] == "starter"
+    assert active["원태인"]["game_decision"] == "승"
+    assert active["류현진"]["role"] == "starter"
+    assert active["류현진"]["game_decision"] == "패"
+    assert active["박영현"]["role"] == "reliever"
+    assert active["박영현"]["game_decision"] == "세이브"
+    assert active["박정민"]["game_decision"] is None
+
+    for page in (integrated, player_page):
+        assert "const pitcherState=p=>" in page
+        assert "['승','패']" in page
+        assert "['세이브','홀드','블론']" in page
+        assert "game_decision" in page
+
+
+def test_game_card_uses_result_label_mono_meta_and_outside_winner_badge_order():
+    page = INTEGRATED.read_text(encoding="utf-8")
+
+    assert '<span class="status">경기 결과</span>' in page
+    assert '.status,.venue{font:600 11px/1.3 "Geist Mono",ui-monospace,monospace' in page
+    assert '<div class="team away">${aw?' in page
+    assert "<span class=\"team-name\">${esc(g.away)}</span>" in page
+
+
 def test_kbo_integrated_report_hero_uses_player_then_all_team_result_title():
     page = INTEGRATED.read_text(encoding="utf-8")
 
