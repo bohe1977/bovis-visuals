@@ -29,7 +29,7 @@
     .stats { display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden; margin:35px 0 21px; border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(0,0,0,.03); }
     .stat { min-height:90px; display:grid; align-content:center; gap:9px; text-align:center; border-right:1px solid var(--line); }
     .stat:last-child { border-right:0; }
-    .stat-label { color:#8f8f8f; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
+    .stat-label { color:#343434; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
     .stat-value { color:#252525; font-size:25px; line-height:1; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
     .filters { display:grid; gap:12px; margin:20px auto 30px; }
     .filter-row { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:4px 0; }
@@ -194,6 +194,7 @@
       ], bohe: []
     };
 
+    const hasBoheVenues = venues.bohe.length > 0;
     const markerLabels = {
       '코다차야 사당점':'코다차야', '사당룸 이자카야 시오리':'시오리', '남도술상 사당점':'남도술상',
       '이자카야나무 사당점':'나무', '크래프트한스 사당점':'크래프트한스', '이자카야 룸':'이자카야 룸',
@@ -202,6 +203,10 @@
     const state = { mode:'general', distance:'all', food:'all' };
     const $ = (selector) => document.querySelector(selector);
     const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}`;
+
+    if (!hasBoheVenues) {
+      document.querySelector('.tabs').hidden = true;
+    }
 
     function filteredVenues() {
       return venues[state.mode].filter((venue) => {
