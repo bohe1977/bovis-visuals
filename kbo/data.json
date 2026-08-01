@@ -28,11 +28,11 @@
           "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260731&gameId=20260731LGOB0&section=REVIEW"
         },
         {
-          "label": "네이버 기록 API",
+          "label": "네이버 기록",
           "url": "https://api-gw.sports.naver.com/schedule/games/20260731LGOB02026/record"
         },
         {
-          "label": "다음 박스스코어",
+          "label": "다음 기록",
           "url": "https://sports.daum.net/match/80101029"
         }
       ]
@@ -63,11 +63,11 @@
           "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260731&gameId=20260731SSLT0&section=REVIEW"
         },
         {
-          "label": "네이버 기록 API",
+          "label": "네이버 기록",
           "url": "https://api-gw.sports.naver.com/schedule/games/20260731SSLT02026/record"
         },
         {
-          "label": "다음 박스스코어",
+          "label": "다음 기록",
           "url": "https://sports.daum.net/match/80101031"
         }
       ]
@@ -98,11 +98,11 @@
           "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260731&gameId=20260731HHKT0&section=REVIEW"
         },
         {
-          "label": "네이버 기록 API",
+          "label": "네이버 기록",
           "url": "https://api-gw.sports.naver.com/schedule/games/20260731HHKT02026/record"
         },
         {
-          "label": "다음 박스스코어",
+          "label": "다음 기록",
           "url": "https://sports.daum.net/match/80101027"
         }
       ]
@@ -132,11 +132,11 @@
           "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260731&gameId=20260731HTNC0&section=REVIEW"
         },
         {
-          "label": "네이버 기록 API",
+          "label": "네이버 기록",
           "url": "https://api-gw.sports.naver.com/schedule/games/20260731HTNC02026/record"
         },
         {
-          "label": "다음 박스스코어",
+          "label": "다음 기록",
           "url": "https://sports.daum.net/match/80101028"
         }
       ]
@@ -166,11 +166,11 @@
           "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260731&gameId=20260731SKWO0&section=REVIEW"
         },
         {
-          "label": "네이버 기록 API",
+          "label": "네이버 기록",
           "url": "https://api-gw.sports.naver.com/schedule/games/20260731SKWO02026/record"
         },
         {
-          "label": "다음 박스스코어",
+          "label": "다음 기록",
           "url": "https://sports.daum.net/match/80101030"
         }
       ]
