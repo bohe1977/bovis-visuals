@@ -18,7 +18,7 @@
     h1 { margin:20px 0 16px; font-size:clamp(36px, 5vw, 66px); line-height:1.07; letter-spacing:-.075em; font-weight:800; }
     .intro { max-width:850px; margin:0 auto; color:var(--soft); font-size:18px; line-height:1.8; letter-spacing:-.025em; }
     .intro strong { color:var(--ink); font-weight:800; }
-    .source { margin:20px auto 0; color:#9b9b9b; font:12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .source { margin:20px auto 0; color:#b3b3b3; font:12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
     .tabs { display:flex; justify-content:center; gap:8px; margin:28px 0 0; }
     .tab { min-height:42px; padding:0 17px; color:#5f5f5f; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:14px; font-weight:750; transition:.15s ease; }
     .tab[aria-selected="true"] { color:#fff; border-color:#151515; background:#151515; }
@@ -26,7 +26,7 @@
     .stats { display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden; margin:35px 0 21px; border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(0,0,0,.03); }
     .stat { min-height:90px; display:grid; align-content:center; gap:9px; text-align:center; border-right:1px solid var(--line); }
     .stat:last-child { border-right:0; }
-    .stat-label { color:#9a9a9a; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
+    .stat-label { color:#b3b3b3; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
     .stat-value { color:#252525; font-size:25px; line-height:1; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
     .filters { display:grid; gap:12px; margin:20px auto 30px; }
     .filter-row { display:flex; align-items:center; justify-content:center; gap:18px; }
@@ -97,20 +97,20 @@
       .marker-grid { grid-template-columns:repeat(3,1fr); gap:19px 7px; }
       .marker-grid::before { display:none; }
       .cards { grid-template-columns:1fr; gap:14px; }
-      .card { padding:33px 20px 24px; border-radius:22px; }
-      .rank { width:56px; height:56px; margin-bottom:17px; font-size:21px; }
-      .card h2 { font-size:29px; }
-      .meta { margin-top:14px; }
-      .chip { min-height:29px; padding:5px 10px; font-size:12px; }
-      .reason { margin:23px 9px; font-size:16px; }
-      .info-grid { grid-template-columns:1fr; gap:10px; }
-      .info { min-height:91px; padding:16px 12px; border-radius:16px; }
-      .info b { font-size:11px; }
-      .info span { font-size:15px; }
-      .menu { padding:7px 10px; font-size:12px; }
-      .accent-rule { margin:23px 0 17px; }
-      .rationale { min-height:0; font-size:14px; }
-      .action { min-height:48px; padding:0 16px; border-radius:12px; font-size:14px; }
+      .card { padding:15px; border-radius:16px; }
+      .rank { width:38px; height:38px; margin-bottom:0; font-size:14px; }
+      .card h2 { font-size:20px; }
+      .meta { margin-top:-4px; }
+      .chip { min-height:23px; padding:3px 8px; font-size:11px; }
+      .reason { margin:-2px 6px; font-size:13px; }
+      .info-grid { grid-template-columns:1fr; gap:8px; }
+      .info { min-height:72px; padding:11px 10px; border-radius:12px; }
+      .info b { font-size:9px; }
+      .info span { font-size:12px; }
+      .menu { padding:5px 8px; font-size:11px; }
+      .accent-rule { margin:0; }
+      .rationale { font-size:12px; }
+      .action { min-height:40px; padding:0 13px; border-radius:9px; font-size:12px; }
     }
     @media (prefers-reduced-motion:reduce) { *, *::before, *::after { transition:none!important; scroll-behavior:auto!important; } }
   </style>
