@@ -37,14 +37,32 @@
       "pitcher_record": "Roki Sasaki 승리, Bryan Woo 패전",
       "headline": "시애틀, LA 다저스에 2–6 패배",
       "points": [
-        "투수 기록: Roki Sasaki 승리, Bryan Woo 패전.",
-        "득점 흐름: LA 다저스 8안타 6득점, 시애틀 8안타 2득점.",
-        "핵심 타자: LA 다저스 Dalton Rushing 4타수 1안타 1홈런 3타점 1득점."
+        "사사키가 5⅓이닝 5피안타 2실점 7탈삼진으로 승리, 우가 5이닝 5실점 8탈삼진으로 패전했다.",
+        "1회 무키 베츠의 2타점 2루타와 4회 달튼 러싱의 3점 홈런으로 다저스가 5-0으로 달아났다.",
+        "6회 시애틀이 2점을 추격하자 테오스카 에르난데스가 솔로 홈런으로 응수했고, 에드윈 디아스가 9회를 막았다.",
+        "다저스는 8안타 6득점, 러싱은 4타수 1안타 1홈런 3타점 1득점을 기록했다."
       ],
       "opponent_label": "시애틀",
-      "opponent_effort": "시애틀는 Randy Arozarena 4타수 3안타 1타점 1득점을 기록했지만 8안타 2득점에 그쳤다.",
+      "opponent_effort": "랜디 아로자레나가 4타수 3안타 1타점 1득점, 6회 적시 2루타로 추격의 불씨를 살렸지만 8안타 2득점에 그쳤다.",
       "daum_verified": true,
-      "naver_verified": true
+      "naver_verified": true,
+      "decisions": [
+        {
+          "type": "win",
+          "label": "승",
+          "name": "Roki Sasaki"
+        },
+        {
+          "type": "loss",
+          "label": "패",
+          "name": "Bryan Woo"
+        },
+        {
+          "type": "save",
+          "label": "세",
+          "name": "Edwin Díaz"
+        }
+      ]
     },
     {
       "section_title": "샌프란시스코 자이언츠 경기",
@@ -71,14 +89,32 @@
       "pitcher_record": "Robbie Ray 승리, JP Sears 패전, Erik Miller 세이브",
       "headline": "샌프란시스코, 샌디에이고에 4–1 승리",
       "points": [
-        "투수 기록: Robbie Ray 승리, JP Sears 패전, Erik Miller 세이브.",
-        "득점 흐름: 샌프란시스코 11안타 4득점, 샌디에이고 6안타 1득점.",
-        "핵심 타자: 샌프란시스코 Daniel Susac 3타수 1안타 1홈런 3타점 1득점."
+        "로비 레이가 6이닝 4피안타 1실점 6탈삼진으로 승리, JP 시어스는 3⅔이닝 7피안타 3실점으로 패전했다.",
+        "1회 라파엘 데버스의 희생플라이로 선취했고, 2회 다니엘 수삭의 2점 홈런으로 3-0을 만들었다.",
+        "수삭은 5회 희생플라이까지 더해 3타수 1안타 1홈런 3타점, 에릭 밀러가 9회를 막아 세이브를 올렸다.",
+        "자이언츠는 11안타 4득점, 샌디에이고는 6안타 1득점에 그쳤다."
       ],
       "opponent_label": "샌디에이고",
-      "opponent_effort": "샌디에이고는 Xander Bogaerts 4타수 1안타 1타점을 기록했지만 6안타 1득점에 그쳤다.",
+      "opponent_effort": "잰더 보가츠가 4타수 1안타 1타점으로 2회 유일한 득점을 만들었지만, 레이를 상대로 추가 득점을 내지 못했다.",
       "daum_verified": true,
-      "naver_verified": true
+      "naver_verified": true,
+      "decisions": [
+        {
+          "type": "win",
+          "label": "승",
+          "name": "Robbie Ray"
+        },
+        {
+          "type": "loss",
+          "label": "패",
+          "name": "JP Sears"
+        },
+        {
+          "type": "save",
+          "label": "세",
+          "name": "Erik Miller"
+        }
+      ]
     }
   ],
   "batters": [
