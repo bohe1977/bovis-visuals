@@ -257,11 +257,15 @@ def main():
         pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':False,'status':'연기'});continue
       if apps:
         g,pp=apps[-1];st=pp['stats']['pitching'];cutoff=g['officialDate'];season=pitcher_season(pid,cutoff)
-        decisions=g.get('decisions',{}); outcome=''
-        if decisions.get('winner',{}).get('id')==pid:outcome='승리'
-        elif decisions.get('loser',{}).get('id')==pid:outcome='패전'
-        elif decisions.get('save',{}).get('id')==pid:outcome='세이브'
-        pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':True,'status':'등판'+(f' · {outcome}' if outcome else ''),'daily_innings':st.get('inningsPitched'),'daily_hits':st.get('hits'),'daily_runs':st.get('runs'),'daily_earned_runs':st.get('earnedRuns'),'daily_walks_hbp':st.get('baseOnBalls'),'daily_strikeouts':st.get('strikeOuts'),'daily_home_runs':st.get('homeRuns'),'daily_pitches':st.get('numberOfPitches'),'era':fmt_stat(season.get('era'))})
+        decisions=g.get('decisions',{}); role='starter' if st.get('gamesStarted') else 'reliever'; game_decision=None
+        if role=='starter':
+          if decisions.get('winner',{}).get('id')==pid: game_decision='승'
+          elif decisions.get('loser',{}).get('id')==pid: game_decision='패'
+        else:
+          if decisions.get('save',{}).get('id')==pid: game_decision='세이브'
+          elif st.get('holds',0): game_decision='홀드'
+          elif st.get('blownSaves',0): game_decision='블론'
+        pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':True,'status':'등판','role':role,'game_decision':game_decision,'daily_innings':st.get('inningsPitched'),'daily_hits':st.get('hits'),'daily_runs':st.get('runs'),'daily_earned_runs':st.get('earnedRuns'),'daily_walks_hbp':st.get('baseOnBalls'),'daily_strikeouts':st.get('strikeOuts'),'daily_home_runs':st.get('homeRuns'),'daily_pitches':st.get('numberOfPitches'),'era':fmt_stat(season.get('era'))})
       elif all(game_status(g)=='경기 종료' for g in tg.values()):
         if pid==808970:
           # A separate official game log is required before calling Go's absence verified.

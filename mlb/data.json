@@ -277,6 +277,8 @@
       "mlbam_id": 694973,
       "appeared": true,
       "status": "등판",
+      "role": "starter",
+      "game_decision": null,
       "daily_innings": "4.0",
       "daily_hits": 7,
       "daily_runs": 5,

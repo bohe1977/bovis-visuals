@@ -126,6 +126,19 @@ def test_mlb_game_cards_match_kbo_game_content_hierarchy():
     assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
 
 
+def test_mlb_uses_result_label_and_role_specific_pitcher_badges():
+    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+    skenes = next(pitcher for pitcher in data["pitchers"] if pitcher["name"] == "폴 스킨스")
+
+    assert '<span class="status">경기 결과</span>' in mlb
+    assert "const pitcherState=p=>" in mlb
+    assert "['승','패']" in mlb
+    assert "['세이브','홀드','블론']" in mlb
+    assert skenes["role"] == "starter"
+    assert skenes["game_decision"] is None
+
+
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
