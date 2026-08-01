@@ -21,7 +21,7 @@
     h1 { margin:20px 0 16px; font-size:clamp(36px, 5vw, 66px); line-height:1.07; letter-spacing:-.075em; font-weight:800; }
     .intro { max-width:850px; margin:0 auto; color:var(--soft); font-size:18px; line-height:1.8; letter-spacing:-.025em; }
     .intro strong { color:var(--ink); font-weight:800; }
-    .source { margin:20px auto 0; color:#8f8f8f; font:600 12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .source { margin:20px auto 0; color:#343434; font:600 12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
     .tabs { display:flex; justify-content:center; gap:8px; margin:28px 0 0; }
     .tab { min-height:42px; padding:0 17px; color:#5f5f5f; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:14px; font-weight:750; transition:.15s ease; }
     .tab[aria-selected="true"] { color:#fff; border-color:#151515; background:#151515; }
@@ -33,7 +33,7 @@
     .stat-value { color:#252525; font-size:25px; line-height:1; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
     .filters { display:grid; gap:12px; margin:20px auto 30px; }
     .filter-row { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:4px 0; }
-    .filter-label { color:#b3b3b3; text-align:right; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
+    .filter-label { color:#343434; text-align:right; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
     .filter-group { display:flex; flex-wrap:wrap; gap:7px; }
     .filter { min-height:38px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 14px; color:#626262; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:13px; font-weight:720; transition:.15s ease; }
     .filter.is-active { color:#fff; border-color:#151515; background:#151515; }
@@ -46,7 +46,7 @@
     .marker-section { margin:18px 0 16px; padding:23px 18px 22px; border:1px solid var(--line); border-radius:16px; }
     .marker-head { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
     .marker-head h2 { margin:0; font-size:21px; letter-spacing:-.055em; }
-    .marker-head p { margin:0; color:#979797; font:11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-align:right; }
+    .marker-head p { margin:0; color:#343434; font:650 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-align:right; }
     .marker-grid { position:relative; display:grid; grid-template-columns:repeat(auto-fit, minmax(74px, 1fr)); gap:18px 7px; margin-top:27px; }
     .marker-grid::before { content:""; position:absolute; top:13px; left:2%; right:2%; height:1px; background:#dedede; }
     .marker { position:relative; z-index:1; min-width:0; text-align:center; color:#555; font-size:11px; line-height:1.35; }
@@ -194,6 +194,11 @@
       ], bohe: []
     };
 
+    const markerLabels = {
+      '코다차야 사당점':'코다차야', '사당룸 이자카야 시오리':'시오리', '남도술상 사당점':'남도술상',
+      '이자카야나무 사당점':'나무', '크래프트한스 사당점':'크래프트한스', '이자카야 룸':'이자카야 룸',
+      '사당헌상':'사당헌상', '아마이까 사당점':'아마이까', '을지로골뱅이 포차 사당역점':'을지로골뱅이', '객간':'객간'
+    };
     const state = { mode:'general', distance:'all', food:'all' };
     const $ = (selector) => document.querySelector(selector);
     const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}`;
@@ -230,7 +235,7 @@
       $('#candidateCount').textContent = `${list.length} bars`;
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
       $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '육밀도에서 가까운 순서';
-      $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${venue.name}</span></div>`).join('');
+      $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${markerLabels[venue.name] || venue.name}</span></div>`).join('');
       $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
       $('#emptyState').style.display = list.length ? 'none' : 'block';
       $('#quickClosest').innerHTML = list.length ? `<strong>${list[0].name} ${list[0].distance}m</strong>. 이동을 최소화하고 싶다면 가장 가까운 이 후보부터 확인하세요.` : '필터를 바꾸면 가장 가까운 후보를 다시 보여드립니다.';
