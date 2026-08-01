@@ -169,13 +169,13 @@
     </section>
 
     <section class="marker-section" aria-labelledby="markerTitle">
-      <div class="marker-head"><h2 id="markerTitle">성수역에서 가까운 순서</h2><p>straight-line distance · tap cards for Naver Map</p></div>
+      <div class="marker-head"><h2 id="markerTitle">육밀도에서 가까운 순서</h2><p>straight-line distance · tap cards for Naver Map</p></div>
       <div class="marker-grid" id="markerGrid"></div>
     </section>
 
     <p class="empty" id="emptyState">선택한 조건에 맞는 후보가 없습니다.<br>거리 또는 음식 필터를 바꿔 보세요.</p>
     <section class="cards" id="cardList" aria-live="polite"></section>
-    <footer class="notice">거리값은 성수역 좌표에서 Naver Place 좌표까지의 직선거리 기준입니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있습니다. 출발 전 네이버 지도에서 영업시간·휴무·대기·예약 가능 여부를 다시 확인하세요.</footer>
+    <footer class="notice">거리값은 육밀도 사당직영점 좌표에서 Naver Place 좌표까지의 직선거리 기준입니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있습니다. 출발 전 네이버 지도에서 영업시간·휴무·대기·예약 가능 여부를 다시 확인하세요.</footer>
   </main>
 
   <script>
@@ -229,7 +229,7 @@
       const list = filteredVenues();
       $('#candidateCount').textContent = `${list.length} bars`;
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
-      $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '성수역에서 가까운 순서';
+      $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '육밀도에서 가까운 순서';
       $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${venue.name}</span></div>`).join('');
       $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
       $('#emptyState').style.display = list.length ? 'none' : 'block';
