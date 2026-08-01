@@ -139,6 +139,17 @@ def test_mlb_uses_result_label_and_role_specific_pitcher_badges():
     assert skenes["game_decision"] is None
 
 
+def test_mlb_ohtani_homer_headline_matches_official_rbi_total():
+    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    ohtani = next(player for player in data["batters"] if player["name"] == "오타니 쇼헤이")
+    dodgers_game = next(game for game in data["team_games"] if game["section_title"] == "LA 다저스 경기")
+
+    assert ohtani["home_runs"] == 1
+    assert ohtani["rbi"] == 2
+    assert "오타니의 2점포" in dodgers_game["headline"]
+    assert "오타니의 3점포" not in dodgers_game["headline"]
+
+
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
