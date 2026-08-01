@@ -124,8 +124,8 @@
     <header class="hero">
       <div class="eyebrow">SEONGSU STATION · FOOD GUIDE</div>
       <h1>성수역 맛집 지도</h1>
-      <p class="intro">기준점은 <strong>성수역 2호선</strong>입니다. 현재 네이버 플레이스의 메뉴·리뷰·영업 신호가 확인되는 <strong>500m 안쪽 일반 식사</strong> 후보만 추려, 거리별·음식별로 바로 고를 수 있게 정리했습니다.</p>
-      <p class="source">SOURCE: Naver Place summary + menu snippets · origin: Seongsu Station · radius gate: ≤ 500m straight-line</p>
+      <p class="intro">기준점은 <strong>성수역 2호선</strong>입니다. 일반 추천은 현재 네이버 플레이스 신호가 확인되는 <strong>500m 안쪽 식사</strong> 후보, 보헤 추천은 저장 DB 후보를 같은 기준으로 비교합니다.</p>
+      <p class="source">SOURCE: Naver Place summary + menu snippets · origin: Seongsu Station · general radius: ≤ 500m straight-line</p>
       <div class="tabs" role="tablist" aria-label="추천 출처">
         <button class="tab" type="button" role="tab" aria-selected="true" data-mode="general">일반 추천</button>
         <button class="tab" type="button" role="tab" aria-selected="false" data-mode="bohe">보헤 추천</button>
@@ -134,7 +134,7 @@
 
     <section class="stats" aria-label="선택 결과 요약">
       <div class="stat"><span class="stat-label">CANDIDATES</span><strong class="stat-value" id="candidateCount">0 places</strong></div>
-      <div class="stat"><span class="stat-label">RADIUS</span><strong class="stat-value">≤ 500m</strong></div>
+      <div class="stat"><span class="stat-label">RADIUS</span><strong class="stat-value" id="radiusValue">≤ 500m</strong></div>
       <div class="stat"><span class="stat-label">CLOSEST</span><strong class="stat-value" id="closest">—</strong></div>
       <div class="stat"><span class="stat-label">BEST FOR</span><strong class="stat-value">식사</strong></div>
     </section>
@@ -147,6 +147,7 @@
         <button class="filter" type="button" data-distance="100"><span class="filter-dot" style="--dot:#171717"></span>0~100m</button>
         <button class="filter" type="button" data-distance="300"><span class="filter-dot" style="--dot:#171717"></span>100~300m</button>
         <button class="filter" type="button" data-distance="500"><span class="filter-dot" style="--dot:#171717"></span>300~500m</button>
+        <button class="filter" type="button" data-distance="800"><span class="filter-dot" style="--dot:#171717"></span>500m+</button>
       </div>
       </div>
       <div class="filter-row">
@@ -174,7 +175,7 @@
 
     <p class="empty" id="emptyState">선택한 조건에 맞는 후보가 없습니다.<br>거리 또는 음식 필터를 바꿔 보세요.</p>
     <section class="cards" id="cardList" aria-live="polite"></section>
-    <footer class="notice">거리값은 성수역 2호선(아차산로 100) 좌표에서 Naver Place 좌표까지의 직선거리 기준입니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있습니다. 영업시간·휴무·대기·예약은 출발 전 각 네이버 플레이스에서 다시 확인하세요.</footer>
+    <footer class="notice">거리값은 성수역 2호선(아차산로 100) 좌표에서 Naver Place 좌표까지의 직선거리 기준입니다. 일반 추천은 500m 안쪽만 수록합니다. 보헤 DB 탭의 스시라온(729m)은 인접권으로 별도 표기했습니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있으니, 영업시간·휴무·대기·예약은 출발 전 각 네이버 플레이스에서 다시 확인하세요.</footer>
   </main>
 
   <script>
@@ -189,14 +190,20 @@
         {name:'글로리칼국수 성수점',distance:238,category:'한식/전골',kind:'칼국수,만두',color:'#d25b1f',map:'https://m.place.naver.com/restaurant/2033129765/home',reason:'삼계탕과 닭칼국수 메뉴가 확인되는 든든한 한 끼 후보.',signal:'방문자 리뷰 608 · 블로그 263',address:'서울 성동구 아차산로7길 11-1 지상1층, 지상2층',menus:['보양 삼계백반','전통 삼계탕','가마솥 닭칼국수','만두'],rationale:'비 오는 날이나 든든한 한식 식사가 필요할 때 적합.'},
         {name:'보따리타코',distance:250,category:'양식/세계음식',kind:'멕시코,남미음식',color:'#a53c76',map:'https://m.place.naver.com/restaurant/2019624142/home',reason:'타코·퀘사디아·포케까지 공개 메뉴 신호가 있는 후보.',signal:'방문자 리뷰 1,079 · 블로그 110',address:'서울 성동구 아차산로7가길 27 1층',menus:['돼지고기 타코','소고기 타코','치즈 퀘사디아','새우 포케'],rationale:'평소 한식·양식 대신 가볍고 다른 메뉴를 원할 때.'},
         {name:'마야',distance:418,category:'양식/세계음식',kind:'양식',color:'#a86a00',map:'https://m.place.naver.com/restaurant/1475800625/home',reason:'스테이크·잠봉 파스타·뇨끼가 확인되는 양식 후보.',signal:'방문자 리뷰 818 · 블로그 772',address:'서울 성동구 연무장3길 3 2층',menus:['마야 스테이크','수제 잠봉 파스타','트러플 수제 뇨끼','파스타'],rationale:'조금 더 걸어도 스테이크와 파스타로 식사 결을 잡을 때.'}
-      ], bohe: []
+      ], bohe: [
+        {name:'르프리크 성수',distance:293,category:'양식/세계음식',kind:'햄버거',color:'#8f3260',map:'https://m.place.naver.com/restaurant/1227114216/home',reason:'보헤 DB에 저장된 성수권 핫치킨 버거 후보.',signal:'보헤 DB · 방문자 리뷰 1,374 · 블로그 2,746',address:'서울 성동구 연무장5길 9-16 블루스톤타워 B103',menus:['내쉬빌 핫치킨 버거','스모키 베이컨 핫치킨','SICILIAN','CHAT POTATO'],rationale:'보헤 DB에서 버거 식사로 고를 때 가장 가까운 후보.'},
+        {name:'천하제일 솥뚜껑',distance:388,category:'한식/전골',kind:'한식',color:'#c66e00',map:'https://m.place.naver.com/restaurant/1720610031/home',reason:'보헤 DB에 저장된 성수 한식·솥뚜껑 구이 후보.',signal:'보헤 DB · 방문자 리뷰 1,545 · 블로그 462',address:'서울 성동구 성수이로7길 27 1층 105-1호',menus:['유황 생삼겹','유황 생목살','자가두부 두루치기','솥뚜껑 구이'],rationale:'고기 식사와 한식 메뉴를 원할 때의 DB 후보.'},
+        {name:'기후',distance:450,category:'일식/스시',kind:'일식당',color:'#2d7b90',map:'https://m.place.naver.com/restaurant/1742512433/home',reason:'보헤 DB에 저장된 제철 생선 중심 오마카세 후보.',signal:'보헤 DB · 방문자 리뷰 1,074 · 블로그 1,043',address:'서울 성동구 성수이로 66 서울숲드림타워 1층 106호',menus:['런치 오마카세','디너 오마카세','제철 생선 스시','제철 초밥'],rationale:'특별한 일식 코스 식사를 원할 때의 DB 후보.'},
+        {name:'스시라온',distance:729,category:'일식/스시',kind:'일식당 · 인접권',color:'#6c4fa3',map:'https://m.place.naver.com/restaurant/1850661993/home',reason:'보헤 DB에 저장됐지만 500m 밖인 성수 인접권 스시 후보.',signal:'보헤 DB · 방문자 리뷰 86 · 블로그 274',address:'서울 성동구 성수일로 10 서울숲ITCT지식산업센터 1층 106호',menus:['런치 카운터','디너 카운터','런치 오마카세','디너 오마카세'],rationale:'직선 729m로 인접권입니다. 스시 코스를 우선할 때만 비교하세요.'}
+      ]
     };
 
     const hasBoheVenues = venues.bohe.length > 0;
     const markerLabels = {
       '샤브인서울 성수점':'샤브인서울', '멘쿠도 성수점':'멘쿠도', '미키스시':'미키스시', '실비옥':'실비옥',
       '도도한면 성수본점':'도도한면', '페레힐':'페레힐', '글로리칼국수 성수점':'글로리칼국수',
-      '보따리타코':'보따리타코', '마야':'마야'
+      '보따리타코':'보따리타코', '마야':'마야', '르프리크 성수':'르프리크',
+      '천하제일 솥뚜껑':'천하제일', '기후':'기후', '스시라온':'스시라온'
     };
     const state = { mode:'general', distance:'all', food:'all' };
     const $ = (selector) => document.querySelector(selector);
@@ -208,7 +215,7 @@
 
     function filteredVenues() {
       return venues[state.mode].filter((venue) => {
-        const distanceMatch = state.distance === 'all' || (state.distance === '100' ? venue.distance <= 100 : state.distance === '300' ? venue.distance > 100 && venue.distance <= 300 : venue.distance > 300 && venue.distance <= 500);
+        const distanceMatch = state.distance === 'all' || (state.distance === '100' ? venue.distance <= 100 : state.distance === '300' ? venue.distance > 100 && venue.distance <= 300 : state.distance === '500' ? venue.distance > 300 && venue.distance <= 500 : venue.distance > 500);
         const foodMatch = state.food === 'all' || venue.category === state.food;
         return distanceMatch && foodMatch;
       }).sort((a, b) => a.distance - b.distance);
@@ -237,6 +244,7 @@
       const list = filteredVenues();
       $('#candidateCount').textContent = `${list.length} places`;
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
+      $('#radiusValue').textContent = state.mode === 'bohe' ? '≤ 729m' : '≤ 500m';
       $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '성수역에서 가까운 순서';
       $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${markerLabels[venue.name] || venue.name}</span></div>`).join('');
       $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
