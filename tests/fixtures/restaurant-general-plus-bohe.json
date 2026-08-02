@@ -1,0 +1,18 @@
+{
+  "config": {
+    "title": "테스트역 양쪽 추천 지도", "description": "일반과 보헤를 비교하는 fixture 지도", "eyebrow": "BOTH MODES", "intro": "<strong>테스트역</strong> 두 추천 모드를 비교합니다.", "source": "source · both fixture", "notice": "fixture notice", "markerHelper": "fixture marker helper",
+    "distanceFilters": [{"value":"all","label":"전체"},{"value":"100","label":"0~100m"},{"value":"300","label":"100~300m"},{"value":"500","label":"300~500m"},{"value":"800","label":"500m+"}]
+  },
+  "modeConfig": {
+    "general": {"label":"일반 추천","radiusLabel":"≤ 500m","bestFor":"일상 식사","markerTitle":"일반 레일","quickPicks":[{"title":"가까운 일반","venue":"일반 파스타","copy":"일반 가까움"},{"title":"일반 메뉴","venue":"일반 덮밥","copy":"일반 메뉴"},{"title":"일반 한 끼","venue":"일반 파스타","copy":"일반 한 끼"}]},
+    "bohe": {"label":"보헤 추천","radiusLabel":"≤ 900m","bestFor":"특별한 식사","markerTitle":"보헤 레일","quickPicks":[{"title":"가까운 보헤","venue":"보헤 버거","copy":"보헤 가까움"},{"title":"보헤 메뉴","venue":"보헤 카레","copy":"보헤 메뉴"},{"title":"보헤 한 끼","venue":"보헤 버거","copy":"보헤 한 끼"}]}
+  },
+  "general": [
+    {"name":"일반 파스타","markerLabel":"일반파스타","distance":110,"category":"양식","kind":"파스타","color":"#a12d4f","signal":"방문자 10","address":"서울 테스트구 일반로 1 1층","menuEvidence":[{"display":"라구 파스타","source":"라구 파스타","sourceType":"대표","kind":"food"}],"reason":"일반 후보","rationale":"일반 rationale"},
+    {"name":"일반 덮밥","markerLabel":"일반덮밥","distance":410,"category":"한식","kind":"덮밥","color":"#a65c00","signal":"방문자 20","address":"서울 테스트구 일반로 2 1층","menuEvidence":[{"display":"제육 덮밥","source":"제육 덮밥","sourceType":"대표","kind":"food"}],"reason":"일반 두번째","rationale":"일반 둘"}
+  ],
+  "bohe": [
+    {"name":"보헤 버거","markerLabel":"보헤버거","distance":220,"category":"버거","kind":"버거","color":"#24733a","signal":"방문자 50","address":"서울 테스트구 보헤로 1 1층","menuEvidence":[{"display":"치킨 버거","source":"치킨 버거","sourceType":"대표","kind":"food"}],"reason":"보헤 후보","rationale":"보헤 rationale","savedSource":"https://example.com/curation"},
+    {"name":"보헤 카레","markerLabel":"보헤카레","distance":680,"category":"인도","kind":"카레","color":"#6d45b1","signal":"방문자 60","address":"서울 테스트구 보헤로 2 2층","menuEvidence":[{"display":"버터 치킨 카레","source":"버터 치킨 카레","sourceType":"대표","kind":"food"}],"reason":"보헤 두번째","rationale":"보헤 둘","savedSource":"https://example.com/curation-2"}
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "config": {
+    "title": "테스트역 맛집 지도",
+    "description": "테스트역 기준 일반 추천을 비교하는 인터랙티브 맛집 지도",
+    "eyebrow": "TEST GUIDE",
+    "intro": "<strong>테스트역</strong>에서 고른 일반 추천입니다.",
+    "source": "source · fixture",
+    "notice": "거리와 메뉴 정보는 fixture 검증용입니다.",
+    "markerHelper": "straight-line distance · tap cards for Naver Map",
+    "distanceFilters": [
+      {"value": "all", "label": "전체"},
+      {"value": "100", "label": "0~100m"},
+      {"value": "300", "label": "100~300m"},
+      {"value": "500", "label": "300~500m"},
+      {"value": "800", "label": "500m+"}
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "식사",
+      "markerTitle": "일반 추천 · 가까운 순서",
+      "quickPicks": [
+        {"title": "가장 가까운 식사", "venue": "테스트 국수 본점", "copy": "이동을 최소화하는 한 끼 후보입니다."},
+        {"title": "특별한 메뉴", "venue": "테스트 타코", "copy": "색다른 메뉴를 원할 때 맞습니다."},
+        {"title": "든든한 한 끼", "venue": "테스트 국수 본점", "copy": "따뜻하고 든든한 식사입니다."}
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "테스트 국수 본점",
+      "markerLabel": "테스트국수",
+      "distance": 80,
+      "category": "면",
+      "kind": "국수",
+      "color": "#2365cc",
+      "signal": "방문자 120 · 블로그 30",
+      "address": "서울 테스트구 테스트로 1 1층",
+      "menuEvidence": [
+        {"display": "고기국수", "source": "고기국수 1인", "sourceType": "대표", "kind": "food"},
+        {"display": "비빔국수", "source": "비빔국수", "sourceType": "대표", "kind": "food"}
+      ],
+      "reason": "가까운 국수 식사 후보",
+      "rationale": "빠르게 식사하기 좋습니다."
+    },
+    {
+      "name": "테스트 타코",
+      "markerLabel": "테스트타코",
+      "distance": 320,
+      "category": "멕시칸",
+      "kind": "타코",
+      "color": "#9c2f61",
+      "signal": "방문자 90 · 블로그 18",
+      "address": "서울 테스트구 테스트로 2 2층",
+      "menuEvidence": [
+        {"display": "바르바코아 타코", "source": "바르바코아 타코", "sourceType": "대표", "kind": "food"}
+      ],
+      "reason": "특별한 메뉴 후보",
+      "rationale": "다른 결의 식사를 찾을 때 좋습니다."
+    }
+  ]
+}

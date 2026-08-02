@@ -1,16 +1,28 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scope": "BOVIS restaurant-map public visualizations",
   "page_update_policy": "Region pages consume this contract; do not copy an old region HTML file as a visual baseline.",
   "candidate_unit": "bars",
+  "renderer": {
+    "input": "Top-level general array is required, bohe array is optional, and config plus modeConfig provide every regional display value.",
+    "template_rule": "The canonical template contains no region, radius, category, venue-name, or mode-specific quick-pick logic.",
+    "food_filters": "Generate FOOD filter buttons from the active mode's venue categories."
+  },
+  "markerLabels": {
+    "required": true,
+    "maxCharacters": 12,
+    "uniqueWithinMode": true,
+    "railUses": "markerLabel",
+    "cardUses": "name"
+  },
   "tabs": {
     "zeroBoheCandidates": "Hide the entire tab control with display:none and render only 일반 추천.",
     "positiveBoheCandidates": "Render switchable in-place 일반 추천 and 보헤 추천 tabs; the selected tab alone supplies metrics, marker rail, quick picks, and cards."
   },
   "actions": {
     "primaryLabel": "네이버 지도",
-    "secondaryLabel": "검색 링크",
     "naverMapSearchTemplate": "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh",
+    "distinctDestinationRule": "Render no duplicate identical action URL; an optional curation action must be a distinct URL.",
     "savedSourceLabel": "큐레이션",
     "savedSourceRule": "For a Bohe venue, show exactly one representative curation source URL even if the private DB has multiple Instagram or blog URLs."
   },
@@ -22,7 +34,6 @@
     "format": "서울 + 구 + 도로명·건물번호 + 층",
     "keep": ["시·구", "도로명", "건물번호", "층 또는 지하층"],
     "omitByDefault": ["건물명", "상가명", "호수"],
-    "examples": ["서울 서초구 방배천로2길 15 2층", "서울 서초구 방배천로2길 21 5층", "서울 성동구 성수이로7길 27 1층"],
     "layoutRule": "Use a factually shortened address that fits on one line; never wrap, ellipsize, or invent an address."
   },
   "routeRail": {
@@ -31,12 +42,5 @@
     "helper": {"color": "#343434", "fontWeight": 650, "fontSize": "11px"},
     "distance": {"color": "#555555", "fontWeight": 400, "fontSize": "10px"},
     "markerName": {"color": "#555555", "fontWeight": 700}
-  },
-  "verification": [
-    "Check generated URL against the exact-name Naver Map template.",
-    "Check general-only and Bohe-positive tab branches separately.",
-    "Check every visible address has one rendered line and no overflow.",
-    "Compare route-rail computed styles against this contract before publication.",
-    "Verify the public page, not only local source."
-  ]
+  }
 }

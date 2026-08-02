@@ -1,32 +1,107 @@
 #!/usr/bin/env python3
-"""Render a BOVIS restaurant-map page only from the v1 template and a data JSON."""
-import json, re, sys
+"""Render a canonical BOVIS restaurant-map page from validated guide JSON."""
+import html
+import json
+import re
+import sys
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
-template = (root / "templates/restaurant-map-v1.html").read_text(encoding="utf-8")
-data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-required = {"title", "eyebrow", "intro", "source", "markerTitle", "notice", "venues"}
-missing = required - data.keys()
-if missing: raise SystemExit(f"missing: {sorted(missing)}")
-venues = data["venues"]
-if not venues or any(not {"name","markerLabel","distance","category","kind","color","signal","address","menuEvidence","reason","rationale"} <= set(v) for v in venues):
-    raise SystemExit("invalid venue schema")
-colors = [v["color"] for v in venues]
-if len(colors) != len(set(colors)): raise SystemExit("candidate accent colors must be unique")
-for venue in venues:
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE = (ROOT / "templates" / "restaurant-map-v1.html").read_text(encoding="utf-8")
+MENU_KEYS = {"display", "source", "sourceType", "kind"}
+VENUE_KEYS = {
+    "name", "markerLabel", "distance", "category", "kind", "color", "signal",
+    "address", "menuEvidence", "reason", "rationale",
+}
+CONFIG_KEYS = {
+    "title", "description", "eyebrow", "intro", "source", "notice", "markerHelper",
+    "distanceFilters",
+}
+MODE_KEYS = {"label", "radiusLabel", "bestFor", "markerTitle", "quickPicks"}
+
+
+def fail(message):
+    raise SystemExit(message)
+
+
+def validate_menu_evidence(venue):
     evidence = venue["menuEvidence"]
-    if not 1 <= len(evidence) <= 4 or any(not {"display","source","sourceType","kind"} <= set(item) for item in evidence):
-        raise SystemExit("menu evidence must contain 1–4 display/source/sourceType/kind items")
+    if not 1 <= len(evidence) <= 4 or any(not MENU_KEYS <= set(item) for item in evidence):
+        fail("menu evidence must contain 1–4 display/source/sourceType/kind items")
     if any(re.search(r"\b\d+\s*(p|ea|인|인분)\b|\((소|중|대|lunch)\)", item["display"], re.I) for item in evidence):
-        raise SystemExit("menu display still contains count, size, or meal-period copy")
-    drinks = [item for item in evidence if item["kind"] == "beverage"]
-    if len(drinks) > 1:
-        raise SystemExit("at most one beverage menu signal")
+        fail("menu display still contains count, size, or meal-period copy")
+    if sum(item["kind"] == "beverage" for item in evidence) > 1:
+        fail("at most one beverage menu signal")
     if any(item["kind"] not in {"food", "beverage"} for item in evidence):
-        raise SystemExit("menu kind must be food or beverage")
+        fail("menu kind must be food or beverage")
     venue["menus"] = [item["display"] for item in evidence]
-replacements = {"__TITLE__":data["title"],"__EYEBROW__":data["eyebrow"],"__INTRO__":data["intro"],"__SOURCE__":data["source"],"__MARKER_TITLE__":data["markerTitle"],"__NOTICE__":data["notice"],"__VENUES_JSON__":json.dumps(venues,ensure_ascii=False)}
-for key,value in replacements.items(): template = template.replace(key,value)
-if re.search(r'__[A-Z_]+__',template): raise SystemExit("unreplaced template token")
-Path(sys.argv[2]).write_text(template,encoding="utf-8")
+
+
+def validate_mode(mode, venues, mode_config):
+    if not isinstance(venues, list) or not venues:
+        fail(f"{mode} must be a non-empty venue array")
+    if not MODE_KEYS <= set(mode_config):
+        fail(f"missing modeConfig for {mode}")
+    colors, labels, names = [], set(), set()
+    for venue in venues:
+        if not VENUE_KEYS <= set(venue):
+            fail("invalid venue schema")
+        label = venue["markerLabel"]
+        if not isinstance(label, str) or not label.strip() or len(label) > 12:
+            fail("markerLabel must be concise and non-empty (maximum 12 characters)")
+        if label in labels:
+            fail("markerLabel values must be unique within a mode")
+        if venue["name"] in names:
+            fail("venue names must be unique within a mode")
+        labels.add(label)
+        names.add(venue["name"])
+        colors.append(venue["color"])
+        validate_menu_evidence(venue)
+    if len(colors) != len(set(colors)):
+        fail("candidate accent colors must be unique within each mode")
+    quick_picks = mode_config["quickPicks"]
+    if not isinstance(quick_picks, list) or len(quick_picks) != 3:
+        fail(f"{mode} quickPicks must contain exactly three items")
+    for pick in quick_picks:
+        if not {"title", "venue", "copy"} <= set(pick) or pick["venue"] not in names:
+            fail(f"{mode} quick picks must reference a venue in that mode")
+
+
+def script_json(value):
+    return json.dumps(value, ensure_ascii=False).replace("</", "<\\/")
+
+
+def main(input_path, output_path):
+    data = json.loads(Path(input_path).read_text(encoding="utf-8"))
+    if not {"config", "modeConfig", "general"} <= set(data):
+        fail("missing top-level config, modeConfig, or general")
+    config = data["config"]
+    if not CONFIG_KEYS <= set(config):
+        fail("invalid config schema")
+    modes = {"general": data["general"]}
+    if data.get("bohe"):
+        modes["bohe"] = data["bohe"]
+    mode_config = data["modeConfig"]
+    if not set(modes) <= set(mode_config):
+        fail("missing modeConfig")
+    for mode, venues in modes.items():
+        validate_mode(mode, venues, mode_config[mode])
+    payload = {"config": config, "modeConfig": {mode: mode_config[mode] for mode in modes}, "venues": modes}
+    replacements = {
+        "__TITLE__": html.escape(config["title"]),
+        "__DESCRIPTION__": html.escape(config["description"]),
+        "__INTRO__": config["intro"],
+        "__PAYLOAD_JSON__": script_json(payload),
+    }
+    rendered = TEMPLATE
+    for key, value in replacements.items():
+        rendered = rendered.replace(key, value)
+    if re.search(r"__[A-Z_]+__", rendered):
+        fail("unreplaced template token")
+    Path(output_path).write_text(rendered, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        fail("usage: render_restaurant_map.py INPUT_JSON OUTPUT_HTML")
+    main(sys.argv[1], sys.argv[2])
