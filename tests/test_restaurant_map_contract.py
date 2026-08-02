@@ -36,6 +36,19 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     assert "candidate-source tab" in contract["boheCards"]["tabMeaning"]
     assert "Never put DB, 저장" in contract["boheCards"]["provenancePlacement"]
     assert "must not repeat" in contract["quickPicks"]["deduplication"]
+    assert "same strong emphasis" in contract["quickPicks"]["comparisonEmphasis"]
+
+
+def test_hakdong_quick_pick_comparison_venues_are_explicit_highlights():
+    guide = json.loads(
+        (ROOT / "data" / "restaurant-guides" / "hakdong-station-second-round.json").read_text(encoding="utf-8")
+    )
+    picks = guide["modeConfig"]["general"]["quickPicks"]
+    assert picks[0]["highlights"] == ["황재벌 강남점 530m"]
+    assert picks[1]["highlights"] == ["아카라 867m"]
+    for pick in picks:
+        for phrase in pick.get("highlights", []):
+            assert phrase in pick["copy"]
 
 
 def test_quick_pick_copy_never_repeats_its_bold_venue_name():

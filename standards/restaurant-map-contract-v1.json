@@ -49,7 +49,8 @@
   },
   "quickPicks": {
     "role": "Each card presents a user decision: a purpose title, a bold venue plus distance, and one concise fit sentence.",
-    "deduplication": "The fit sentence must not repeat the quick-pick venue name or its displayed distance; mention only a distinct comparison venue when needed."
+    "deduplication": "The fit sentence must not repeat the quick-pick venue name or its displayed distance; mention only a distinct comparison venue when needed.",
+    "comparisonEmphasis": "A distinct comparison venue plus distance in the fit sentence must be declared in highlights and rendered with the same strong emphasis as the primary venue plus distance."
   },
   "boheCards": {
     "tabMeaning": "보헤 추천 is a candidate-source tab, not a different recommendation product. It uses the same regional goal, decision-oriented BEST FOR, quick-pick hierarchy, and venue-fit copy as 일반 추천.",
