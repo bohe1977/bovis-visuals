@@ -40,3 +40,10 @@ def test_seongsu_mobile_info_boxes_match_the_reference_natural_height_rule():
     assert ".info { min-height:72px" not in seongsu
     assert ".info b { font-size:9px; }" not in seongsu
     assert ".info span { font-size:12px; }" not in seongsu
+
+
+def test_seongsu_menu_tags_keep_the_reference_size_on_mobile():
+    seongsu = SEONGSU.read_text(encoding="utf-8")
+
+    assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in seongsu
+    assert ".menu { padding:5px 8px; font-size:11px; }" not in seongsu
