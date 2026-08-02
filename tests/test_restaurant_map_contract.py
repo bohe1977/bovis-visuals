@@ -30,3 +30,13 @@ def test_seongsu_page_has_standardized_addresses_and_both_modes():
     assert "일반 추천" in seongsu and "보헤 추천" in seongsu
     assert "2026-08-02-seongsu-station-restaurants/" in portal
     assert "보헤 큐레이션 4곳" in portal
+
+
+def test_seongsu_mobile_info_boxes_match_the_reference_natural_height_rule():
+    seongsu = SEONGSU.read_text(encoding="utf-8")
+
+    assert ".info { min-height:0; display:block; padding:11px; border:0;" in seongsu
+    assert "box-shadow:0 0 0 1px rgba(0,0,0,.06);" in seongsu
+    assert ".info { min-height:72px" not in seongsu
+    assert ".info b { font-size:9px; }" not in seongsu
+    assert ".info span { font-size:12px; }" not in seongsu
