@@ -132,6 +132,34 @@ def batting_leader(box,side):
     if st.get('rbi',0): line+=f" {st['rbi']}타점"
     if st.get('runs',0): line+=f" {st['runs']}득점"
     return line
+def headline_player_moment(line):
+    """Turn a verified batting line into a concise Korean headline subject."""
+    if not line:return None
+    tokens=line.split(); stat_start=next((i for i,x in enumerate(tokens) if x.endswith('타수')),len(tokens))
+    name=' '.join(tokens[:stat_start]) or line
+    homers=next((x for x in tokens[stat_start:] if x.endswith('홈런')),None)
+    hits=next((x for x in tokens[stat_start:] if x.endswith('안타')),None)
+    rbi=next((x for x in tokens[stat_start:] if x.endswith('타점')),None)
+    if homers:
+      return f'{name}의 홈런 포함 {rbi or "핵심 활약"}'
+    return f'{name}의 {hits or "핵심"} 활약'
+
+def topic_particle(team):
+    """Korean topic particle for a Korean team label."""
+    last=next((c for c in reversed(team) if '가'<=c<='힣'), '')
+    return team+('은' if last and (ord(last)-ord('가'))%28 else '는')
+
+def pitching_line(box,name):
+    """Return a verified compact pitching line by official full name, never infer a stat."""
+    if not box or not name:return None
+    for side in ('away','home'):
+      for p in box.get('teams',{}).get(side,{}).get('players',{}).values():
+        if p.get('person',{}).get('fullName')!=name:continue
+        st=p.get('stats',{}).get('pitching',{})
+        if not st:return None
+        return f"{name}은 {st.get('inningsPitched','—')}이닝 {st.get('hits','—')}피안타 {st.get('runs','—')}실점 {st.get('strikeOuts','—')}탈삼진"
+    return None
+
 def permanent_lead_point(feed,winner_side):
     if not feed:return None
     plays=feed.get('liveData',{}).get('plays',{}).get('allPlays',[])
@@ -158,26 +186,45 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     winner_side=ws or 'away'; winner_team=a if winner_side=='away' else h; loser_team=h if winner_side=='away' else a
     winner_hits=ls.get('teams',{}).get(winner_side,{}).get('hits','—'); loser_hits=ls.get('teams',{}).get('home' if winner_side=='away' else 'away',{}).get('hits','—')
     winner_runs=aw if winner_side=='away' else hw; loser_runs=hw if winner_side=='away' else aw
+    focus_team='LA 다저스' if title.startswith('LA 다저스') else '샌프란시스코'
+    focus_side='away' if a==focus_team else 'home'
+    focus_runs=aw if focus_side=='away' else hw; focus_hits=ls.get('teams',{}).get(focus_side,{}).get('hits','—')
+    focus_leader=batting_leader(box,focus_side) if box else None
+    focus_moment=headline_player_moment(focus_leader)
+    focus_won=(focus_side==winner_side)
+    focus_opponent=h if focus_side=='away' else a
     record=pitcher_record(winner,loser,save)
-    points=[]
-    if record: points.append(f'투수 기록: {record}.')
     lead=permanent_lead_point(feed,winner_side)
+    winner_leader=batting_leader(box,winner_side) if box else None
+    winner_pitching=pitching_line(box,winner)
+    loser_pitching=pitching_line(box,loser)
+    save_pitching=pitching_line(box,save)
+    game_points=[]
+    if winner_pitching and loser_pitching:
+      game_points.append(f'{winner_pitching}으로 승리했고, {loser_pitching}으로 패전했다.')
+    elif record:
+      game_points.append(f'투수 결정은 {record}으로 기록됐다.')
     if lead:
-      inning=lead.get('about',{}).get('inning','—'); batter=lead.get('matchup',{}).get('batter',{}).get('fullName','—')
-      points.append(f'승부처: {inning}회 {winner_team} {batter}의 {point_event_ko(lead)}로 리드를 잡았다.')
+      inning=lead.get('about',{}).get('inning','—'); batter=lead.get('matchup',{}).get('batter',{}).get('fullName','—'); event=point_event_ko(lead)
+      game_points.append(f'{inning}회 {winner_team} {batter}의 {event}가 결승타가 됐다.')
+      headline=f'{batter}의 {inning}회 {event}로 {winner_team}, {loser_team}에 {winner_runs}–{loser_runs} 승리' if focus_won else f'{focus_moment or focus_team+"의 추격"}에도 {focus_team}, {focus_opponent}에 {focus_runs}–{(hw if focus_side=="away" else aw)} 패배'
+    else:
+      headline=(f'{focus_moment or focus_team} 앞세워 {focus_team}, {focus_opponent}에 {focus_runs}–{(hw if focus_side=="away" else aw)} 승리' if focus_won else f'{focus_moment or focus_team+"의 분전"}에도 {focus_team}, {focus_opponent}에 {focus_runs}–{(hw if focus_side=="away" else aw)} 패배')
+      game_points.append(f'{topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점, {topic_particle(focus_opponent)} {loser_hits if focus_won else winner_hits}안타 {(loser_runs if focus_won else winner_runs)}득점을 기록했다.')
+    if focus_leader:
+      game_points.append(f'{topic_particle(focus_team)} {focus_leader}의 활약으로 타선을 이끌며 끝까지 추격했다.' if not focus_won else f'{topic_particle(focus_team)} {focus_leader}의 활약으로 타선을 이끌었다.')
+    if save_pitching:
+      game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
     elif aw is not None:
-      points.append(f'득점 흐름: {winner_team} {winner_hits}안타 {winner_runs}득점, {loser_team} {loser_hits}안타 {loser_runs}득점.')
-    if box:
-      leader=batting_leader(box,winner_side)
-      if leader: points.append(f'핵심 타자: {winner_team} {leader}.')
-    if len(points)<3 and aw is not None: points.append(f'{winner_team}이 {loser_team}에 {aw}–{hw}로 승리했다.')
-    losing_leader=batting_leader(box,'home' if winner_side=='away' else 'away') if box else None
-    effort=(f'{loser_team}는 {losing_leader}을 기록했지만 {loser_hits}안타 {loser_runs}득점에 그쳤다.' if losing_leader else f'{loser_team}는 {loser_hits}안타 {loser_runs}득점을 기록했지만 승부를 뒤집지 못했다.')
+      game_points.append(f'{topic_particle(winner_team)} {loser_team}보다 {(winner_runs-loser_runs) if isinstance(winner_runs,int) and isinstance(loser_runs,int) else "—"}점 앞서 경기를 마무리했다.')
+    while len(game_points)<4:
+      game_points.append(f'{winner_team}이 {loser_team}에 {winner_runs}–{loser_runs}로 승리했다.')
+    effort=(f'{focus_leader}의 활약에도 {topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점에 그쳤다.' if not focus_won and focus_leader else f'{batting_leader(box,"home" if winner_side=="away" else "away") if box else loser_team}의 분전에도 {topic_particle(loser_team)} {loser_hits}안타 {loser_runs}득점에 그쳤다.')
     daum=daum_match(g,daum_rows)
     naver=naver_match(g,naver_rows)
     verified=bool(daum and str(daum.get('awayResult'))==str(aw) and str(daum.get('homeResult'))==str(hw) and (daum.get('gameStatus')=='END')==(status=='경기 종료'))
     naver_verified=bool(naver and str(naver.get('awayTeamScore'))==str(aw) and str(naver.get('homeTeamScore'))==str(hw) and (naver.get('statusCode')=='RESULT')==(status=='경기 종료'))
-    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'pitcher_record':record,'headline':outcome,'points':points or [f'MLB 공식 상태: {status}.'],'opponent_label':loser_team,'opponent_effort':effort,'daum_verified':verified,'naver_verified':naver_verified}
+    return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':winner,'loser_pitcher':loser,'save_pitcher':save,'pitcher_record':record,'headline':headline,'game_points':game_points,'opponent_label':(focus_team if not focus_won else loser_team),'opponent_effort':effort,'daum_verified':verified,'naver_verified':naver_verified}
 def main():
     # `currentTeam` is only present when explicitly hydrated; do not infer it from a roster name.
     people={}
@@ -287,7 +334,7 @@ def main():
     for title,teamid in [('LA 다저스 경기',119),('샌프란시스코 자이언츠 경기',137)]:
       ts=[g for g in mlb_games.values() if teamid in (g['teams']['away']['team']['id'],g['teams']['home']['team']['id'])]
       if ts: targets.append(build_game(ts[0],title,daum_rows,naver_rows,box=box(ts[0]['gamePk']),feed=feed(ts[0]['gamePk'])))
-      else: targets.append({'section_title':title,'game_pk':None,'officialDate':None,'game_date_utc':None,'naver_game_id':None,'daum_game_id':None,'venue':'—','start_time_kst':'—','status':'팀 경기 없음','away':'LA 다저스' if teamid==119 else '샌프란시스코','home':'—','winner_side':None,'away_score':None,'home_score':None,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'headline':'KST 대상일 팀 경기 없음','points':['MLB 공식 schedule의 KST gameDate 기준.'],'opponent_label':'—','opponent_effort':'—'})
+      else: targets.append({'section_title':title,'game_pk':None,'officialDate':None,'game_date_utc':None,'naver_game_id':None,'daum_game_id':None,'venue':'—','start_time_kst':'—','status':'팀 경기 없음','away':'LA 다저스' if teamid==119 else '샌프란시스코','home':'—','winner_side':None,'away_score':None,'home_score':None,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'headline':'KST 대상일 팀 경기 없음','game_points':['MLB 공식 schedule의 KST gameDate 기준.'],'opponent_label':'—','opponent_effort':'—'})
     # Cross-check endpoints are retained as provenance. Dynamic Naver game IDs are not guessed.
     src=['https://statsapi.mlb.com/api/v1/schedule?sportId=1&date='+d.isoformat() for d in (REPORT-timedelta(days=1),REPORT)]
     src += [f'https://statsapi.mlb.com/api/v1/game/{pk}/boxscore' for pk in sorted(boxes)]

@@ -112,12 +112,12 @@ def test_mlb_game_cards_match_kbo_game_content_hierarchy():
 
     final_games = [game for game in data["team_games"] if game["status"] == "경기 종료"]
     assert final_games
-    assert all(game.get("pitcher_record") for game in final_games)
-    assert all(len(game.get("points", [])) >= 3 for game in final_games)
-    assert all("공식 결정" not in " ".join(game["points"]) for game in final_games)
+    assert all(game.get("winner_pitcher") and game.get("loser_pitcher") for game in final_games)
+    assert all(len(game.get("game_points", [])) >= 4 for game in final_games)
+    assert all("공식 결정" not in " ".join(game["game_points"]) for game in final_games)
     assert all(game.get("opponent_label") in {game["away"], game["home"]} for game in final_games)
-    assert '<div class="record">' in mlb
-    assert 'g.pitcher_record?' in mlb
+    assert '<div class="record">${g.winner_pitcher?`<span>승 ${esc(g.winner_pitcher)}</span>`' in mlb
+    assert "g.game_points.map" in mlb
     assert '<strong>${esc(g.opponent_label)}의 분전</strong>' in mlb
     assert '<strong>출처</strong>: ${esc(g.opponent_effort)}</div>' not in mlb
 
@@ -168,8 +168,8 @@ def test_mlb_current_batting_line_and_team_result_are_normalized_from_official_d
     assert ohtani["mlbam_id"] == 660271
     assert ohtani["status"] in {"출전", "비출전", "팀 경기 없음"}
     assert dodgers_game["status"] == "경기 종료"
-    assert dodgers_game["pitcher_record"]
-    assert len(dodgers_game["points"]) >= 3
+    assert dodgers_game["winner_pitcher"]
+    assert len(dodgers_game["game_points"]) >= 4
 
 
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():

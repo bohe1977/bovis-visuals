@@ -1,7 +1,7 @@
 {
   "report_date_kst": "2026-08-02",
   "official_date_mlb": "2026-08-01",
-  "generated_at": "2026-08-02T16:53:06+09:00",
+  "generated_at": "2026-08-02T21:58:50+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회",
     "method": "KST 2026-08-02 UTC 창(2026-08-01T15:00:00Z–2026-08-02T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.",
@@ -35,14 +35,15 @@
       "loser_pitcher": "Yoshinobu Yamamoto",
       "save_pitcher": "Aroldis Chapman",
       "pitcher_record": "Justin Slaten 승리, Yoshinobu Yamamoto 패전, Aroldis Chapman 세이브",
-      "headline": "보스턴, LA 다저스에 3–2 승리",
-      "points": [
-        "투수 기록: Justin Slaten 승리, Yoshinobu Yamamoto 패전, Aroldis Chapman 세이브.",
-        "득점 흐름: 보스턴 4안타 3득점, LA 다저스 10안타 2득점.",
-        "핵심 타자: 보스턴 Ceddanne Rafaela 4타수 2안타 2홈런 2타점 2득점."
+      "headline": "Teoscar Hernández의 홈런 포함 2타점에도 LA 다저스, 보스턴에 2–3 패배",
+      "game_points": [
+        "Justin Slaten은 1.0이닝 0피안타 0실점 1탈삼진으로 승리했고, Yoshinobu Yamamoto은 8.0이닝 4피안타 3실점 3탈삼진으로 패전했다.",
+        "LA 다저스는 10안타 2득점, 보스턴은 4안타 3득점을 기록했다.",
+        "LA 다저스는 Teoscar Hernández 4타수 3안타 1홈런 2타점 1득점의 활약으로 타선을 이끌며 끝까지 추격했다.",
+        "마무리 Aroldis Chapman은 1.0이닝 0피안타 0실점 1탈삼진으로 세이브를 올렸다."
       ],
       "opponent_label": "LA 다저스",
-      "opponent_effort": "LA 다저스는 Teoscar Hernández 4타수 3안타 1홈런 2타점 1득점을 기록했지만 10안타 2득점에 그쳤다.",
+      "opponent_effort": "Teoscar Hernández 4타수 3안타 1홈런 2타점 1득점의 활약에도 LA 다저스는 10안타 2득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     },
@@ -69,14 +70,15 @@
       "loser_pitcher": "Dylan Smith",
       "save_pitcher": null,
       "pitcher_record": "Mason Miller 승리, Dylan Smith 패전",
-      "headline": "샌프란시스코, 샌디에이고에 5–6 패배",
-      "points": [
-        "투수 기록: Mason Miller 승리, Dylan Smith 패전.",
-        "득점 흐름: 샌디에이고 10안타 6득점, 샌프란시스코 12안타 5득점.",
-        "핵심 타자: 샌디에이고 Freddy Fermin 3타수 2안타 1홈런 3타점 1득점."
+      "headline": "Osleivis Basabe의 홈런 포함 4타점에도 샌프란시스코, 샌디에이고에 5–6 패배",
+      "game_points": [
+        "Mason Miller은 1.2이닝 1피안타 0실점 3탈삼진으로 승리했고, Dylan Smith은 0.2이닝 2피안타 1실점 0탈삼진으로 패전했다.",
+        "샌프란시스코는 12안타 5득점, 샌디에이고는 10안타 6득점을 기록했다.",
+        "샌프란시스코는 Osleivis Basabe 4타수 2안타 1홈런 4타점 1득점의 활약으로 타선을 이끌며 끝까지 추격했다.",
+        "샌디에이고는 샌프란시스코보다 1점 앞서 경기를 마무리했다."
       ],
       "opponent_label": "샌프란시스코",
-      "opponent_effort": "샌프란시스코는 Osleivis Basabe 4타수 2안타 1홈런 4타점 1득점을 기록했지만 12안타 5득점에 그쳤다.",
+      "opponent_effort": "Osleivis Basabe 4타수 2안타 1홈런 4타점 1득점의 활약에도 샌프란시스코는 12안타 5득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     }
