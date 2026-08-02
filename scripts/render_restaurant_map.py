@@ -91,8 +91,8 @@ def validate_mode(mode, venues, mode_config):
     if len(colors) != len(set(colors)):
         fail("candidate accent colors must be unique within each mode")
     quick_picks = mode_config["quickPicks"]
-    if not isinstance(quick_picks, list) or len(quick_picks) != 3:
-        fail(f"{mode} quickPicks must contain exactly three items")
+    if not isinstance(quick_picks, list) or not 1 <= len(quick_picks) <= 3:
+        fail(f"{mode} quickPicks must contain one to three verified venues")
     for pick in quick_picks:
         if not {"title", "venue", "copy"} <= set(pick) or pick["venue"] not in names:
             fail(f"{mode} quick picks must reference a venue in that mode")
