@@ -47,6 +47,10 @@
     "savedSourceLabel": "레퍼런스",
     "savedSourceRule": "For a Bohe venue, show exactly one representative reference source URL even if the private DB has multiple Instagram or blog URLs."
   },
+  "quickPicks": {
+    "role": "Each card presents a user decision: a purpose title, a bold venue plus distance, and one concise fit sentence.",
+    "deduplication": "The fit sentence must not repeat the quick-pick venue name or its displayed distance; mention only a distinct comparison venue when needed."
+  },
   "boheCards": {
     "tabMeaning": "보헤 추천 is a candidate-source tab, not a different recommendation product. It uses the same regional goal, decision-oriented BEST FOR, quick-pick hierarchy, and venue-fit copy as 일반 추천.",
     "provenancePlacement": "The tab label and reference action convey provenance. Never put DB, 저장, source provenance, or 후보 wording in BEST FOR, quick-pick titles/copy, venue reason, or rationale.",

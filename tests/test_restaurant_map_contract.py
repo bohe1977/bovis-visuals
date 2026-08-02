@@ -35,6 +35,17 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     assert contract["actions"]["distinctDestinationRule"].startswith("Render both 지도")
     assert "candidate-source tab" in contract["boheCards"]["tabMeaning"]
     assert "Never put DB, 저장" in contract["boheCards"]["provenancePlacement"]
+    assert "must not repeat" in contract["quickPicks"]["deduplication"]
+
+
+def test_quick_pick_copy_never_repeats_its_bold_venue_name():
+    for path in (ROOT / "data" / "restaurant-guides").glob("*.json"):
+        guide = json.loads(path.read_text(encoding="utf-8"))
+        for mode, config in guide.get("modeConfig", {}).items():
+            for pick in config["quickPicks"]:
+                assert pick["venue"].replace(" ", "") not in pick["copy"].replace(" ", ""), (
+                    f"{path.name}:{mode}:{pick['venue']} repeats its bold venue name"
+                )
 
 
 def test_hakdong_bohe_tab_uses_the_same_regional_recommendation_language():
