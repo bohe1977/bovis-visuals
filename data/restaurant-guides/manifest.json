@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "siteBase": "/bovis-visuals/",
+  "guides": [
+    {
+      "slug": "bohe-seongsu-station",
+      "data": "data/restaurant-guides/bohe-seongsu-station.json",
+      "output": "2026-08-02-bohe-seongsu-station-restaurants/index.html",
+      "shareAlias": "bohe-seongsu/index.html",
+      "archiveHref": "bohe-seongsu/"
+    },
+    {
+      "slug": "sadang-station",
+      "data": "data/restaurant-guides/sadang-station.json",
+      "output": "2026-08-02-sadang-station-restaurants/index.html"
+    },
+    {
+      "slug": "sadang-second-round",
+      "data": "data/restaurant-guides/sadang-second-round.json",
+      "output": "2026-08-01-sadang-second-round-test/index.html"
+    },
+    {
+      "slug": "yukmildo-500m",
+      "data": "data/restaurant-guides/yukmildo-500m.json",
+      "output": "2026-08-02-yukmildo-500m-restaurants/index.html"
+    }
+  ]
+}

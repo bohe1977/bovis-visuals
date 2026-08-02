@@ -1,0 +1,34 @@
+name: Restaurant guide contract
+
+on:
+  push:
+    paths:
+      - 'data/restaurant-guides/**'
+      - 'scripts/render_restaurant_map.py'
+      - 'scripts/render_all_restaurant_guides.py'
+      - 'scripts/create_restaurant_guide.py'
+      - 'templates/restaurant-map-v1.html'
+      - 'standards/restaurant-map-contract-v1.json'
+      - 'tests/test_restaurant_map_*.py'
+      - '.github/workflows/restaurant-guide-contract.yml'
+  pull_request:
+    paths:
+      - 'data/restaurant-guides/**'
+      - 'scripts/render_restaurant_map.py'
+      - 'scripts/render_all_restaurant_guides.py'
+      - 'scripts/create_restaurant_guide.py'
+      - 'templates/restaurant-map-v1.html'
+      - 'standards/restaurant-map-contract-v1.json'
+      - 'tests/test_restaurant_map_*.py'
+      - '.github/workflows/restaurant-guide-contract.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Run restaurant map contract tests
+        run: uv run --with pytest pytest -q tests/test_restaurant_map_renderer.py tests/test_restaurant_map_contract.py tests/test_restaurant_map_v2.py
+      - name: Reject stale generated guides, aliases, and archive links
+        run: python3 scripts/render_all_restaurant_guides.py --check

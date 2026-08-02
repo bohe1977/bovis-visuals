@@ -1,7 +1,14 @@
 {
-  "version": "1.2.0",
+  "version": "2.0.0",
   "scope": "BOVIS restaurant-map public visualizations",
-  "page_update_policy": "Region pages consume this contract; do not copy an old region HTML file as a visual baseline.",
+  "page_update_policy": "Only guides declared in data/restaurant-guides/manifest.json may be rendered or linked from the public archive. Create new regions with scripts/create_restaurant_guide.py; do not copy an old region HTML file as a visual baseline.",
+  "manifest": {
+    "sourceOfTruth": "data/restaurant-guides/manifest.json",
+    "renderCommand": "python3 scripts/render_all_restaurant_guides.py --write",
+    "verificationCommand": "python3 scripts/render_all_restaurant_guides.py --check",
+    "archiveRule": "Any public archive href for a manifest guide must equal its archiveHref.",
+    "aliasRule": "A shareAlias is generated from the rendered output digest; hand-edited cache keys are not permitted."
+  },
   "candidate_unit": "bars",
   "labelTypography": {
     "appliesTo": ["CANDIDATES", "RADIUS", "CLOSEST", "BEST FOR", "DISTANCE", "FOOD"],

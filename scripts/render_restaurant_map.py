@@ -13,6 +13,23 @@ VENUE_KEYS = {
     "name", "markerLabel", "distance", "category", "kind", "color", "signal",
     "address", "menuEvidence", "reason", "rationale",
 }
+
+
+def valid_reference_url(value):
+    return isinstance(value, str) and re.fullmatch(r"https?://[^\s]+", value) is not None
+
+
+def validate_address(value):
+    if not isinstance(value, str) or "\n" in value or not re.match(r"^서울\s+\S+구\s+.+\d", value):
+        fail("address must be one-line Seoul road address with district and building number")
+
+
+def validate_search_query(venue):
+    query = venue.get("searchQuery")
+    if query is not None and (not isinstance(query, str) or len(query.strip()) < 3):
+        fail("searchQuery must be a specific search phrase of at least three characters")
+    if len(venue["name"].strip()) <= 2 and not query:
+        fail("short or ambiguous venue names require searchQuery")
 CONFIG_KEYS = {
     "title", "description", "eyebrow", "intro", "source", "notice", "markerHelper",
     "distanceFilters",
@@ -43,6 +60,9 @@ def validate_menu_evidence(venue):
 
 
 def validate_mode(mode, venues, mode_config):
+    expected_label = "일반 추천" if mode == "general" else "보헤 추천"
+    if mode_config.get("label") != expected_label:
+        fail(f"{mode} tab label must be {expected_label}")
     if not isinstance(venues, list) or not venues:
         fail(f"{mode} must be a non-empty venue array")
     if not MODE_KEYS <= set(mode_config):
@@ -60,6 +80,12 @@ def validate_mode(mode, venues, mode_config):
             fail("venue names must be unique within a mode")
         labels.add(label)
         names.add(venue["name"])
+        validate_address(venue["address"])
+        validate_search_query(venue)
+        if mode == "bohe" and not valid_reference_url(venue.get("savedSource")):
+            fail("bohe venues require an https savedSource for the reference action")
+        if mode == "bohe" and venue.get("dbOnly"):
+            fail("bohe venues require verified Naver menu evidence; dbOnly is not allowed")
         colors.append(venue["color"])
         validate_menu_evidence(venue)
     if len(colors) != len(set(colors)):

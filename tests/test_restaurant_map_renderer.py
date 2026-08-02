@@ -105,3 +105,31 @@ def test_renderer_treats_empty_optional_bohe_array_as_general_only(tmp_path):
 
     assert '"bohe":' not in html
     assert 'data-mode="bohe"' not in html
+
+
+def test_renderer_enforces_v2_mode_reference_and_ambiguous_name_rules(tmp_path):
+    payload = json.loads((FIXTURES / "restaurant-general-plus-bohe.json").read_text(encoding="utf-8"))
+    payload["modeConfig"]["general"]["label"] = "레퍼런스"
+    result = render_payload(tmp_path, payload)
+    assert result.returncode != 0
+    assert "general tab label must be 일반 추천" in result.stderr
+
+    payload = json.loads((FIXTURES / "restaurant-general-plus-bohe.json").read_text(encoding="utf-8"))
+    del payload["bohe"][0]["savedSource"]
+    result = render_payload(tmp_path, payload)
+    assert result.returncode != 0
+    assert "bohe venues require an https savedSource" in result.stderr
+
+    payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
+    original_name = payload["general"][0]["name"]
+    payload["general"][0]["name"] = "마야"
+    for pick in payload["modeConfig"]["general"]["quickPicks"]:
+        if pick["venue"] == original_name:
+            pick["venue"] = "마야"
+    result = render_payload(tmp_path, payload)
+    assert result.returncode != 0
+    assert "short or ambiguous venue names require searchQuery" in result.stderr
+
+    payload["general"][0]["searchQuery"] = "마야 성수"
+    result = render_payload(tmp_path, payload)
+    assert result.returncode == 0, result.stderr
