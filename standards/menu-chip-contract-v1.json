@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "source": "current public Naver Place menu; prefer 대표 entries",
+  "cardLimit": 4,
+  "selection": [
+    "Select food-first representative signals with meaningfully different dishes or preparations.",
+    "Allow at most one beverage signal, only when it materially represents the venue.",
+    "Never include a broad beverage and a branded/subtype beverage from the same family together.",
+    "If fewer than four verified distinct signals exist, render fewer; never invent filler."
+  ],
+  "normalization": [
+    "Remove price, portions, counts, size, meal period, and event copy without changing dish identity.",
+    "Examples: 수제교자 5p → 수제교자; 대표 고급양갈비 2+1 → 고급양갈비."
+  ],
+  "evidence": "Each rendered menu chip must retain its exact Naver source menu string and source type (대표 or 등록)."
+}
