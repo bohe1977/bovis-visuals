@@ -1,34 +1,374 @@
 {
   "config": {
-    "title": "보헤의 DB, 성수역 맛집 지도",
-    "description": "보헤의 개인 맛집 DB에 저장된 성수역권 맛집 4곳을 정리한 지도입니다.",
-    "eyebrow": "BOHE DB · SEONGSU",
-    "intro": "보헤의 개인 맛집 DB에서 <strong>성수역권으로 확인된 4곳</strong>만 정리했습니다. 메뉴와 현재 영업 정보는 저장 원문에 없으므로 임의로 추가하지 않았습니다.",
-    "source": "SOURCE: 보헤의 개인 맛집 DB · origin: 성수역 · 4 saved venues · 거리: 직선거리",
-    "notice": "보헤의 개인 DB 저장 기록만으로 구성했습니다. 메뉴와 현재 영업 정보는 DB 원문에 없어 표시하지 않았습니다. 방문 전 지도에서 최신 영업 정보와 예약 가능 여부를 확인하세요.",
+    "title": "성수역 맛집 지도",
+    "description": "성수역 일반 추천과 보헤의 개인 맛집 DB 저장 후보를 같은 화면에서 비교하는 지도입니다.",
+    "eyebrow": "SEONGSU STATION · FOOD GUIDE",
+    "intro": "기준점은 <strong>성수역 2호선</strong>입니다. 일반 추천은 레퍼런스의 <strong>500m 안쪽 식사 후보</strong>, 보헤 추천은 <strong>개인 DB에 저장된 성수권 후보</strong>를 같은 화면에서 비교합니다.",
+    "source": "SOURCE: Naver Map summary + menu snippets · origin: Seongsu Station · general radius: ≤ 500m straight-line",
+    "notice": "일반 추천은 성수역 500m 안쪽 레퍼런스 후보입니다. 보헤 추천은 개인 DB 저장 기록만으로 구성했으며 메뉴와 현재 영업 정보가 없는 DB 후보는 임의로 추가하지 않았습니다. 영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
     "markerHelper": "성수역 기준 직선거리, 10m 단위 반올림",
     "distanceFilters": [
-      {"value": "all", "label": "전체"},
-      {"value": "100", "label": "0~100m"},
-      {"value": "300", "label": "100~300m"},
-      {"value": "500", "label": "300~500m"},
-      {"value": "700", "label": "500~700m"}
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "100",
+        "label": "0~100m"
+      },
+      {
+        "value": "300",
+        "label": "100~300m"
+      },
+      {
+        "value": "500",
+        "label": "300~500m"
+      },
+      {
+        "value": "plus",
+        "label": "500m+"
+      }
     ]
   },
   "modeConfig": {
     "general": {
-      "label": "보헤 추천",
-      "radiusLabel": "≤ 700m",
-      "bestFor": "보헤 DB",
-      "markerTitle": "성수역 보헤 DB 후보",
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "식사",
+      "markerTitle": "성수역에서 가까운 순서",
       "quickPicks": [
-        {"title": "가장 가까운 저장", "venue": "르프리크 성수", "copy": "성수역에서 가장 가까운 보헤 DB 저장 후보입니다."},
-        {"title": "한식 선택", "venue": "천하제일 솥뚜껑", "copy": "성수역권 한식으로 저장된 후보입니다."},
-        {"title": "일식 선택", "venue": "기후", "copy": "성수이로에 저장된 일식당 후보입니다."}
+        {
+          "title": "가장 가까운 식사",
+          "venue": "샤브인서울 성수점",
+          "copy": "성수역에서 가장 가까운 샤브샤브 식사 후보입니다."
+        },
+        {
+          "title": "특별한 메뉴",
+          "venue": "페레힐",
+          "copy": "스페인 식사 메뉴를 비교할 때의 핵심 후보입니다."
+        },
+        {
+          "title": "든든한 한 끼",
+          "venue": "실비옥",
+          "copy": "전골 중심 한식 식사를 원할 때의 후보입니다."
+        }
+      ]
+    },
+    "bohe": {
+      "label": "보헤 추천",
+      "radiusLabel": "≤ 620m",
+      "bestFor": "보헤 DB",
+      "markerTitle": "보헤 추천 · 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 저장",
+          "venue": "르프리크 성수",
+          "copy": "성수역에서 가장 가까운 보헤 DB 저장 후보입니다."
+        },
+        {
+          "title": "한식 선택",
+          "venue": "천하제일 솥뚜껑",
+          "copy": "성수역권 한식으로 저장된 후보입니다."
+        },
+        {
+          "title": "일식 선택",
+          "venue": "기후",
+          "copy": "성수이로에 저장된 일식당 후보입니다."
+        }
       ]
     }
   },
   "general": [
+    {
+      "name": "샤브인서울 성수점",
+      "markerLabel": "샤브인서울",
+      "distance": 56,
+      "category": "한식/전골",
+      "kind": "샤브샤브",
+      "color": "#1f6fd1",
+      "signal": "방문자 리뷰 1,868 · 블로그 1,374",
+      "address": "서울 성동구 성수일로6길 53 1층",
+      "menuEvidence": [
+        {
+          "display": "흑돼지 삼겹 샤브",
+          "source": "흑돼지 삼겹 샤브",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "흑돼지 목살 샤브",
+          "source": "흑돼지 목살 샤브",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "앵거스 알목심 샤브",
+          "source": "앵거스 알목심 샤브",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "성수역에서 가장 가까운 샤브샤브 식사 후보.",
+      "rationale": "여럿이 대화하며 든든하게 식사할 때의 가장 가까운 선택."
+    },
+    {
+      "name": "멘쿠도 성수점",
+      "markerLabel": "멘쿠도",
+      "distance": 81,
+      "category": "면/라멘",
+      "kind": "일본식라면",
+      "color": "#a72d5b",
+      "signal": "방문자 리뷰 1,675 · 블로그 82",
+      "address": "서울 성동구 성수일로8길 53 105·106호",
+      "menuEvidence": [
+        {
+          "display": "아카멘",
+          "source": "아카멘",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "시로멘",
+          "source": "시로멘",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "마제소바",
+          "source": "마제소바",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "브레이크타임 없이 노출되는 역세권 라멘 후보.",
+      "rationale": "혼밥이나 빠른 식사에 우선 확인할 역세권 후보."
+    },
+    {
+      "name": "미키스시",
+      "markerLabel": "미키스시",
+      "distance": 184,
+      "category": "일식/스시",
+      "kind": "초밥,롤",
+      "color": "#c76c00",
+      "signal": "방문자 리뷰 2,103 · 블로그 337",
+      "address": "서울 성동구 연무장9길 8-1 1층",
+      "menuEvidence": [
+        {
+          "display": "미키평일런치",
+          "source": "미키평일런치",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "일등한판",
+          "source": "일등한판",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "특등한판",
+          "source": "특등한판",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "런치와 한판 구성이 함께 확인되는 성수 스시 후보.",
+      "rationale": "점심부터 여럿이 나눠 먹는 스시까지 폭넓게 대응."
+    },
+    {
+      "name": "실비옥",
+      "markerLabel": "실비옥",
+      "distance": 219,
+      "category": "한식/전골",
+      "kind": "한식",
+      "color": "#2f8a4c",
+      "signal": "방문자 리뷰 4,893 · 블로그 337",
+      "address": "서울 성동구 아차산로 126 B107호",
+      "menuEvidence": [
+        {
+          "display": "소고기미역전골",
+          "source": "소고기미역전골",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "소갈비전골",
+          "source": "소갈비전골",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "오징어미나리전골",
+          "source": "오징어미나리전골",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "전골 중심으로 한식 식사를 하기 좋은 후보.",
+      "rationale": "따뜻한 국물 요리와 한식 식사를 원할 때의 우선 후보."
+    },
+    {
+      "name": "도도한면 성수본점",
+      "markerLabel": "도도한면",
+      "distance": 221,
+      "category": "면/라멘",
+      "kind": "우동,소바",
+      "color": "#7151a5",
+      "signal": "방문자 리뷰 3,394 · 블로그 2,039",
+      "address": "서울 성동구 연무장길 41-17",
+      "menuEvidence": [
+        {
+          "display": "찌꾸타마부카케",
+          "source": "찌꾸타마부카케",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "갈치우동",
+          "source": "갈치우동",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "크림자루우동",
+          "source": "크림자루우동",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "우동·소바 중심의 성수 본점 메뉴가 확인되는 후보.",
+      "rationale": "성수다운 면 요리를 찾을 때 가장 먼저 비교할 곳."
+    },
+    {
+      "name": "페레힐",
+      "markerLabel": "페레힐",
+      "distance": 226,
+      "category": "양식/세계음식",
+      "kind": "스페인음식",
+      "color": "#118796",
+      "signal": "방문자 리뷰 10,950 · 블로그 822",
+      "address": "서울 성동구 연무장길 37-22 1층",
+      "menuEvidence": [
+        {
+          "display": "홍새우 비스크 파스타",
+          "source": "홍새우 비스크 파스타",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "사프란 빠에야",
+          "source": "사프란 빠에야",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "갈리시아 뽈뽀",
+          "source": "갈리시아 뽈뽀",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "빠에야·파스타 메뉴와 높은 리뷰 신호가 있는 스페인 식당.",
+      "rationale": "특별한 식사나 데이트 메뉴를 고를 때의 핵심 후보."
+    },
+    {
+      "name": "글로리칼국수 성수점",
+      "markerLabel": "글로리칼국수",
+      "distance": 238,
+      "category": "한식/전골",
+      "kind": "칼국수,만두",
+      "color": "#d25b1f",
+      "signal": "방문자 리뷰 608 · 블로그 263",
+      "address": "서울 성동구 아차산로7길 11-1 1·2층",
+      "menuEvidence": [
+        {
+          "display": "보양 삼계백반",
+          "source": "보양 삼계백반",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "전통 삼계탕",
+          "source": "전통 삼계탕",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "가마솥 닭칼국수",
+          "source": "가마솥 닭칼국수",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "삼계탕과 닭칼국수 메뉴가 확인되는 든든한 한 끼 후보.",
+      "rationale": "비 오는 날이나 든든한 한식 식사가 필요할 때 적합."
+    },
+    {
+      "name": "보따리타코",
+      "markerLabel": "보따리타코",
+      "distance": 250,
+      "category": "양식/세계음식",
+      "kind": "멕시코,남미음식",
+      "color": "#a53c76",
+      "signal": "방문자 리뷰 1,079 · 블로그 110",
+      "address": "서울 성동구 아차산로7가길 27 1층",
+      "menuEvidence": [
+        {
+          "display": "돼지고기 타코",
+          "source": "돼지고기 타코",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "소고기 타코",
+          "source": "소고기 타코",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "치즈 퀘사디아",
+          "source": "치즈 퀘사디아",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "타코·퀘사디아·포케까지 공개 메뉴 신호가 있는 후보.",
+      "rationale": "평소 한식·양식 대신 가볍고 다른 메뉴를 원할 때."
+    },
+    {
+      "name": "마야",
+      "markerLabel": "마야",
+      "distance": 418,
+      "category": "양식/세계음식",
+      "kind": "양식",
+      "color": "#a86a00",
+      "signal": "방문자 리뷰 818 · 블로그 772",
+      "address": "서울 성동구 연무장3길 3 2층",
+      "menuEvidence": [
+        {
+          "display": "마야 스테이크",
+          "source": "마야 스테이크",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "수제 잠봉 파스타",
+          "source": "수제 잠봉 파스타",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "트러플 수제 뇨끼",
+          "source": "트러플 수제 뇨끼",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "스테이크·잠봉 파스타·뇨끼가 확인되는 양식 후보.",
+      "rationale": "조금 더 걸어도 스테이크와 파스타로 식사 결을 잡을 때."
+    }
+  ],
+  "bohe": [
     {
       "name": "르프리크 성수",
       "markerLabel": "르프리크",
@@ -42,7 +382,10 @@
       "dbOnly": true,
       "reason": "보헤 DB에 성수권 햄버거로 저장된 후보.",
       "rationale": "DB 저장 분류: 햄버거. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {"lat": 37.5443066, "lng": 127.0526884}
+      "coordinates": {
+        "lat": 37.5443066,
+        "lng": 127.0526884
+      }
     },
     {
       "name": "천하제일 솥뚜껑",
@@ -57,7 +400,10 @@
       "dbOnly": true,
       "reason": "보헤 DB에 성수권 한식으로 저장된 후보.",
       "rationale": "DB 저장 분류: 한식. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {"lat": 37.5415261, "lng": 127.0536830}
+      "coordinates": {
+        "lat": 37.5415261,
+        "lng": 127.053683
+      }
     },
     {
       "name": "기후",
@@ -72,7 +418,10 @@
       "dbOnly": true,
       "reason": "보헤 DB에 성수이로 일식당으로 저장된 후보.",
       "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {"lat": 37.5406190, "lng": 127.0561320}
+      "coordinates": {
+        "lat": 37.540619,
+        "lng": 127.056132
+      }
     },
     {
       "name": "스시라온",
@@ -87,7 +436,10 @@
       "dbOnly": true,
       "reason": "보헤 DB에 성수권 일식당으로 저장된 후보.",
       "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {"lat": 37.5412781, "lng": 127.0488281}
+      "coordinates": {
+        "lat": 37.5412781,
+        "lng": 127.0488281
+      }
     }
   ]
 }
