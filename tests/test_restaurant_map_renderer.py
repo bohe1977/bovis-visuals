@@ -70,7 +70,7 @@ def test_renderer_embeds_both_modes_as_data_for_synchronized_client_rendering(tm
     assert "양식/세계음식" not in template and "페레힐" not in template
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in html
     assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in html
-    assert ".marker-head p { margin:0; color:#181818; font:750 11px/1.5 ui-monospace,monospace; text-align:right; }" in html
+    assert ".marker-head p { margin:0; color:#181818; font:800 12px/1.5 Geist,Arial,sans-serif; text-align:right; }" in html
 
 
 def test_renderer_treats_empty_optional_bohe_array_as_general_only(tmp_path):
