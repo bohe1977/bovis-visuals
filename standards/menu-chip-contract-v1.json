@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "source": "current public Naver Place menu; prefer 대표 entries",
-  "cardLimit": 4,
+  "cardLimit": 3,
   "selection": [
     "Select food-first representative signals with meaningfully different dishes or preparations.",
     "Allow at most one beverage signal, only when it materially represents the venue.",

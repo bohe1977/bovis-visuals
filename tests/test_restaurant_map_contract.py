@@ -30,5 +30,7 @@ def test_canonical_template_keeps_mobile_info_and_menu_contracts():
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in template
     assert "box-shadow:0 0 0 1px rgba(0,0,0,.06);" in template
     assert ".info { min-height:72px" not in template
-    assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; white-space:nowrap; }" in template
+    assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in template
+    menu_contract = json.loads((ROOT / "standards" / "menu-chip-contract-v1.json").read_text(encoding="utf-8"))
+    assert menu_contract["cardLimit"] == 3
     assert ".menu { padding:5px 8px; font-size:11px; }" not in template

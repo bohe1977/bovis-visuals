@@ -68,12 +68,6 @@
           "source": "양고기모듬",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "어향가지",
-          "source": "어향가지",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "램타운양꼬치"
@@ -104,12 +98,6 @@
         {
           "display": "라자냐",
           "source": "라자냐",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "콰트로 치즈 뇨끼",
-          "source": "콰트로 치즈 뇨끼",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -144,12 +132,6 @@
           "source": "풍기 리조또",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "만조 스테이크",
-          "source": "만조 스테이크",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "리에또"
@@ -180,12 +162,6 @@
         {
           "display": "오리지널 닭갈비",
           "source": "오리지널 닭갈비",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "들기름 막국수",
-          "source": "들기름 막국수",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -220,12 +196,6 @@
           "source": "파인애플볶음밥",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "생안심쌀국수",
-          "source": "생안심쌀국수",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "방배동쌀국수"
@@ -256,12 +226,6 @@
         {
           "display": "통돼지김치찌개",
           "source": "통돼지김치찌개",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "동태탕",
-          "source": "동태탕",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -296,12 +260,6 @@
           "source": "생대구탕",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "오징어순대",
-          "source": "오징어순대",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "가우리집"
@@ -332,12 +290,6 @@
         {
           "display": "팟타이 꿍",
           "source": "팟타이 꿍",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "나시고랭",
-          "source": "나시고랭",
           "sourceType": "등록",
           "kind": "food"
         }

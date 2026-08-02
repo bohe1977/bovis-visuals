@@ -80,12 +80,6 @@
           "source": "라자냐",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "콰트로 치즈 뇨끼",
-          "source": "콰트로 치즈 뇨끼",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "투파인드피터"
@@ -116,12 +110,6 @@
         {
           "display": "목살보쌈찜",
           "source": "목살보쌈찜",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "강릉꼬막비빔밥",
-          "source": "강릉꼬막비빔밥",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -156,12 +144,6 @@
           "source": "맑은칼국수",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "미나리전",
-          "source": "미나리전",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "등촌샤브칼국수"
@@ -192,12 +174,6 @@
         {
           "display": "통돼지김치찌개",
           "source": "통돼지김치찌개",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "동태탕",
-          "source": "동태탕",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -232,12 +208,6 @@
           "source": "생대구탕",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "오징어순대",
-          "source": "오징어순대",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "가우리집"
@@ -268,12 +238,6 @@
         {
           "display": "오리지널 닭갈비",
           "source": "오리지널 닭갈비",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "들기름 막국수",
-          "source": "들기름 막국수",
           "sourceType": "등록",
           "kind": "food"
         }
@@ -308,12 +272,6 @@
           "source": "풍기 리조또",
           "sourceType": "등록",
           "kind": "food"
-        },
-        {
-          "display": "만조 스테이크",
-          "source": "만조 스테이크",
-          "sourceType": "등록",
-          "kind": "food"
         }
       ],
       "markerLabel": "리에또"
@@ -344,12 +302,6 @@
         {
           "display": "파인애플볶음밥",
           "source": "파인애플볶음밥",
-          "sourceType": "등록",
-          "kind": "food"
-        },
-        {
-          "display": "우삼겹쌀국수",
-          "source": "우삼겹쌀국수",
           "sourceType": "등록",
           "kind": "food"
         }
