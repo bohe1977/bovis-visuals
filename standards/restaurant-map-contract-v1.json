@@ -48,7 +48,8 @@
     "savedSourceRule": "For a Bohe venue, show exactly one representative reference source URL even if the private DB has multiple Instagram or blog URLs."
   },
   "boheCards": {
-    "provenancePlacement": "Use the fit sentence, e.g. 보헤가 저장한 성수권 핫치킨 버거 후보.",
+    "tabMeaning": "보헤 추천 is a candidate-source tab, not a different recommendation product. It uses the same regional goal, decision-oriented BEST FOR, quick-pick hierarchy, and venue-fit copy as 일반 추천.",
+    "provenancePlacement": "The tab label and reference action convey provenance. Never put DB, 저장, source provenance, or 후보 wording in BEST FOR, quick-pick titles/copy, venue reason, or rationale.",
     "naverSignalRule": "NAVER SIGNAL contains only Naver visitor and blog metrics; never place 보헤 DB or source provenance there."
   },
   "addressDisplay": {

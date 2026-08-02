@@ -5,7 +5,7 @@
     "eyebrow": "HAKDONG STATION · SECOND ROUND",
     "intro": "기준점은 <strong>학동역</strong>입니다. 이자카야·와인바·요리주점 중 <strong>2차에 맞는 안주와 주류</strong>를 기준으로 골랐습니다.",
     "source": "SOURCE: Naver Place listing + rendered menu · origin: 학동역 · distance: straight-line",
-    "notice": "거리는 학동역 좌표에서 각 네이버 Place 좌표까지의 직선거리입니다. 영업시간·휴무·대기는 변동되므로 출발 전 네이버 지도를 다시 확인하세요. 정주의 맛집 DB에서는 이 권역의 현재 Place 검증 2차 후보를 찾지 못해 이번 페이지는 일반 추천만 표시합니다.",
+    "notice": "거리는 학동역 좌표에서 각 네이버 Place 좌표까지의 직선거리입니다. 영업시간·휴무·대기는 변동되므로 출발 전 네이버 지도를 다시 확인하세요.",
     "markerHelper": "학동역 기준 직선거리",
     "distanceFilters": [
       {"value":"all","label":"전체"},
@@ -21,19 +21,19 @@
       "bestFor":"학동역 2차",
       "markerTitle":"학동역에서 가까운 순서",
       "quickPicks":[
-        {"title":"가장 가까운 와인","venue":"피헨","copy":"학동역에서 약 370m, 와인과 식사형 안주를 함께 보기 좋은 후보입니다."},
-        {"title":"꼬치·사케","venue":"야키토리요이야마","copy":"야키토리와 사시미로 2차를 이어가기 좋은 이자카야입니다."},
-        {"title":"늦은 시간","venue":"용용선생 논현점","copy":"조회 시점 네이버 Place에 01:00 라스트오더가 표시된 요리주점입니다."}
+        {"title":"가장 가까운 2차","venue":"피헨","copy":"피헨 368m, 황재벌 강남점 530m. 이동을 최소화하고 바로 한잔하기에는 이 두 곳이 가장 편합니다."},
+        {"title":"음식까지 제대로","venue":"야키토리요이야마","copy":"야키토리요이야마 806m, 아카라 867m. 꼬치·사시미·숯불구이까지 안주 메뉴를 보고 고르기 좋습니다."},
+        {"title":"늦은 시간까지","venue":"용용선생 논현점","copy":"용용선생 논현점 980m. 전골·돌짜장처럼 든든한 안주를 두고 늦게까지 이어갈 때의 선택입니다."}
       ]
     },
     "bohe": {
       "label":"보헤 추천",
       "radiusLabel":"≤ 1km",
-      "bestFor":"정주의 맛집 DB",
-      "markerTitle":"보헤 추천 · 가까운 순서",
+      "bestFor":"학동역 2차",
+      "markerTitle":"학동역에서 가까운 순서",
       "quickPicks":[
-        {"title":"가장 가까운 저장","venue":"빌라레코드 Bar","copy":"학동역에서 약 895m, 보헤 DB에 저장된 바 후보입니다."},
-        {"title":"이자카야 저장","venue":"이자카야 코슌","copy":"학동역에서 약 946m, 규카츠·사시미 신호가 확인된 보헤 DB 후보입니다."}
+        {"title":"가장 가까운 2차","venue":"빌라레코드 Bar","copy":"빌라레코드 Bar 895m. 음악을 들으며 감바스를 곁들여 한잔하기 좋은 선택입니다."},
+        {"title":"음식까지 제대로","venue":"이자카야 코슌","copy":"이자카야 코슌 946m. 규카츠·사시미·옥돔구이처럼 식사감 있는 안주를 곁들이기 좋습니다."}
       ]
     }
   },
@@ -45,7 +45,7 @@
     {"name":"용용선생 논현점","distance":980,"category":"요리주점","kind":"요리주점","color":"#3c6e37","signal":"방문자 1,852 · 블로그 947","address":"서울 강남구 학동로2길 54 1·2층","reason":"마라전골·돌짜장처럼 든든한 안주와 늦은 라스트오더가 강점인 후보.","rationale":"네이버 Place 조회 시점에 01:00 라스트오더가 표시됐고, 전골·돌짜장 메뉴가 확인됩니다.","placeUrl":"https://m.place.naver.com/restaurant/1961194724/home","menuEvidence":[{"display":"화산마라전골","source":"화산마라전골","sourceType":"등록","kind":"food"},{"display":"용용돌짜장","source":"용용돌짜장(기본/마라)","sourceType":"등록","kind":"food"},{"display":"돌판로제샹궈","source":"돌판로제샹궈","sourceType":"등록","kind":"food"}],"markerLabel":"용용선생"}
   ],
   "bohe": [
-    {"name":"빌라레코드 Bar","searchQuery":"빌라레코드 Bar 신사","distance":895,"category":"바(BAR)","kind":"바","color":"#7b3a58","signal":"네이버 Place 리뷰 470 · 별점 4.71","address":"서울 강남구 도산대로15길 18 지하2층","reason":"정주의 맛집 DB 저장 바 후보. 학동역에서 약 895m.","rationale":"현재 네이버 Place에서 상호·주소·별점·리뷰와 감바스 신호를 대조했습니다.","placeUrl":"https://m.place.naver.com/restaurant/1708972920/home","menuEvidence":[{"display":"감바스 알 아히요","source":"감바스알아히요","sourceType":"Naver Place topic","kind":"food"}],"markerLabel":"빌라레코드","savedSource":"https://www.instagram.com/p/CpKPw3cyeNC/"},
-    {"name":"이자카야 코슌","distance":946,"category":"이자카야","kind":"이자카야","color":"#315d95","signal":"네이버 Place 리뷰 832 · 별점 4.55","address":"서울 강남구 언주로153길 14 지상2층","reason":"정주의 맛집 DB 저장 이자카야 후보. 학동역에서 약 946m.","rationale":"현재 네이버 Place에서 상호·주소·18:00 영업 시작 신호와 사시미·규카츠 신호를 대조했습니다.","placeUrl":"https://m.place.naver.com/restaurant/1587959706/home","menuEvidence":[{"display":"규카츠","source":"규카츠","sourceType":"Naver Place topic","kind":"food"},{"display":"사시미","source":"사시미","sourceType":"Naver Place topic","kind":"food"},{"display":"옥돔구이","source":"옥돔구이","sourceType":"Naver Place topic","kind":"food"}],"markerLabel":"이자카야 코슌","savedSource":"https://www.instagram.com/p/CnYSuyPy0GJ/"}
+    {"name":"빌라레코드 Bar","searchQuery":"빌라레코드 Bar 신사","distance":895,"category":"바(BAR)","kind":"바","color":"#7b3a58","signal":"네이버 Place 리뷰 470 · 별점 4.71","address":"서울 강남구 도산대로15길 18 지하2층","reason":"감성 음악을 들으며 감바스를 곁들여 한잔하기 좋은 바.","rationale":"분위기와 안주를 함께 보고 고르는 학동역 2차 선택입니다.","placeUrl":"https://m.place.naver.com/restaurant/1708972920/home","menuEvidence":[{"display":"감바스 알 아히요","source":"감바스알아히요","sourceType":"Naver Place topic","kind":"food"}],"markerLabel":"빌라레코드","savedSource":"https://www.instagram.com/p/CpKPw3cyeNC/"},
+    {"name":"이자카야 코슌","distance":946,"category":"이자카야","kind":"이자카야","color":"#315d95","signal":"네이버 Place 리뷰 832 · 별점 4.55","address":"서울 강남구 언주로153길 14 지상2층","reason":"규카츠·사시미·옥돔구이처럼 식사감 있는 안주를 곁들이기 좋은 이자카야.","rationale":"안주 메뉴까지 보고 2차를 이어갈 때의 선택입니다.","placeUrl":"https://m.place.naver.com/restaurant/1587959706/home","menuEvidence":[{"display":"규카츠","source":"규카츠","sourceType":"Naver Place topic","kind":"food"},{"display":"사시미","source":"사시미","sourceType":"Naver Place topic","kind":"food"},{"display":"옥돔구이","source":"옥돔구이","sourceType":"Naver Place topic","kind":"food"}],"markerLabel":"이자카야 코슌","savedSource":"https://www.instagram.com/p/CnYSuyPy0GJ/"}
   ]
 }

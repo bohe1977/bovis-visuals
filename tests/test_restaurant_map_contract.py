@@ -33,6 +33,24 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     assert contract["actions"]["secondaryLabel"] == "검색 링크"
     assert contract["actions"]["naverPlaceSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueNameOrSearchQuery)}?c=15.00,0,0,0,dh"
     assert contract["actions"]["distinctDestinationRule"].startswith("Render both 지도")
+    assert "candidate-source tab" in contract["boheCards"]["tabMeaning"]
+    assert "Never put DB, 저장" in contract["boheCards"]["provenancePlacement"]
+
+
+def test_hakdong_bohe_tab_uses_the_same_regional_recommendation_language():
+    guide = json.loads(
+        (ROOT / "data" / "restaurant-guides" / "hakdong-station-second-round.json").read_text(encoding="utf-8")
+    )
+    general = guide["modeConfig"]["general"]
+    bohe = guide["modeConfig"]["bohe"]
+
+    assert bohe["bestFor"] == general["bestFor"] == "학동역 2차"
+    assert bohe["markerTitle"] == general["markerTitle"]
+    forbidden = ("DB", "저장", "후보", "source provenance")
+    visible_copy = [bohe["bestFor"], bohe["markerTitle"]]
+    visible_copy += [value for pick in bohe["quickPicks"] for value in (pick["title"], pick["copy"])]
+    visible_copy += [value for venue in guide["bohe"] for value in (venue["reason"], venue["rationale"])]
+    assert not any(token in text for text in visible_copy for token in forbidden)
 
 
 def test_canonical_template_keeps_mobile_info_and_menu_contracts():
