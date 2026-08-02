@@ -12,7 +12,8 @@
         "value": "all",
         "label": "전체"
       }
-    ]
+    ],
+    "distanceMethod": "사당역 좌표(37.4765834, 126.9827547) 기준 직선거리, 10m 단위 반올림"
   },
   "modeConfig": {
     "general": {
@@ -42,7 +43,7 @@
   "general": [
     {
       "name": "램타운양꼬치 사당점",
-      "distance": 0,
+      "distance": 270,
       "category": "중식/아시아",
       "kind": "중식/아시아",
       "color": "#9c2f61",
@@ -70,11 +71,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "램타운양꼬치"
+      "markerLabel": "램타운양꼬치",
+      "coordinates": {
+        "lat": 37.4773858,
+        "lng": 126.979926
+      }
     },
     {
       "name": "투파인드피터 서울사당점",
-      "distance": 0,
+      "distance": 40,
       "category": "양식/세계음식",
       "kind": "양식/세계음식",
       "color": "#c26500",
@@ -102,11 +107,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "투파인드피터"
+      "markerLabel": "투파인드피터",
+      "coordinates": {
+        "lat": 37.4769361,
+        "lng": 126.9829592
+      }
     },
     {
       "name": "리에또",
-      "distance": 0,
+      "distance": 280,
       "category": "양식/세계음식",
       "kind": "양식/세계음식",
       "color": "#2365cc",
@@ -134,11 +143,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "리에또"
+      "markerLabel": "리에또",
+      "coordinates": {
+        "lat": 37.4790222,
+        "lng": 126.983411
+      }
     },
     {
       "name": "계탄언니 사당본점",
-      "distance": 0,
+      "distance": 170,
       "category": "한식/전골",
       "kind": "한식/전골",
       "color": "#27863c",
@@ -166,11 +179,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "계탄언니"
+      "markerLabel": "계탄언니",
+      "coordinates": {
+        "lat": 37.4755188,
+        "lng": 126.9813088
+      }
     },
     {
       "name": "방배동쌀국수",
-      "distance": 0,
+      "distance": 450,
       "category": "면/라멘",
       "kind": "면/라멘",
       "color": "#7352aa",
@@ -198,11 +215,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "방배동쌀국수"
+      "markerLabel": "방배동쌀국수",
+      "coordinates": {
+        "lat": 37.4804541,
+        "lng": 126.9844132
+      }
     },
     {
       "name": "그냥찌개집 사당역점",
-      "distance": 0,
+      "distance": 140,
       "category": "한식/전골",
       "kind": "한식/전골",
       "color": "#bb4d26",
@@ -230,11 +251,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "그냥찌개집"
+      "markerLabel": "그냥찌개집",
+      "coordinates": {
+        "lat": 37.4777933,
+        "lng": 126.9828956
+      }
     },
     {
       "name": "가우리집",
-      "distance": 0,
+      "distance": 230,
       "category": "한식/전골",
       "kind": "한식/전골",
       "color": "#167a78",
@@ -262,11 +287,15 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "가우리집"
+      "markerLabel": "가우리집",
+      "coordinates": {
+        "lat": 37.4771405,
+        "lng": 126.9852457
+      }
     },
     {
       "name": "생어거스틴 파스텔시티점",
-      "distance": 0,
+      "distance": 140,
       "category": "중식/아시아",
       "kind": "중식/아시아",
       "color": "#a13b6b",
@@ -294,7 +323,11 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "생어거스틴"
+      "markerLabel": "생어거스틴",
+      "coordinates": {
+        "lat": 37.4778141,
+        "lng": 126.9822744
+      }
     }
   ]
 }

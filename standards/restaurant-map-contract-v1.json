@@ -3,6 +3,11 @@
   "scope": "BOVIS restaurant-map public visualizations",
   "page_update_policy": "Region pages consume this contract; do not copy an old region HTML file as a visual baseline.",
   "candidate_unit": "bars",
+  "distance": {
+    "unit": "m",
+    "sadangStationMethod": "Use the verified Sadang Station coordinate, calculate straight-line distance to verified venue coordinates, and round display values to 10m.",
+    "placeholderValueForbidden": 0
+  },
   "renderer": {
     "input": "Top-level general array is required, bohe array is optional, and config plus modeConfig provide every regional display value.",
     "template_rule": "The canonical template contains no region, radius, category, venue-name, or mode-specific quick-pick logic.",

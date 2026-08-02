@@ -71,7 +71,8 @@ def test_renderer_embeds_both_modes_as_data_for_synchronized_client_rendering(tm
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in html
     assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in html
     assert ".menus { margin:0; gap:7px; flex-wrap:nowrap" not in html
-    assert ".marker-head p { margin:0; color:#181818; font:800 12px/1.5 Geist,Arial,sans-serif; text-align:right; }" in html
+    assert ".stat-label { color:#181818; font:800 12px/1 Geist,Arial,sans-serif; letter-spacing:.08em; }" in html
+    assert ".filter-label { color:#181818; text-align:right; font:800 12px/1 Geist,Arial,sans-serif; letter-spacing:.08em; }" in html
 
 
 def test_renderer_treats_empty_optional_bohe_array_as_general_only(tmp_path):

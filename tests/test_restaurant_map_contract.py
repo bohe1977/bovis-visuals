@@ -18,6 +18,8 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
         "railUses": "markerLabel",
         "cardUses": "name",
     }
+    assert contract["distance"]["placeholderValueForbidden"] == 0
+    assert contract["distance"]["unit"] == "m"
     assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh"
     assert contract["actions"]["secondaryLabel"] == "검색 링크"
     assert contract["actions"]["naverIntegratedSearchTemplate"] == "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueName)}"
@@ -34,3 +36,12 @@ def test_canonical_template_keeps_mobile_info_and_menu_contracts():
     menu_contract = json.loads((ROOT / "standards" / "menu-chip-contract-v1.json").read_text(encoding="utf-8"))
     assert menu_contract["cardLimit"] == 3
     assert ".menu { padding:5px 8px; font-size:11px; }" not in template
+
+
+def test_sadang_candidates_have_verified_nonzero_distances():
+    sadang = json.loads((ROOT / "data" / "restaurant-guides" / "sadang-station.json").read_text(encoding="utf-8"))
+    venues = sadang["general"]
+
+    assert "사당역 좌표" in sadang["config"]["distanceMethod"]
+    assert all(venue["distance"] > 0 and venue["distance"] % 10 == 0 for venue in venues)
+    assert all(set(venue["coordinates"]) == {"lat", "lng"} for venue in venues)
