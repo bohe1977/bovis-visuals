@@ -25,6 +25,8 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
         "fontSize": "11px",
         "fontFamily": "ui-monospace, monospace",
     }
+    assert contract["actions"]["savedSourceLabel"] == "레퍼런스"
+    assert "reference source URL" in contract["actions"]["savedSourceRule"]
     assert contract["distance"]["placeholderValueForbidden"] == 0
     assert contract["distance"]["unit"] == "m"
     assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh"

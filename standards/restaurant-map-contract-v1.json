@@ -37,8 +37,8 @@
     "naverMapSearchTemplate": "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh",
     "naverIntegratedSearchTemplate": "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueName)}",
     "distinctDestinationRule": "Render both 지도 and 검색 링크 actions because they are distinct destinations; an optional curation action must be distinct from both.",
-    "savedSourceLabel": "큐레이션",
-    "savedSourceRule": "For a Bohe venue, show exactly one representative curation source URL even if the private DB has multiple Instagram or blog URLs."
+    "savedSourceLabel": "레퍼런스",
+    "savedSourceRule": "For a Bohe venue, show exactly one representative reference source URL even if the private DB has multiple Instagram or blog URLs."
   },
   "boheCards": {
     "provenancePlacement": "Use the fit sentence, e.g. 보헤가 저장한 성수권 핫치킨 버거 후보.",

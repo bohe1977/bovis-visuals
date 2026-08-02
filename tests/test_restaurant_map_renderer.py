@@ -89,6 +89,17 @@ def test_renderer_allows_db_only_venue_without_invented_menu_chips(tmp_path):
     assert "const menus = venue.menus.length" in html
 
 
+def test_renderer_labels_bohe_source_action_as_reference(tmp_path):
+    payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
+    payload["general"][0]["savedSource"] = "https://www.instagram.com/p/example/"
+
+    result = render_payload(tmp_path, payload)
+
+    assert result.returncode == 0, result.stderr
+    html = (tmp_path / "guide.html").read_text(encoding="utf-8")
+    assert ">레퍼런스</a>" in html
+
+
 def test_renderer_treats_empty_optional_bohe_array_as_general_only(tmp_path):
     html = render_fixture(tmp_path, "restaurant-empty-bohe.json")
 
