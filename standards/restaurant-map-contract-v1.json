@@ -11,8 +11,8 @@
     "primaryLabel": "네이버 지도",
     "secondaryLabel": "검색 링크",
     "naverMapSearchTemplate": "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh",
-    "savedSourceLabel": "저장 원문",
-    "savedSourceRule": "For a Bohe venue, show exactly one representative saved source URL even if the private DB has multiple Instagram or blog URLs."
+    "savedSourceLabel": "큐레이션",
+    "savedSourceRule": "For a Bohe venue, show exactly one representative curation source URL even if the private DB has multiple Instagram or blog URLs."
   },
   "boheCards": {
     "provenancePlacement": "Use the fit sentence, e.g. 보헤가 저장한 성수권 핫치킨 버거 후보.",
