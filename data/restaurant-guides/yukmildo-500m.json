@@ -1,0 +1,306 @@
+{
+  "title": "육밀도 근처 500m 맛집 지도",
+  "eyebrow": "YUKMILDO SADANG · FOOD GUIDE",
+  "intro": "기준점은 <strong>육밀도 사당직영점</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사</strong> 후보를 비교합니다.",
+  "source": "SOURCE: Naver Map + Place menu · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line",
+  "markerTitle": "육밀도에서 가까운 순서",
+  "notice": "거리값은 육밀도 사당직영점 좌표에서 네이버 지도 공개 좌표까지 계산한 직선거리입니다. 모든 일반 후보는 500m 안쪽입니다. 실제 동선과 영업 정보는 출발 전 네이버 지도에서 다시 확인하세요.",
+  "venues": [
+    {
+      "name": "투파인드피터 서울사당점",
+      "distance": 60,
+      "category": "양식/세계음식",
+      "kind": "양식/세계음식",
+      "color": "#9c2f61",
+      "signal": "방문자 169 · 블로그 34",
+      "address": "서울 서초구 방배천로2길 2 3층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "알리오 올리오",
+          "source": "알리오 올리오",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "해산물 로제 파스타",
+          "source": "해산물 로제 파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "라자냐",
+          "source": "라자냐",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "콰트로 치즈 뇨끼",
+          "source": "콰트로 치즈 뇨끼",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "수향가족발보쌈&얼큰감자탕&꼬막비빔밥",
+      "distance": 95,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#c26500",
+      "signal": "방문자 2,188 · 블로그 6,186",
+      "address": "서울 서초구 남부순환로 2121-3 1·2층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "앞족발",
+          "source": "앞족발",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "뒷족발",
+          "source": "뒷족발",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "목살보쌈찜",
+          "source": "목살보쌈찜",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "강릉꼬막비빔밥",
+          "source": "강릉꼬막비빔밥",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "등촌샤브칼국수 사당역점",
+      "distance": 100,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#2365cc",
+      "signal": "방문자 1,693 · 블로그 377",
+      "address": "서울 서초구 방배천로 10 2층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "얼큰칼국수",
+          "source": "얼큰칼국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "들깨칼국수",
+          "source": "들깨칼국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "맑은칼국수",
+          "source": "맑은칼국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "미나리전",
+          "source": "미나리전",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "그냥찌개집 사당역점",
+      "distance": 135,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#27863c",
+      "signal": "방문자 1,201 · 블로그 657",
+      "address": "서울 서초구 방배천로 12 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "돼지김치찌개",
+          "source": "돼지김치찌개",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "돼지김치구이",
+          "source": "돼지김치구이",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "통돼지김치찌개",
+          "source": "통돼지김치찌개",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "동태탕",
+          "source": "동태탕",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "가우리집",
+      "distance": 155,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#7352aa",
+      "signal": "방문자 1,985 · 블로그 1,425",
+      "address": "서울 서초구 청두곶길 5 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "가오리조림",
+          "source": "가오리조림",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "코다리조림",
+          "source": "코다리조림",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생대구탕",
+          "source": "생대구탕",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "오징어순대",
+          "source": "오징어순대",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "계탄언니 사당본점",
+      "distance": 240,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#bb4d26",
+      "signal": "방문자 6,623 · 블로그 2,628",
+      "address": "서울 관악구 과천대로 951 지하 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "투움바 닭갈비",
+          "source": "투움바 닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "치즈닭갈비",
+          "source": "치즈닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "오리지널 닭갈비",
+          "source": "오리지널 닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "들기름 막국수",
+          "source": "들기름 막국수",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "리에또",
+      "distance": 257,
+      "category": "양식/세계음식",
+      "kind": "양식/세계음식",
+      "color": "#167a78",
+      "signal": "방문자 10,496 · 블로그 1,558",
+      "address": "서울 서초구 방배천로4안길 20",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "아마트리치아나 파스타",
+          "source": "아마트리치아나 파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "치즈냄비파스타",
+          "source": "치즈냄비파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "풍기 리조또",
+          "source": "풍기 리조또",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "만조 스테이크",
+          "source": "만조 스테이크",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "방배동쌀국수",
+      "distance": 423,
+      "category": "면/라멘",
+      "kind": "면/라멘",
+      "color": "#a13b6b",
+      "signal": "방문자 3,146 · 블로그 586",
+      "address": "서울 서초구 방배천로8길 34 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "분짜",
+          "source": "분짜",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "모듬쌀국수",
+          "source": "모듬쌀국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "파인애플볶음밥",
+          "source": "파인애플볶음밥",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "우삼겹쌀국수",
+          "source": "우삼겹쌀국수",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "title": "사당역 맛집 지도",
+  "eyebrow": "SADANG STATION · FOOD GUIDE",
+  "intro": "기준점은 <strong>사당역</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>사당역권 일반 식사</strong> 후보를 비교합니다.",
+  "source": "SOURCE: Naver Map + Place menu · origin: Sadang Station · general search scope",
+  "markerTitle": "사당역권 일반 식사 후보",
+  "notice": "사당역 일반 검색 후보입니다. 수치 반경은 별도로 제한하지 않았습니다. 메뉴·영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
+  "venues": [
+    {
+      "name": "램타운양꼬치 사당점",
+      "distance": 0,
+      "category": "중식/아시아",
+      "kind": "중식/아시아",
+      "color": "#9c2f61",
+      "signal": "방문자 2,966 · 블로그 1,227",
+      "address": "서울 동작구 동작대로1길 28 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "고급양갈비",
+          "source": "고급양갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "냄비마라탕",
+          "source": "냄비마라탕",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "양고기모듬",
+          "source": "양고기모듬",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "어향가지",
+          "source": "어향가지",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "투파인드피터 서울사당점",
+      "distance": 0,
+      "category": "양식/세계음식",
+      "kind": "양식/세계음식",
+      "color": "#c26500",
+      "signal": "방문자 169 · 블로그 34",
+      "address": "서울 서초구 방배천로2길 2 3층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "알리오 올리오",
+          "source": "알리오 올리오",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "해산물 로제 파스타",
+          "source": "해산물 로제 파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "라자냐",
+          "source": "라자냐",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "콰트로 치즈 뇨끼",
+          "source": "콰트로 치즈 뇨끼",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "리에또",
+      "distance": 0,
+      "category": "양식/세계음식",
+      "kind": "양식/세계음식",
+      "color": "#2365cc",
+      "signal": "방문자 10,496 · 블로그 1,558",
+      "address": "서울 서초구 방배천로4안길 20",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "아마트리치아나 파스타",
+          "source": "아마트리치아나 파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "치즈냄비파스타",
+          "source": "치즈냄비파스타",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "풍기 리조또",
+          "source": "풍기 리조또",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "만조 스테이크",
+          "source": "만조 스테이크",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "계탄언니 사당본점",
+      "distance": 0,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#27863c",
+      "signal": "방문자 6,623 · 블로그 2,628",
+      "address": "서울 관악구 과천대로 951 지하 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "투움바 닭갈비",
+          "source": "투움바 닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "치즈닭갈비",
+          "source": "치즈닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "오리지널 닭갈비",
+          "source": "오리지널 닭갈비",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "들기름 막국수",
+          "source": "들기름 막국수",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "방배동쌀국수",
+      "distance": 0,
+      "category": "면/라멘",
+      "kind": "면/라멘",
+      "color": "#7352aa",
+      "signal": "방문자 3,146 · 블로그 586",
+      "address": "서울 서초구 방배천로8길 34 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "분짜",
+          "source": "분짜",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "모듬쌀국수",
+          "source": "모듬쌀국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "파인애플볶음밥",
+          "source": "파인애플볶음밥",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생안심쌀국수",
+          "source": "생안심쌀국수",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "그냥찌개집 사당역점",
+      "distance": 0,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#bb4d26",
+      "signal": "방문자 1,201 · 블로그 657",
+      "address": "서울 서초구 방배천로 12 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "돼지김치찌개",
+          "source": "돼지김치찌개",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "돼지김치구이",
+          "source": "돼지김치구이",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "통돼지김치찌개",
+          "source": "통돼지김치찌개",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "동태탕",
+          "source": "동태탕",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "가우리집",
+      "distance": 0,
+      "category": "한식/전골",
+      "kind": "한식/전골",
+      "color": "#167a78",
+      "signal": "방문자 1,985 · 블로그 1,425",
+      "address": "서울 서초구 청두곶길 5 1층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "가오리조림",
+          "source": "가오리조림",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "코다리조림",
+          "source": "코다리조림",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생대구탕",
+          "source": "생대구탕",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "오징어순대",
+          "source": "오징어순대",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "생어거스틴 파스텔시티점",
+      "distance": 0,
+      "category": "중식/아시아",
+      "kind": "중식/아시아",
+      "color": "#a13b6b",
+      "signal": "방문자 2,694 · 블로그 791",
+      "address": "서울 서초구 방배천로 11 4층",
+      "reason": "네이버 Place 메뉴 기준 일반 식사 후보.",
+      "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.",
+      "menuEvidence": [
+        {
+          "display": "똠얌꿍",
+          "source": "똠얌꿍",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "푸 팟 퐁커리",
+          "source": "푸 팟 퐁커리",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "팟타이 꿍",
+          "source": "팟타이 꿍",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "나시고랭",
+          "source": "나시고랭",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    }
+  ]
+}
