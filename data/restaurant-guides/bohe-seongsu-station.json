@@ -1,12 +1,12 @@
 {
   "config": {
     "title": "성수역 맛집 지도",
-    "description": "성수역 일반 추천과 보헤의 개인 맛집 DB 저장 후보를 같은 화면에서 비교하는 지도입니다.",
+    "description": "보헤의 개인 맛집 DB 후보를 네이버 Place 신호와 메뉴로 대조하고, 레퍼런스 후보와 비교하는 성수역 지도입니다.",
     "eyebrow": "SEONGSU STATION · FOOD GUIDE",
-    "intro": "기준점은 <strong>성수역 2호선</strong>입니다. 일반 추천은 레퍼런스의 <strong>500m 안쪽 식사 후보</strong>, 보헤 추천은 <strong>개인 DB에 저장된 성수권 후보</strong>를 같은 화면에서 비교합니다.",
-    "source": "SOURCE: Naver Map summary + menu snippets · origin: Seongsu Station · general radius: ≤ 500m straight-line",
-    "notice": "일반 추천은 성수역 500m 안쪽 레퍼런스 후보입니다. 보헤 추천은 개인 DB 저장 기록만으로 구성했으며 메뉴와 현재 영업 정보가 없는 DB 후보는 임의로 추가하지 않았습니다. 영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
-    "markerHelper": "성수역 기준 직선거리, 10m 단위 반올림",
+    "intro": "기준점은 <strong>성수역 2호선</strong>입니다. <strong>보헤 추천</strong>은 개인 DB 후보를 네이버 Place와 대조해 신호·주소·메뉴를 정리했고, <strong>레퍼런스</strong> 탭에서 비교 후보를 확인할 수 있습니다.",
+    "source": "SOURCE: 보헤 DB candidates + Naver Place signal/menu · origin: Seongsu Station · reference radius: ≤ 500m straight-line",
+    "notice": "보헤 추천은 개인 DB에 저장된 후보를 네이버 Place로 대조한 결과입니다. 레퍼런스는 성수역 500m 안쪽 비교 후보입니다. 영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
+    "markerHelper": "성수역 기준 네이버 지도 공개 좌표 직선거리",
     "distanceFilters": [
       {
         "value": "all",
@@ -32,10 +32,33 @@
   },
   "modeConfig": {
     "general": {
-      "label": "일반 추천",
+      "label": "보헤 추천",
+      "radiusLabel": "≤ 729m",
+      "bestFor": "보헤 DB",
+      "markerTitle": "보헤 추천 · 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 저장",
+          "venue": "르프리크 성수",
+          "copy": "보헤 DB 후보 중 성수역에서 가장 가까운 선택입니다."
+        },
+        {
+          "title": "한식 선택",
+          "venue": "천하제일 솥뚜껑",
+          "copy": "보헤 DB에서 저장된 성수권 솥뚜껑 구이 후보입니다."
+        },
+        {
+          "title": "스시 선택",
+          "venue": "기후",
+          "copy": "보헤 DB에서 저장된 성수권 제철 생선 오마카세 후보입니다."
+        }
+      ]
+    },
+    "bohe": {
+      "label": "레퍼런스",
       "radiusLabel": "≤ 500m",
-      "bestFor": "식사",
-      "markerTitle": "성수역에서 가까운 순서",
+      "bestFor": "비교",
+      "markerTitle": "레퍼런스 · 가까운 순서",
       "quickPicks": [
         {
           "title": "가장 가까운 식사",
@@ -53,32 +76,139 @@
           "copy": "전골 중심 한식 식사를 원할 때의 후보입니다."
         }
       ]
-    },
-    "bohe": {
-      "label": "보헤 추천",
-      "radiusLabel": "≤ 620m",
-      "bestFor": "보헤 DB",
-      "markerTitle": "보헤 추천 · 가까운 순서",
-      "quickPicks": [
-        {
-          "title": "가장 가까운 저장",
-          "venue": "르프리크 성수",
-          "copy": "성수역에서 가장 가까운 보헤 DB 저장 후보입니다."
-        },
-        {
-          "title": "한식 선택",
-          "venue": "천하제일 솥뚜껑",
-          "copy": "성수역권 한식으로 저장된 후보입니다."
-        },
-        {
-          "title": "일식 선택",
-          "venue": "기후",
-          "copy": "성수이로에 저장된 일식당 후보입니다."
-        }
-      ]
     }
   },
   "general": [
+    {
+      "name": "르프리크 성수",
+      "markerLabel": "르프리크",
+      "distance": 293,
+      "category": "양식/세계음식",
+      "kind": "햄버거",
+      "color": "#8f3260",
+      "signal": "방문자 리뷰 1,374 · 블로그 2,746",
+      "address": "서울 성동구 연무장5길 9-16 B103",
+      "menuEvidence": [
+        {
+          "display": "내쉬빌 핫치킨 버거",
+          "source": "내쉬빌 핫치킨 버거",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "스모키 베이컨 핫치킨",
+          "source": "스모키 베이컨 핫치킨",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "SICILIAN",
+          "source": "SICILIAN",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다.",
+      "rationale": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다."
+    },
+    {
+      "name": "천하제일 솥뚜껑",
+      "markerLabel": "천하제일",
+      "distance": 388,
+      "category": "한식/전골",
+      "kind": "한식",
+      "color": "#c66e00",
+      "signal": "방문자 리뷰 1,545 · 블로그 462",
+      "address": "서울 성동구 성수이로7길 27 1층",
+      "menuEvidence": [
+        {
+          "display": "유황 생삼겹",
+          "source": "유황 생삼겹",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "유황 생목살",
+          "source": "유황 생목살",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "자가두부 두루치기",
+          "source": "자가두부 두루치기",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다.",
+      "rationale": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다."
+    },
+    {
+      "name": "기후",
+      "markerLabel": "기후",
+      "distance": 450,
+      "category": "일식/스시",
+      "kind": "일식당",
+      "color": "#2d7b90",
+      "signal": "방문자 리뷰 1,074 · 블로그 1,043",
+      "address": "서울 성동구 성수이로 66 1층",
+      "menuEvidence": [
+        {
+          "display": "런치 오마카세",
+          "source": "런치 오마카세",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "디너 오마카세",
+          "source": "디너 오마카세",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "제철 생선 스시",
+          "source": "제철 생선 스시",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다.",
+      "rationale": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다."
+    },
+    {
+      "name": "스시라온",
+      "markerLabel": "스시라온",
+      "distance": 729,
+      "category": "일식/스시",
+      "kind": "일식당 · 인접권",
+      "color": "#6c4fa3",
+      "signal": "방문자 리뷰 86 · 블로그 274",
+      "address": "서울 성동구 성수일로 10 1층",
+      "menuEvidence": [
+        {
+          "display": "런치 카운터",
+          "source": "런치 카운터",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "디너 카운터",
+          "source": "디너 카운터",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "런치 오마카세",
+          "source": "런치 오마카세",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다.",
+      "rationale": "보헤 DB 저장 후보. 네이버 Place로 지점·주소·메뉴 신호를 대조했습니다."
+    }
+  ],
+  "bohe": [
     {
       "name": "샤브인서울 성수점",
       "markerLabel": "샤브인서울",
@@ -366,80 +496,6 @@
       ],
       "reason": "스테이크·잠봉 파스타·뇨끼가 확인되는 양식 후보.",
       "rationale": "조금 더 걸어도 스테이크와 파스타로 식사 결을 잡을 때."
-    }
-  ],
-  "bohe": [
-    {
-      "name": "르프리크 성수",
-      "markerLabel": "르프리크",
-      "distance": 150,
-      "category": "햄버거",
-      "kind": "restaurant",
-      "color": "#d66a2e",
-      "signal": "미확인",
-      "address": "성동구 연무장5길 9-16, B103",
-      "menuEvidence": [],
-      "dbOnly": true,
-      "reason": "보헤 DB에 성수권 햄버거로 저장된 후보.",
-      "rationale": "DB 저장 분류: 햄버거. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {
-        "lat": 37.5443066,
-        "lng": 127.0526884
-      }
-    },
-    {
-      "name": "천하제일 솥뚜껑",
-      "markerLabel": "천하제일",
-      "distance": 430,
-      "category": "한식",
-      "kind": "restaurant",
-      "color": "#267a55",
-      "signal": "미확인",
-      "address": "성동구 성수이로7길 27, 1층 105-1호",
-      "menuEvidence": [],
-      "dbOnly": true,
-      "reason": "보헤 DB에 성수권 한식으로 저장된 후보.",
-      "rationale": "DB 저장 분류: 한식. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {
-        "lat": 37.5415261,
-        "lng": 127.053683
-      }
-    },
-    {
-      "name": "기후",
-      "markerLabel": "기후",
-      "distance": 580,
-      "category": "일식당",
-      "kind": "restaurant",
-      "color": "#8a5db2",
-      "signal": "미확인",
-      "address": "성동구 성수이로 66, 서울숲드림타워 1층 106호",
-      "menuEvidence": [],
-      "dbOnly": true,
-      "reason": "보헤 DB에 성수이로 일식당으로 저장된 후보.",
-      "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {
-        "lat": 37.540619,
-        "lng": 127.056132
-      }
-    },
-    {
-      "name": "스시라온",
-      "markerLabel": "스시라온",
-      "distance": 620,
-      "category": "일식당",
-      "kind": "restaurant",
-      "color": "#187d92",
-      "signal": "미확인",
-      "address": "성동구 성수일로 10, 서울숲ITCT 1층 106호",
-      "menuEvidence": [],
-      "dbOnly": true,
-      "reason": "보헤 DB에 성수권 일식당으로 저장된 후보.",
-      "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
-      "coordinates": {
-        "lat": 37.5412781,
-        "lng": 127.0488281
-      }
     }
   ]
 }
