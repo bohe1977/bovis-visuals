@@ -29,9 +29,9 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     assert "reference source URL" in contract["actions"]["savedSourceRule"]
     assert contract["distance"]["placeholderValueForbidden"] == 0
     assert contract["distance"]["unit"] == "m"
-    assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh"
+    assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueNameOrSearchQuery)}?c=15.00,0,0,0,dh"
     assert contract["actions"]["secondaryLabel"] == "검색 링크"
-    assert contract["actions"]["naverIntegratedSearchTemplate"] == "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueName)}"
+    assert contract["actions"]["naverIntegratedSearchTemplate"] == "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueNameOrSearchQuery)}"
     assert contract["actions"]["distinctDestinationRule"].startswith("Render both 지도")
 
 

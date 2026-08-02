@@ -437,6 +437,7 @@
     },
     {
       "name": "기후",
+      "searchQuery": "기후 성수",
       "markerLabel": "기후",
       "distance": 450,
       "category": "일식/스시",
