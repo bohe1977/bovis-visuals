@@ -23,6 +23,13 @@
       "slug": "yukmildo-500m",
       "data": "data/restaurant-guides/yukmildo-500m.json",
       "output": "2026-08-02-yukmildo-500m-restaurants/index.html"
+    },
+    {
+      "slug": "hakdong-station-second-round",
+      "data": "data/restaurant-guides/hakdong-station-second-round.json",
+      "output": "2026-08-02-hakdong-station-second-round/index.html",
+      "shareAlias": "hakdong-second-round/index.html",
+      "archiveHref": "hakdong-second-round/"
     }
   ]
 }

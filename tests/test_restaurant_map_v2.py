@@ -26,4 +26,5 @@ def test_manifest_outputs_and_aliases_are_current():
         [sys.executable, str(VERIFY), "--check"], cwd=ROOT, text=True, capture_output=True
     )
     assert result.returncode == 0, result.stderr
-    assert "verified 4 restaurant guides" in result.stdout
+    expected = len(json.loads(MANIFEST.read_text(encoding="utf-8"))["guides"])
+    assert f"verified {expected} restaurant guides" in result.stdout

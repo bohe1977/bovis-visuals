@@ -1,0 +1,37 @@
+{
+  "config": {
+    "title": "학동역 2차 맛집",
+    "description": "학동역 기준, 술과 안주를 함께 즐기기 좋은 2차 후보를 네이버 Place 신호로 비교하는 지도",
+    "eyebrow": "HAKDONG STATION · SECOND ROUND",
+    "intro": "기준점은 <strong>학동역</strong>입니다. 이자카야·와인바·요리주점 중 <strong>2차에 맞는 안주와 주류</strong>를 기준으로 골랐습니다.",
+    "source": "SOURCE: Naver Place listing + rendered menu · origin: 학동역 · distance: straight-line",
+    "notice": "거리는 학동역 좌표에서 각 네이버 Place 좌표까지의 직선거리입니다. 영업시간·휴무·대기는 변동되므로 출발 전 네이버 지도를 다시 확인하세요. 정주의 맛집 DB에서는 이 권역의 현재 Place 검증 2차 후보를 찾지 못해 이번 페이지는 일반 추천만 표시합니다.",
+    "markerHelper": "학동역 기준 직선거리",
+    "distanceFilters": [
+      {"value":"all","label":"전체"},
+      {"value":"500","label":"0~500m"},
+      {"value":"800","label":"500~800m"},
+      {"value":"1000","label":"800m+"}
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label":"일반 추천",
+      "radiusLabel":"≤ 1km",
+      "bestFor":"학동역 2차",
+      "markerTitle":"학동역에서 가까운 순서",
+      "quickPicks":[
+        {"title":"가장 가까운 와인","venue":"피헨","copy":"학동역에서 약 370m, 와인과 식사형 안주를 함께 보기 좋은 후보입니다."},
+        {"title":"꼬치·사케","venue":"야키토리요이야마","copy":"야키토리와 사시미로 2차를 이어가기 좋은 이자카야입니다."},
+        {"title":"늦은 시간","venue":"용용선생 논현점","copy":"조회 시점 네이버 Place에 01:00 라스트오더가 표시된 요리주점입니다."}
+      ]
+    }
+  },
+  "general": [
+    {"name":"피헨","searchQuery":"피헨 학동","distance":368,"category":"와인바","kind":"와인바","color":"#9c2f61","signal":"방문자 719 · 블로그 677","address":"서울 강남구 도산대로30길 39","reason":"학동역에서 가장 가까운 와인 중심 2차 후보.","rationale":"네이버 메뉴에서 파스타·하몽·감바스가 확인돼 와인과 가벼운 식사형 안주 조합에 맞습니다.","placeUrl":"https://m.place.naver.com/restaurant/1055688781/home","menuEvidence":[{"display":"베이컨크림파스타","source":"베이컨버섯팬네크림파스타","sourceType":"등록","kind":"food"},{"display":"멜론 하몽","source":"멜론 하몽(멜론반통)","sourceType":"등록","kind":"food"},{"display":"감바스","source":"감바스 알 하이요","sourceType":"등록","kind":"food"}],"markerLabel":"피헨"},
+    {"name":"황재벌 강남점","distance":530,"category":"요리주점","kind":"요리주점","color":"#c26500","signal":"방문자 1,727 · 블로그 1,103","address":"서울 강남구 언주로136길 7 1층","reason":"매콤한 해산물 안주를 여럿이 나눠 먹기 좋은 요리주점.","rationale":"쭈꾸미·꼼장어·닭발 등 술안주 중심의 네이버 등록 메뉴가 확인됩니다.","placeUrl":"https://m.place.naver.com/restaurant/1712982280/home","menuEvidence":[{"display":"양념 쭈꾸미","source":"쭈꾸미(양념)","sourceType":"등록","kind":"food"},{"display":"소금 꼼장어","source":"왕꼼장어(소금)","sourceType":"등록","kind":"food"},{"display":"닭발","source":"닭발","sourceType":"등록","kind":"food"}],"markerLabel":"황재벌"},
+    {"name":"야키토리요이야마","distance":806,"category":"이자카야","kind":"이자카야","color":"#126c74","signal":"방문자 351 · 블로그 517","address":"서울 강남구 도산대로17길 8 1층","reason":"꼬치와 사케·맥주 조합을 원하는 2차 이자카야.","rationale":"세세리·하라미·고마칸파치 등 꼬치와 사시미 메뉴가 네이버에 등록돼 있습니다.","placeUrl":"https://m.place.naver.com/restaurant/1148577769/home","menuEvidence":[{"display":"세세리","source":"야키토리요이야마 추천 세세리(닭목살)","sourceType":"등록","kind":"food"},{"display":"하라미","source":"하라미(안창살)","sourceType":"등록","kind":"food"},{"display":"고마칸파치","source":"고마칸파치","sourceType":"등록","kind":"food"}],"markerLabel":"요이야마"},
+    {"name":"아카라","distance":867,"category":"이자카야","kind":"이자카야","color":"#5750a2","signal":"방문자 474 · 블로그 393","address":"서울 강남구 봉은사로43길 14 1층","reason":"사시미와 숯불구이로 조금 더 진하게 이어가기 좋은 이자카야.","rationale":"오늘의 사시미·금태 숯불구이·고등어 봉초밥이 네이버 메뉴에 표시됩니다.","placeUrl":"https://m.place.naver.com/restaurant/1842455561/home","menuEvidence":[{"display":"오늘의 사시미","source":"오늘의 사시미 (매일변동)","sourceType":"등록","kind":"food"},{"display":"금태 숯불구이","source":"금태 숯불 구이","sourceType":"등록","kind":"food"},{"display":"고등어 봉초밥","source":"고등어 봉초밥","sourceType":"등록","kind":"food"}],"markerLabel":"아카라"},
+    {"name":"용용선생 논현점","distance":980,"category":"요리주점","kind":"요리주점","color":"#3c6e37","signal":"방문자 1,852 · 블로그 947","address":"서울 강남구 학동로2길 54 1·2층","reason":"마라전골·돌짜장처럼 든든한 안주와 늦은 라스트오더가 강점인 후보.","rationale":"네이버 Place 조회 시점에 01:00 라스트오더가 표시됐고, 전골·돌짜장 메뉴가 확인됩니다.","placeUrl":"https://m.place.naver.com/restaurant/1961194724/home","menuEvidence":[{"display":"화산마라전골","source":"화산마라전골","sourceType":"등록","kind":"food"},{"display":"용용돌짜장","source":"용용돌짜장(기본/마라)","sourceType":"등록","kind":"food"},{"display":"돌판로제샹궈","source":"돌판로제샹궈","sourceType":"등록","kind":"food"}],"markerLabel":"용용선생"}
+  ]
+}
