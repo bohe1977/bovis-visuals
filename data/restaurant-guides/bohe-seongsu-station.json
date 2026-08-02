@@ -1,0 +1,93 @@
+{
+  "config": {
+    "title": "보헤의 DB, 성수역 맛집 지도",
+    "description": "보헤의 개인 맛집 DB에 저장된 성수역권 맛집 4곳을 정리한 지도입니다.",
+    "eyebrow": "BOHE DB · SEONGSU",
+    "intro": "보헤의 개인 맛집 DB에서 <strong>성수역권으로 확인된 4곳</strong>만 정리했습니다. 메뉴와 현재 영업 정보는 저장 원문에 없으므로 임의로 추가하지 않았습니다.",
+    "source": "SOURCE: 보헤의 개인 맛집 DB · origin: 성수역 · 4 saved venues · 거리: 직선거리",
+    "notice": "보헤의 개인 DB 저장 기록만으로 구성했습니다. 메뉴와 현재 영업 정보는 DB 원문에 없어 표시하지 않았습니다. 방문 전 지도에서 최신 영업 정보와 예약 가능 여부를 확인하세요.",
+    "markerHelper": "성수역 기준 직선거리, 10m 단위 반올림",
+    "distanceFilters": [
+      {"value": "all", "label": "전체"},
+      {"value": "100", "label": "0~100m"},
+      {"value": "300", "label": "100~300m"},
+      {"value": "500", "label": "300~500m"},
+      {"value": "700", "label": "500~700m"}
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "보헤 추천",
+      "radiusLabel": "≤ 700m",
+      "bestFor": "보헤 DB",
+      "markerTitle": "성수역 보헤 DB 후보",
+      "quickPicks": [
+        {"title": "가장 가까운 저장", "venue": "르프리크 성수", "copy": "성수역에서 가장 가까운 보헤 DB 저장 후보입니다."},
+        {"title": "한식 선택", "venue": "천하제일 솥뚜껑", "copy": "성수역권 한식으로 저장된 후보입니다."},
+        {"title": "일식 선택", "venue": "기후", "copy": "성수이로에 저장된 일식당 후보입니다."}
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "르프리크 성수",
+      "markerLabel": "르프리크",
+      "distance": 150,
+      "category": "햄버거",
+      "kind": "restaurant",
+      "color": "#d66a2e",
+      "signal": "미확인",
+      "address": "성동구 연무장5길 9-16, B103",
+      "menuEvidence": [],
+      "dbOnly": true,
+      "reason": "보헤 DB에 성수권 햄버거로 저장된 후보.",
+      "rationale": "DB 저장 분류: 햄버거. 메뉴·현재 영업 정보는 DB 원문 미포함.",
+      "coordinates": {"lat": 37.5443066, "lng": 127.0526884}
+    },
+    {
+      "name": "천하제일 솥뚜껑",
+      "markerLabel": "천하제일",
+      "distance": 430,
+      "category": "한식",
+      "kind": "restaurant",
+      "color": "#267a55",
+      "signal": "미확인",
+      "address": "성동구 성수이로7길 27, 1층 105-1호",
+      "menuEvidence": [],
+      "dbOnly": true,
+      "reason": "보헤 DB에 성수권 한식으로 저장된 후보.",
+      "rationale": "DB 저장 분류: 한식. 메뉴·현재 영업 정보는 DB 원문 미포함.",
+      "coordinates": {"lat": 37.5415261, "lng": 127.0536830}
+    },
+    {
+      "name": "기후",
+      "markerLabel": "기후",
+      "distance": 580,
+      "category": "일식당",
+      "kind": "restaurant",
+      "color": "#8a5db2",
+      "signal": "미확인",
+      "address": "성동구 성수이로 66, 서울숲드림타워 1층 106호",
+      "menuEvidence": [],
+      "dbOnly": true,
+      "reason": "보헤 DB에 성수이로 일식당으로 저장된 후보.",
+      "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
+      "coordinates": {"lat": 37.5406190, "lng": 127.0561320}
+    },
+    {
+      "name": "스시라온",
+      "markerLabel": "스시라온",
+      "distance": 620,
+      "category": "일식당",
+      "kind": "restaurant",
+      "color": "#187d92",
+      "signal": "미확인",
+      "address": "성동구 성수일로 10, 서울숲ITCT 1층 106호",
+      "menuEvidence": [],
+      "dbOnly": true,
+      "reason": "보헤 DB에 성수권 일식당으로 저장된 후보.",
+      "rationale": "DB 저장 분류: 일식당. 메뉴·현재 영업 정보는 DB 원문 미포함.",
+      "coordinates": {"lat": 37.5412781, "lng": 127.0488281}
+    }
+  ]
+}

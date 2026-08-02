@@ -26,6 +26,9 @@ def fail(message):
 
 def validate_menu_evidence(venue):
     evidence = venue["menuEvidence"]
+    if venue.get("dbOnly") and not evidence:
+        venue["menus"] = []
+        return
     if not 1 <= len(evidence) <= 3 or any(not MENU_KEYS <= set(item) for item in evidence):
         fail("menu evidence must contain 1–3 display/source/sourceType/kind items")
     if any(len(item["display"].strip()) > 12 for item in evidence):

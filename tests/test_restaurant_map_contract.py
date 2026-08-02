@@ -20,10 +20,10 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     }
     assert contract["labelTypography"] == {
         "appliesTo": ["CANDIDATES", "RADIUS", "CLOSEST", "BEST FOR", "DISTANCE", "FOOD"],
-        "color": "#181818",
-        "fontWeight": 800,
-        "fontSize": "12px",
-        "fontFamily": "Geist, Arial, sans-serif",
+        "color": "#343434",
+        "fontWeight": 700,
+        "fontSize": "11px",
+        "fontFamily": "ui-monospace, monospace",
     }
     assert contract["distance"]["placeholderValueForbidden"] == 0
     assert contract["distance"]["unit"] == "m"
@@ -52,5 +52,6 @@ def test_sadang_candidates_have_verified_nonzero_distances():
     venues = sadang["general"]
 
     assert "사당역 좌표" in sadang["config"]["distanceMethod"]
+    assert [item["label"] for item in sadang["config"]["distanceFilters"]] == ["전체", "0~100m", "100~300m", "300~500m"]
     assert all(venue["distance"] > 0 and venue["distance"] % 10 == 0 for venue in venues)
     assert all(set(venue["coordinates"]) == {"lat", "lng"} for venue in venues)

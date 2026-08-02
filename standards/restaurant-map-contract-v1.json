@@ -5,10 +5,10 @@
   "candidate_unit": "bars",
   "labelTypography": {
     "appliesTo": ["CANDIDATES", "RADIUS", "CLOSEST", "BEST FOR", "DISTANCE", "FOOD"],
-    "color": "#181818",
-    "fontWeight": 800,
-    "fontSize": "12px",
-    "fontFamily": "Geist, Arial, sans-serif"
+    "color": "#343434",
+    "fontWeight": 700,
+    "fontSize": "11px",
+    "fontFamily": "ui-monospace, monospace"
   },
   "distance": {
     "unit": "m",

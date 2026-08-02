@@ -71,9 +71,22 @@ def test_renderer_embeds_both_modes_as_data_for_synchronized_client_rendering(tm
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in html
     assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in html
     assert ".menus { margin:0; gap:7px; flex-wrap:nowrap" not in html
-    assert ".stat-label { color:#181818; font:800 12px/1 Geist,Arial,sans-serif; letter-spacing:.08em; }" in html
-    assert ".filter-label { color:#181818; text-align:right; font:800 12px/1 Geist,Arial,sans-serif; letter-spacing:.08em; }" in html
+    assert ".stat-label { color:#343434; font:700 11px/1 ui-monospace,monospace; letter-spacing:.08em; }" in html
+    assert ".filter-label { color:#343434; text-align:right; font:700 11px/1 ui-monospace,monospace; letter-spacing:.08em; }" in html
     assert ".marker-distance { display:block; color:#181818; font:800 11px/1.25 Geist,Arial,sans-serif; }" in html
+
+
+def test_renderer_allows_db_only_venue_without_invented_menu_chips(tmp_path):
+    payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
+    venue = payload["general"][0]
+    venue["dbOnly"] = True
+    venue["menuEvidence"] = []
+
+    result = render_payload(tmp_path, payload)
+
+    assert result.returncode == 0, result.stderr
+    html = (tmp_path / "guide.html").read_text(encoding="utf-8")
+    assert "const menus = venue.menus.length" in html
 
 
 def test_renderer_treats_empty_optional_bohe_array_as_general_only(tmp_path):
