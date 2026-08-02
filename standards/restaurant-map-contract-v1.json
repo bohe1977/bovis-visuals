@@ -47,7 +47,7 @@
     "desktopPadding": "19px 18px 18px",
     "mobilePadding": "21px 12px",
     "helper": {"color": "#181818", "fontWeight": 800, "fontSize": "12px", "fontFamily": "Geist, Arial, sans-serif"},
-    "distance": {"color": "#555555", "fontWeight": 400, "fontSize": "10px"},
+    "distance": {"color": "#181818", "fontWeight": 800, "fontSize": "11px", "fontFamily": "Geist, Arial, sans-serif"},
     "markerName": {"color": "#555555", "fontWeight": 700}
   }
 }
