@@ -1,10 +1,10 @@
 {
-  "report_date_kst": "2026-08-01",
-  "official_date_mlb": "2026-07-31",
-  "generated_at": "2026-08-01T16:52:07+09:00",
+  "report_date_kst": "2026-08-02",
+  "official_date_mlb": "2026-08-01",
+  "generated_at": "2026-08-02T16:53:06+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회",
-    "method": "KST 2026-08-01 UTC 창(2026-07-31T15:00:00Z–2026-08-01T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.",
+    "method": "KST 2026-08-02 UTC 창(2026-08-01T15:00:00Z–2026-08-02T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.",
     "notes": [
       "MLB 공식 schedule에서 KST 대상 창에 15개 MLB 경기를 확인했고, 네이버·다음 KST schedule API는 각각 15개·15개로 일치했다.",
       "다저스·자이언츠의 실제 대상 경기 2/2경기를 네이버·다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 공개 API는 HTTP 200 응답을 확인했다.",
@@ -14,97 +14,71 @@
   "team_games": [
     {
       "section_title": "LA 다저스 경기",
-      "game_pk": 823922,
-      "officialDate": "2026-07-31",
-      "game_date_utc": "2026-08-01T02:10:00Z",
-      "naver_game_id": "20260801BOLA0",
-      "daum_game_id": 80104946,
+      "game_pk": 823920,
+      "officialDate": "2026-08-01",
+      "game_date_utc": "2026-08-02T01:10:00Z",
+      "naver_game_id": "20260802BOLA0",
+      "daum_game_id": 80104960,
       "venue": "UNIQLO Field at Dodger Stadium",
-      "start_time_kst": "11:10",
+      "start_time_kst": "10:10",
       "status": "경기 종료",
       "away": "보스턴",
       "home": "LA 다저스",
       "winner_side": "away",
-      "away_score": 9,
-      "home_score": 4,
-      "away_hits": 12,
+      "away_score": 3,
+      "home_score": 2,
+      "away_hits": 4,
       "home_hits": 10,
       "away_errors": 0,
-      "home_errors": 2,
-      "winner_pitcher": "Brayan Bello",
-      "loser_pitcher": "Cole Irvin",
-      "save_pitcher": null,
-      "pitcher_record": "Brayan Bello 승리, Cole Irvin 패전",
-      "headline": "다저스가 오타니의 2점포에도 불구하고 보스턴에 4-9 패배",
+      "home_errors": 0,
+      "winner_pitcher": "Justin Slaten",
+      "loser_pitcher": "Yoshinobu Yamamoto",
+      "save_pitcher": "Aroldis Chapman",
+      "pitcher_record": "Justin Slaten 승리, Yoshinobu Yamamoto 패전, Aroldis Chapman 세이브",
+      "headline": "보스턴, LA 다저스에 3–2 승리",
       "points": [
-        "보스턴은 3회 프리먼의 실책으로 2점을 보태며 흐름을 잡았다.",
-        "다저스는 5회 오타니의 2점 홈런으로 추격했지만, 7회 보스턴이 라파엘라의 2점포 등 4득점으로 달아났다.",
-        "라파엘라는 5타수 3안타 1홈런 2타점 2득점으로 보스턴 타선을 이끌었다.",
-        "다저스는 10안타 4득점을 냈지만 보스턴의 12안타 9득점을 막지 못했다."
+        "투수 기록: Justin Slaten 승리, Yoshinobu Yamamoto 패전, Aroldis Chapman 세이브.",
+        "득점 흐름: 보스턴 4안타 3득점, LA 다저스 10안타 2득점.",
+        "핵심 타자: 보스턴 Ceddanne Rafaela 4타수 2안타 2홈런 2타점 2득점."
       ],
       "opponent_label": "LA 다저스",
-      "opponent_effort": "오타니는 5타수 2안타 1홈런 2타점 2득점을 기록했고, 프리먼도 2안타를 보탰다.",
+      "opponent_effort": "LA 다저스는 Teoscar Hernández 4타수 3안타 1홈런 2타점 1득점을 기록했지만 10안타 2득점에 그쳤다.",
       "daum_verified": true,
-      "naver_verified": true,
-      "decisions": [
-        {
-          "type": "win",
-          "label": "승",
-          "name": "Brayan Bello"
-        },
-        {
-          "type": "loss",
-          "label": "패",
-          "name": "Cole Irvin"
-        }
-      ]
+      "naver_verified": true
     },
     {
       "section_title": "샌프란시스코 자이언츠 경기",
-      "game_pk": 823272,
-      "officialDate": "2026-07-31",
-      "game_date_utc": "2026-08-01T01:45:00Z",
-      "naver_game_id": "20260801SFSD0",
-      "daum_game_id": 80104945,
+      "game_pk": 823269,
+      "officialDate": "2026-08-01",
+      "game_date_utc": "2026-08-02T00:40:00Z",
+      "naver_game_id": "20260802SFSD0",
+      "daum_game_id": 80104959,
       "venue": "Petco Park",
-      "start_time_kst": "10:45",
+      "start_time_kst": "09:40",
       "status": "경기 종료",
       "away": "샌프란시스코",
       "home": "샌디에이고",
       "winner_side": "home",
-      "away_score": 0,
-      "home_score": 7,
-      "away_hits": 2,
-      "home_hits": 12,
+      "away_score": 5,
+      "home_score": 6,
+      "away_hits": 12,
+      "home_hits": 10,
       "away_errors": 0,
       "home_errors": 0,
-      "winner_pitcher": "Yuki Matsui",
-      "loser_pitcher": "Carson Whisenhunt",
-      "save_pitcher": "Germán Márquez",
-      "pitcher_record": "Yuki Matsui 승리, Carson Whisenhunt 패전, Germán Márquez 세이브",
-      "headline": "자이언츠가 샌디에이고 타선에 막혀 0-7 완패",
+      "winner_pitcher": "Mason Miller",
+      "loser_pitcher": "Dylan Smith",
+      "save_pitcher": null,
+      "pitcher_record": "Mason Miller 승리, Dylan Smith 패전",
+      "headline": "샌프란시스코, 샌디에이고에 5–6 패배",
       "points": [
-        "샌디에이고는 1회 희생플라이와 캠푸사노 적시타로 먼저 2점을 냈다.",
-        "4회 보웬의 솔로포와 프랑스의 2타점 적시타로 격차를 6점으로 벌렸다.",
-        "프랑스는 2안타 3타점, 마차도는 희생플라이로 득점을 보탰다.",
-        "자이언츠는 2안타에 묶이며 득점 없이 경기를 마쳤다."
+        "투수 기록: Mason Miller 승리, Dylan Smith 패전.",
+        "득점 흐름: 샌디에이고 10안타 6득점, 샌프란시스코 12안타 5득점.",
+        "핵심 타자: 샌디에이고 Freddy Fermin 3타수 2안타 1홈런 3타점 1득점."
       ],
       "opponent_label": "샌프란시스코",
-      "opponent_effort": "아라에즈가 3타수 1안타를 기록했지만, 팀 타선은 2안타에 그쳤다.",
+      "opponent_effort": "샌프란시스코는 Osleivis Basabe 4타수 2안타 1홈런 4타점 1득점을 기록했지만 12안타 5득점에 그쳤다.",
       "daum_verified": true,
-      "naver_verified": true,
-      "decisions": [
-        {
-          "type": "win",
-          "label": "승",
-          "name": "Yuki Matsui"
-        },
-        {
-          "type": "loss",
-          "label": "패",
-          "name": "Carson Whisenhunt"
-        }
-      ]
+      "naver_verified": true
     }
   ],
   "batters": [
@@ -114,18 +88,18 @@
       "mlbam_id": 660271,
       "status": "출전",
       "position": "DH",
-      "at_bats": 5,
-      "hits": 2,
-      "rbi": 2,
-      "runs": 2,
-      "home_runs": 1,
-      "walks": 0,
+      "at_bats": 3,
+      "hits": 1,
+      "rbi": 0,
+      "runs": 0,
+      "home_runs": 0,
+      "walks": 1,
       "strikeouts": 1,
       "avg": ".291",
-      "obp": ".394",
+      "obp": ".395",
       "ops": ".939",
-      "season_stats_cutoff": "2026-07-31",
-      "daily_note": "DH · 2-5 | 1 HR, 1 2B, 1 K"
+      "season_stats_cutoff": "2026-08-01",
+      "daily_note": "DH · 1-3 | 1 BB, 1 K"
     },
     {
       "name": "이정후",
@@ -133,18 +107,18 @@
       "mlbam_id": 808982,
       "status": "출전",
       "position": "RF",
-      "at_bats": 3,
-      "hits": 0,
+      "at_bats": 5,
+      "hits": 1,
       "rbi": 0,
-      "runs": 0,
+      "runs": 1,
       "home_runs": 0,
       "walks": 0,
-      "strikeouts": 0,
-      "avg": ".300",
-      "obp": ".336",
-      "ops": ".768",
-      "season_stats_cutoff": "2026-07-31",
-      "daily_note": "RF · 0-3"
+      "strikeouts": 2,
+      "avg": ".298",
+      "obp": ".334",
+      "ops": ".763",
+      "season_stats_cutoff": "2026-08-01",
+      "daily_note": "RF · 1-5 | 2 K"
     },
     {
       "name": "바비 위트 주니어",
@@ -162,7 +136,7 @@
       "avg": ".279",
       "obp": ".350",
       "ops": ".800",
-      "season_stats_cutoff": "2026-07-31",
+      "season_stats_cutoff": "2026-08-01",
       "daily_note": "MLB 공식 boxscore: 타격 기록 없음"
     },
     {
@@ -171,18 +145,18 @@
       "mlbam_id": 545361,
       "status": "출전",
       "position": "CF",
-      "at_bats": 4,
-      "hits": 0,
+      "at_bats": 3,
+      "hits": 2,
       "rbi": 0,
-      "runs": 0,
+      "runs": 1,
       "home_runs": 0,
-      "walks": 0,
+      "walks": 1,
       "strikeouts": 1,
-      "avg": ".241",
-      "obp": ".389",
-      "ops": ".843",
-      "season_stats_cutoff": "2026-07-31",
-      "daily_note": "CF · 0-4 | 1 K"
+      "avg": ".245",
+      "obp": ".392",
+      "ops": ".848",
+      "season_stats_cutoff": "2026-08-01",
+      "daily_note": "CF · 2-3 | 1 BB, 1 K"
     },
     {
       "name": "무라카미 무네타카",
@@ -191,36 +165,36 @@
       "status": "출전",
       "position": "1B",
       "at_bats": 4,
-      "hits": 2,
-      "rbi": 2,
-      "runs": 2,
-      "home_runs": 1,
+      "hits": 1,
+      "rbi": 0,
+      "runs": 0,
+      "home_runs": 0,
       "walks": 0,
-      "strikeouts": 0,
+      "strikeouts": 3,
       "avg": ".244",
-      "obp": ".382",
-      "ops": ".935",
-      "season_stats_cutoff": "2026-07-31",
-      "daily_note": "1B · 2-4 | 1 HR"
+      "obp": ".380",
+      "ops": ".929",
+      "season_stats_cutoff": "2026-08-01",
+      "daily_note": "1B · 1-4 | 3 K"
     },
     {
       "name": "송성문",
       "team": "샌디에이고",
       "mlbam_id": 823550,
-      "status": "비출전",
-      "position": "—",
-      "at_bats": null,
-      "hits": null,
-      "rbi": null,
-      "runs": null,
-      "home_runs": null,
-      "walks": null,
-      "strikeouts": null,
+      "status": "출전",
+      "position": "2B",
+      "at_bats": 0,
+      "hits": 0,
+      "rbi": 0,
+      "runs": 0,
+      "home_runs": 0,
+      "walks": 0,
+      "strikeouts": 0,
       "avg": ".212",
       "obp": ".316",
       "ops": ".599",
-      "season_stats_cutoff": "2026-07-31",
-      "daily_note": "MLB 공식 boxscore: 타격 기록 없음"
+      "season_stats_cutoff": "2026-08-01",
+      "daily_note": "2B · 0-0"
     },
     {
       "name": "김하성",
@@ -275,19 +249,8 @@
       "name": "폴 스킨스",
       "team": "피츠버그",
       "mlbam_id": 694973,
-      "appeared": true,
-      "status": "등판",
-      "role": "starter",
-      "game_decision": null,
-      "daily_innings": "4.0",
-      "daily_hits": 7,
-      "daily_runs": 5,
-      "daily_earned_runs": 5,
-      "daily_walks_hbp": 4,
-      "daily_strikeouts": 7,
-      "daily_home_runs": 2,
-      "daily_pitches": 100,
-      "era": "3.90"
+      "appeared": false,
+      "status": "등판 없음"
     },
     {
       "name": "고우석",
@@ -299,22 +262,22 @@
   ],
   "sources": {
     "mlb_official": [
-      "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-31",
       "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-01",
-      "https://statsapi.mlb.com/api/v1/game/822945/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/823272/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/823922/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/823999/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/824325/boxscore",
-      "https://statsapi.mlb.com/api/v1/game/824486/boxscore"
+      "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-02",
+      "https://statsapi.mlb.com/api/v1/game/822944/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/823269/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/823920/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/824000/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/824326/boxscore",
+      "https://statsapi.mlb.com/api/v1/game/824485/boxscore"
     ],
     "naver": [
-      "https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date=2026-08-01",
-      "https://api-gw.sports.naver.com/schedule/games?categoryId=mlb&gameDate=2026-08-01"
+      "https://m.sports.naver.com/wbaseball/schedule/index?category=mlb&date=2026-08-02",
+      "https://api-gw.sports.naver.com/schedule/games?categoryId=mlb&gameDate=2026-08-02"
     ],
     "daum": [
-      "https://sports.daum.net/schedule/mlb?date=20260801",
-      "https://sports.daum.net/prx/hermes/api/game/schedule.json?leagueCode=mlb&fromDate=20260801&toDate=20260801&callback=bovis"
+      "https://sports.daum.net/schedule/mlb?date=20260802",
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?leagueCode=mlb&fromDate=20260802&toDate=20260802&callback=bovis"
     ]
   }
 }

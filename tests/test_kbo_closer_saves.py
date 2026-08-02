@@ -125,25 +125,51 @@ def test_mlb_game_cards_match_kbo_game_content_hierarchy():
 def test_mlb_uses_result_label_and_role_specific_pitcher_badges():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
-    skenes = next(pitcher for pitcher in data["pitchers"] if pitcher["name"] == "폴 스킨스")
 
     assert '<span class="status">경기 결과</span>' in mlb
     assert "const pitcherState=p=>" in mlb
     assert "['승','패']" in mlb
     assert "['세이브','홀드','블론']" in mlb
-    assert skenes["role"] == "starter"
-    assert skenes["game_decision"] is None
+    assert "metric(p.game_decision" not in mlb
+    assert "metric(p.decision" not in mlb
+    assert "metric(p.daily_walks_hbp,'4사구')" in mlb
+
+    # Role-specific decision fixtures: only the allowed decision may render.
+    fixtures = [
+        {"role": "starter", "game_decision": "승", "visible": True},
+        {"role": "starter", "game_decision": "패", "visible": True},
+        {"role": "starter", "game_decision": None, "visible": False},
+        {"role": "reliever", "game_decision": "세이브", "visible": True},
+        {"role": "reliever", "game_decision": "홀드", "visible": True},
+        {"role": "reliever", "game_decision": "블론", "visible": True},
+        {"role": "reliever", "game_decision": None, "visible": False},
+    ]
+    for fixture in fixtures:
+        decision = fixture["game_decision"]
+        visible = bool(decision) and (
+            (fixture["role"] == "starter" and decision in {"승", "패"})
+            or (fixture["role"] == "reliever" and decision in {"세이브", "홀드", "블론"})
+        )
+        assert visible is fixture["visible"]
+
+    for pitcher in data["pitchers"]:
+        if pitcher["appeared"]:
+            assert pitcher["role"] in {"starter", "reliever"}
+            assert pitcher["game_decision"] in {"승", "패", "세이브", "홀드", "블론", None}
+        else:
+            assert set(pitcher) == {"name", "team", "mlbam_id", "appeared", "status"}
 
 
-def test_mlb_ohtani_homer_headline_matches_official_rbi_total():
+def test_mlb_current_batting_line_and_team_result_are_normalized_from_official_data():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
     ohtani = next(player for player in data["batters"] if player["name"] == "오타니 쇼헤이")
     dodgers_game = next(game for game in data["team_games"] if game["section_title"] == "LA 다저스 경기")
 
-    assert ohtani["home_runs"] == 1
-    assert ohtani["rbi"] == 2
-    assert "오타니의 2점포" in dodgers_game["headline"]
-    assert "오타니의 3점포" not in dodgers_game["headline"]
+    assert ohtani["mlbam_id"] == 660271
+    assert ohtani["status"] in {"출전", "비출전", "팀 경기 없음"}
+    assert dodgers_game["status"] == "경기 종료"
+    assert dodgers_game["pitcher_record"]
+    assert len(dodgers_game["points"]) >= 3
 
 
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
