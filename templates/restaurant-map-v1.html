@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="성수역 2호선 기준 일반 맛집과 보헤 저장 후보를 비교하는 인터랙티브 맛집 지도">
-  <title>성수역 맛집 지도</title>
+  <title>__TITLE__</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -120,10 +120,10 @@
 <body>
   <main class="page">
     <header class="hero">
-      <div class="eyebrow">SEONGSU STATION · FOOD GUIDE</div>
-      <h1>성수역 맛집 지도</h1>
-      <p class="intro">기준점은 <strong>성수역 2호선</strong>입니다. 일반 추천은 현재 네이버 지도 신호가 확인되는 <strong>500m 안쪽 식사</strong> 후보, 보헤 추천은 저장된 후보를 같은 화면에서 비교합니다.</p>
-      <p class="source">SOURCE: Naver Map summary + menu snippets · origin: Seongsu Station · general radius: ≤ 500m straight-line</p>
+      <div class="eyebrow">__EYEBROW__</div>
+      <h1>__TITLE__</h1>
+      <p class="intro">__INTRO__</p>
+      <p class="source">__SOURCE__</p>
       <div class="tabs" role="tablist" aria-label="추천 출처">
         <button class="tab" type="button" role="tab" aria-selected="true" data-mode="general">일반 추천</button>
         <button class="tab" type="button" role="tab" aria-selected="false" data-mode="bohe">보헤 추천</button>
@@ -167,30 +167,19 @@
     </section>
 
     <section class="marker-section" aria-labelledby="markerTitle">
-      <div class="marker-head"><h2 id="markerTitle">성수역에서 가까운 순서</h2><p>straight-line distance · tap cards for Naver Map</p></div>
+      <div class="marker-head"><h2 id="markerTitle">__MARKER_TITLE__</h2><p>straight-line distance · tap cards for Naver Map</p></div>
       <div class="marker-grid" id="markerGrid"></div>
     </section>
 
     <p class="empty" id="emptyState">선택한 조건에 맞는 후보가 없습니다.<br>거리 또는 음식 필터를 바꿔 보세요.</p>
     <section class="cards" id="cardList" aria-live="polite"></section>
-    <footer class="notice">거리값은 성수역 2호선(아차산로 100) 좌표에서 Naver 지도 공개 좌표까지의 직선거리 기준입니다. 일반 추천은 500m 안쪽만 수록합니다. 보헤 추천의 스시라온(729m)은 인접권으로 별도 표기했습니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있으니, 영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.</footer>
+    <footer class="notice">__NOTICE__</footer>
   </main>
 
   <script>
     const venues = {
-      general: [
-        {name:'샤브인서울 성수점',distance:56,category:'한식/전골',kind:'샤브샤브',color:'#1f6fd1',reason:'성수역에서 가장 가까운 샤브샤브 식사 후보.',signal:'방문자 리뷰 1,868 · 블로그 1,374',address:'서울 성동구 성수일로6길 53 1층',menus:['흑돼지 삼겹 샤브','흑돼지 목살 샤브','앵거스 알목심 샤브','살치살 샤브'],rationale:'여럿이 대화하며 든든하게 식사할 때의 가장 가까운 선택.'},
-        {name:'멘쿠도 성수점',distance:81,category:'면/라멘',kind:'일본식라면',color:'#a72d5b',reason:'브레이크타임 없이 노출되는 역세권 라멘 후보.',signal:'방문자 리뷰 1,675 · 블로그 82',address:'서울 성동구 성수일로8길 53 105·106호',menus:['아카멘','시로멘','마제소바','수제교자 5p'],rationale:'혼밥이나 빠른 식사에 우선 확인할 역세권 후보.'},
-        {name:'미키스시',distance:184,category:'일식/스시',kind:'초밥,롤',color:'#c76c00',reason:'런치와 한판 구성이 함께 확인되는 성수 스시 후보.',signal:'방문자 리뷰 2,103 · 블로그 337',address:'서울 성동구 연무장9길 8-1 1층',menus:['미키평일런치','일등한판','특등한판','연어'],rationale:'점심부터 여럿이 나눠 먹는 스시까지 폭넓게 대응.'},
-        {name:'실비옥',distance:219,category:'한식/전골',kind:'한식',color:'#2f8a4c',reason:'전골 중심으로 한식 식사를 하기 좋은 후보.',signal:'방문자 리뷰 4,893 · 블로그 337',address:'서울 성동구 아차산로 126 B107호',menus:['소고기미역전골','소갈비전골','오징어미나리전골','평일점심 전골'],rationale:'따뜻한 국물 요리와 한식 식사를 원할 때의 우선 후보.'},
-        {name:'도도한면 성수본점',distance:221,category:'면/라멘',kind:'우동,소바',color:'#7151a5',reason:'우동·소바 중심의 성수 본점 메뉴가 확인되는 후보.',signal:'방문자 리뷰 3,394 · 블로그 2,039',address:'서울 성동구 연무장길 41-17',menus:['찌꾸타마부카케','갈치우동','크림자루우동','자루우동'],rationale:'성수다운 면 요리를 찾을 때 가장 먼저 비교할 곳.'},
-        {name:'페레힐',distance:226,category:'양식/세계음식',kind:'스페인음식',color:'#118796',reason:'빠에야·파스타 메뉴와 높은 리뷰 신호가 있는 스페인 식당.',signal:'방문자 리뷰 10,950 · 블로그 822',address:'서울 성동구 연무장길 37-22 1층',menus:['홍새우 비스크 파스타','사프란 빠에야','갈리시아 뽈뽀','엘로띠또스'],rationale:'특별한 식사나 데이트 메뉴를 고를 때의 핵심 후보.'},
-        {name:'글로리칼국수 성수점',distance:238,category:'한식/전골',kind:'칼국수,만두',color:'#d25b1f',reason:'삼계탕과 닭칼국수 메뉴가 확인되는 든든한 한 끼 후보.',signal:'방문자 리뷰 608 · 블로그 263',address:'서울 성동구 아차산로7길 11-1 1·2층',menus:['보양 삼계백반','전통 삼계탕','가마솥 닭칼국수','만두'],rationale:'비 오는 날이나 든든한 한식 식사가 필요할 때 적합.'},
-        {name:'보따리타코',distance:250,category:'양식/세계음식',kind:'멕시코,남미음식',color:'#a53c76',reason:'타코·퀘사디아·포케까지 공개 메뉴 신호가 있는 후보.',signal:'방문자 리뷰 1,079 · 블로그 110',address:'서울 성동구 아차산로7가길 27 1층',menus:['돼지고기 타코','소고기 타코','치즈 퀘사디아','새우 포케'],rationale:'평소 한식·양식 대신 가볍고 다른 메뉴를 원할 때.'},
-        {name:'마야',distance:418,category:'양식/세계음식',kind:'양식',color:'#a86a00',reason:'스테이크·잠봉 파스타·뇨끼가 확인되는 양식 후보.',signal:'방문자 리뷰 818 · 블로그 772',address:'서울 성동구 연무장3길 3 2층',menus:['마야 스테이크','수제 잠봉 파스타','트러플 수제 뇨끼','파스타'],rationale:'조금 더 걸어도 스테이크와 파스타로 식사 결을 잡을 때.'}
-      ],
-      bohe: [
-        {name:'르프리크 성수',distance:293,category:'양식/세계음식',kind:'햄버거',color:'#8f3260',reason:'보헤가 큐레이션한 성수권 핫치킨 버거 후보.',signal:'방문자 리뷰 1,374 · 블로그 2,746',address:'서울 성동구 연무장5길 9-16 B103',menus:['내쉬빌 핫치킨 버거','스모키 베이컨 핫치킨','SICILIAN','CHAT POTATO'],rationale:'보헤가 큐레이션한 성수권 핫치킨 버거 후보.',savedSource:'https://www.instagram.com/p/Cmh8bsGyRw6/'},
+      general: __VENUES_JSON__,
+      bohe: [],rationale:'보헤가 큐레이션한 성수권 핫치킨 버거 후보.',savedSource:'https://www.instagram.com/p/Cmh8bsGyRw6/'},
         {name:'천하제일 솥뚜껑',distance:388,category:'한식/전골',kind:'한식',color:'#c66e00',reason:'보헤가 큐레이션한 성수권 솥뚜껑 구이 후보.',signal:'방문자 리뷰 1,545 · 블로그 462',address:'서울 성동구 성수이로7길 27 1층',menus:['유황 생삼겹','유황 생목살','자가두부 두루치기','솥뚜껑 구이'],rationale:'보헤가 큐레이션한 성수권 솥뚜껑 구이 후보.',savedSource:'https://www.instagram.com/p/CdKT3nrLJ4_/'},
         {name:'기후',distance:450,category:'일식/스시',kind:'일식당',color:'#2d7b90',reason:'보헤가 큐레이션한 성수권 제철 생선 오마카세 후보.',signal:'방문자 리뷰 1,074 · 블로그 1,043',address:'서울 성동구 성수이로 66 1층',menus:['런치 오마카세','디너 오마카세','제철 생선 스시','제철 초밥'],rationale:'보헤가 큐레이션한 성수권 제철 생선 오마카세 후보.',savedSource:'https://www.instagram.com/p/Ci7VB5oP0FK/'},
         {name:'스시라온',distance:729,category:'일식/스시',kind:'일식당 · 인접권',color:'#6c4fa3',reason:'보헤가 큐레이션한 성수권 인접 스시 후보.',signal:'방문자 리뷰 86 · 블로그 274',address:'서울 성동구 성수일로 10 1층',menus:['런치 카운터','디너 카운터','런치 오마카세','디너 오마카세'],rationale:'직선 729m 인접권입니다. 스시 코스를 우선할 때 비교하세요.',savedSource:'https://www.instagram.com/p/Cf32ztbhftx/'}
@@ -236,7 +225,7 @@
       $('#candidateCount').textContent = `${list.length} bars`;
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
       $('#radiusValue').textContent = state.mode === 'bohe' ? '≤ 729m' : '≤ 500m';
-      $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '성수역에서 가까운 순서';
+      $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '__MARKER_TITLE__';
       $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${markerLabels[venue.name] || venue.name}</span></div>`).join('');
       $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
       $('#emptyState').style.display = list.length ? 'none' : 'block';
