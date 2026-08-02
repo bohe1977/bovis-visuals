@@ -10,7 +10,7 @@ required = {"title", "eyebrow", "intro", "source", "markerTitle", "notice", "ven
 missing = required - data.keys()
 if missing: raise SystemExit(f"missing: {sorted(missing)}")
 venues = data["venues"]
-if not venues or any(not {"name","distance","category","kind","color","signal","address","menuEvidence","reason","rationale"} <= set(v) for v in venues):
+if not venues or any(not {"name","markerLabel","distance","category","kind","color","signal","address","menuEvidence","reason","rationale"} <= set(v) for v in venues):
     raise SystemExit("invalid venue schema")
 colors = [v["color"] for v in venues]
 if len(colors) != len(set(colors)): raise SystemExit("candidate accent colors must be unique")

@@ -41,7 +41,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "램타운양꼬치 사당점"
     },
     {
       "name": "투파인드피터 서울사당점",
@@ -78,7 +79,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "투파인드피터"
     },
     {
       "name": "리에또",
@@ -115,7 +117,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "리에또"
     },
     {
       "name": "계탄언니 사당본점",
@@ -152,7 +155,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "계탄언니"
     },
     {
       "name": "방배동쌀국수",
@@ -189,7 +193,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "방배동쌀국수"
     },
     {
       "name": "그냥찌개집 사당역점",
@@ -226,7 +231,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "그냥찌개집"
     },
     {
       "name": "가우리집",
@@ -263,7 +269,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "가우리집"
     },
     {
       "name": "생어거스틴 파스텔시티점",
@@ -300,7 +307,8 @@
           "sourceType": "등록",
           "kind": "food"
         }
-      ]
+      ],
+      "markerLabel": "생어거스틴 파스텔시티점"
     }
   ]
 }

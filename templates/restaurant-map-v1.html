@@ -183,9 +183,6 @@
     };
 
     const hasBoheVenues = venues.bohe.length > 0;
-    const markerLabels = {
-      '샤브인서울 성수점':'샤브인서울','멘쿠도 성수점':'멘쿠도','미키스시':'미키스시','실비옥':'실비옥','도도한면 성수본점':'도도한면','페레힐':'페레힐','글로리칼국수 성수점':'글로리칼국수','보따리타코':'보따리타코','마야':'마야','르프리크 성수':'르프리크','천하제일 솥뚜껑':'천하제일','기후':'기후','스시라온':'스시라온'
-    };
     const state = { mode:'general', distance:'all', food:'all' };
     const $ = (selector) => document.querySelector(selector);
     const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}`;
@@ -207,7 +204,7 @@
       const savedSource = venue.savedSource ? `<a class="action" target="_blank" rel="noopener noreferrer" href="${venue.savedSource}">큐레이션</a>` : '';
       return `<article class="card" style="--accent:${venue.color}">
         <div class="rank">${rank}</div><h2>${venue.name}</h2>
-        <div class="meta"><span class="chip">${venue.distance}m</span><span class="chip">${venue.kind}</span><span class="chip">${venue.category}</span></div>
+        <div class="meta"><span class="chip">${venue.distance}m</span><span class="chip">${venue.category}</span></div>
         <p class="reason">${venue.reason}</p>
         <div class="info-grid"><div class="info"><b>NAVER SIGNAL</b><span>${venue.signal}</span></div><div class="info"><b>ADDRESS</b><span class="address-line">${venue.address}</span></div></div>
         <div class="menus">${venue.menus.map((menu) => `<span class="menu">${menu}</span>`).join('')}</div>
@@ -222,7 +219,7 @@
       $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
       $('#radiusValue').textContent = state.mode === 'bohe' ? '≤ 729m' : '≤ 500m';
       $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '__MARKER_TITLE__';
-      $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${markerLabels[venue.name] || venue.name}</span></div>`).join('');
+      $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${venue.markerLabel}</span></div>`).join('');
       $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
       $('#emptyState').style.display = list.length ? 'none' : 'block';
       $('#quickClosest').innerHTML = list.length ? `<strong>${list[0].name} ${list[0].distance}m</strong>. 이동을 최소화하고 싶다면 가장 가까운 이 후보부터 확인하세요.` : '필터를 바꾸면 가장 가까운 후보를 다시 보여드립니다.';
