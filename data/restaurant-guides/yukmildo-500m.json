@@ -1,11 +1,57 @@
 {
-  "title": "육밀도 근처 500m 맛집 지도",
-  "eyebrow": "YUKMILDO SADANG · FOOD GUIDE",
-  "intro": "기준점은 <strong>육밀도 사당직영점</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사</strong> 후보를 비교합니다.",
-  "source": "SOURCE: Naver Map + Place menu · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line",
-  "markerTitle": "육밀도에서 가까운 순서",
-  "notice": "거리값은 육밀도 사당직영점 좌표에서 네이버 지도 공개 좌표까지 계산한 직선거리입니다. 모든 일반 후보는 500m 안쪽입니다. 실제 동선과 영업 정보는 출발 전 네이버 지도에서 다시 확인하세요.",
-  "venues": [
+  "config": {
+    "title": "육밀도 근처 500m 맛집 지도",
+    "description": "육밀도 사당직영점 기준 500m 일반 식사 후보를 비교하는 인터랙티브 맛집 지도",
+    "eyebrow": "YUKMILDO SADANG · FOOD GUIDE",
+    "intro": "기준점은 <strong>육밀도 사당직영점</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사</strong> 후보를 비교합니다.",
+    "source": "SOURCE: Naver Map + Place menu · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line",
+    "notice": "거리값은 육밀도 사당직영점 좌표에서 네이버 지도 공개 좌표까지 계산한 직선거리입니다. 모든 일반 후보는 500m 안쪽입니다. 실제 동선과 영업 정보는 출발 전 네이버 지도에서 다시 확인하세요.",
+    "markerHelper": "straight-line distance · tap card for Naver Map",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "100",
+        "label": "0~100m"
+      },
+      {
+        "value": "300",
+        "label": "100~300m"
+      },
+      {
+        "value": "500",
+        "label": "300~500m"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "일반 식사",
+      "markerTitle": "육밀도에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 식사",
+          "venue": "투파인드피터 서울사당점",
+          "copy": "육밀도에서 가장 가까운 일반 식사 후보입니다."
+        },
+        {
+          "title": "특별한 메뉴",
+          "venue": "투파인드피터 서울사당점",
+          "copy": "파스타·라자냐 메뉴를 원할 때 확인하세요."
+        },
+        {
+          "title": "든든한 한 끼",
+          "venue": "계탄언니 사당본점",
+          "copy": "닭갈비 중심으로 식사하고 싶을 때 맞습니다."
+        }
+      ]
+    }
+  },
+  "general": [
     {
       "name": "투파인드피터 서울사당점",
       "distance": 60,
@@ -80,7 +126,7 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "수향가족발보쌈&얼큰감자"
+      "markerLabel": "수향가족발보쌈"
     },
     {
       "name": "등촌샤브칼국수 사당역점",

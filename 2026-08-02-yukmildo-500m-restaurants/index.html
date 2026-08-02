@@ -3,235 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="성수역 2호선 기준 일반 맛집과 보헤 저장 후보를 비교하는 인터랙티브 맛집 지도">
+  <meta name="description" content="육밀도 사당직영점 기준 500m 일반 식사 후보를 비교하는 인터랙티브 맛집 지도">
   <title>육밀도 근처 500m 맛집 지도</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#181818; --soft:#717171; --faint:#f7f7f6; --line:#e7e7e5; --orange:#bd5a0a; }
-    * { box-sizing:border-box; }
-    html { background:#fff; }
-    body { margin:0; color:var(--ink); background:#fff; font-family:Inter, Pretendard, "Noto Sans KR", Arial, sans-serif; -webkit-font-smoothing:antialiased; }
-    button, a { font:inherit; }
-    .page { width:min(1160px, calc(100% - 32px)); margin:0 auto; padding:44px 0 74px; }
-    .hero { text-align:center; margin:10px auto 34px; max-width:940px; }
-    .eyebrow { display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border-radius:999px; color:#9b470d; background:#fff4ec; font:700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.04em; }
-    .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#e56b12; }
-    h1 { margin:20px 0 16px; font-size:clamp(36px, 5vw, 66px); line-height:1.07; letter-spacing:-.075em; font-weight:800; }
-    .intro { max-width:850px; margin:0 auto; color:var(--soft); font-size:18px; line-height:1.8; letter-spacing:-.025em; }
-    .intro strong { color:var(--ink); font-weight:800; }
-    .source { margin:20px auto 0; color:#343434; font:600 12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
-    .tabs { display:flex; justify-content:center; gap:8px; margin:28px 0 0; }
-    .tabs[hidden] { display:none; }
-    .tab { min-height:42px; padding:0 17px; color:#5f5f5f; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:14px; font-weight:750; transition:.15s ease; }
-    .tab[aria-selected="true"] { color:#fff; border-color:#151515; background:#151515; }
-    .tab:focus-visible, .filter:focus-visible, .action:focus-visible { outline:3px solid #7eb6ff; outline-offset:3px; }
-    .stats { display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden; margin:35px 0 21px; border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(0,0,0,.03); }
-    .stat { min-height:90px; display:grid; align-content:center; gap:9px; text-align:center; border-right:1px solid var(--line); }
-    .stat:last-child { border-right:0; }
-    .stat-label { color:#343434; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
-    .stat-value { color:#252525; font-size:25px; line-height:1; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
-    .filters { display:grid; gap:12px; margin:20px auto 30px; }
-    .filter-row { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:4px 0; }
-    .filter-label { color:#343434; text-align:right; font:700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.08em; }
-    .filter-group { display:flex; flex-wrap:wrap; gap:7px; }
-    .filter { min-height:38px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 14px; color:#626262; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:13px; font-weight:720; transition:.15s ease; }
-    .filter.is-active { color:#fff; border-color:#151515; background:#151515; }
-    .filter-dot { width:8px; height:8px; flex:0 0 auto; border-radius:50%; background:var(--dot); }
-    .quick-picks { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:0 0 18px; }
-    .quick { padding:20px 17px; border:1px solid var(--line); border-radius:16px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }
-    .quick h2 { margin:0 0 9px; font-size:16px; letter-spacing:-.045em; }
-    .quick p { margin:0; color:#6e6e6e; font-size:13px; line-height:1.62; letter-spacing:-.02em; }
-    .quick strong { color:#333; }
-    .marker-section { margin:18px 0 16px; padding:19px 18px 18px; border:1px solid var(--line); border-radius:16px; }
-    .marker-head { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
-    .marker-head h2 { margin:0; font-size:21px; letter-spacing:-.055em; }
-    .marker-head p { margin:0; color:#343434; font:650 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-align:right; }
-    .marker-grid { position:relative; display:grid; grid-template-columns:repeat(auto-fit, minmax(74px, 1fr)); gap:18px 7px; margin-top:27px; }
-    .marker-grid::before { content:""; position:absolute; top:13px; left:2%; right:2%; height:1px; background:#dedede; }
-    .marker { position:relative; z-index:1; min-width:0; text-align:center; color:#555; font-size:11px; line-height:1.35; }
-    .marker-dot { width:25px; height:25px; margin:0 auto 4px; border:5px solid #fff; border-radius:50%; background:var(--accent); box-shadow:0 0 0 1px #dedede; }
-    .marker-distance { display:block; color:#555; font:10px/1.25 ui-monospace, SFMono-Regular, Menlo, monospace; }
-    .marker-name { display:block; overflow:hidden; margin-top:1px; text-overflow:ellipsis; white-space:nowrap; font-weight:700; }
-    .empty { display:none; padding:42px 18px; border:1px dashed #d5d5d5; border-radius:16px; color:#777; text-align:center; line-height:1.7; }
-    .cards { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
-    .card { position:relative; display:grid; gap:14px; padding:18px; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#fff; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }
-    .rank { display:grid; place-items:center; width:38px; height:38px; margin:0 auto; border-radius:50%; color:#fff; background:var(--accent); font:700 14px/1 "Geist Mono"; }
-    .card h2 { margin:0; font-size:22px; line-height:1.12; letter-spacing:-.05em; }
-    .meta, .menus { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
-    .meta { margin:0; }
-    .chip { display:inline-flex; align-items:center; min-height:22px; padding:0 8px; border-radius:999px; background:#f4f4f4; color:#555; font:650 11px/1 "Geist Mono"; }
-    .reason { min-height:0; margin:0; color:#5f5f5f; font-size:14px; line-height:1.6; letter-spacing:normal; }
-    .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-    .info { min-height:0; display:block; padding:11px; border:0; border-radius:12px; background:#fafafa; box-shadow:0 0 0 1px rgba(0,0,0,.06); }
-    .info b { display:block; color:#999; font:650 11px/normal "Geist Mono"; letter-spacing:normal; }
-    .info span { display:block; margin-top:5px; color:#242424; font:400 14px/20.3px Geist, Arial, "Apple SD Gothic Neo", sans-serif; letter-spacing:normal; }
-    .menus { margin:0; gap:7px; }
-    .menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }
-    .accent-rule { height:3px; margin:1px 0; background:var(--accent); }
-    .rationale { min-height:0; margin:0 6px; color:#707070; font-size:14px; line-height:1.58; letter-spacing:-.02em; }
-    .actions { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:0; }
-    .action { display:inline-flex; min-height:40px; align-items:center; justify-content:center; padding:0 14px; border:1px solid #dfdfdf; border-radius:9px; color:#343434; background:#fff; text-decoration:none; font-size:13px; font-weight:800; transition:.15s ease; }
-    .action.primary { color:#fff; border-color:#151515; background:#151515; }
-    .action:hover { transform:translateY(-1px); box-shadow:0 3px 8px rgba(0,0,0,.08); }
-    .notice { margin-top:25px; padding:16px 18px; color:#777; border:1px solid var(--line); border-radius:14px; font-size:12px; line-height:1.7; }
-    @media (max-width:650px) {
-      .page { width:min(100% - 28px, 540px); padding:32px 0 52px; }
-      .hero { margin-top:0; }
-      h1 { margin:19px 0 13px; font-size:39px; }
-      .intro { font-size:16px; line-height:1.75; }
-      .source { padding:0 3px; font-size:10px; }
-      .tabs { margin-top:22px; }
-      .stats { grid-template-columns:1fr; margin-top:29px; border-radius:16px; }
-      .stat { min-height:82px; border-right:0; border-bottom:1px solid var(--line); }
-      .stat:last-child { border-bottom:0; }
-      .stat-value { font-size:27px; }
-      .filters { display:block; margin:20px 0 24px; }
-      .filter-row { display:block; }
-      .filter-label { margin:18px 0 7px; text-align:center; }
-      .filter-label:first-child { margin-top:0; }
-      .filter-group { display:grid; grid-template-columns:1fr; gap:5px; }
-      .filter { width:100%; min-height:42px; font-size:14px; }
-      .quick-picks { grid-template-columns:1fr; gap:10px; }
-      .quick { padding:21px 18px; }
-      .marker-section { padding:21px 12px; }
-      .marker-head { display:block; text-align:center; }
-      .marker-head p { margin-top:7px; text-align:center; }
-      .marker-grid { grid-template-columns:repeat(3,1fr); gap:19px 7px; }
-      .marker-grid::before { display:none; }
-      .cards { grid-template-columns:1fr; gap:14px; }
-      .card { padding:15px; border-radius:16px; }
-      .rank { width:38px; height:38px; margin-bottom:0; font-size:14px; }
-      .card h2 { font-size:20px; }
-      .meta { margin-top:-4px; }
-      .chip { min-height:23px; padding:3px 8px; font-size:11px; }
-      .reason { margin:-2px 6px; font-size:13px; }
-      .info-grid { grid-template-columns:1fr; gap:8px; }
-
-      .accent-rule { margin:0; }
-      .rationale { font-size:12px; }
-      .action { min-height:40px; padding:0 13px; border-radius:9px; font-size:12px; }
-    }
-    @media (prefers-reduced-motion:reduce) { *, *::before, *::after { transition:none!important; scroll-behavior:auto!important; } }
-      .address-line { white-space: nowrap; display: block; letter-spacing: -.03em; }
+    :root { --ink:#181818; --soft:#717171; --line:#e7e7e5; }
+    * { box-sizing:border-box; } html,body { background:#fff; } body { margin:0; color:var(--ink); font-family:Inter, Pretendard, "Noto Sans KR", Arial, sans-serif; -webkit-font-smoothing:antialiased; } button,a { font:inherit; }
+    .page { width:min(1160px, calc(100% - 32px)); margin:0 auto; padding:44px 0 74px; }.hero { text-align:center; margin:10px auto 34px; max-width:940px; }.eyebrow { display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border-radius:999px; color:#9b470d; background:#fff4ec; font:700 12px/1 ui-monospace,monospace; letter-spacing:.04em; }.eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#e56b12; }h1 { margin:20px 0 16px; font-size:clamp(36px,5vw,66px); line-height:1.07; letter-spacing:-.075em; font-weight:800; }.intro { max-width:850px; margin:0 auto; color:var(--soft); font-size:18px; line-height:1.8; letter-spacing:-.025em; }.intro strong { color:var(--ink); font-weight:800; }.source { margin:20px auto 0; color:#343434; font:600 12px/1.65 ui-monospace,monospace; }
+    .tabs { display:flex; justify-content:center; gap:8px; margin:28px 0 0; }.tabs[hidden] { display:none; }.tab { min-height:42px; padding:0 17px; color:#5f5f5f; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:14px; font-weight:750; }.tab[aria-selected="true"],.filter.is-active { color:#fff; border-color:#151515; background:#151515; }.tab:focus-visible,.filter:focus-visible,.action:focus-visible { outline:3px solid #7eb6ff; outline-offset:3px; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden; margin:35px 0 21px; border:1px solid var(--line); border-radius:16px; box-shadow:0 1px 3px rgba(0,0,0,.03); }.stat { min-height:90px; display:grid; align-content:center; gap:9px; text-align:center; border-right:1px solid var(--line); }.stat:last-child { border-right:0; }.stat-label { color:#343434; font:700 11px/1 ui-monospace,monospace; letter-spacing:.08em; }.stat-value { color:#252525; font-size:25px; line-height:1; font-weight:800; letter-spacing:-.05em; white-space:nowrap; }
+    .filters { display:grid; gap:12px; margin:20px auto 30px; }.filter-row { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:4px 0; }.filter-label { color:#343434; text-align:right; font:700 11px/1 ui-monospace,monospace; letter-spacing:.08em; }.filter-group { display:flex; flex-wrap:wrap; gap:7px; }.filter { min-height:38px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 14px; color:#626262; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; font-size:13px; font-weight:720; }.filter-dot { width:8px; height:8px; flex:0 0 auto; border-radius:50%; background:var(--dot); }
+    .quick-picks { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:0 0 18px; }.quick { padding:20px 17px; border:1px solid var(--line); border-radius:16px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }.quick h2 { margin:0 0 9px; font-size:16px; letter-spacing:-.045em; }.quick p { margin:0; color:#6e6e6e; font-size:13px; line-height:1.62; letter-spacing:-.02em; }.quick strong { color:#333; }
+    .marker-section { margin:18px 0 16px; padding:19px 18px 18px; border:1px solid var(--line); border-radius:16px; }.marker-head { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }.marker-head h2 { margin:0; font-size:21px; letter-spacing:-.055em; }.marker-head p { margin:0; color:#343434; font:650 11px/1.5 ui-monospace,monospace; text-align:right; }.marker-grid { position:relative; display:grid; grid-template-columns:repeat(auto-fit,minmax(74px,1fr)); gap:18px 7px; margin-top:27px; }.marker-grid::before { content:""; position:absolute; top:13px; left:2%; right:2%; height:1px; background:#dedede; }.marker { position:relative; z-index:1; min-width:0; text-align:center; color:#555; font-size:11px; line-height:1.35; }.marker-dot { width:25px; height:25px; margin:0 auto 4px; border:5px solid #fff; border-radius:50%; background:var(--accent); box-shadow:0 0 0 1px #dedede; }.marker-distance { display:block; color:#555; font:10px/1.25 ui-monospace,monospace; }.marker-name { display:block; overflow:hidden; margin-top:1px; text-overflow:ellipsis; white-space:nowrap; font-weight:700; }
+    .empty { display:none; padding:42px 18px; border:1px dashed #d5d5d5; border-radius:16px; color:#777; text-align:center; line-height:1.7; }.cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }.card { position:relative; display:grid; gap:14px; padding:18px; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#fff; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,.025); }.rank { display:grid; place-items:center; width:38px; height:38px; margin:0 auto; border-radius:50%; color:#fff; background:var(--accent); font:700 14px/1 "Geist Mono"; }.card h2 { margin:0; font-size:22px; line-height:1.12; letter-spacing:-.05em; }.meta,.menus { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }.meta { margin:0; }.chip { display:inline-flex; align-items:center; min-height:22px; padding:0 8px; border-radius:999px; background:#f4f4f4; color:#555; font:650 11px/1 "Geist Mono"; }.reason { min-height:0; margin:0; color:#5f5f5f; font-size:14px; line-height:1.6; }.info-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }.info { min-height:0; display:block; padding:11px; border:0; border-radius:12px; background:#fafafa; box-shadow:0 0 0 1px rgba(0,0,0,.06); }.info b { display:block; color:#999; font:650 11px/normal "Geist Mono"; }.info span { display:block; margin-top:5px; color:#242424; font:400 14px/20.3px Geist,Arial,"Apple SD Gothic Neo",sans-serif; }.menus { margin:0; gap:7px; }.menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }.accent-rule { height:3px; margin:1px 0; background:var(--accent); }.rationale { min-height:0; margin:0 6px; color:#707070; font-size:14px; line-height:1.58; }.actions { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:0; }.action { display:inline-flex; min-height:40px; align-items:center; justify-content:center; padding:0 14px; border:1px solid #dfdfdf; border-radius:9px; color:#343434; background:#fff; text-decoration:none; font-size:13px; font-weight:800; }.action.primary { color:#fff; border-color:#151515; background:#151515; }.notice { margin-top:25px; padding:16px 18px; color:#777; border:1px solid var(--line); border-radius:14px; font-size:12px; line-height:1.7; }.address-line { white-space:nowrap; display:block; letter-spacing:-.03em; }
+    @media (max-width:650px) { .page { width:min(100% - 28px,540px); padding:32px 0 52px; }.hero { margin-top:0; } h1 { margin:19px 0 13px; font-size:39px; }.intro { font-size:16px; line-height:1.75; }.source { padding:0 3px; font-size:10px; }.tabs { margin-top:22px; }.stats { grid-template-columns:1fr; margin-top:29px; }.stat { min-height:82px; border-right:0; border-bottom:1px solid var(--line); }.stat:last-child { border-bottom:0; }.stat-value { font-size:27px; }.filters { display:block; margin:20px 0 24px; }.filter-row { display:block; }.filter-label { margin:18px 0 7px; text-align:center; }.filter-label:first-child { margin-top:0; }.filter-group { display:grid; grid-template-columns:1fr; gap:5px; }.filter { width:100%; min-height:42px; font-size:14px; }.quick-picks { grid-template-columns:1fr; gap:10px; }.quick { padding:21px 18px; }.marker-section { padding:21px 12px; }.marker-head { display:block; text-align:center; }.marker-head p { margin-top:7px; text-align:center; }.marker-grid { grid-template-columns:repeat(3,1fr); gap:19px 7px; }.marker-grid::before { display:none; }.cards { grid-template-columns:1fr; gap:14px; }.card { padding:15px; border-radius:16px; }.rank { width:38px; height:38px; margin-bottom:0; font-size:14px; }.card h2 { font-size:20px; }.meta { margin-top:-4px; }.chip { min-height:23px; padding:3px 8px; font-size:11px; }.reason { margin:-2px 6px; font-size:13px; }.info-grid { grid-template-columns:1fr; gap:8px; }.accent-rule { margin:0; }.rationale { font-size:12px; }.action { min-height:40px; padding:0 13px; border-radius:9px; font-size:12px; } }
   </style>
 </head>
 <body>
   <main class="page">
-    <header class="hero">
-      <div class="eyebrow">YUKMILDO SADANG · FOOD GUIDE</div>
-      <h1>육밀도 근처 500m 맛집 지도</h1>
-      <p class="intro">기준점은 <strong>육밀도 사당직영점</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사</strong> 후보를 비교합니다.</p>
-      <p class="source">SOURCE: Naver Map + Place menu · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line</p>
-      <div class="tabs" role="tablist" aria-label="추천 출처">
-        <button class="tab" type="button" role="tab" aria-selected="true" data-mode="general">일반 추천</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-mode="bohe">보헤 추천</button>
-      </div>
-    </header>
-
-    <section class="stats" aria-label="선택 결과 요약">
-      <div class="stat"><span class="stat-label">CANDIDATES</span><strong class="stat-value" id="candidateCount">0 bars</strong></div>
-      <div class="stat"><span class="stat-label">RADIUS</span><strong class="stat-value" id="radiusValue">≤ 500m</strong></div>
-      <div class="stat"><span class="stat-label">CLOSEST</span><strong class="stat-value" id="closest">—</strong></div>
-      <div class="stat"><span class="stat-label">BEST FOR</span><strong class="stat-value">식사</strong></div>
-    </section>
-
-    <section class="filters" aria-label="후보 필터">
-      <div class="filter-row">
-      <div class="filter-label">DISTANCE</div>
-      <div class="filter-group" id="distanceFilters">
-        <button class="filter is-active" type="button" data-distance="all"><span>전체</span></button>
-        <button class="filter" type="button" data-distance="100"><span class="filter-dot" style="--dot:#171717"></span>0~100m</button>
-        <button class="filter" type="button" data-distance="300"><span class="filter-dot" style="--dot:#171717"></span>100~300m</button>
-        <button class="filter" type="button" data-distance="500"><span class="filter-dot" style="--dot:#171717"></span>300~500m</button>
-        <button class="filter" type="button" data-distance="800"><span class="filter-dot" style="--dot:#171717"></span>500m+</button>
-      </div>
-      </div>
-      <div class="filter-row">
-      <div class="filter-label">FOOD</div>
-      <div class="filter-group" id="foodFilters">
-        <button class="filter is-active" type="button" data-food="all">전체</button>
-        <button class="filter" type="button" data-food="양식/세계음식"><span class="filter-dot" style="--dot:#9c2f61"></span>양식/세계음식</button>
-        <button class="filter" type="button" data-food="한식/전골"><span class="filter-dot" style="--dot:#c26500"></span>한식/전골</button>
-        <button class="filter" type="button" data-food="면/라멘"><span class="filter-dot" style="--dot:#2365cc"></span>면/라멘</button>
-        <button class="filter" type="button" data-food="일식/스시"><span class="filter-dot" style="--dot:#27863c"></span>일식/스시</button>
-      </div>
-      </div>
-    </section>
-
-    <section class="quick-picks" aria-label="빠른 선택">
-      <article class="quick"><h2>가장 가까운 식사</h2><p id="quickClosest">—</p></article>
-      <article class="quick"><h2>특별한 메뉴</h2><p id="quickFood">—</p></article>
-      <article class="quick"><h2>든든한 한 끼</h2><p id="quickMood">—</p></article>
-    </section>
-
-    <section class="marker-section" aria-labelledby="markerTitle">
-      <div class="marker-head"><h2 id="markerTitle">육밀도에서 가까운 순서</h2><p>straight-line distance · tap cards for Naver Map</p></div>
-      <div class="marker-grid" id="markerGrid"></div>
-    </section>
-
-    <p class="empty" id="emptyState">선택한 조건에 맞는 후보가 없습니다.<br>거리 또는 음식 필터를 바꿔 보세요.</p>
-    <section class="cards" id="cardList" aria-live="polite"></section>
-    <footer class="notice">거리값은 육밀도 사당직영점 좌표에서 네이버 지도 공개 좌표까지 계산한 직선거리입니다. 모든 일반 후보는 500m 안쪽입니다. 실제 동선과 영업 정보는 출발 전 네이버 지도에서 다시 확인하세요.</footer>
+    <header class="hero"><div class="eyebrow" id="eyebrow"></div><h1>육밀도 근처 500m 맛집 지도</h1><p class="intro">기준점은 <strong>육밀도 사당직영점</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사</strong> 후보를 비교합니다.</p><p class="source" id="source"></p><div class="tabs" role="tablist" aria-label="추천 출처" id="tabs"></div></header>
+    <section class="stats" aria-label="선택 결과 요약"><div class="stat"><span class="stat-label">CANDIDATES</span><strong class="stat-value" id="candidateCount"></strong></div><div class="stat"><span class="stat-label">RADIUS</span><strong class="stat-value" id="radiusValue"></strong></div><div class="stat"><span class="stat-label">CLOSEST</span><strong class="stat-value" id="closest"></strong></div><div class="stat"><span class="stat-label">BEST FOR</span><strong class="stat-value" id="bestFor"></strong></div></section>
+    <section class="filters" aria-label="후보 필터"><div class="filter-row"><div class="filter-label">DISTANCE</div><div class="filter-group" id="distanceFilters"></div></div><div class="filter-row"><div class="filter-label">FOOD</div><div class="filter-group" id="foodFilters"></div></div></section>
+    <section class="quick-picks" aria-label="빠른 선택" id="quickPicks"></section>
+    <section class="marker-section" aria-labelledby="markerTitle"><div class="marker-head"><h2 id="markerTitle"></h2><p id="markerHelper"></p></div><div class="marker-grid" id="markerGrid"></div></section>
+    <p class="empty" id="emptyState">선택한 조건에 맞는 후보가 없습니다.<br>거리 또는 음식 필터를 바꿔 보세요.</p><section class="cards" id="cardList" aria-live="polite"></section><footer class="notice" id="notice"></footer>
   </main>
-
   <script>
-    const venues = {
-      general: [{"name": "투파인드피터 서울사당점", "distance": 60, "category": "양식/세계음식", "kind": "양식/세계음식", "color": "#9c2f61", "signal": "방문자 169 · 블로그 34", "address": "서울 서초구 방배천로2길 2 3층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "알리오 올리오", "source": "알리오 올리오", "sourceType": "등록", "kind": "food"}, {"display": "해산물 로제 파스타", "source": "해산물 로제 파스타", "sourceType": "등록", "kind": "food"}, {"display": "라자냐", "source": "라자냐", "sourceType": "등록", "kind": "food"}, {"display": "콰트로 치즈 뇨끼", "source": "콰트로 치즈 뇨끼", "sourceType": "등록", "kind": "food"}], "markerLabel": "투파인드피터", "menus": ["알리오 올리오", "해산물 로제 파스타", "라자냐", "콰트로 치즈 뇨끼"]}, {"name": "수향가족발보쌈&얼큰감자탕&꼬막비빔밥", "distance": 95, "category": "한식/전골", "kind": "한식/전골", "color": "#c26500", "signal": "방문자 2,188 · 블로그 6,186", "address": "서울 서초구 남부순환로 2121-3 1·2층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "앞족발", "source": "앞족발", "sourceType": "등록", "kind": "food"}, {"display": "뒷족발", "source": "뒷족발", "sourceType": "등록", "kind": "food"}, {"display": "목살보쌈찜", "source": "목살보쌈찜", "sourceType": "등록", "kind": "food"}, {"display": "강릉꼬막비빔밥", "source": "강릉꼬막비빔밥", "sourceType": "등록", "kind": "food"}], "markerLabel": "수향가족발보쌈&얼큰감자", "menus": ["앞족발", "뒷족발", "목살보쌈찜", "강릉꼬막비빔밥"]}, {"name": "등촌샤브칼국수 사당역점", "distance": 100, "category": "한식/전골", "kind": "한식/전골", "color": "#2365cc", "signal": "방문자 1,693 · 블로그 377", "address": "서울 서초구 방배천로 10 2층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "얼큰칼국수", "source": "얼큰칼국수", "sourceType": "등록", "kind": "food"}, {"display": "들깨칼국수", "source": "들깨칼국수", "sourceType": "등록", "kind": "food"}, {"display": "맑은칼국수", "source": "맑은칼국수", "sourceType": "등록", "kind": "food"}, {"display": "미나리전", "source": "미나리전", "sourceType": "등록", "kind": "food"}], "markerLabel": "등촌샤브칼국수", "menus": ["얼큰칼국수", "들깨칼국수", "맑은칼국수", "미나리전"]}, {"name": "그냥찌개집 사당역점", "distance": 135, "category": "한식/전골", "kind": "한식/전골", "color": "#27863c", "signal": "방문자 1,201 · 블로그 657", "address": "서울 서초구 방배천로 12 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "돼지김치찌개", "source": "돼지김치찌개", "sourceType": "등록", "kind": "food"}, {"display": "돼지김치구이", "source": "돼지김치구이", "sourceType": "등록", "kind": "food"}, {"display": "통돼지김치찌개", "source": "통돼지김치찌개", "sourceType": "등록", "kind": "food"}, {"display": "동태탕", "source": "동태탕", "sourceType": "등록", "kind": "food"}], "markerLabel": "그냥찌개집", "menus": ["돼지김치찌개", "돼지김치구이", "통돼지김치찌개", "동태탕"]}, {"name": "가우리집", "distance": 155, "category": "한식/전골", "kind": "한식/전골", "color": "#7352aa", "signal": "방문자 1,985 · 블로그 1,425", "address": "서울 서초구 청두곶길 5 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "가오리조림", "source": "가오리조림", "sourceType": "등록", "kind": "food"}, {"display": "코다리조림", "source": "코다리조림", "sourceType": "등록", "kind": "food"}, {"display": "생대구탕", "source": "생대구탕", "sourceType": "등록", "kind": "food"}, {"display": "오징어순대", "source": "오징어순대", "sourceType": "등록", "kind": "food"}], "markerLabel": "가우리집", "menus": ["가오리조림", "코다리조림", "생대구탕", "오징어순대"]}, {"name": "계탄언니 사당본점", "distance": 240, "category": "한식/전골", "kind": "한식/전골", "color": "#bb4d26", "signal": "방문자 6,623 · 블로그 2,628", "address": "서울 관악구 과천대로 951 지하 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "투움바 닭갈비", "source": "투움바 닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "치즈닭갈비", "source": "치즈닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "오리지널 닭갈비", "source": "오리지널 닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "들기름 막국수", "source": "들기름 막국수", "sourceType": "등록", "kind": "food"}], "markerLabel": "계탄언니", "menus": ["투움바 닭갈비", "치즈닭갈비", "오리지널 닭갈비", "들기름 막국수"]}, {"name": "리에또", "distance": 257, "category": "양식/세계음식", "kind": "양식/세계음식", "color": "#167a78", "signal": "방문자 10,496 · 블로그 1,558", "address": "서울 서초구 방배천로4안길 20", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "아마트리치아나 파스타", "source": "아마트리치아나 파스타", "sourceType": "등록", "kind": "food"}, {"display": "치즈냄비파스타", "source": "치즈냄비파스타", "sourceType": "등록", "kind": "food"}, {"display": "풍기 리조또", "source": "풍기 리조또", "sourceType": "등록", "kind": "food"}, {"display": "만조 스테이크", "source": "만조 스테이크", "sourceType": "등록", "kind": "food"}], "markerLabel": "리에또", "menus": ["아마트리치아나 파스타", "치즈냄비파스타", "풍기 리조또", "만조 스테이크"]}, {"name": "방배동쌀국수", "distance": 423, "category": "면/라멘", "kind": "면/라멘", "color": "#a13b6b", "signal": "방문자 3,146 · 블로그 586", "address": "서울 서초구 방배천로8길 34 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "분짜", "source": "분짜", "sourceType": "등록", "kind": "food"}, {"display": "모듬쌀국수", "source": "모듬쌀국수", "sourceType": "등록", "kind": "food"}, {"display": "파인애플볶음밥", "source": "파인애플볶음밥", "sourceType": "등록", "kind": "food"}, {"display": "우삼겹쌀국수", "source": "우삼겹쌀국수", "sourceType": "등록", "kind": "food"}], "markerLabel": "방배동쌀국수", "menus": ["분짜", "모듬쌀국수", "파인애플볶음밥", "우삼겹쌀국수"]}],
-      bohe: []
-    };
-
-    const hasBoheVenues = venues.bohe.length > 0;
-    const state = { mode:'general', distance:'all', food:'all' };
+    const guide = {"config": {"title": "육밀도 근처 500m 맛집 지도", "description": "육밀도 사당직영점 기준 500m 일반 식사 후보를 비교하는 인터랙티브 맛집 지도", "eyebrow": "YUKMILDO SADANG · FOOD GUIDE", "intro": "기준점은 <strong>육밀도 사당직영점<\/strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>직선거리 500m 안쪽 일반 식사<\/strong> 후보를 비교합니다.", "source": "SOURCE: Naver Map + Place menu · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line", "notice": "거리값은 육밀도 사당직영점 좌표에서 네이버 지도 공개 좌표까지 계산한 직선거리입니다. 모든 일반 후보는 500m 안쪽입니다. 실제 동선과 영업 정보는 출발 전 네이버 지도에서 다시 확인하세요.", "markerHelper": "straight-line distance · tap card for Naver Map", "distanceFilters": [{"value": "all", "label": "전체"}, {"value": "100", "label": "0~100m"}, {"value": "300", "label": "100~300m"}, {"value": "500", "label": "300~500m"}]}, "modeConfig": {"general": {"label": "일반 추천", "radiusLabel": "≤ 500m", "bestFor": "일반 식사", "markerTitle": "육밀도에서 가까운 순서", "quickPicks": [{"title": "가장 가까운 식사", "venue": "투파인드피터 서울사당점", "copy": "육밀도에서 가장 가까운 일반 식사 후보입니다."}, {"title": "특별한 메뉴", "venue": "투파인드피터 서울사당점", "copy": "파스타·라자냐 메뉴를 원할 때 확인하세요."}, {"title": "든든한 한 끼", "venue": "계탄언니 사당본점", "copy": "닭갈비 중심으로 식사하고 싶을 때 맞습니다."}]}}, "venues": {"general": [{"name": "투파인드피터 서울사당점", "distance": 60, "category": "양식/세계음식", "kind": "양식/세계음식", "color": "#9c2f61", "signal": "방문자 169 · 블로그 34", "address": "서울 서초구 방배천로2길 2 3층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "알리오 올리오", "source": "알리오 올리오", "sourceType": "등록", "kind": "food"}, {"display": "해산물 로제 파스타", "source": "해산물 로제 파스타", "sourceType": "등록", "kind": "food"}, {"display": "라자냐", "source": "라자냐", "sourceType": "등록", "kind": "food"}, {"display": "콰트로 치즈 뇨끼", "source": "콰트로 치즈 뇨끼", "sourceType": "등록", "kind": "food"}], "markerLabel": "투파인드피터", "menus": ["알리오 올리오", "해산물 로제 파스타", "라자냐", "콰트로 치즈 뇨끼"]}, {"name": "수향가족발보쌈&얼큰감자탕&꼬막비빔밥", "distance": 95, "category": "한식/전골", "kind": "한식/전골", "color": "#c26500", "signal": "방문자 2,188 · 블로그 6,186", "address": "서울 서초구 남부순환로 2121-3 1·2층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "앞족발", "source": "앞족발", "sourceType": "등록", "kind": "food"}, {"display": "뒷족발", "source": "뒷족발", "sourceType": "등록", "kind": "food"}, {"display": "목살보쌈찜", "source": "목살보쌈찜", "sourceType": "등록", "kind": "food"}, {"display": "강릉꼬막비빔밥", "source": "강릉꼬막비빔밥", "sourceType": "등록", "kind": "food"}], "markerLabel": "수향가족발보쌈", "menus": ["앞족발", "뒷족발", "목살보쌈찜", "강릉꼬막비빔밥"]}, {"name": "등촌샤브칼국수 사당역점", "distance": 100, "category": "한식/전골", "kind": "한식/전골", "color": "#2365cc", "signal": "방문자 1,693 · 블로그 377", "address": "서울 서초구 방배천로 10 2층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "얼큰칼국수", "source": "얼큰칼국수", "sourceType": "등록", "kind": "food"}, {"display": "들깨칼국수", "source": "들깨칼국수", "sourceType": "등록", "kind": "food"}, {"display": "맑은칼국수", "source": "맑은칼국수", "sourceType": "등록", "kind": "food"}, {"display": "미나리전", "source": "미나리전", "sourceType": "등록", "kind": "food"}], "markerLabel": "등촌샤브칼국수", "menus": ["얼큰칼국수", "들깨칼국수", "맑은칼국수", "미나리전"]}, {"name": "그냥찌개집 사당역점", "distance": 135, "category": "한식/전골", "kind": "한식/전골", "color": "#27863c", "signal": "방문자 1,201 · 블로그 657", "address": "서울 서초구 방배천로 12 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "돼지김치찌개", "source": "돼지김치찌개", "sourceType": "등록", "kind": "food"}, {"display": "돼지김치구이", "source": "돼지김치구이", "sourceType": "등록", "kind": "food"}, {"display": "통돼지김치찌개", "source": "통돼지김치찌개", "sourceType": "등록", "kind": "food"}, {"display": "동태탕", "source": "동태탕", "sourceType": "등록", "kind": "food"}], "markerLabel": "그냥찌개집", "menus": ["돼지김치찌개", "돼지김치구이", "통돼지김치찌개", "동태탕"]}, {"name": "가우리집", "distance": 155, "category": "한식/전골", "kind": "한식/전골", "color": "#7352aa", "signal": "방문자 1,985 · 블로그 1,425", "address": "서울 서초구 청두곶길 5 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "가오리조림", "source": "가오리조림", "sourceType": "등록", "kind": "food"}, {"display": "코다리조림", "source": "코다리조림", "sourceType": "등록", "kind": "food"}, {"display": "생대구탕", "source": "생대구탕", "sourceType": "등록", "kind": "food"}, {"display": "오징어순대", "source": "오징어순대", "sourceType": "등록", "kind": "food"}], "markerLabel": "가우리집", "menus": ["가오리조림", "코다리조림", "생대구탕", "오징어순대"]}, {"name": "계탄언니 사당본점", "distance": 240, "category": "한식/전골", "kind": "한식/전골", "color": "#bb4d26", "signal": "방문자 6,623 · 블로그 2,628", "address": "서울 관악구 과천대로 951 지하 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "투움바 닭갈비", "source": "투움바 닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "치즈닭갈비", "source": "치즈닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "오리지널 닭갈비", "source": "오리지널 닭갈비", "sourceType": "등록", "kind": "food"}, {"display": "들기름 막국수", "source": "들기름 막국수", "sourceType": "등록", "kind": "food"}], "markerLabel": "계탄언니", "menus": ["투움바 닭갈비", "치즈닭갈비", "오리지널 닭갈비", "들기름 막국수"]}, {"name": "리에또", "distance": 257, "category": "양식/세계음식", "kind": "양식/세계음식", "color": "#167a78", "signal": "방문자 10,496 · 블로그 1,558", "address": "서울 서초구 방배천로4안길 20", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "아마트리치아나 파스타", "source": "아마트리치아나 파스타", "sourceType": "등록", "kind": "food"}, {"display": "치즈냄비파스타", "source": "치즈냄비파스타", "sourceType": "등록", "kind": "food"}, {"display": "풍기 리조또", "source": "풍기 리조또", "sourceType": "등록", "kind": "food"}, {"display": "만조 스테이크", "source": "만조 스테이크", "sourceType": "등록", "kind": "food"}], "markerLabel": "리에또", "menus": ["아마트리치아나 파스타", "치즈냄비파스타", "풍기 리조또", "만조 스테이크"]}, {"name": "방배동쌀국수", "distance": 423, "category": "면/라멘", "kind": "면/라멘", "color": "#a13b6b", "signal": "방문자 3,146 · 블로그 586", "address": "서울 서초구 방배천로8길 34 1층", "reason": "네이버 Place 메뉴 기준 일반 식사 후보.", "rationale": "대표 메뉴와 리뷰 신호를 확인해 비교하세요.", "menuEvidence": [{"display": "분짜", "source": "분짜", "sourceType": "등록", "kind": "food"}, {"display": "모듬쌀국수", "source": "모듬쌀국수", "sourceType": "등록", "kind": "food"}, {"display": "파인애플볶음밥", "source": "파인애플볶음밥", "sourceType": "등록", "kind": "food"}, {"display": "우삼겹쌀국수", "source": "우삼겹쌀국수", "sourceType": "등록", "kind": "food"}], "markerLabel": "방배동쌀국수", "menus": ["분짜", "모듬쌀국수", "파인애플볶음밥", "우삼겹쌀국수"]}]}};
+    const { config, modeConfig, venues } = guide;
+    const modes = Object.keys(venues);
+    const state = { mode: modes[0], distance: 'all', food: 'all' };
     const $ = (selector) => document.querySelector(selector);
-    const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}`;
-
-    if (!hasBoheVenues) document.querySelector('.tabs').hidden = true;
-
-    function filteredVenues() {
-      return venues[state.mode].filter((venue) => {
-        const distanceMatch = state.distance === 'all' || (state.distance === '100' ? venue.distance <= 100 : state.distance === '300' ? venue.distance > 100 && venue.distance <= 300 : state.distance === '500' ? venue.distance > 300 && venue.distance <= 500 : venue.distance > 500);
-        return distanceMatch && (state.food === 'all' || venue.category === state.food);
-      }).sort((a, b) => a.distance - b.distance);
-    }
-
-    function setActive(selector, value, attribute) {
-      document.querySelectorAll(selector).forEach((button) => button.classList.toggle('is-active', button.dataset[attribute] === value));
-    }
-
-    function cardMarkup(venue, rank) {
-      const savedSource = venue.savedSource ? `<a class="action" target="_blank" rel="noopener noreferrer" href="${venue.savedSource}">큐레이션</a>` : '';
-      return `<article class="card" style="--accent:${venue.color}">
-        <div class="rank">${rank}</div><h2>${venue.name}</h2>
-        <div class="meta"><span class="chip">${venue.distance}m</span><span class="chip">${venue.category}</span></div>
-        <p class="reason">${venue.reason}</p>
-        <div class="info-grid"><div class="info"><b>NAVER SIGNAL</b><span>${venue.signal}</span></div><div class="info"><b>ADDRESS</b><span class="address-line">${venue.address}</span></div></div>
-        <div class="menus">${venue.menus.map((menu) => `<span class="menu">${menu}</span>`).join('')}</div>
-        <div class="accent-rule"></div><p class="rationale">${venue.rationale}</p>
-        <div class="actions"><a class="action primary" target="_blank" rel="noopener noreferrer" href="${searchUrl(venue.name)}">네이버 지도</a><a class="action" target="_blank" rel="noopener noreferrer" href="${searchUrl(venue.name)}">검색 링크</a>${savedSource}</div>
-      </article>`;
-    }
-
-    function render() {
-      const list = filteredVenues();
-      $('#candidateCount').textContent = `${list.length} bars`;
-      $('#closest').textContent = list.length ? `${list[0].distance}m` : '—';
-      $('#radiusValue').textContent = state.mode === 'bohe' ? '≤ 729m' : '≤ 500m';
-      $('#markerTitle').textContent = state.mode === 'bohe' ? '보헤 추천 · 가까운 순서' : '육밀도에서 가까운 순서';
-      $('#markerGrid').innerHTML = list.map((venue, index) => `<div class="marker" style="--accent:${venue.color}" title="${index + 1}. ${venue.name}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${venue.markerLabel}</span></div>`).join('');
-      $('#cardList').innerHTML = list.map((venue, index) => cardMarkup(venue, index + 1)).join('');
-      $('#emptyState').style.display = list.length ? 'none' : 'block';
-      $('#quickClosest').innerHTML = list.length ? `<strong>${list[0].name} ${list[0].distance}m</strong>. 이동을 최소화하고 싶다면 가장 가까운 이 후보부터 확인하세요.` : '필터를 바꾸면 가장 가까운 후보를 다시 보여드립니다.';
-      const foodPick = list.find((venue) => venue.name === '페레힐') || list.find((venue) => venue.category === '양식/세계음식');
-      const moodPick = list.find((venue) => venue.name === '실비옥') || list.find((venue) => venue.category === '한식/전골');
-      $('#quickFood').innerHTML = foodPick ? `<strong>${foodPick.name}</strong>은 ${foodPick.kind} 선택지입니다. 메뉴의 특별함을 우선할 때 확인하세요.` : '현재 조건에서는 특별 메뉴 후보가 없습니다.';
-      $('#quickMood').innerHTML = moodPick ? `<strong>${moodPick.name}</strong>은 ${moodPick.kind} 선택지입니다. 든든한 한 끼를 원할 때 맞습니다.` : '현재 조건에서는 든든한 한 끼 후보가 없습니다.';
-    }
-
-    document.querySelectorAll('[data-mode]').forEach((button) => button.addEventListener('click', () => { state.mode = button.dataset.mode; document.querySelectorAll('[data-mode]').forEach((tab) => tab.setAttribute('aria-selected', String(tab === button))); render(); }));
-    document.querySelectorAll('[data-distance]').forEach((button) => button.addEventListener('click', () => { state.distance = button.dataset.distance; setActive('[data-distance]', state.distance, 'distance'); render(); }));
-    document.querySelectorAll('[data-food]').forEach((button) => button.addEventListener('click', () => { state.food = button.dataset.food; setActive('[data-food]', state.food, 'food'); render(); }));
+    const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' })[character]);
+    const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}?c=15.00,0,0,0,dh`;
+    function modeVenues() { return venues[state.mode]; }
+    function filteredVenues() { return modeVenues().filter((venue) => { const distance = state.distance === 'all' || (state.distance === '100' ? venue.distance <= 100 : state.distance === '300' ? venue.distance > 100 && venue.distance <= 300 : state.distance === '500' ? venue.distance > 300 && venue.distance <= 500 : venue.distance > 500); return distance && (state.food === 'all' || venue.category === state.food); }).sort((a,b) => a.distance-b.distance); }
+    function buttonMarkup(type, value, label, color, active) { return `<button class="filter${active ? ' is-active' : ''}" type="button" data-${type}="${escapeHtml(value)}">${color ? `<span class="filter-dot" style="--dot:${escapeHtml(color)}"></span>` : ''}${escapeHtml(label)}</button>`; }
+    function renderTabs() { const tabs = $('#tabs'); tabs.hidden = modes.length < 2; tabs.innerHTML = modes.map((mode) => `<button class="tab" type="button" role="tab" aria-selected="${mode === state.mode}" data-mode="${mode}">${escapeHtml(modeConfig[mode].label)}</button>`).join(''); tabs.querySelectorAll('[data-mode]').forEach((button) => button.addEventListener('click', () => { state.mode = button.dataset.mode; state.food = 'all'; render(); })); }
+    function renderFilters() { $('#distanceFilters').innerHTML = config.distanceFilters.map((filter) => buttonMarkup('distance', filter.value, filter.label, filter.color, state.distance === filter.value)).join(''); const categories = [...new Map(modeVenues().map((venue) => [venue.category, venue.color])).entries()]; $('#foodFilters').innerHTML = buttonMarkup('food', 'all', '전체', null, state.food === 'all') + categories.map(([category,color]) => buttonMarkup('food', category, category, color, state.food === category)).join(''); document.querySelectorAll('[data-distance]').forEach((button) => button.addEventListener('click', () => { state.distance = button.dataset.distance; render(); })); document.querySelectorAll('[data-food]').forEach((button) => button.addEventListener('click', () => { state.food = button.dataset.food; render(); })); }
+    function cardMarkup(venue, rank) { const mapUrl = searchUrl(venue.name); const source = venue.savedSource && venue.savedSource !== mapUrl ? `<a class="action" target="_blank" rel="noopener noreferrer" href="${escapeHtml(venue.savedSource)}">큐레이션</a>` : ''; return `<article class="card" style="--accent:${escapeHtml(venue.color)}"><div class="rank">${rank}</div><h2>${escapeHtml(venue.name)}</h2><div class="meta"><span class="chip">${venue.distance}m</span><span class="chip">${escapeHtml(venue.category)}</span></div><p class="reason">${escapeHtml(venue.reason)}</p><div class="info-grid"><div class="info"><b>NAVER SIGNAL</b><span>${escapeHtml(venue.signal)}</span></div><div class="info"><b>ADDRESS</b><span class="address-line">${escapeHtml(venue.address)}</span></div></div><div class="menus">${venue.menus.map((menu) => `<span class="menu">${escapeHtml(menu)}</span>`).join('')}</div><div class="accent-rule"></div><p class="rationale">${escapeHtml(venue.rationale)}</p><div class="actions"><a class="action primary" target="_blank" rel="noopener noreferrer" href="${mapUrl}">네이버 지도</a>${source}</div></article>`; }
+    function renderQuickPicks() { const byName = new Map(modeVenues().map((venue) => [venue.name, venue])); $('#quickPicks').innerHTML = modeConfig[state.mode].quickPicks.map((pick) => { const venue = byName.get(pick.venue); return `<article class="quick"><h2>${escapeHtml(pick.title)}</h2><p><strong>${escapeHtml(venue.name)} ${venue.distance}m</strong>. ${escapeHtml(pick.copy)}</p></article>`; }).join(''); }
+    function render() { const mode = modeConfig[state.mode]; const list = filteredVenues(); $('#eyebrow').textContent = config.eyebrow; $('#source').textContent = config.source; $('#notice').textContent = config.notice; $('#markerHelper').textContent = config.markerHelper; $('#candidateCount').textContent = `${list.length} bars`; $('#radiusValue').textContent = mode.radiusLabel; $('#closest').textContent = list.length ? `${list[0].distance}m` : '—'; $('#bestFor').textContent = mode.bestFor; $('#markerTitle').textContent = mode.markerTitle; $('#markerGrid').innerHTML = list.map((venue,index) => `<div class="marker" style="--accent:${escapeHtml(venue.color)}" title="${index + 1}. ${escapeHtml(venue.name)}"><div class="marker-dot"></div><span class="marker-distance">${venue.distance}m</span><span class="marker-name">${escapeHtml(venue.markerLabel)}</span></div>`).join(''); $('#cardList').innerHTML = list.map((venue,index) => cardMarkup(venue,index+1)).join(''); $('#emptyState').style.display = list.length ? 'none' : 'block'; renderTabs(); renderFilters(); renderQuickPicks(); }
     render();
   </script>
 </body>

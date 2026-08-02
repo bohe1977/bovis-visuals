@@ -1,11 +1,45 @@
 {
-  "title": "사당역 맛집 지도",
-  "eyebrow": "SADANG STATION · FOOD GUIDE",
-  "intro": "기준점은 <strong>사당역</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>사당역권 일반 식사</strong> 후보를 비교합니다.",
-  "source": "SOURCE: Naver Map + Place menu · origin: Sadang Station · general search scope",
-  "markerTitle": "사당역권 일반 식사 후보",
-  "notice": "사당역 일반 검색 후보입니다. 수치 반경은 별도로 제한하지 않았습니다. 메뉴·영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
-  "venues": [
+  "config": {
+    "title": "사당역 맛집 지도",
+    "description": "사당역 기준 일반 식사 후보를 비교하는 인터랙티브 맛집 지도",
+    "eyebrow": "SADANG STATION · FOOD GUIDE",
+    "intro": "기준점은 <strong>사당역</strong>입니다. 현재 네이버 Place 신호가 확인되는 <strong>사당역권 일반 식사</strong> 후보를 비교합니다.",
+    "source": "SOURCE: Naver Map + Place menu · origin: Sadang Station · general search scope",
+    "notice": "사당역 일반 검색 후보입니다. 메뉴·영업시간·휴무·대기·예약은 출발 전 네이버 지도에서 다시 확인하세요.",
+    "markerHelper": "station-area distance · tap card for Naver Map",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "사당역권",
+      "bestFor": "일반 식사",
+      "markerTitle": "사당역권 일반 식사 후보",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 식사",
+          "venue": "램타운양꼬치 사당점",
+          "copy": "사당역권에서 양꼬치·마라탕 식사를 찾을 때 확인하세요."
+        },
+        {
+          "title": "특별한 메뉴",
+          "venue": "생어거스틴 파스텔시티점",
+          "copy": "태국식 메뉴를 원할 때 맞는 후보입니다."
+        },
+        {
+          "title": "든든한 한 끼",
+          "venue": "계탄언니 사당본점",
+          "copy": "닭갈비와 식사 메뉴를 함께 고르기 좋습니다."
+        }
+      ]
+    }
+  },
+  "general": [
     {
       "name": "램타운양꼬치 사당점",
       "distance": 0,
@@ -42,7 +76,7 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "램타운양꼬치 사당점"
+      "markerLabel": "램타운양꼬치"
     },
     {
       "name": "투파인드피터 서울사당점",
@@ -308,7 +342,7 @@
           "kind": "food"
         }
       ],
-      "markerLabel": "생어거스틴 파스텔시티점"
+      "markerLabel": "생어거스틴"
     }
   ]
 }
