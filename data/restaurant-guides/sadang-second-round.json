@@ -1,0 +1,376 @@
+{
+  "config": {
+    "title": "사당역 2차 술집 지도",
+    "description": "육밀도 사당직영점 식사 후 500m 안쪽 2차 술집을 비교하는 지도입니다.",
+    "eyebrow": "SADANG STATION · SECOND ROUND",
+    "intro": "기준점은 <strong>육밀도 사당직영점</strong>입니다. 저녁 식사 후 걸어서 움직이기 좋은 <strong>500m 안쪽 술집</strong>만 추려서, 거리별·음식별 필터로 바로 고를 수 있게 정리했습니다.",
+    "source": "SOURCE: Naver Place summary + menu snippets · origin: 육밀도 사당직영점 · radius gate: ≤ 500m straight-line",
+    "notice": "거리값은 육밀도 사당직영점 좌표에서 Naver Place 좌표까지의 직선거리 기준입니다. 실제 도보 동선은 횡단보도·골목에 따라 달라질 수 있습니다. 출발 전 네이버 지도에서 영업시간·휴무·대기·예약 가능 여부를 다시 확인하세요.",
+    "markerHelper": "육밀도 사당직영점 기준 네이버 지도 공개 좌표 직선거리",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "100",
+        "label": "0~100m"
+      },
+      {
+        "value": "300",
+        "label": "100~300m"
+      },
+      {
+        "value": "500",
+        "label": "300~500m"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "2차",
+      "markerTitle": "육밀도에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 2차",
+          "venue": "코다차야 사당점",
+          "copy": "육밀도 바로 옆에서 이동을 최소화할 수 있는 2차 후보입니다."
+        },
+        {
+          "title": "음식까지 제대로",
+          "venue": "아마이까 사당점",
+          "copy": "숙성회 중심으로 음식 완성도를 보려는 2차 후보입니다."
+        },
+        {
+          "title": "사당 2차 분위기",
+          "venue": "사당룸 이자카야 시오리",
+          "copy": "가까운 룸형 이자카야에서 대화를 이어가기 좋은 후보입니다."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "코다차야 사당점",
+      "distance": 51,
+      "category": "이자카야/사시미",
+      "kind": "이자카야",
+      "color": "#1f6fd1",
+      "reason": "육밀도 바로 옆의 초근접 이자카야형 2차 후보.",
+      "signal": "방문자 리뷰 1,395 · 블로그 1,034",
+      "address": "서울 서초구 방배천로2길 7 지하1층",
+      "rationale": "이동을 최소화하면서 메뉴 선택폭을 넓게 가져갈 때의 후보.",
+      "markerLabel": "코다차야",
+      "menuEvidence": [
+        {
+          "display": "김치볶음밥",
+          "source": "김치볶음밥",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "나가사끼짬뽕",
+          "source": "나가사끼짬뽕",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "아사히생",
+          "source": "아사히생",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "사당룸 이자카야 시오리",
+      "distance": 56,
+      "category": "이자카야/사시미",
+      "kind": "이자카야",
+      "color": "#a72d5b",
+      "reason": "룸과 사시미 메뉴 신호가 있는 가까운 이자카야.",
+      "signal": "방문자 리뷰 121 · 블로그 186",
+      "address": "서울 서초구 방배천로2길 21 5층",
+      "rationale": "대화를 오래 이어갈 2차라면 가까운 룸형 후보로 확인.",
+      "markerLabel": "시오리",
+      "menuEvidence": [
+        {
+          "display": "모듬 사시미",
+          "source": "모듬 사시미",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "나가사끼짬뽕",
+          "source": "나가사끼짬뽕",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "하이볼",
+          "source": "하이볼",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "남도술상 사당점",
+      "distance": 65,
+      "category": "포차/전골",
+      "kind": "요리주점",
+      "color": "#c76c00",
+      "reason": "막걸리와 한식 안주 중심의 가까운 요리주점.",
+      "signal": "방문자 리뷰 154 · 블로그 99",
+      "address": "서울 서초구 방배천로2길 2 2층",
+      "rationale": "한식 안주와 전통주로 방향을 잡고 싶을 때의 초근접 선택.",
+      "markerLabel": "남도술상",
+      "menuEvidence": [
+        {
+          "display": "홍어삼합",
+          "source": "홍어삼합",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "장수막걸리",
+          "source": "장수막걸리",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "갑오징어",
+          "source": "갑오징어",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "이자카야나무 사당점",
+      "distance": 68,
+      "category": "이자카야/사시미",
+      "kind": "이자카야",
+      "color": "#2f8a4c",
+      "reason": "숙회·계란말이 등 메뉴 신호가 확인되는 이자카야.",
+      "signal": "방문자 리뷰 1,266 · 블로그 520",
+      "address": "서울 서초구 방배천로2길 25 2층, 3층",
+      "rationale": "무난한 이자카야 안주와 높은 리뷰 신호를 함께 볼 때.",
+      "markerLabel": "나무",
+      "menuEvidence": [
+        {
+          "display": "스텔라",
+          "source": "스텔라",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "카스 330ml",
+          "source": "카스 330ml",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "허니고구마스틱",
+          "source": "허니고구마스틱",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "크래프트한스 사당점",
+      "distance": 90,
+      "category": "맥주/하이볼",
+      "kind": "맥주,호프",
+      "color": "#7151a5",
+      "reason": "수제맥주 중심으로 가볍게 이어가기 좋은 후보.",
+      "signal": "방문자 리뷰 346 · 블로그 247",
+      "address": "서울 서초구 방배천로 12-4 1층",
+      "rationale": "식사 후 맥주·하이볼 위주로 부담 없이 마무리할 때.",
+      "markerLabel": "크래프트한스",
+      "menuEvidence": [
+        {
+          "display": "카스 생맥",
+          "source": "카스 생맥",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "한스 바이젠",
+          "source": "한스 바이젠",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "한스 필스너",
+          "source": "한스 필스너",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "이자카야 룸",
+      "distance": 117,
+      "category": "이자카야/사시미",
+      "kind": "이자카야",
+      "color": "#118796",
+      "reason": "사시미와 하이볼 메뉴 신호가 있는 지하 이자카야.",
+      "signal": "방문자 리뷰 241 · 블로그 197",
+      "address": "서울 서초구 방배천로2안길 17 지하1층",
+      "rationale": "사시미 안주를 중심으로 2차를 고를 때의 후보.",
+      "markerLabel": "이자카야 룸",
+      "menuEvidence": [
+        {
+          "display": "모듬 사시미",
+          "source": "모듬 사시미",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "가라아게",
+          "source": "가라아게",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "하이볼",
+          "source": "하이볼",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "사당헌상",
+      "distance": 120,
+      "category": "포차/전골",
+      "kind": "요리주점",
+      "color": "#d25b1f",
+      "reason": "김치찜·파전 등 한식형 안주 구성이 확인되는 요리주점.",
+      "signal": "방문자 리뷰 302 · 블로그 344",
+      "address": "서울 서초구 방배천로2안길 17 2층",
+      "rationale": "여러 명이 한식 안주를 나눠 먹기 좋은 카드.",
+      "markerLabel": "사당헌상",
+      "menuEvidence": [
+        {
+          "display": "돼지김치찜",
+          "source": "돼지김치찜",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "파전",
+          "source": "파전",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "막걸리",
+          "source": "막걸리",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "아마이까 사당점",
+      "distance": 189,
+      "category": "이자카야/사시미",
+      "kind": "이자카야",
+      "color": "#a53c76",
+      "reason": "숙성회 신호가 확인되는 음식 중심 이자카야.",
+      "signal": "방문자 리뷰 234 · 블로그 103",
+      "address": "서울 서초구 방배천로2안길 31 2층",
+      "rationale": "배가 불러도 음식 완성도를 포기하고 싶지 않을 때.",
+      "markerLabel": "아마이까",
+      "menuEvidence": [
+        {
+          "display": "숙성회",
+          "source": "숙성회",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "모찌리도후",
+          "source": "모찌리도후",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "문어튀김",
+          "source": "문어튀김",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "을지로골뱅이 포차 사당역점",
+      "distance": 236,
+      "category": "포차/전골",
+      "kind": "요리주점",
+      "color": "#a86a00",
+      "reason": "골뱅이·탕류로 메뉴 방향을 바꾸기 좋은 포차형 후보.",
+      "signal": "방문자 리뷰 1,191 · 블로그 202",
+      "address": "서울 동작구 동작대로1길 7 1층",
+      "rationale": "고기 식사 뒤 탕과 골뱅이 안주로 전환하기 좋습니다.",
+      "markerLabel": "을지로골뱅이",
+      "menuEvidence": [
+        {
+          "display": "을지로골뱅이",
+          "source": "을지로골뱅이",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "백골뱅이탕",
+          "source": "백골뱅이탕",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "소면",
+          "source": "소면",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "객간",
+      "distance": 473,
+      "category": "포차/전골",
+      "kind": "요리주점",
+      "color": "#287c91",
+      "reason": "막회·봉초밥 등 다양한 안주가 확인되는 500m 경계 후보.",
+      "signal": "방문자 리뷰 689 · 블로그 1,206",
+      "address": "서울 동작구 남부순환로269길 16 1층",
+      "rationale": "조금 더 걸어도 메뉴 선택폭이 넓은 곳을 원할 때.",
+      "markerLabel": "객간",
+      "menuEvidence": [
+        {
+          "display": "깻잎막회",
+          "source": "깻잎막회",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "고등어봉초밥",
+          "source": "고등어봉초밥",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        },
+        {
+          "display": "치즈감자전",
+          "source": "치즈감자전",
+          "sourceType": "Naver Place menu snippet",
+          "kind": "food"
+        }
+      ]
+    }
+  ]
+}
