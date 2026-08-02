@@ -21,8 +21,10 @@
   },
   "actions": {
     "primaryLabel": "네이버 지도",
+    "secondaryLabel": "검색 링크",
     "naverMapSearchTemplate": "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh",
-    "distinctDestinationRule": "Render no duplicate identical action URL; an optional curation action must be a distinct URL.",
+    "naverIntegratedSearchTemplate": "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueName)}",
+    "distinctDestinationRule": "Render both 지도 and 검색 링크 actions because they are distinct destinations; an optional curation action must be distinct from both.",
     "savedSourceLabel": "큐레이션",
     "savedSourceRule": "For a Bohe venue, show exactly one representative curation source URL even if the private DB has multiple Instagram or blog URLs."
   },

@@ -19,7 +19,9 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
         "cardUses": "name",
     }
     assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh"
-    assert contract["actions"]["distinctDestinationRule"].startswith("Render no duplicate")
+    assert contract["actions"]["secondaryLabel"] == "검색 링크"
+    assert contract["actions"]["naverIntegratedSearchTemplate"] == "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueName)}"
+    assert contract["actions"]["distinctDestinationRule"].startswith("Render both 지도")
 
 
 def test_canonical_template_keeps_mobile_info_and_menu_contracts():
