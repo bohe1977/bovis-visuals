@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "scope": "BOVIS MLB daily tracked-team game cards",
+  "trackedTeams": ["LA 다저스", "샌프란시스코"],
+  "scoreboard": {
+    "teamOrder": "official-away-home",
+    "winnerBadge": "adjacent-to-winning-team",
+    "finalStatusLabel": "경기 결과"
+  },
+  "cardOrder": [
+    "game-status-venue-kst-time",
+    "official-away-home-score",
+    "tracked-team-headline",
+    "separated-winner-loser-save-tags",
+    "game-points",
+    "tracked-team-effort",
+    "official-naver-daum-sources"
+  ],
+  "headline": {
+    "perspective": "tracked-team",
+    "lossTemplate": "<핵심 타자>의 홈런 포함 <타점>에도 <추적팀>, <상대팀>에 <점수> 패배",
+    "winTemplate": "<결승 장면 또는 핵심 타자>로 <추적팀>, <상대팀>에 <점수> 승리",
+    "forbidGenericOpponentFirstResult": true,
+    "homeRunRbiRule": "Do not infer an N-run homer from aggregate home-run and RBI totals; use 홈런 포함 N타점 unless play-by-play verifies RBI for the homer."
+  },
+  "decisions": {
+    "placement": "centered-row-below-headline",
+    "tokens": ["승 <winner_pitcher>", "패 <loser_pitcher>", "세 <save_pitcher-if-present>"],
+    "forbidCombinedDecisionString": true
+  },
+  "gamePoints": {
+    "minimumItems": 4,
+    "requiredFacts": [
+      "winner-loser-pitcher-lines",
+      "decisive-play-or-hit-run-flow",
+      "tracked-team-key-hitter-line-and-context",
+      "verified-closer-or-closing-flow"
+    ],
+    "forbidBareDecisionDuplication": true
+  },
+  "effort": {
+    "whenTrackedTeamLoses": "tracked-team",
+    "requireConcretePlayerEffort": true
+  },
+  "collectorRequiredFields": [
+    "headline",
+    "winner_pitcher",
+    "loser_pitcher",
+    "save_pitcher",
+    "game_points",
+    "opponent_label",
+    "opponent_effort",
+    "naver_game_id",
+    "daum_game_id"
+  ],
+  "qa": {
+    "viewports": [390, 768, 1440],
+    "checks": ["decision-tag-count", "game-point-count", "console-errors", "horizontal-overflow"]
+  }
+}
