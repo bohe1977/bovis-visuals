@@ -65,8 +65,8 @@ def test_renderer_embeds_both_modes_as_data_for_synchronized_client_rendering(tm
     assert "<h2>${escapeHtml(venue.name)}</h2>" in template
     assert "?c=15.00,0,0,0,dh" in template
     assert "검색 링크" in template
-    assert "https://search.naver.com/search.naver?query=" in template
-    assert "const query = venue.searchQuery || venue.name; const mapUrl = searchUrl(query); const integratedSearchUrl = naverSearchUrl(query);" in template
+    assert "function naverPlaceSearchUrl(name) { return `https://map.naver.com/p/search/${encodeURIComponent(name)}?c=15.00,0,0,0,dh`; }" in template
+    assert "const query = venue.searchQuery || venue.name; const mapUrl = searchUrl(query); const placeSearchUrl = naverPlaceSearchUrl(query);" in template
     assert "양식/세계음식" not in template and "페레힐" not in template
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in html
     assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in html
