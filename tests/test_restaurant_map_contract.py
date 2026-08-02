@@ -18,6 +18,13 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
         "railUses": "markerLabel",
         "cardUses": "name",
     }
+    assert contract["labelTypography"] == {
+        "appliesTo": ["CANDIDATES", "RADIUS", "CLOSEST", "BEST FOR", "DISTANCE", "FOOD"],
+        "color": "#181818",
+        "fontWeight": 800,
+        "fontSize": "12px",
+        "fontFamily": "Geist, Arial, sans-serif",
+    }
     assert contract["distance"]["placeholderValueForbidden"] == 0
     assert contract["distance"]["unit"] == "m"
     assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueName)}?c=15.00,0,0,0,dh"
@@ -35,6 +42,8 @@ def test_canonical_template_keeps_mobile_info_and_menu_contracts():
     assert ".menu { padding:7px 9px; border-radius:8px; background:#f2f2f2; color:#444; font-size:13px; font-weight:650; }" in template
     menu_contract = json.loads((ROOT / "standards" / "menu-chip-contract-v1.json").read_text(encoding="utf-8"))
     assert menu_contract["cardLimit"] == 3
+    assert menu_contract["mobileRendering"] == "Render at most three verified menu chips with normal centered wrapping. Do not shrink chips or use a horizontal swipe rail unless the user explicitly approves it."
+    assert "fewer than three" in menu_contract["selection"][-1]
     assert ".menu { padding:5px 8px; font-size:11px; }" not in template
 
 

@@ -1,8 +1,15 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scope": "BOVIS restaurant-map public visualizations",
   "page_update_policy": "Region pages consume this contract; do not copy an old region HTML file as a visual baseline.",
   "candidate_unit": "bars",
+  "labelTypography": {
+    "appliesTo": ["CANDIDATES", "RADIUS", "CLOSEST", "BEST FOR", "DISTANCE", "FOOD"],
+    "color": "#181818",
+    "fontWeight": 800,
+    "fontSize": "12px",
+    "fontFamily": "Geist, Arial, sans-serif"
+  },
   "distance": {
     "unit": "m",
     "sadangStationMethod": "Use the verified Sadang Station coordinate, calculate straight-line distance to verified venue coordinates, and round display values to 10m.",
