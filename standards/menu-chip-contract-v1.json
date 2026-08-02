@@ -13,6 +13,6 @@
     "Use a compact display name of 12 characters or fewer so each mobile menu chip stays on one line; preserve the complete original in source.",
     "Examples: 수제교자 5p → 수제교자; 대표 고급양갈비 2+1 → 고급양갈비."
   ],
-  "mobileRendering": "Menu chips may move as whole chips to another row, but chip text must never wrap inside a chip (white-space: nowrap).",
+  "mobileRendering": "On mobile, render menu chips as one horizontal swipe rail; chip text must never wrap and the menu group must not create a second row.",
   "evidence": "Each rendered menu chip must retain its exact Naver source menu string and source type (대표 or 등록)."
 }
