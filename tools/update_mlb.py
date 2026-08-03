@@ -5,6 +5,7 @@ import json, sys, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from archive_daily_sports import archive_mlb
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'mlb'/'data.json'
@@ -366,5 +367,6 @@ def main():
       'sources':{'mlb_official':src,'naver':[naver_url,naver_api],'daum':[daum_url,daum_api]}
     }
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    archive_mlb(ROOT)
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

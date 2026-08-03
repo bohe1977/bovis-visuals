@@ -1,0 +1,110 @@
+{
+  "date": "2026-08-02",
+  "generated_at": "2026-08-03T06:20:00+09:00",
+  "games": [
+    {
+      "id": "20260802SKWO0",
+      "stadium": "고척",
+      "start_time": "14:00",
+      "status": "경기 종료",
+      "away": "SSG",
+      "home": "키움",
+      "away_score": 3,
+      "home_score": 5,
+      "winner_pitcher": "김성민",
+      "loser_pitcher": "노경은",
+      "save_pitcher": "유토",
+      "headline": "키움이 7회 데이비슨의 결승 홈런으로 SSG에 5-3 승리",
+      "winner_points": [
+        "키움 선발 전준표는 4⅔이닝 4피안타 4사사구 4탈삼진 2실점, SSG 선발 아빌라는 5⅓이닝 7피안타 4사사구 6탈삼진 3실점을 기록했다.",
+        "7회 무사에서 데이비슨의 좌월 솔로 홈런이 결승타가 됐다.",
+        "키움 김웅빈은 2타수 2안타 1홈런 3타점, 임병욱과 김건희는 각각 2안타를 기록했다.",
+        "김성민이 1⅓이닝 2피안타 1탈삼진 무실점으로 승리를 챙겼고, 유토가 1이닝 무실점으로 시즌 13세이브를 올렸다."
+      ],
+      "opponent_effort": "SSG는 박성한이 5타수 3안타 1타점, 전의산이 5타수 2안타를 기록하며 끝까지 추격했다.",
+      "sources": [
+        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260802&gameId=20260802SKWO0&section=REVIEW"},
+        {"label": "네이버 기록", "url": "https://api-gw.sports.naver.com/schedule/games/20260802SKWO02026/record"},
+        {"label": "다음 기록", "url": "https://sports.daum.net/match/80101037"}
+      ]
+    },
+    {
+      "id": "20260802LGOB0",
+      "stadium": "잠실",
+      "start_time": "18:00",
+      "status": "경기 종료",
+      "away": "LG",
+      "home": "두산",
+      "away_score": 3,
+      "home_score": 8,
+      "winner_pitcher": "벤자민",
+      "loser_pitcher": "톨허스트",
+      "save_pitcher": "",
+      "headline": "두산이 박찬호의 4회 결승 2루타를 앞세워 LG에 8-3 승리",
+      "winner_points": [
+        "두산 선발 벤자민은 6이닝 4피안타 무사사구 8탈삼진 3실점으로 승리했고, LG 톨허스트는 4이닝 9피안타 2사사구 3탈삼진 6실점으로 패전했다.",
+        "4회 무사 2·3루에서 박찬호의 좌익수 쪽 2루타가 결승타가 됐다.",
+        "두산 안현민은 5타수 4안타 1타점 2득점, 김현수는 4타수 1안타 1홈런 3타점, 장준원은 5타수 2안타 1홈런 4타점을 기록했다.",
+        "김정우가 1이닝 무피안타 2탈삼진 무실점 홀드, 이영하가 1이닝 무실점으로 뒤를 받쳤다."
+      ],
+      "opponent_effort": "LG는 이주헌이 4타수 1안타 1홈런 2타점, 문성주가 4타수 2안타를 기록하며 반격했다.",
+      "sources": [
+        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260802&gameId=20260802LGOB0&section=REVIEW"},
+        {"label": "네이버 기록", "url": "https://api-gw.sports.naver.com/schedule/games/20260802LGOB02026/record"},
+        {"label": "다음 기록", "url": "https://sports.daum.net/match/80101040"}
+      ]
+    },
+    {
+      "id": "20260802SSLT0",
+      "stadium": "사직",
+      "start_time": "18:00",
+      "status": "경기 종료",
+      "away": "삼성",
+      "home": "롯데",
+      "away_score": 7,
+      "home_score": 10,
+      "winner_pitcher": "비슬리",
+      "loser_pitcher": "보스",
+      "save_pitcher": "",
+      "headline": "롯데가 레이예스의 1회 결승 3루타로 삼성에 10-7 승리",
+      "winner_points": [
+        "롯데 선발 비슬리는 7이닝 7피안타 무사사구 4탈삼진 4실점으로 승리했고, 삼성 보스는 3이닝 9피안타 3사사구 1탈삼진 7실점으로 패전했다.",
+        "1회 1사 1루에서 레이예스의 우중간 3루타가 결승타가 됐다.",
+        "롯데 전민재는 4타수 3안타 4타점, 나승엽은 4타수 3안타 1타점 3득점, 한동희는 4타수 2안타 1홈런 2타점을 기록했다.",
+        "최준용이 1이닝 3탈삼진을 기록했고, 김원중은 9회 1이닝을 책임져 승리를 마무리했다."
+      ],
+      "opponent_effort": "삼성은 전병우가 4타수 2안타 3타점, 김성윤이 4타수 2안타 2타점, 이재현이 4타수 2안타로 끝까지 추격했다.",
+      "sources": [
+        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260802&gameId=20260802SSLT0&section=REVIEW"},
+        {"label": "네이버 기록", "url": "https://api-gw.sports.naver.com/schedule/games/20260802SSLT02026/record"},
+        {"label": "다음 기록", "url": "https://sports.daum.net/match/80101041"}
+      ]
+    },
+    {
+      "id": "20260802HHKT0",
+      "stadium": "수원",
+      "start_time": "18:00",
+      "status": "경기 종료",
+      "away": "한화",
+      "home": "KT",
+      "away_score": 1,
+      "home_score": 12,
+      "winner_pitcher": "고영표",
+      "loser_pitcher": "화이트",
+      "save_pitcher": "",
+      "headline": "KT가 고영표의 7이닝 무실점과 장준원의 4타점으로 한화에 12-1 승리",
+      "winner_points": [
+        "KT 선발 고영표는 7이닝 6피안타 무사사구 8탈삼진 무실점으로 승리했고, 한화 화이트는 5⅔이닝 7피안타 2사사구 6탈삼진 4실점으로 패전했다.",
+        "결승타는 없었고, KT는 6회 김현수의 3점 홈런과 7회 장준원의 3점 홈런으로 점수 차를 벌렸다.",
+        "장준원은 5타수 2안타 1홈런 4타점, 안현민은 5타수 4안타 1타점 2득점, 김현수는 4타수 1안타 1홈런 3타점을 기록했다.",
+        "전용주가 1이닝 무실점, 이정현이 1이닝 3탈삼진으로 마운드를 이어받았다."
+      ],
+      "opponent_effort": "한화는 노시환이 4타수 2안타 1홈런 1타점으로 9회 완봉을 막았고, 강백호·문현빈·채은성도 각각 안타를 기록했다.",
+      "sources": [
+        {"label": "KBO 공식", "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260802&gameId=20260802HHKT0&section=REVIEW"},
+        {"label": "네이버 기록", "url": "https://api-gw.sports.naver.com/schedule/games/20260802HHKT02026/record"},
+        {"label": "다음 기록", "url": "https://sports.daum.net/match/80101038"}
+      ]
+    }
+  ]
+}
