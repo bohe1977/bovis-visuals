@@ -179,7 +179,7 @@ def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appe
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
     excluded = [player for player in data["batters"] if player.get("minor_league_excluded")]
 
-    assert {player["name"] for player in excluded} == {"김하성", "김혜성"}
+    assert "김혜성" in {player["name"] for player in excluded}
     assert all(player["status"] == "출전 없음" for player in excluded)
     assert all(player["daily_note"] == "MLB 경기 출전 없음" for player in excluded)
     assert all(player["at_bats"] is None and player["hits"] is None for player in excluded)

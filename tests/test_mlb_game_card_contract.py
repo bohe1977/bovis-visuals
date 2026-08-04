@@ -14,7 +14,7 @@ def test_mlb_contract_declares_kbo_reference_order_and_guardrails():
     assert CONTRACT["headline"]["forbidGenericOpponentFirstResult"] is True
     assert CONTRACT["decisions"]["forbidCombinedDecisionString"] is True
     assert CONTRACT["gamePoints"]["minimumItems"] == 4
-    assert CONTRACT["effort"]["whenTrackedTeamLoses"] == "tracked-team"
+    assert CONTRACT["effort"]["team"] == "losing-team"
 
 
 def test_mlb_current_final_games_conform_to_contract():
@@ -25,7 +25,8 @@ def test_mlb_current_final_games_conform_to_contract():
         assert required <= set(game)
         assert game["winner_pitcher"] and game["loser_pitcher"]
         assert len(game["game_points"]) >= CONTRACT["gamePoints"]["minimumItems"]
-        assert game["opponent_label"] in CONTRACT["trackedTeams"]
+        losing_team = game["away"] if game["winner_side"] == "home" else game["home"]
+        assert game["opponent_label"] == losing_team
         assert "에도" in game["headline"] or "앞세워" in game["headline"] or "결승타" in game["headline"]
         assert "홈런 포함" in game["headline"] or "결승타" in game["headline"]
         assert all("공식 결정" not in item for item in game["game_points"])

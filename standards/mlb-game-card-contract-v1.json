@@ -13,7 +13,7 @@
     "tracked-team-headline",
     "separated-winner-loser-save-tags",
     "game-points",
-    "tracked-team-effort",
+    "losing-team-effort",
     "official-naver-daum-sources"
   ],
   "headline": {
@@ -39,7 +39,7 @@
     "forbidBareDecisionDuplication": true
   },
   "effort": {
-    "whenTrackedTeamLoses": "tracked-team",
+    "team": "losing-team",
     "requireConcretePlayerEffort": true
   },
   "collectorRequiredFields": [
