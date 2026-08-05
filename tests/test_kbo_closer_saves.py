@@ -183,12 +183,13 @@ def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appe
     excluded = [player for player in data["batters"] if player.get("minor_league_excluded")]
 
     assert "김혜성" in {player["name"] for player in excluded}
-    assert all(player["status"] == "출전 없음" for player in excluded)
+    assert all(player["status"] == "메이저 출전 없음" for player in excluded)
     assert all(player["daily_note"] == "MLB 경기 출전 없음" for player in excluded)
     assert all(player["at_bats"] is None and player["hits"] is None for player in excluded)
     assert "Gwinnett Stripers" not in MLB_DATA.read_text(encoding="utf-8")
     assert "Oklahoma City Comets" not in MLB_DATA.read_text(encoding="utf-8")
-    assert "p.minor_league_excluded" in mlb
+    assert "const inactiveBatterRows=inactiveBatters.map(p=>`<div class=\"inactive-row\"" in mlb
+    assert "${inactiveBatterRows?`<div class=\"inactive-pitchers\" aria-label=\"MLB 출전 없는 타자\">${inactiveBatterRows}</div>`:''}" in mlb
 
 
 def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appearance():
@@ -201,7 +202,7 @@ def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appea
     assert go["daily_note"] == "MLB 경기 출전 없음"
     assert "const inactivePitcherRows=inactivePitchers.map(p=>`<div class=\"inactive-row\"" in mlb
     assert "${p.team?`<small>${esc(p.team)}</small>`:''}" in mlb
-    assert "data.json?rev=20260805-minor-pitcher-v2" in mlb
+    assert "data.json?rev=20260805-minor-pitcher-v3" in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():

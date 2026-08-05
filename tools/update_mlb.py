@@ -262,7 +262,7 @@ def main():
       # The report is MLB-only.  A current affiliated-minors assignment must
       # not leak its club, game, or season totals into an MLB daily card.
       if team_sports.get(pid) != 1:
-        batters.append({'name':name,'team':'','mlbam_id':pid,'minor_league_excluded':True,'status':'출전 없음','position':'—','at_bats':None,'hits':None,'rbi':None,'runs':None,'home_runs':None,'walks':None,'strikeouts':None,'avg':None,'obp':None,'ops':None,'season_stats_cutoff':None,'daily_note':'MLB 경기 출전 없음'})
+        batters.append({'name':name,'team':'','mlbam_id':pid,'minor_league_excluded':True,'status':'메이저 출전 없음','position':'—','at_bats':None,'hits':None,'rbi':None,'runs':None,'home_runs':None,'walks':None,'strikeouts':None,'avg':None,'obp':None,'ops':None,'season_stats_cutoff':None,'daily_note':'MLB 경기 출전 없음'})
         continue
       appearances=[]
       for pk,g in tg.items():
