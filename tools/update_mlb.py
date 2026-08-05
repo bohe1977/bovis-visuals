@@ -290,7 +290,7 @@ def main():
       # season records as MLB evidence.  The status remains a compact MLB
       # report state without inventing an MLB appearance.
       if team_sports.get(pid) != 1:
-        pitchers.append({'name':name,'team':'','mlbam_id':pid,'appeared':False,'status':'팀 경기 없음'})
+        pitchers.append({'name':name,'team':'','mlbam_id':pid,'appeared':False,'minor_league_excluded':True,'status':'출전 없음','daily_note':'MLB 경기 출전 없음'})
         continue
       apps=[]
       for pk,g in tg.items():

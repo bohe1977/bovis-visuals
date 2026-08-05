@@ -158,6 +158,9 @@ def test_mlb_uses_result_label_and_role_specific_pitcher_badges():
         if pitcher["appeared"]:
             assert pitcher["role"] in {"starter", "reliever"}
             assert pitcher["game_decision"] in {"승", "패", "세이브", "홀드", "블론", None}
+        elif pitcher.get("minor_league_excluded"):
+            assert pitcher["status"] == "출전 없음"
+            assert pitcher["daily_note"] == "MLB 경기 출전 없음"
         else:
             assert set(pitcher) == {"name", "team", "mlbam_id", "appeared", "status"}
 
@@ -186,6 +189,17 @@ def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appe
     assert "Gwinnett Stripers" not in MLB_DATA.read_text(encoding="utf-8")
     assert "Oklahoma City Comets" not in MLB_DATA.read_text(encoding="utf-8")
     assert "p.minor_league_excluded" in mlb
+
+
+def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appearance():
+    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
+    go = next(player for player in data["pitchers"] if player["name"] == "고우석")
+
+    assert go["minor_league_excluded"] is True
+    assert go["status"] == "출전 없음"
+    assert go["daily_note"] == "MLB 경기 출전 없음"
+    assert "const inactivePitcherRows=inactivePitchers.map(p=>p.minor_league_excluded?" in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
