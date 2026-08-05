@@ -200,6 +200,8 @@ def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appea
     assert go["status"] == "출전 없음"
     assert go["daily_note"] == "MLB 경기 출전 없음"
     assert "const inactivePitcherRows=inactivePitchers.map(p=>p.minor_league_excluded?" in mlb
+    assert "cache:'no-store'" in mlb
+    assert "data.json?rev=20260805-minor-pitcher" in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():

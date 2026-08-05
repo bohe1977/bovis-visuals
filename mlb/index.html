@@ -33,7 +33,7 @@
     const esc = value => String(value ?? '—').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
     const metric = (value,label) => `<div class="stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`;
     const dateKo = value => { const [y,m,d]=value.split('-'); return `${y}년 ${Number(m)}월 ${Number(d)}일`; };
-    fetch('./data.json', {cache:'no-store'}).then(r => {if(!r.ok) throw new Error('data'); return r.json();}).then(data => {
+    fetch('./data.json?rev=20260805-minor-pitcher', {cache:'no-store'}).then(r => {if(!r.ok) throw new Error('data'); return r.json();}).then(data => {
       document.title=`${data.report_date_kst} MLB 선수·주요 팀 리포트 · BOVIS`;
       const allFinal=data.team_games.every(g=>g.status==='경기 종료');
       document.getElementById('nav-date').textContent=`${data.report_date_kst.replaceAll('-','.')} · ${allFinal?'FINAL':'UPDATE'}`;
