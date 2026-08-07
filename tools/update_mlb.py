@@ -313,7 +313,7 @@ def main():
           if decisions.get('save',{}).get('id')==pid: game_decision='세이브'
           elif st.get('holds',0): game_decision='홀드'
           elif st.get('blownSaves',0): game_decision='블론'
-        pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':True,'status':'등판','role':role,'game_decision':game_decision,'daily_innings':st.get('inningsPitched'),'daily_hits':st.get('hits'),'daily_runs':st.get('runs'),'daily_earned_runs':st.get('earnedRuns'),'daily_walks_hbp':st.get('baseOnBalls',0)+st.get('hitByPitch',0),'daily_strikeouts':st.get('strikeOuts'),'daily_home_runs':st.get('homeRuns'),'daily_pitches':st.get('numberOfPitches'),'era':fmt_stat(season.get('era'))})
+        pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':True,'status':'등판','role':role,'game_decision':game_decision,'daily_innings':st.get('inningsPitched'),'daily_hits':st.get('hits'),'daily_runs':st.get('runs'),'daily_earned_runs':st.get('earnedRuns'),'daily_walks_hbp':st.get('baseOnBalls',0)+st.get('hitByPitch',0),'daily_strikeouts':st.get('strikeOuts'),'daily_home_runs':st.get('homeRuns'),'daily_pitches':st.get('numberOfPitches'),'season_record':f"{season.get('wins')}승 {season.get('losses')}패" if season.get('wins') is not None and season.get('losses') is not None else '—','era':fmt_stat(season.get('era'))})
       elif all(game_status(g)=='경기 종료' for g in tg.values()):
         if pid==808970:
           # A separate official game log is required before calling Go's absence verified.

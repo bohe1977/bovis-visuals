@@ -202,7 +202,7 @@ def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appea
     assert go["daily_note"] == "MLB 경기 출전 없음"
     assert "const inactivePitcherRows=inactivePitchers.map(p=>`<div class=\"inactive-row\"" in mlb
     assert "${p.team?`<small>${esc(p.team)}</small>`:''}" in mlb
-    assert "data.json?rev=20260805-minor-pitcher-v3" in mlb
+    assert "data.json?rev=20260806-pitcher-record-v4" in mlb
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
@@ -219,3 +219,15 @@ def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_
     assert active_closer["appeared"] is True
     assert active_closer["season_saves"] == 11
     assert set(inactive_pitcher) == {"name", "team", "appeared"}
+
+
+def test_mlb_pitcher_season_record_fills_the_tenth_stats_cell_in_daily_archive():
+    archive = ROOT / "mlb" / "2026-08-06"
+    data = json.loads((archive / "data.json").read_text(encoding="utf-8"))
+    page = (archive / "index.html").read_text(encoding="utf-8")
+    skenes = next(player for player in data["pitchers"] if player["name"] == "폴 스킨스")
+
+    assert skenes["season_record"] == "9승 10패"
+    assert "${metric(p.season_record,'시즌 성적')}" in page
+    collector = (ROOT / "tools" / "update_mlb.py").read_text(encoding="utf-8")
+    assert "'season_record':f\"{season.get('wins')}승 {season.get('losses')}패\"" in collector
