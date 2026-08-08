@@ -245,3 +245,12 @@ def test_mlb_pitcher_season_record_fills_the_tenth_stats_cell_in_daily_archive()
     assert "${metric(p.season_record,'시즌 성적')}" in page
     collector = (ROOT / "tools" / "update_mlb.py").read_text(encoding="utf-8")
     assert "'season_record':f\"{season.get('wins')}승 {season.get('losses')}패\"" in collector
+
+
+def test_mlb_no_game_state_renders_a_compact_row_without_null_game_card():
+    page = MLB_INTEGRATED.read_text(encoding="utf-8")
+
+    assert "const actualTeamGames=data.team_games.filter(g=>g.game_pk!==null);" in page
+    assert "const noGameRows=data.team_games.filter(g=>g.game_pk===null).map(g=>`<section class=\"section\"" in page
+    assert "actualTeamGames.map((g,index)=>" in page
+    assert "actualTeamGames.flatMap(g=>" in page
