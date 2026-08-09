@@ -202,8 +202,8 @@ def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appe
     assert all(player["at_bats"] is None and player["hits"] is None for player in excluded)
     assert "Gwinnett Stripers" not in MLB_DATA.read_text(encoding="utf-8")
     assert "Oklahoma City Comets" not in MLB_DATA.read_text(encoding="utf-8")
-    assert "const inactiveBatterRows=inactiveBatters.map(p=>`<div class=\"inactive-row\"" in mlb
-    assert "${inactiveBatterRows?`<div class=\"inactive-pitchers\" aria-label=\"MLB 출전 없는 타자\">${inactiveBatterRows}</div>`:''}" in mlb
+    assert "const inactiveBatterRows=inactiveBatters.map(p=>`<div class=\"inactive-row batter-inactive\"" in mlb
+    assert "const batterCards=activeBatterCards+inactiveBatterRows;" in mlb
 
 
 def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appearance():
@@ -245,6 +245,14 @@ def test_mlb_pitcher_season_record_fills_the_tenth_stats_cell_in_daily_archive()
     assert "${metric(p.season_record,'시즌 성적')}" in page
     collector = (ROOT / "tools" / "update_mlb.py").read_text(encoding="utf-8")
     assert "'season_record':f\"{season.get('wins')}승 {season.get('losses')}패\"" in collector
+
+
+def test_mlb_inactive_batter_stays_compact_beside_kim_haseong_on_desktop():
+    page = MLB_INTEGRATED.read_text(encoding="utf-8")
+
+    assert "const batterCards=activeBatterCards+inactiveBatterRows;" in page
+    assert '<div class="player-grid">${batterCards}</div>' in page
+    assert '.batter-inactive{align-self:start}' in page
 
 
 def test_mlb_no_game_state_renders_a_compact_row_without_null_game_card():
