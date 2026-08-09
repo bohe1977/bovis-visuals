@@ -18,7 +18,7 @@
   ],
   "headline": {
     "perspective": "tracked-team",
-    "lossTemplate": "<핵심 타자>의 홈런 포함 <타점>에도 <추적팀>, <상대팀>에 <점수> 패배",
+    "lossTemplate": "<확인된 핵심 타자 기록>에도 <추적팀>, <상대팀>에 <점수> 패배",
     "winTemplate": "<결승 장면 또는 핵심 타자>로 <추적팀>, <상대팀>에 <점수> 승리",
     "forbidGenericOpponentFirstResult": true,
     "homeRunRbiRule": "Do not infer an N-run homer from aggregate home-run and RBI totals; use 홈런 포함 N타점 unless play-by-play verifies RBI for the homer."

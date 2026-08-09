@@ -28,7 +28,9 @@ def test_mlb_current_final_games_conform_to_contract():
         losing_team = game["away"] if game["winner_side"] == "home" else game["home"]
         assert game["opponent_label"] == losing_team
         assert "에도" in game["headline"] or "앞세워" in game["headline"] or "결승타" in game["headline"]
-        assert "홈런 포함" in game["headline"] or "결승타" in game["headline"]
+        # Headlines must use a verified tracked-team hitter line or a verified decisive play;
+        # do not require a home run when the official box score has none.
+        assert any(token in game["headline"] for token in ("홈런 포함", "활약", "결승타"))
         assert all("공식 결정" not in item for item in game["game_points"])
 
 
