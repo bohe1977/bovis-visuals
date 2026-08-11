@@ -14,8 +14,9 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     games = json.loads(GAME_DATA.read_text(encoding="utf-8"))["games"]
     page = INTEGRATED.read_text(encoding="utf-8")
 
-    assert len(games) == 0
+    assert len(games) == 5
     assert all(game["status"] == "경기 종료" for game in games)
+    assert sum(game["away_score"] + game["home_score"] for game in games) == 46
     assert "const finalGames=gdata.games.filter(g=>g.status==='경기 종료');" in page
     assert "#metric-games').textContent=finalGames.length" in page
     assert "#metric-runs').textContent=finalGames.reduce" in page
@@ -59,8 +60,10 @@ def test_pitcher_badges_use_verified_role_specific_game_decisions():
     player_page = PLAYER_PAGE.read_text(encoding="utf-8")
     active = [pitcher for pitcher in pitchers if pitcher["appeared"]]
 
-    # This canceled slate must not synthesize appearance or decision data.
-    assert active == []
+    assert len(active) == 1
+    assert active[0]["name"] == "제레미 비슬리"
+    assert active[0]["role"] == "starter"
+    assert active[0]["game_decision"] == "패"
 
     for page in (integrated, player_page):
         assert "const pitcherState=p=>" in page
