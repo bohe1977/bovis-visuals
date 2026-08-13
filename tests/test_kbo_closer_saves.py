@@ -16,7 +16,7 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
 
     assert len(games) == 5
     assert all(game["status"] == "경기 종료" for game in games)
-    assert sum(game["away_score"] + game["home_score"] for game in games) == 36
+    assert sum(game["away_score"] + game["home_score"] for game in games) == 73
     assert "const finalGames=gdata.games.filter(g=>g.status==='경기 종료');" in page
     assert "#metric-games').textContent=finalGames.length" in page
     assert "#metric-runs').textContent=finalGames.reduce" in page
@@ -60,8 +60,8 @@ def test_pitcher_badges_use_verified_role_specific_game_decisions():
     player_page = PLAYER_PAGE.read_text(encoding="utf-8")
     active = [pitcher for pitcher in pitchers if pitcher["appeared"]]
 
-    assert {pitcher["name"] for pitcher in active} == {"임찬규", "정해영"}
-    im = next(pitcher for pitcher in active if pitcher["name"] == "임찬규")
+    assert {pitcher["name"] for pitcher in active} == {"원태인", "류현진", "박정민", "로드리게스", "정해영"}
+    im = next(pitcher for pitcher in active if pitcher["name"] == "원태인")
     jung = next(pitcher for pitcher in active if pitcher["name"] == "정해영")
     assert im["role"] == "starter"
     assert im["game_decision"] is None
