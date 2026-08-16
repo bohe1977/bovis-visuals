@@ -14,10 +14,10 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     games = json.loads(GAME_DATA.read_text(encoding="utf-8"))["games"]
     page = INTEGRATED.read_text(encoding="utf-8")
 
-    assert len(games) == 5
+    assert len(games) == 3
     assert all(game["status"] == "경기 종료" for game in games)
-    # 2026-08-15 completed final slate: 4-1, 11-6, 8-5, 6-1, 10-5.
-    assert sum(game["away_score"] + game["home_score"] for game in games) == 57
+    # 2026-08-16 completed final slate; two scheduled games were canceled and excluded.
+    assert sum(game["away_score"] + game["home_score"] for game in games) == 17
     assert "const finalGames=gdata.games.filter(g=>g.status==='경기 종료');" in page
     assert "#metric-games').textContent=finalGames.length" in page
     assert "#metric-runs').textContent=finalGames.reduce" in page
@@ -61,14 +61,9 @@ def test_pitcher_badges_use_verified_role_specific_game_decisions():
     player_page = PLAYER_PAGE.read_text(encoding="utf-8")
     active = [pitcher for pitcher in pitchers if pitcher["appeared"]]
 
-    assert {pitcher["name"] for pitcher in active} == {"박세웅", "김원중"}
-    kim = next(pitcher for pitcher in active if pitcher["name"] == "박세웅")
-    won = next(pitcher for pitcher in active if pitcher["name"] == "김원중")
-    assert kim["role"] == "starter"
-    assert kim["game_decision"] is None
-    assert won["role"] == "reliever"
-    # 김원중의 공식 패전은 구원 badge contract의 세이브·홀드·블론 범위 밖이다.
-    assert won["game_decision"] is None
+    # The two Lotte pitchers' scheduled game was canceled; no watched pitcher appeared.
+    assert active == []
+    assert all(set(pitcher) == {"name", "team", "appeared"} for pitcher in pitchers)
 
     for page in (integrated, player_page):
         assert "const pitcherState=p=>" in page
