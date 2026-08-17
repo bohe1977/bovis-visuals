@@ -151,7 +151,8 @@ def test_mlb_game_cards_match_kbo_game_content_hierarchy():
     final_games = [game for game in data["team_games"] if game["status"] == "경기 종료"]
     # The current KST window can legitimately contain no completed tracked game.
     assert all(game["winner_pitcher"] and game["loser_pitcher"] for game in final_games)
-    assert all(len(game.get("game_points", [])) >= 4 for game in final_games)
+    assert all(len(game.get("game_points", [])) >= 3 for game in final_games)
+    assert all(not any("앞서 경기를 마무리" in point for point in game.get("game_points", [])) for game in final_games)
     assert all("공식 결정" not in " ".join(game["game_points"]) for game in final_games)
     assert all(game.get("opponent_label") in {game["away"], game["home"]} for game in final_games)
     assert '<div class="record">${g.winner_pitcher?`<span>승 ${esc(g.winner_pitcher)}</span>`' in mlb
@@ -211,7 +212,8 @@ def test_mlb_current_batting_line_and_team_result_are_normalized_from_official_d
     assert dodgers_game["status"] in {"경기 종료", "팀 경기 없음", "경기 취소", "연기"}
     if dodgers_game["status"] == "경기 종료":
         assert dodgers_game["winner_pitcher"]
-        assert len(dodgers_game["game_points"]) >= 4
+        assert len(dodgers_game["game_points"]) >= 3
+        assert not any("앞서 경기를 마무리" in point for point in dodgers_game["game_points"])
 
 
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
