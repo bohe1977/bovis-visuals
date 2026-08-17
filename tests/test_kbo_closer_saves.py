@@ -61,9 +61,17 @@ def test_pitcher_badges_use_verified_role_specific_game_decisions():
     player_page = PLAYER_PAGE.read_text(encoding="utf-8")
     active = [pitcher for pitcher in pitchers if pitcher["appeared"]]
 
-    # The two Lotte pitchers' scheduled game was canceled; no watched pitcher appeared.
-    assert active == []
-    assert all(set(pitcher) == {"name", "team", "appeared"} for pitcher in pitchers)
+    # 박영현이 KT전에서 1⅓이닝 무실점으로 시즌 22세이브를 기록했다.
+    park = next(pitcher for pitcher in active if pitcher["name"] == "박영현")
+    assert len(active) == 1
+    assert park["team"] == "KT"
+    assert park["role"] == "reliever"
+    assert park["game_decision"] == "세이브"
+    assert park["innings"] == "1 ⅓"
+    assert park["hits"] == 0
+    assert park["runs"] == 0
+    assert park["season_saves"] == 22
+    assert all(set(pitcher) == {"name", "team", "appeared"} for pitcher in pitchers if not pitcher["appeared"])
 
     for page in (integrated, player_page):
         assert "const pitcherState=p=>" in page
