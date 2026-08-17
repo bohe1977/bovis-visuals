@@ -52,12 +52,12 @@
       "game_pk": 823182,
       "officialDate": "2026-08-16",
       "game_date_utc": "2026-08-16T20:05:00Z",
-      "naver_game_id": null,
-      "daum_game_id": null,
+      "naver_game_id": "20260817COSF0",
+      "daum_game_id": 80105159,
       "venue": "Oracle Park",
       "start_time_kst": "05:05",
       "status": "경기 종료",
-      "away": "Colorado Rockies",
+      "away": "콜로라도",
       "home": "샌프란시스코",
       "winner_side": "away",
       "away_score": 13,
@@ -70,17 +70,17 @@
       "loser_pitcher": "Sam Hentges",
       "save_pitcher": null,
       "pitcher_record": "Nick Frasso 승리, Sam Hentges 패전",
-      "headline": "Rafael Devers의 홈런 포함 3타점에도 샌프란시스코, Colorado Rockies에 7–13 패배",
+      "headline": "Rafael Devers의 홈런 포함 3타점에도 샌프란시스코, 콜로라도에 7–13 패배",
       "game_points": [
         "Nick Frasso은 1.0이닝 1피안타 0실점 2탈삼진으로 승리했고, Sam Hentges은 1.1이닝 1피안타 2실점 1탈삼진으로 패전했다.",
-        "샌프란시스코는 11안타 7득점, Colorado Rockies는 9안타 13득점을 기록했다.",
+        "샌프란시스코는 11안타 7득점, 콜로라도는 9안타 13득점을 기록했다.",
         "샌프란시스코는 Rafael Devers 5타수 2안타 1홈런 3타점 2득점의 활약으로 타선을 이끌며 끝까지 추격했다.",
-        "Colorado Rockies는 샌프란시스코보다 6점 앞서 경기를 마무리했다."
+        "콜로라도는 샌프란시스코보다 6점 앞서 경기를 마무리했다."
       ],
       "opponent_label": "샌프란시스코",
       "opponent_effort": "Rafael Devers 5타수 2안타 1홈런 3타점 2득점의 활약에도 샌프란시스코는 11안타 7득점에 그쳤다.",
-      "daum_verified": false,
-      "naver_verified": false
+      "daum_verified": true,
+      "naver_verified": true
     }
   ],
   "batters": [
