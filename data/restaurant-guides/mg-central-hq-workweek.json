@@ -136,5 +136,35 @@
       ],
       "markerLabel": "수다 삼성1호점"
     }
-  ]
+  ],
+  "bohe": [
+    {
+      "name": "이속우화진", "markerLabel": "이속우화진", "distance": 602, "category": "1차 식사", "kind": "소고기구이", "color": "#7e3d2d", "signal": "네이버 리뷰 100", "address": "서울 강남구 영동대로 513 코엑스몰 스타필드 B1층", "reason": "정주의 DB에 저장된 코엑스 한우 맡김차림 1차 후보.", "rationale": "DB 원문 주소와 네이버 Place 주소를 대조했고, 한우 맡김차림 메뉴가 현재 공개되어 있습니다.", "searchQuery": "이속우화진 코엑스", "menuEvidence": [{"display":"한우 맡김차림","source":"한우맡김차림","sourceType":"등록","kind":"food"}]
+    },
+    {
+      "name": "란주쿠 삼성점", "markerLabel": "란주쿠", "distance": 915, "category": "2차 술자리", "kind": "이자카야", "color": "#235c78", "signal": "네이버 리뷰 1,410 · 별점 4.47", "address": "서울 강남구 봉은사로82길 31 1층", "reason": "정주의 DB에 저장된 삼성동 이자카야 2차 후보.", "rationale": "사시미·스키야키·우니크림파스타 메뉴와 예약·단체 이용 가능 신호가 현재 네이버 Place에 확인됩니다.", "searchQuery": "란주쿠 삼성점", "menuEvidence": [{"display":"한우 스키야키","source":"한우 스키야키","sourceType":"등록","kind":"food"},{"display":"사시미모듬","source":"사시미모듬","sourceType":"등록","kind":"food"},{"display":"우니크림파스타","source":"우니크림파스타","sourceType":"등록","kind":"food"}]
+    },
+    {
+      "name": "스시욘즈", "markerLabel": "스시욘즈", "distance": 915, "category": "1차 식사", "kind": "일식당", "color": "#765198", "signal": "네이버 리뷰 960", "address": "서울 강남구 삼성로96길 11 1층", "reason": "정주의 DB에 저장된 예약형 오마카세 1차 후보.", "rationale": "DB 주소와 현재 네이버 Place 주소가 일치하며 런치·디너 오마카세 메뉴가 확인됩니다.", "searchQuery": "스시욘즈 삼성", "menuEvidence": [{"display":"런치 오마카세","source":"런치 오마카세","sourceType":"등록","kind":"food"},{"display":"디너 오마카세","source":"디너 오마카세","sourceType":"등록","kind":"food"}]
+    },
+    {
+      "name": "더라운드 삼성점", "markerLabel": "더라운드", "distance": 958, "category": "1차 식사", "kind": "중식당", "color": "#387c54", "signal": "네이버 리뷰 736", "address": "서울 강남구 영동대로 648 삼안빌딩 1층", "reason": "정주의 DB에 저장된 청담역 방향 중식 1차 후보.", "rationale": "DB 원문 주소와 네이버 Place 주소를 대조했고, 런치·디너 세트와 베이징덕 신호가 현재 확인됩니다.", "searchQuery": "더라운드 삼성점", "menuEvidence": [{"display":"런치 N세트","source":"Luncheon N set","sourceType":"등록","kind":"food"},{"display":"디너 T세트","source":"Dinner T set","sourceType":"등록","kind":"food"},{"display":"베이징덕","source":"매콤한 소스와 어우러진 베이징덕","sourceType":"대표","kind":"food"}]
+    }
+  ],
+  "modeConfig": {
+    "bohe": {
+      "label": "보헤 추천", "radiusLabel": "≤ 1km", "bestFor": "정주의 DB 저장 맛집", "markerTitle": "정주의 DB 맛집, 가까운 순서", "quickPicks": [
+        {"title":"가장 가까운 DB 1차","venue":"이속우화진","copy":"코엑스 안에서 한우 맡김차림으로 저녁 1차를 잡을 때의 저장 후보입니다."},
+        {"title":"DB 2차","venue":"란주쿠 삼성점","copy":"사시미와 스키야키를 곁들여 이자카야 2차로 이어갈 때의 저장 후보입니다."},
+        {"title":"예약형 DB 식사","venue":"스시욘즈","copy":"정주의 DB에서 오마카세 저녁을 선택할 때의 저장 후보입니다."}
+      ]
+    },
+    "general": {
+      "label": "일반 추천", "radiusLabel": "≤ 1km", "bestFor": "업무 후 1차·2차", "markerTitle": "새마을금고중앙회 본부에서 가까운 순서", "quickPicks": [
+        {"title":"가장 가까운 1차","venue":"김인복의광평 삼성본점","copy":"중앙회 본부 뒤편에서 이동을 거의 줄이고 고기와 냉면을 함께 잡을 수 있는 식사 선택입니다."},
+        {"title":"해산물 1차","venue":"목포명가 봉은사역점","copy":"물회·모듬회·낙지비빔밥처럼 해산물 중심으로 저녁 메뉴를 고를 때의 가까운 선택입니다."},
+        {"title":"2차 안주까지","venue":"야키도리 수다","copy":"꼬치와 사시미, 스키야키까지 확인된 안주 폭으로 여러 명이 이어가기 좋습니다."}
+      ]
+    }
+  }
 }

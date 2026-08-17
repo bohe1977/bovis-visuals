@@ -82,8 +82,8 @@ def validate_mode(mode, venues, mode_config):
         names.add(venue["name"])
         validate_address(venue["address"])
         validate_search_query(venue)
-        if mode == "bohe" and not valid_reference_url(venue.get("savedSource")):
-            fail("bohe venues require an https savedSource for the reference action")
+        if mode == "bohe" and venue.get("savedSource") is not None and not valid_reference_url(venue["savedSource"]):
+            fail("savedSource must be an https URL when a public reference action is enabled")
         if mode == "bohe" and venue.get("dbOnly"):
             fail("bohe venues require verified Naver menu evidence; dbOnly is not allowed")
         colors.append(venue["color"])

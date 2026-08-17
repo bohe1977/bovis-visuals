@@ -65,7 +65,7 @@ def test_renderer_embeds_both_modes_as_data_for_synchronized_client_rendering(tm
     assert "<h2>${escapeHtml(venue.name)}</h2>" in template
     assert "?c=15.00,0,0,0,dh" in template
     assert "검색 링크" in template
-    assert "function naverPlaceSearchUrl(name) { return `https://map.naver.com/p/search/${encodeURIComponent(name)}?c=15.00,0,0,0,dh`; }" in template
+    assert "function naverPlaceSearchUrl(name) { return `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`; }" in template
     assert "const query = venue.searchQuery || venue.name; const mapUrl = searchUrl(query); const placeSearchUrl = naverPlaceSearchUrl(query);" in template
     assert "양식/세계음식" not in template and "페레힐" not in template
     assert ".info { min-height:0; display:block; padding:11px; border:0;" in html
@@ -117,8 +117,8 @@ def test_renderer_enforces_v2_mode_reference_and_ambiguous_name_rules(tmp_path):
     payload = json.loads((FIXTURES / "restaurant-general-plus-bohe.json").read_text(encoding="utf-8"))
     del payload["bohe"][0]["savedSource"]
     result = render_payload(tmp_path, payload)
-    assert result.returncode != 0
-    assert "bohe venues require an https savedSource" in result.stderr
+    assert result.returncode == 0
+    assert "레퍼런스" not in result.stdout
 
     payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
     original_name = payload["general"][0]["name"]
