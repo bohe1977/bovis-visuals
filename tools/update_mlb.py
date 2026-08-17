@@ -178,6 +178,32 @@ def pitching_headline_line(box,name):
         return f"{ko_person(name)} {innings}이닝 {run_text}"
     return ko_person(name)
 
+def winner_pitcher_is_short_reliever(box,name):
+    """A one- or short-inning relief win is not automatically the game's headline."""
+    if not box or not name:return False
+    for side in ('away','home'):
+      for p in box.get('teams',{}).get(side,{}).get('players',{}).values():
+        if p.get('person',{}).get('fullName') != name:continue
+        st=p.get('stats',{}).get('pitching',{})
+        innings=str(st.get('inningsPitched','0.0'))
+        whole,_,fraction=innings.partition('.')
+        outs=int(whole)*3+{'0':0,'1':1,'2':2}.get(fraction,0)
+        return not st.get('gamesStarted') and outs < 12
+    return False
+
+def winner_batter_headline(line):
+    """Use a decisive winning batter, without repeating the winning team name."""
+    if not line:return None
+    tokens=line.split(); stat_start=next((i for i,x in enumerate(tokens) if x.endswith('타수')),len(tokens))
+    name=' '.join(tokens[:stat_start]) or line
+    stats=tokens[stat_start:]
+    homers=next((x for x in stats if x.endswith('홈런')),None)
+    rbi=next((x for x in stats if x.endswith('타점')),None)
+    hits=next((x for x in stats if x.endswith('안타')),None)
+    if homers and rbi:return f'{name} 홈런 포함 {rbi}'
+    if rbi:return f'{name} {rbi}'
+    return f'{name} {hits or "활약"}'
+
 def bullpen_point(box,side,exclude_name=None):
     """Return a verified winning-bullpen line; never fill this slot with score repetition."""
     team=box.get('teams',{}).get(side,{})
@@ -260,7 +286,10 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(bullpen)
     elif save_pitching:
       game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
-    headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
+    if winner_pitcher_is_short_reliever(box,winner) and winner_leader:
+      headline=f'{winner_batter_headline(winner_leader)}, {loser_team}에 {winner_runs}-{loser_runs} 승리'
+    else:
+      headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
     effort=(f'{focus_leader}의 활약에도 {topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점에 그쳤다.' if not focus_won and focus_leader else f'{batting_leader(box,"home" if winner_side=="away" else "away") if box else loser_team}의 분전에도 {topic_particle(loser_team)} {loser_hits}안타 {loser_runs}득점에 그쳤다.')
     daum=daum_match(g,daum_rows)
     naver=naver_match(g,naver_rows)
