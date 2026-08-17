@@ -26,3 +26,4 @@ def test_mlb_current_winner_first_copy_uses_korean_names_and_no_score_margin_fil
 
     for value in (dodgers["headline"], giants["headline"], *dodgers["game_points"], *giants["game_points"]):
         assert "보다" not in value or "앞서 경기를 마무리" not in value
+        assert "흐름을 주도" not in value

@@ -229,8 +229,6 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(lead_phrase)
     if winner_leader:
       game_points.append(f'{topic_particle(winner_team)} {winner_leader}의 활약으로 타선을 이끌었다.')
-    if winner_hits != '—' and winner_runs is not None:
-      game_points.append(f'{topic_particle(winner_team)} {winner_hits}안타 {winner_runs}득점으로 흐름을 주도했다.')
     if save_pitching:
       game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
     headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'

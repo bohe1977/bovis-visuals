@@ -14,11 +14,13 @@ def test_mlb_game_cards_always_render_three_equal_source_actions():
     assert 'class="game-sources"' in html
 
 
-def test_mlb_desktop_game_cards_pin_effort_and_source_rows_to_same_baseline():
+def test_mlb_desktop_game_cards_pin_effort_and_source_rows_with_visual_gap():
     html = (ROOT / "mlb" / "index.html").read_text(encoding="utf-8")
 
-    assert ".effort{margin-top:auto;" in html
+    assert ".effort-wrap{margin-top:auto;padding-top:16px}" in html
+    assert ".effort{margin-top:0;" in html
     assert ".game-sources{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:15px;" in html
+    assert '<div class="effort-wrap"><div class="effort">' in html
 
 
 def test_current_mlb_archive_has_same_source_action_contract():
@@ -26,7 +28,8 @@ def test_current_mlb_archive_has_same_source_action_contract():
 
     assert "const naverUrl=g.naver_game_id?" in html
     assert "const daumUrl=g.daum_game_id?" in html
-    assert ".effort{margin-top:auto;" in html
+    assert ".effort-wrap{margin-top:auto;padding-top:16px}" in html
+    assert ".effort{margin-top:0;" in html
     assert ".game-sources{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:15px;" in html
 
 
