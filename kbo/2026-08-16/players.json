@@ -1,0 +1,129 @@
+{
+  "report_date": "2026-08-16",
+  "generated_at": "2026-08-17T11:04:21+09:00",
+  "verification": {
+    "status": "KBO 공식 기준 · 네이버·다음 대조",
+    "sources": [
+      "KBO 공식 게임센터 REVIEW·상세기록",
+      "네이버스포츠 공개 기록 API",
+      "다음스포츠 일정·박스스코어"
+    ],
+    "details": "2026-08-16 KBO 예정 5경기 중 한화-삼성과 NC-롯데는 취소되어 제외했다. 나머지 3경기는 kbo-game FINISHED, KBO 공식 게임센터 상세기록, 네이버 공개 기록 API statusCode=4·박스스코어, 다음 일정 API gameStatus=END·스코어를 대조했다. 박영현은 KT전 공식·네이버 투수 목록에서 1⅓이닝 무피안타 2사사구 1탈삼진 무실점, 세이브, 시즌 22세이브로 확인했다. 나머지 관심 투수는 완료된 경기의 공식·네이버 투수 목록에서 모두 미등판으로 확인했다. 김도영의 4타수 2안타·1삼진·시즌 타율 0.296은 KBO 공식 상세기록과 네이버 API에서 대조했다. 다음은 타자 볼넷을 사사구로 표기할 수 있어 해당 필드는 독립 일치값으로 주장하지 않았다.",
+    "conflicts": []
+  },
+  "pitchers": [
+    {
+      "name": "원태인",
+      "team": "삼성",
+      "appeared": false
+    },
+    {
+      "name": "류현진",
+      "team": "한화",
+      "appeared": false
+    },
+    {
+      "name": "제레미 비슬리",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "박세웅",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "김진욱",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "김원중",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "박정민",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "로드리게스",
+      "team": "롯데",
+      "appeared": false
+    },
+    {
+      "name": "임찬규",
+      "team": "LG",
+      "appeared": false
+    },
+    {
+      "name": "정해영",
+      "team": "KIA",
+      "appeared": false
+    },
+    {
+      "name": "박영현",
+      "team": "KT",
+      "appeared": true,
+      "role": "reliever",
+      "game_decision": "세이브",
+      "innings": "1 ⅓",
+      "hits": 0,
+      "runs": 0,
+      "earned_runs": 0,
+      "walks_hbp": 2,
+      "strikeouts": 1,
+      "home_runs": 0,
+      "season_record": "6승 0패",
+      "season_saves": 22,
+      "era": "2.30"
+    }
+  ],
+  "batters": [
+    {
+      "name": "강백호",
+      "team": "한화",
+      "appeared": false
+    },
+    {
+      "name": "노시환",
+      "team": "한화",
+      "appeared": false
+    },
+    {
+      "name": "김도영",
+      "team": "KIA",
+      "appeared": true,
+      "at_bats": 4,
+      "hits": 2,
+      "rbi": 0,
+      "runs": 0,
+      "home_runs": 0,
+      "walks": 0,
+      "strikeouts": 1,
+      "avg": "0.296",
+      "obp": null,
+      "ops": null
+    }
+  ],
+  "source_urls": {
+    "kbo_official": [
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20260816",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260816&gameId=20260816SKLG0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260816&gameId=20260816OBHT0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20260816&gameId=20260816WOKT0&section=REVIEW"
+    ],
+    "naver": [
+      "https://api-gw.sports.naver.com/schedule/games/20260816SKLG02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260816OBHT02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20260816WOKT02026/record"
+    ],
+    "daum": [
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20260816&toDate=20260816",
+      "https://sports.daum.net/match/80101100",
+      "https://sports.daum.net/match/80101099",
+      "https://sports.daum.net/match/80101101"
+    ]
+  }
+}

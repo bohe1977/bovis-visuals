@@ -23,6 +23,18 @@ def test_kbo_report_excludes_canceled_games_from_data_and_display():
     assert "#metric-runs').textContent=finalGames.reduce" in page
 
 
+def test_20260816_integrated_archive_is_self_contained_and_renders_its_own_player_payload():
+    archive = ROOT / "kbo" / "2026-08-16"
+    page = (archive / "index.html").read_text(encoding="utf-8")
+    players = json.loads((archive / "players.json").read_text(encoding="utf-8"))
+
+    assert "fetch('./players.json'" in page
+    assert "../kbo-players/data.json" not in page
+    park = next(player for player in players["pitchers"] if player["name"] == "박영현")
+    assert park["appeared"] is True
+    assert park["game_decision"] == "세이브"
+
+
 def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season_record_label():
     pitchers = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["pitchers"]
     inactive = [pitcher for pitcher in pitchers if not pitcher["appeared"]]
