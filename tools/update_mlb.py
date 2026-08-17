@@ -160,7 +160,10 @@ def pitching_line(box,name):
         if p.get('person',{}).get('fullName')!=name:continue
         st=p.get('stats',{}).get('pitching',{})
         if not st:return None
-        return f"{ko_person(name)}은 {st.get('inningsPitched','—')}이닝 {st.get('hits','—')}피안타 {st.get('runs','—')}실점 {st.get('strikeOuts','—')}탈삼진"
+        innings=str(st.get('inningsPitched','—')).removesuffix('.0')
+        runs=st.get('runs','—')
+        run_text='무실점' if runs==0 else f'{runs}실점'
+        return f"{topic_particle(ko_person(name))} {innings}이닝 {st.get('hits','—')}피안타 {run_text} {st.get('strikeOuts','—')}탈삼진"
     return None
 
 def pitching_headline_line(box,name):
