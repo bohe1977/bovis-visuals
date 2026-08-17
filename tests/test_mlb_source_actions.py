@@ -14,11 +14,20 @@ def test_mlb_game_cards_always_render_three_equal_source_actions():
     assert 'class="game-sources"' in html
 
 
+def test_mlb_desktop_game_cards_pin_effort_and_source_rows_to_same_baseline():
+    html = (ROOT / "mlb" / "index.html").read_text(encoding="utf-8")
+
+    assert ".effort{margin-top:auto;" in html
+    assert ".game-sources{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:15px;" in html
+
+
 def test_current_mlb_archive_has_same_source_action_contract():
     html = (ROOT / "mlb" / "2026-08-17" / "index.html").read_text(encoding="utf-8")
 
     assert "const naverUrl=g.naver_game_id?" in html
     assert "const daumUrl=g.daum_game_id?" in html
+    assert ".effort{margin-top:auto;" in html
+    assert ".game-sources{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:15px;" in html
 
 
 def test_20260817_giants_game_uses_actual_naver_and_daum_records_in_korean():
