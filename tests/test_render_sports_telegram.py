@@ -43,11 +43,14 @@ def test_kbo_renderer_refuses_missing_dated_archive(tmp_path: Path):
     assert "dated archive missing" in result.stderr
 
 
-def test_mlb_renderer_outputs_dated_team_report_and_archive_link():
+def test_mlb_renderer_outputs_current_dated_team_report_and_archive_link():
     result = run_renderer("mlb")
+    data = json.loads((ROOT / "mlb" / "data.json").read_text(encoding="utf-8"))
+    report_date = data["report_date_kst"]
+    dodgers = next(game for game in data["team_games"] if game["section_title"] == "LA 다저스 경기")
 
     assert result.returncode == 0, result.stderr
-    assert "## ⚾ MLB 오늘 경기 브리핑, 2026-08-16 KST" in result.stdout
+    assert f"## ⚾ MLB 오늘 경기 브리핑, {report_date} KST" in result.stdout
     assert "**LA 다저스 경기**" in result.stdout
-    assert "투수 기록: Jacob Misiorowski 승리, Justin Wrobleski 패전, Aaron Ashby 세이브" in result.stdout
-    assert "https://bohe1977.github.io/bovis-visuals/mlb/2026-08-16/" in result.stdout
+    assert f"투수 기록: {dodgers['pitcher_record']}" in result.stdout
+    assert f"https://bohe1977.github.io/bovis-visuals/mlb/{report_date}/" in result.stdout
