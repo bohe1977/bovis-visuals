@@ -224,7 +224,9 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(f'투수 결정은 {record}으로 기록됐다.')
     if lead:
       inning=lead.get('about',{}).get('inning','—'); batter=ko_person(lead.get('matchup',{}).get('batter',{}).get('fullName','—')); event=point_event_ko(lead)
-      game_points.append(f'{inning}회 {winner_team} {batter}의 {event}가 결승타가 됐다.')
+      lead_kind='결승타' if event in {'홈런','2루타','3루타','안타'} else '결승점'
+      lead_phrase=f'{inning}회 {winner_team} {batter}의 {event}가 {lead_kind}가 됐다.' if lead_kind=='결승타' else f'{inning}회 {winner_team} {batter}의 {event}로 {lead_kind}을 냈다.'
+      game_points.append(lead_phrase)
     if winner_leader:
       game_points.append(f'{topic_particle(winner_team)} {winner_leader}의 활약으로 타선을 이끌었다.')
     if winner_hits != '—' and winner_runs is not None:
@@ -251,7 +253,7 @@ def main():
     feeds={}
     def feed(pk):
       if pk not in feeds:
-        try: feeds[pk]=api(f'game/{pk}/feed/live')
+        try: feeds[pk]=get(f'https://statsapi.mlb.com/api/v1.1/game/{pk}/feed/live')
         except Exception: feeds[pk]={}
       return feeds[pk]
     # Teams that may be in affiliated ball: determine schedule from currentTeam sport id, then restrict gameDate window.

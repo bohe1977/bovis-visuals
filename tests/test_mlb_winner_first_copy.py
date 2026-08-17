@@ -17,6 +17,7 @@ def test_mlb_current_winner_first_copy_uses_korean_names_and_no_score_margin_fil
     assert dodgers["winner_pitcher"] == "로건 헨더슨"
     assert dodgers["loser_pitcher"] == "타릭 스쿠발"
     assert "제이크 바우어스" in " ".join(dodgers["game_points"])
+    assert "5회 밀워키 제이크 바우어스의 안타가 결승타가 됐다." in dodgers["game_points"]
     assert giants["headline"] == "닉 프라소 1이닝 무실점, 콜로라도가 샌프란시스코에 13-7 승리"
     assert giants["winner_pitcher"] == "닉 프라소"
     assert giants["loser_pitcher"] == "샘 헨지스"
