@@ -84,7 +84,7 @@
       "signal": "방문자 1,215 · 블로그 1,139",
       "address": "서울 강남구 영동대로106길 45",
       "reason": "본부 바로 뒤편의 한우·평양냉면 중심 1차 식사 후보.",
-      "rationale": "고기와 냉면을 함께 고를 수 있는 가장 가까운 1차.",
+      "rationale": "한우와 냉면을 함께 고를 수 있는 초근접 1차. 식사 취향이 갈릴 때 안정적.",
       "placeUrl": "https://m.place.naver.com/restaurant/1648999759/home",
       "menuEvidence": [
         {
@@ -117,7 +117,7 @@
       "signal": "방문자 1,211 · 블로그 2,339",
       "address": "서울 강남구 봉은사로111길 6",
       "reason": "본부에서 가장 가까운 해산물·회 중심의 1차 식사 후보.",
-      "rationale": "회와 식사를 함께 원하는 해산물 1차.",
+      "rationale": "회·해산물과 식사를 함께 맞출 수 있는 1차. 인원별 메뉴를 나눌 때 좋음.",
       "placeUrl": "https://m.place.naver.com/restaurant/1635333017/home",
       "menuEvidence": [
         {
@@ -150,7 +150,7 @@
       "signal": "방문자 9,439 · 블로그 862",
       "address": "서울 강남구 영동대로 513 B1층 H103A호",
       "reason": "코엑스 안에서 정식 중심으로 가볍고 예측 가능한 1차를 고를 때의 후보.",
-      "rationale": "코엑스 안에서 가볍게 식사부터 할 때.",
+      "rationale": "코엑스 안에서 바로 이어갈 수 있는 한식당. 가볍게 식사부터 할 때.",
       "placeUrl": "https://m.place.naver.com/restaurant/1047937294/home",
       "menuEvidence": [
         {
@@ -183,7 +183,7 @@
       "signal": "방문자 448 · 블로그 416",
       "address": "서울 강남구 봉은사로103길 8",
       "reason": "본부에서 350m권, 식사감 있는 안주로 이어가기 좋은 이자카야.",
-      "rationale": "식사감 있는 안주로 2차를 시작할 때.",
+      "rationale": "식사감 있는 안주 구성이 보이는 이자카야. 고기 뒤 든든한 2차로.",
       "placeUrl": "https://m.place.naver.com/restaurant/36667123/home",
       "menuEvidence": [
         {
@@ -216,7 +216,7 @@
       "signal": "방문자 1,063 · 블로그 1,144",
       "address": "서울 강남구 테헤란로87길 57 지하1층",
       "reason": "꼬치·사시미·스키야키까지 넓은 안주 선택폭이 있는 2차 이자카야.",
-      "rationale": "꼬치와 사시미를 함께 나눌 때.",
+      "rationale": "꼬치와 사시미를 함께 나눌 수 있는 이자카야. 술안주 중심 2차로.",
       "placeUrl": "https://m.place.naver.com/restaurant/1285864260/home",
       "menuEvidence": [
         {
@@ -249,7 +249,7 @@
       "signal": "방문자 848 · 블로그 1,095",
       "address": "서울 강남구 테헤란로87길 53",
       "reason": "숙성회와 스키야키를 중심으로 2차 안주를 고를 때의 이자카야 후보.",
-      "rationale": "숙성회와 스키야키 중심 2차.",
+      "rationale": "숙성회와 스키야키가 있는 이자카야. 대화하며 길게 머물 2차로.",
       "placeUrl": "https://m.place.naver.com/restaurant/37282214/home",
       "menuEvidence": [
         {
@@ -285,7 +285,7 @@
       "signal": "네이버 리뷰 100",
       "address": "서울 강남구 영동대로 513 코엑스몰 스타필드 B1층",
       "reason": "코엑스 한우 맡김차림으로 저녁을 시작할 때.",
-      "rationale": "코엑스 안에서 격식 있는 한우 1차.",
+      "rationale": "한우 맡김차림으로 코엑스 안에서 격을 올리는 선택. 업무 저녁 1차로.",
       "searchQuery": "이속우화진 코엑스",
       "menuEvidence": [
         {
@@ -307,7 +307,7 @@
       "signal": "네이버 리뷰 1,410 · 별점 4.47",
       "address": "서울 강남구 봉은사로82길 31 1층",
       "reason": "사시미·스키야키를 곁들일 이자카야 2차.",
-      "rationale": "사시미와 스키야키를 곁들일 2차.",
+      "rationale": "사시미와 스키야키가 함께 잡히는 이자카야. 음식까지 챙길 2차로.",
       "searchQuery": "란주쿠 삼성점",
       "menuEvidence": [
         {
@@ -341,7 +341,7 @@
       "signal": "네이버 리뷰 960",
       "address": "서울 강남구 삼성로96길 11 1층",
       "reason": "예약형 오마카세 식사를 고를 때.",
-      "rationale": "예약해 오마카세 식사를 할 때.",
+      "rationale": "런치·디너 오마카세가 분명한 예약형 식당. 조용한 업무 저녁으로.",
       "searchQuery": "스시욘즈 삼성",
       "menuEvidence": [
         {
@@ -369,7 +369,7 @@
       "signal": "네이버 리뷰 736",
       "address": "서울 강남구 영동대로 648 삼안빌딩 1층",
       "reason": "베이징덕 중심으로 격식 있는 중식을 고를 때.",
-      "rationale": "베이징덕 중심의 격식 있는 중식 1차.",
+      "rationale": "베이징덕과 세트 요리를 고를 수 있는 중식당. 격식 있는 식사 자리에.",
       "searchQuery": "더라운드 삼성점",
       "menuEvidence": [
         {
