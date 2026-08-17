@@ -19,7 +19,7 @@ PLAYER_SPECS=[
  ('무라카미 무네타카',808959,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
  ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
 TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀'}
-PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰'}
+PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰'}
 def ko_team(name): return TEAM_KO.get(name,name)
 def ko_person(name): return PLAYER_KO.get(name,name)
 def get(url):
@@ -178,6 +178,32 @@ def pitching_headline_line(box,name):
         return f"{ko_person(name)} {innings}이닝 {run_text}"
     return ko_person(name)
 
+def bullpen_point(box,side,exclude_name=None):
+    """Return a verified winning-bullpen line; never fill this slot with score repetition."""
+    team=box.get('teams',{}).get(side,{})
+    relievers=[]
+    for pid in team.get('pitchers',[]):
+      p=team.get('players',{}).get('ID'+str(pid),{})
+      st=p.get('stats',{}).get('pitching',{})
+      innings=str(st.get('inningsPitched','0.0'))
+      if st.get('gamesStarted') or innings in {'0','0.0'} or st.get('runs') != 0: continue
+      raw_name=p.get('person',{}).get('fullName','—')
+      if raw_name == exclude_name: continue
+      name=ko_person(raw_name)
+      whole,_,fraction=innings.partition('.')
+      outs=int(whole)*3+{'0':0,'1':1,'2':2}.get(fraction,0)
+      relievers.append((name,outs,st.get('holds',0)))
+    if not relievers:return None
+    total=sum(item[1] for item in relievers)
+    innings=f'{total//3}이닝' if total%3==0 else f'{total//3}⅓이닝' if total%3==1 else f'{total//3}⅔이닝'
+    names=f'{relievers[0][0]}과 {relievers[1][0]}' if len(relievers)==2 else '·'.join(item[0] for item in relievers)
+    hold_names=[item[0] for item in relievers if item[2]]
+    if len(hold_names)==len(relievers) and len(relievers)>1:
+      return f'{names}가 {innings} 무실점으로 이어 던졌고, 각각 홀드를 기록했다.'
+    if hold_names:
+      return f'{names}가 {innings} 무실점으로 이어 던졌고, {"·".join(hold_names)}가 홀드를 기록했다.'
+    return f'{names}가 {innings} 무실점으로 이어 던져 승리를 지켰다.'
+
 def permanent_lead_point(feed,winner_side):
     if not feed:return None
     plays=feed.get('liveData',{}).get('plays',{}).get('allPlays',[])
@@ -217,6 +243,7 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     winner_pitching=pitching_line(box,winner)
     loser_pitching=pitching_line(box,loser)
     save_pitching=pitching_line(box,save)
+    bullpen=bullpen_point(box,winner_side,winner)
     game_points=[]
     if winner_pitching:
       game_points.append(f'{winner_team} 선발 {winner_pitching}으로 승리했다.')
@@ -229,7 +256,9 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(lead_phrase)
     if winner_leader:
       game_points.append(f'{topic_particle(winner_team)} {winner_leader}의 활약으로 타선을 이끌었다.')
-    if save_pitching:
+    if bullpen:
+      game_points.append(bullpen)
+    elif save_pitching:
       game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
     headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
     effort=(f'{focus_leader}의 활약에도 {topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점에 그쳤다.' if not focus_won and focus_leader else f'{batting_leader(box,"home" if winner_side=="away" else "away") if box else loser_team}의 분전에도 {topic_particle(loser_team)} {loser_hits}안타 {loser_runs}득점에 그쳤다.')
