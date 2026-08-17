@@ -31,8 +31,9 @@ def test_restaurant_map_contract_freezes_data_driven_template_rules():
     assert contract["distance"]["unit"] == "m"
     assert contract["actions"]["naverMapSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueNameOrSearchQuery)}?c=15.00,0,0,0,dh"
     assert contract["actions"]["secondaryLabel"] == "검색 링크"
-    assert contract["actions"]["naverPlaceSearchTemplate"] == "https://map.naver.com/p/search/{encodeURIComponent(exactVenueNameOrSearchQuery)}?c=15.00,0,0,0,dh"
-    assert contract["actions"]["distinctDestinationRule"].startswith("Render both 지도")
+    assert contract["actions"]["naverPlaceSearchTemplate"] == "https://search.naver.com/search.naver?query={encodeURIComponent(exactVenueNameOrSearchQuery)}"
+    assert "distinct destinations" in contract["actions"]["distinctDestinationRule"]
+    assert "function naverPlaceSearchUrl(name) { return `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`; }" in TEMPLATE.read_text(encoding="utf-8")
     assert "candidate-source tab" in contract["boheCards"]["tabMeaning"]
     assert "Never put DB, 저장" in contract["boheCards"]["provenancePlacement"]
     assert "must not repeat" in contract["quickPicks"]["deduplication"]

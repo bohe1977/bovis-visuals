@@ -38,7 +38,7 @@
     const $ = (selector) => document.querySelector(selector);
     const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' })[character]);
     const searchUrl = (name) => `https://map.naver.com/p/search/${encodeURIComponent(name)}?c=15.00,0,0,0,dh`;
-    function naverPlaceSearchUrl(name) { return `https://map.naver.com/p/search/${encodeURIComponent(name)}?c=15.00,0,0,0,dh`; }
+    function naverPlaceSearchUrl(name) { return `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`; }
     function modeVenues() { return venues[state.mode]; }
     function filteredVenues() { const limits = config.distanceFilters.filter((filter) => filter.value !== 'all' && Number.isFinite(Number(filter.value))).map((filter) => Number(filter.value)).sort((a,b) => a-b); return modeVenues().filter((venue) => { const selected = config.distanceFilters.find((filter) => filter.value === state.distance); const limit = Number(selected?.value); const previous = Number.isFinite(limit) ? (limits[limits.indexOf(limit) - 1] || 0) : (limits.at(-1) || 0); const distance = state.distance === 'all' || (Number.isFinite(limit) ? venue.distance > previous && venue.distance <= limit : venue.distance > previous); return distance && (state.food === 'all' || venue.category === state.food); }).sort((a,b) => a.distance-b.distance); }
     function buttonMarkup(type, value, label, color, active) { return `<button class="filter${active ? ' is-active' : ''}" type="button" data-${type}="${escapeHtml(value)}">${color ? `<span class="filter-dot" style="--dot:${escapeHtml(color)}"></span>` : ''}${escapeHtml(label)}</button>`; }
