@@ -30,6 +30,11 @@
       "output": "2026-08-02-hakdong-station-second-round/index.html",
       "shareAlias": "hakdong-second-round/index.html",
       "archiveHref": "hakdong-second-round/"
+    },
+    {
+      "slug": "mg-central-hq-workweek",
+      "data": "data/restaurant-guides/mg-central-hq-workweek.json",
+      "output": "2026-08-17-mg-central-hq-workweek-dinner/index.html"
     }
   ]
 }
