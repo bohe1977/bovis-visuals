@@ -117,8 +117,8 @@ def test_renderer_enforces_v2_mode_reference_and_ambiguous_name_rules(tmp_path):
     payload = json.loads((FIXTURES / "restaurant-general-plus-bohe.json").read_text(encoding="utf-8"))
     del payload["bohe"][0]["savedSource"]
     result = render_payload(tmp_path, payload)
-    assert result.returncode == 0
-    assert "레퍼런스" not in result.stdout
+    assert result.returncode != 0
+    assert "bohe venues require an https savedSource" in result.stderr
 
     payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
     original_name = payload["general"][0]["name"]
