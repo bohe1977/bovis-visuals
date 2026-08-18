@@ -16,14 +16,20 @@ def run_renderer(kind: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def test_kbo_renderer_outputs_verified_date_link_and_watchlist_line():
+def test_kbo_renderer_outputs_current_verified_date_link_and_watchlist_lines():
     result = run_renderer("kbo")
+    games = json.loads((ROOT / "kbo" / "data.json").read_text(encoding="utf-8"))
+    players = json.loads((ROOT / "kbo-players" / "data.json").read_text(encoding="utf-8"))
+    report_date = games["date"]
 
     assert result.returncode == 0, result.stderr
-    assert "## ⚾ KBO 전날 경기, 2026-08-16" in result.stdout
-    assert "SSG 6 : 0 LG" in result.stdout
-    assert "박영현(KT), 세이브, 1 ⅓이닝, 0피안타, 0실점, 시즌 6승 0패 22세이브" in result.stdout
-    assert "https://bohe1977.github.io/bovis-visuals/kbo/2026-08-16/" in result.stdout
+    assert players["report_date"] == report_date
+    assert f"## ⚾ KBO 전날 경기, {report_date}" in result.stdout
+    for game in games["games"]:
+        assert f"{game['away']} {game['away_score']} : {game['home_score']} {game['home']}" in result.stdout
+    for pitcher in players["pitchers"]:
+        assert f"- {pitcher['name']}({pitcher['team']})" in result.stdout
+    assert f"https://bohe1977.github.io/bovis-visuals/kbo/{report_date}/" in result.stdout
 
 
 def test_kbo_renderer_refuses_missing_dated_archive(tmp_path: Path):
