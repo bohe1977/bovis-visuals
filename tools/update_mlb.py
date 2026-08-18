@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build BOVIS MLB daily data from MLB Stats API using a KST game-start window."""
 from __future__ import annotations
-import json, sys, urllib.parse, urllib.request
+import json, os, sys, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'mlb'/'data.json'
 KST=ZoneInfo('Asia/Seoul')
 UTC=timezone.utc
-REPORT=datetime.now(KST).date()
+REPORT=datetime.fromisoformat(os.environ.get('BOVIS_MLB_REPORT_DATE', datetime.now(KST).date().isoformat())).date()
 START=datetime.combine(REPORT-timedelta(days=1),datetime.min.time(),tzinfo=UTC)+timedelta(hours=15)
 END=START+timedelta(days=1)-timedelta(seconds=1)
 PLAYER_SPECS=[
@@ -19,9 +19,16 @@ PLAYER_SPECS=[
  ('무라카미 무네타카',808959,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
  ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
 TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀'}
-PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰'}
+PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰','Blake Snell':'블레이크 스넬','Tomoyuki Sugano':'스가노 도모유키','Mookie Betts':'무키 베츠','Shohei Ohtani':'오타니 쇼헤이','Evan Phillips':'에번 필립스','Bryce Eldridge':'브라이스 엘드리지','Jo Adell':'조 아델'}
 def ko_team(name): return TEAM_KO.get(name,name)
-def ko_person(name): return PLAYER_KO.get(name,name)
+def ko_person(name):
+    """Never silently publish an English MLB player name in Korean copy."""
+    if not name:
+        return name
+    try:
+        return PLAYER_KO[name]
+    except KeyError as exc:
+        raise ValueError(f'Missing Korean player-name mapping: {name}') from exc
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'BOVIS MLB daily collector/1.0'})
     with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
@@ -437,6 +444,7 @@ def main():
       'sources':{'mlb_official':src,'naver':[naver_url,naver_api],'daum':[daum_url,daum_api]}
     }
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    archive_mlb(ROOT)
+    if not os.environ.get('BOVIS_MLB_SKIP_ARCHIVE'):
+        archive_mlb(ROOT)
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

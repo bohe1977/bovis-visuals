@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def game(game_pk: int) -> dict:
-    data = json.loads((ROOT / "mlb" / "data.json").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "mlb" / "2026-08-17" / "data.json").read_text(encoding="utf-8"))
     return next(item for item in data["team_games"] if item["game_pk"] == game_pk)
 
 
