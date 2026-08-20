@@ -17,6 +17,17 @@ def test_mlb_contract_declares_kbo_reference_order_and_guardrails():
     assert CONTRACT["effort"]["team"] == "losing-team"
 
 
+def test_losing_tracked_team_headline_leads_with_winner_and_omits_winner_team_name():
+    giants = next(
+        game for game in DATA["team_games"]
+        if game["section_title"] == "샌프란시스코 자이언츠 경기" and game["status"] == "경기 종료"
+    )
+
+    assert giants["headline"] == "조 아델의 홈런 포함 6타점, 샌프란시스코에 8-1 승리"
+    assert "클리블랜드가" not in giants["headline"]
+    assert "브라이스 엘드리지의" not in giants["headline"]
+
+
 def test_mlb_current_final_games_conform_to_contract():
     required = set(CONTRACT["collectorRequiredFields"])
     final_games = [game for game in DATA["team_games"] if game["status"] == "경기 종료"]

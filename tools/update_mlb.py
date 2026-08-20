@@ -231,9 +231,9 @@ def winner_batter_headline(line):
     homers=next((x for x in stats if x.endswith('홈런')),None)
     rbi=next((x for x in stats if x.endswith('타점')),None)
     hits=next((x for x in stats if x.endswith('안타')),None)
-    if homers and rbi:return f'{name} 홈런 포함 {rbi}'
-    if rbi:return f'{name} {rbi}'
-    return f'{name} {hits or "활약"}'
+    if homers and rbi:return f'{name}의 홈런 포함 {rbi}'
+    if rbi:return f'{name}의 {rbi}'
+    return f'{name}의 {hits or "활약"}'
 
 def bullpen_point(box,side,exclude_name=None):
     """Return a verified winning-bullpen line; never fill this slot with score repetition."""
@@ -321,12 +321,10 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
     if focus_won and focus_moment:
       headline=f'{focus_moment}, {focus_opponent}에 {winner_runs}-{loser_runs} 승리'
-    elif not focus_won and focus_moment:
-      headline=f'{focus_moment}에도, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
-    elif winner_pitcher_is_short_reliever(box,winner) and winner_leader:
+    elif winner_leader:
       headline=f'{winner_batter_headline(winner_leader)}, {loser_team}에 {winner_runs}-{loser_runs} 승리'
     else:
-      headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
+      headline=f'{pitching_headline_line(box,winner)}, {loser_team}에 {winner_runs}-{loser_runs} 승리'
     effort=(f'{focus_leader}의 활약에도 {topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점에 그쳤다.' if not focus_won and focus_leader else f'{batting_leader(box,"home" if winner_side=="away" else "away") if box else loser_team}의 분전에도 {topic_particle(loser_team)} {loser_hits}안타 {loser_runs}득점에 그쳤다.')
     daum=daum_match(g,daum_rows)
     naver=naver_match(g,naver_rows)
