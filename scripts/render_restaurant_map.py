@@ -46,8 +46,8 @@ def validate_menu_evidence(venue):
     if venue.get("dbOnly") and not evidence:
         venue["menus"] = []
         return
-    if not 1 <= len(evidence) <= 3 or any(not MENU_KEYS <= set(item) for item in evidence):
-        fail("menu evidence must contain 1–3 display/source/sourceType/kind items")
+    if not 1 <= len(evidence) <= 4 or any(not MENU_KEYS <= set(item) for item in evidence):
+        fail("menu evidence must contain 1–4 display/source/sourceType/kind items")
     if any(len(item["display"].strip()) > 12 for item in evidence):
         fail("menu display must be concise (maximum 12 characters) for a one-line mobile chip")
     if any(re.search(r"\b\d+\s*(p|ea|인|인분)\b|\((소|중|대|lunch)\)", item["display"], re.I) for item in evidence):
