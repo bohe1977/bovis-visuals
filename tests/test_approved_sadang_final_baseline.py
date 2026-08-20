@@ -22,6 +22,10 @@ def test_template_uses_approved_sadang_card_anatomy_and_natural_height():
     assert 'function foodGroup(venue)' in TEMPLATE
     assert "'이자카야/사시미'" in TEMPLATE
     assert 'function conciseSignal(value)' in TEMPLATE
+    assert '@media (max-width:650px) { .page' in TEMPLATE
+    assert '.top { justify-content:center; }' in TEMPLATE
+    assert '.pill { display:none; }' in TEMPLATE
+    assert 'h1 { margin:18px 0 0; font-size:42px; }' in TEMPLATE
     assert 'min-height:36px' in TEMPLATE
     assert 'padding:0 12px' in TEMPLATE
     assert 'grid-template-rows:3px auto 36px' in TEMPLATE
