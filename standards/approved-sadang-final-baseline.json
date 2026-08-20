@@ -1,0 +1,33 @@
+{
+  "referenceUrl": "https://bohe76.github.io/bohe-visual-scrap/items/2026-07-10-sadang-yukmildo-second-round-bars/?v=3d39db6",
+  "purpose": "User-approved final baseline for all generated BOVIS restaurant guides.",
+  "templateRequired": [
+    "<nav class=\"top\">",
+    "class=\"brand\"",
+    "class=\"pill\" id=\"scopePill\"",
+    "font-size:clamp(42px,7vw,78px)",
+    "class=\"card-head\"",
+    ".card-head { display:flex;",
+    "function foodGroup(venue)",
+    "function conciseSignal(value)"
+  ],
+  "templateForbidden": [
+    ".card { min-height:486px;",
+    "grid-template-rows:3px 46px 40px",
+    "font-family:Inter, Pretendard"
+  ],
+  "renderedRequired": [
+    "<nav class=\"top\">",
+    "class=\"pill\" id=\"scopePill\"",
+    "class=\"card-head\"",
+    "NAVER SIGNAL",
+    "네이버 지도",
+    "검색 링크"
+  ],
+  "checks": [
+    "canonical template matches approved shell/card anatomy",
+    "all generated guide pages contain the approved DOM rail",
+    "generated pages contain no intermediate fixed-card-height rule",
+    "browser QA on the published URL verifies visual hierarchy and action alignment"
+  ]
+}
