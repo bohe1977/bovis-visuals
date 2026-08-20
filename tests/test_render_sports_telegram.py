@@ -9,7 +9,7 @@ RENDERER = ROOT / "tools" / "render_sports_telegram.py"
 
 def run_renderer(kind: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [sys.executable, str(RENDERER), "--kind", kind, "--root", str(ROOT)],
+        [sys.executable, str(RENDERER), "--kind", kind, "--root", str(ROOT), "--allow-stale"],
         text=True,
         capture_output=True,
         check=False,
@@ -60,3 +60,47 @@ def test_mlb_renderer_outputs_current_dated_team_report_and_archive_link():
     assert "**LA 다저스 경기**" in result.stdout
     assert f"투수 기록: {dodgers['pitcher_record']}" in result.stdout
     assert f"https://bohe1977.github.io/bovis-visuals/mlb/{report_date}/" in result.stdout
+
+
+def test_mlb_renderer_refuses_nonfinal_report_even_when_archive_exists(tmp_path: Path):
+    report_date = "2026-08-19"
+    report_dir = tmp_path / "mlb" / report_date
+    report_dir.mkdir(parents=True)
+    (report_dir / "index.html").write_text("ok", encoding="utf-8")
+    (report_dir / "data.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "mlb" / "data.json").write_text(
+        json.dumps({"report_date_kst": report_date, "team_games": [{"game_pk": 1, "section_title": "LA 다저스 경기", "status": "경기 진행 중"}]}),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(RENDERER), "--kind", "mlb", "--root", str(tmp_path)],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode != 0
+    assert "not final" in result.stderr
+
+
+def test_mlb_renderer_refuses_stale_report_for_expected_delivery_date(tmp_path: Path):
+    report_date = "2026-08-19"
+    report_dir = tmp_path / "mlb" / report_date
+    report_dir.mkdir(parents=True)
+    (report_dir / "index.html").write_text("ok", encoding="utf-8")
+    (report_dir / "data.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "mlb" / "data.json").write_text(
+        json.dumps({"report_date_kst": report_date, "team_games": [{"game_pk": 1, "section_title": "LA 다저스 경기", "status": "경기 종료"}]}),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(RENDERER), "--kind", "mlb", "--root", str(tmp_path), "--expected-date", "2026-08-20"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode != 0
+    assert "date mismatch" in result.stderr

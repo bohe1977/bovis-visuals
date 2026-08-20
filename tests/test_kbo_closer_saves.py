@@ -11,7 +11,7 @@ MLB_DATA = ROOT / "mlb" / "data.json"
 
 
 def test_kbo_report_excludes_canceled_games_from_data_and_display():
-    games = json.loads(GAME_DATA.read_text(encoding="utf-8"))["games"]
+    games = json.loads((ROOT / "kbo" / "2026-08-16" / "data.json").read_text(encoding="utf-8"))["games"]
     page = INTEGRATED.read_text(encoding="utf-8")
 
     assert len(games) == 3
@@ -68,7 +68,7 @@ def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season
 
 
 def test_pitcher_badges_use_verified_role_specific_game_decisions():
-    pitchers = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["pitchers"]
+    pitchers = json.loads((ROOT / "kbo" / "2026-08-16" / "players.json").read_text(encoding="utf-8"))["pitchers"]
     integrated = INTEGRATED.read_text(encoding="utf-8")
     player_page = PLAYER_PAGE.read_text(encoding="utf-8")
     active = [pitcher for pitcher in pitchers if pitcher["appeared"]]
@@ -166,7 +166,8 @@ def test_mlb_uses_result_label_and_role_specific_pitcher_badges():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
 
-    assert '<span class="status">경기 결과</span>' in mlb
+    assert "const final=g.status==='경기 종료';" in mlb
+    assert "final?'경기 결과':esc(g.status)" in mlb
     assert "const pitcherState=p=>" in mlb
     assert "['승','패']" in mlb
     assert "['세이브','홀드','블론']" in mlb

@@ -18,9 +18,11 @@ PLAYER_SPECS=[
  ('오타니 쇼헤이',660271,'batter'),('이정후',808982,'batter'),('바비 위트 주니어',677951,'batter'),('마이크 트라웃',545361,'batter'),
  ('무라카미 무네타카',808959,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
  ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
-TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀'}
-PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰','Blake Snell':'블레이크 스넬','Tomoyuki Sugano':'스가노 도모유키','Mookie Betts':'무키 베츠','Shohei Ohtani':'오타니 쇼헤이','Evan Phillips':'에번 필립스','Bryce Eldridge':'브라이스 엘드리지','Jo Adell':'조 아델'}
-def ko_team(name): return TEAM_KO.get(name,name)
+TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Cleveland Guardians':'클리블랜드','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀'}
+PLAYER_KO={'Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Blade Tidwell':'블레이드 티드웰','Blake Snell':'블레이크 스넬','Tomoyuki Sugano':'스가노 도모유키','Mookie Betts':'무키 베츠','Shohei Ohtani':'오타니 쇼헤이','Evan Phillips':'에번 필립스','Bryce Eldridge':'브라이스 엘드리지','Jo Adell':'조 아델','Eric Lauer':'에릭 라우어','Ryan Feltner':'라이언 펠트너','Tanner Scott':'태너 스콧','Jack Dreyer':'잭 드레이어','Edgardo Henriquez':'에드가르도 엔리케스','Kyle Tucker':'카일 터커','Willi Castro':'윌리 카스트로','Trent Harris':'트렌트 해리스','Reiver Sanmartin':'레이버 산마르틴','Carson Whisenhunt':'카슨 위즌헌트','Craig Yoho':'크레이그 요호','Matt Festa':'맷 페스타','Tim Herrin':'팀 헤린','Foster Griffin':'포스터 그리핀'}
+def ko_team(name):
+  if name in TEAM_KO:return TEAM_KO[name]
+  raise ValueError(f'Missing Korean team-name mapping: {name}')
 def ko_person(name):
     """Never silently publish an English MLB player name in Korean copy."""
     if not name:
@@ -120,7 +122,29 @@ def game_status(g):
     if state=='Final':return '경기 종료'
     if state in ('Preview','Pre-Game'):return '경기 예정'
     if 'Postponed' in detailed or 'Cancelled' in detailed:return '연기'
+    if state=='Live' or detailed=='In Progress':return '경기 진행 중'
     return detailed or state or '상태 미확인'
+
+def batter_status(stats, game_state):
+    """A lineup/boxscore entry is not a completed batting appearance."""
+    plate_appearances=stats.get('plateAppearances')
+    if plate_appearances is None:
+        plate_appearances=sum(stats.get(key, 0) or 0 for key in (
+            'atBats', 'baseOnBalls', 'hitByPitch', 'sacBunts', 'sacFlies', 'catchersInterference',
+        ))
+    if plate_appearances:
+        return '출전'
+    if game_state=='경기 종료':
+        return '비출전'
+    return game_state
+
+def require_final_report(data):
+    """Prevent a mutable public daily-results page from publishing live/preview copy."""
+    active=[game for game in data.get('team_games', []) if game.get('game_pk') is not None]
+    nonfinal=[game for game in active if game.get('status')!='경기 종료']
+    if nonfinal:
+        labels=', '.join(f"{game.get('section_title', '경기')} ({game.get('status')})" for game in nonfinal)
+        raise ValueError(f'not final: {labels}')
 def decision(g,k):return g.get('decisions',{}).get(k,{}).get('fullName')
 def pitcher_record(winner,loser,save):
     parts=[]
@@ -259,6 +283,8 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     if aw is not None and hw is not None and aw!=hw:ws='away' if aw>hw else 'home'
     a=ko_team(away['team']['name']); h=ko_team(home['team']['name']); status=game_status(g)
     winner=decision(g,'winner'); loser=decision(g,'loser'); save=decision(g,'save')
+    if status!='경기 종료':
+      return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':None,'daum_game_id':None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':None,'away_score':aw,'home_score':hw,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'pitcher_record':'','headline':f'{a}–{h} {status}','game_points':[],'opponent_label':None,'opponent_effort':None,'daum_verified':False,'naver_verified':False}
     outcome=(f'{a}, {h}에 {aw}–{hw} 승리' if ws=='away' else f'{a}, {h}에 {aw}–{hw} 패배' if ws=='home' else f'{a}–{h} {status}')
     winner_side=ws or 'away'; winner_team=a if winner_side=='away' else h; loser_team=h if winner_side=='away' else a
     winner_hits=ls.get('teams',{}).get(winner_side,{}).get('hits','—'); loser_hits=ls.get('teams',{}).get('home' if winner_side=='away' else 'away',{}).get('hits','—')
@@ -293,7 +319,11 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       game_points.append(bullpen)
     elif save_pitching:
       game_points.append(f'마무리 {save_pitching}으로 세이브를 올렸다.')
-    if winner_pitcher_is_short_reliever(box,winner) and winner_leader:
+    if focus_won and focus_moment:
+      headline=f'{focus_moment}, {focus_opponent}에 {winner_runs}-{loser_runs} 승리'
+    elif not focus_won and focus_moment:
+      headline=f'{focus_moment}에도, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
+    elif winner_pitcher_is_short_reliever(box,winner) and winner_leader:
       headline=f'{winner_batter_headline(winner_leader)}, {loser_team}에 {winner_runs}-{loser_runs} 승리'
     else:
       headline=f'{pitching_headline_line(box,winner)}, {winner_team}가 {loser_team}에 {winner_runs}-{loser_runs} 승리'
@@ -350,12 +380,16 @@ def main():
       season=batter_season(pid,cutoff)
       if appearances:
         g,pp=appearances[-1]; st=pp['stats']['batting']; pos=pp.get('position',{}).get('abbreviation','—')
-        note=f'{pos} · {st.get("hits",0)}-{st.get("atBats",0)}'
-        extras=[]
-        for key,label in [('homeRuns','HR'),('triples','3B'),('doubles','2B'),('baseOnBalls','BB'),('strikeOuts','K')]:
-          if st.get(key,0):extras.append(f'{st[key]} {label}')
-        if extras:note+=' | '+', '.join(extras)
-        status='출전'
+        status=batter_status(st,game_status(g))
+        if status=='출전':
+          note=f'{pos} · {st.get("hits",0)}-{st.get("atBats",0)}'
+          extras=[]
+          for key,label in [('homeRuns','HR'),('triples','3B'),('doubles','2B'),('baseOnBalls','BB'),('strikeOuts','K')]:
+            if st.get(key,0):extras.append(f'{st[key]} {label}')
+          if extras:note+=' | '+', '.join(extras)
+        else:
+          note='MLB 공식 boxscore: 선발 명단이나 아직 타격 기록 없음' if status=='경기 진행 중' else 'MLB 공식 boxscore: 타격 기록 없음'
+          st={}
       else:
         st={};pos='—'; status='비출전' if tg else '팀 경기 없음'; note='MLB 공식 boxscore: 타격 기록 없음' if tg else 'KST 대상일 현재 팀 경기 없음'
       batters.append({'name':name,'team':team,'mlbam_id':pid,'status':status,'position':pos,'at_bats':st.get('atBats'),'hits':st.get('hits'),'rbi':st.get('rbi'),'runs':st.get('runs'),'home_runs':st.get('homeRuns'),'walks':st.get('baseOnBalls'),'strikeouts':st.get('strikeOuts'),'avg':fmt_stat(season.get('avg')),'obp':fmt_stat(season.get('obp')),'ops':fmt_stat(season.get('ops')),'season_stats_cutoff':cutoff,'daily_note':note})
@@ -443,8 +477,15 @@ def main():
       'pitchers':pitchers,
       'sources':{'mlb_official':src,'naver':[naver_url,naver_api],'daum':[daum_url,daum_api]}
     }
-    OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    require_final_report(data)
+    rendered=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
+    # Preflight immutable snapshots before changing the mutable latest path.
+    # A same-date mismatch is a hard failure, not a reason to overwrite either copy.
+    archive_data=ROOT/'mlb'/REPORT.isoformat()/'data.json'
+    if archive_data.exists() and archive_data.read_text(encoding='utf-8') != rendered and not os.environ.get('BOVIS_MLB_REPLACE_ARCHIVE'):
+        raise SystemExit(f'immutable archive conflict: {archive_data}')
+    OUT.write_text(rendered,encoding='utf-8')
     if not os.environ.get('BOVIS_MLB_SKIP_ARCHIVE'):
-        archive_mlb(ROOT)
+        archive_mlb(ROOT, replace=bool(os.environ.get('BOVIS_MLB_REPLACE_ARCHIVE')))
     print(json.dumps({'report_date_kst':data['report_date_kst'],'target_mlb_games':len(mlb_games),'team_games':[(x['section_title'],x['status'],x['game_pk']) for x in targets],'pitchers':data['pitchers']},ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

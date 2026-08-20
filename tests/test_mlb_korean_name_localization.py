@@ -36,6 +36,11 @@ def test_unknown_person_name_fails_generation_instead_of_leaking_english():
         UPDATE_MLB.ko_person("Unmapped Player")
 
 
+def test_unknown_team_name_fails_generation_instead_of_leaking_english():
+    with pytest.raises(ValueError, match="Missing Korean team-name mapping"):
+        UPDATE_MLB.ko_team("Unmapped Club")
+
+
 def test_20260818_archive_has_no_english_player_names_in_user_copy():
     data = json.loads((ROOT / "mlb" / "2026-08-18" / "data.json").read_text(encoding="utf-8"))
     player_copy = []

@@ -5,7 +5,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 PUBLIC_ROOT = "https://bohe1977.github.io/bovis-visuals"
 
@@ -76,11 +78,22 @@ def kbo_report(root: Path) -> str:
     return "\n".join(lines)
 
 
-def mlb_report(root: Path) -> str:
+def require_mlb_final(data: dict) -> None:
+    active = [game for game in data.get("team_games", []) if game.get("game_pk") is not None]
+    nonfinal = [game for game in active if game.get("status") != "경기 종료"]
+    if nonfinal:
+        labels = ", ".join(f"{game.get('section_title', '경기')} ({game.get('status')})" for game in nonfinal)
+        fail(f"MLB report not final: {labels}")
+
+
+def mlb_report(root: Path, *, expected_date: str | None = None) -> str:
     data = read_json(root / "mlb" / "data.json")
+    require_mlb_final(data)
     report_date = data.get("report_date_kst")
     if not isinstance(report_date, str):
         fail("MLB report date missing")
+    if expected_date is not None and report_date != expected_date:
+        fail(f"MLB report date mismatch: expected {expected_date}, found {report_date}")
     require_archive(root, "mlb", report_date)
     lines = [f"## ⚾ MLB 오늘 경기 브리핑, {report_date} KST", ""]
     for game in data.get("team_games", []):
@@ -102,9 +115,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--kind", choices=("kbo", "mlb"), required=True)
     parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--expected-date", help="required MLB report date (YYYY-MM-DD)")
+    parser.add_argument("--allow-stale", action="store_true", help="permit historical MLB rendering for tests/manual inspection")
     args = parser.parse_args()
     root = args.root.resolve()
-    print(kbo_report(root) if args.kind == "kbo" else mlb_report(root))
+    if args.kind == "kbo":
+        print(kbo_report(root))
+        return
+    expected_date = None if args.allow_stale else (args.expected_date or datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat())
+    print(mlb_report(root, expected_date=expected_date))
 
 
 if __name__ == "__main__":

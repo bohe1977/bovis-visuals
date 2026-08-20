@@ -30,7 +30,7 @@ def date_value(data: dict, field: str, label: str) -> str:
     return value
 
 
-def immutable_copy(source: Path, destination: Path, *, transform=None) -> None:
+def immutable_copy(source: Path, destination: Path, *, transform=None, replace: bool = False) -> None:
     if not source.is_file():
         fail(f"missing source: {source}")
     content = source.read_text(encoding="utf-8")
@@ -38,6 +38,9 @@ def immutable_copy(source: Path, destination: Path, *, transform=None) -> None:
         content = transform(content)
     if destination.exists():
         if destination.read_text(encoding="utf-8") != content:
+            if replace:
+                destination.write_text(content, encoding="utf-8")
+                return
             fail(f"immutable archive conflict: {destination}")
         return
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -70,12 +73,12 @@ def archive_kbo(root: Path = ROOT) -> str:
     return report_date
 
 
-def archive_mlb(root: Path = ROOT) -> str:
+def archive_mlb(root: Path = ROOT, *, replace: bool = False) -> str:
     data = read_json(root / "mlb" / "data.json")
     report_date = date_value(data, "report_date_kst", "MLB data")
     report_dir = root / "mlb" / report_date
-    immutable_copy(root / "mlb" / "data.json", report_dir / "data.json")
-    immutable_copy(root / "mlb" / "index.html", report_dir / "index.html")
+    immutable_copy(root / "mlb" / "data.json", report_dir / "data.json", replace=replace)
+    immutable_copy(root / "mlb" / "index.html", report_dir / "index.html", replace=replace)
     return report_date
 
 

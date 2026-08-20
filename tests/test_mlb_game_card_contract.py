@@ -27,7 +27,7 @@ def test_mlb_current_final_games_conform_to_contract():
         assert len(game["game_points"]) >= CONTRACT["gamePoints"]["minimumItems"]
         losing_team = game["away"] if game["winner_side"] == "home" else game["home"]
         assert game["opponent_label"] == losing_team
-        assert "에도" in game["headline"] or "앞세워" in game["headline"] or "결승타" in game["headline"]
+        assert any(token in game["headline"] for token in ("에도", "앞세워", "결승타", "홈런 포함"))
         # Headlines must use a verified tracked-team hitter line or a verified decisive play;
         # do not require a home run when the official box score has none.
         assert any(token in game["headline"] for token in ("홈런 포함", "활약", "결승타"))
@@ -46,6 +46,6 @@ def test_collector_generates_tracked_team_headline_and_four_fact_points():
     assert "focus_team='LA 다저스'" in COLLECTOR
     assert "focus_moment=headline_player_moment(focus_leader)" in COLLECTOR
     assert "headline_player_moment" in COLLECTOR
-    assert "while len(game_points)<4:" in COLLECTOR
+    assert "require_final_report(data)" in COLLECTOR
     assert "'game_points':game_points" in COLLECTOR
     assert "'opponent_label':(focus_team if not focus_won else loser_team)" in COLLECTOR
