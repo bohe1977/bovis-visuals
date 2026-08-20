@@ -40,6 +40,11 @@
       "slug": "gim-inbok-gwangpyeong-samseong-second-round",
       "data": "data/restaurant-guides/gim-inbok-gwangpyeong-samseong-second-round.json",
       "output": "2026-08-20-gim-inbok-gwangpyeong-samseong-second-round/index.html"
+    },
+    {
+      "slug": "mg-central-hq-first-round",
+      "data": "data/restaurant-guides/2026-08-20-mg-central-hq-first-round.json",
+      "output": "2026-08-20-mg-central-hq-first-round/index.html"
     }
   ]
 }

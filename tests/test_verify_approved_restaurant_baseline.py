@@ -1,3 +1,4 @@
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -11,4 +12,5 @@ def test_all_generated_guides_match_approved_sadang_final_baseline():
         [sys.executable, str(SCRIPT)], cwd=ROOT, text=True, capture_output=True, check=False
     )
     assert result.returncode == 0, result.stderr
-    assert "PASS: approved Sadang final baseline verified for 7 generated guides" in result.stdout
+    guide_count = len(json.loads((ROOT / "data/restaurant-guides/manifest.json").read_text(encoding="utf-8"))["guides"])
+    assert f"PASS: approved Sadang final baseline verified for {guide_count} generated guides" in result.stdout

@@ -1,0 +1,226 @@
+{
+  "config": {
+    "title": "새마을금고 중앙회 1차",
+    "description": "새마을금고중앙회 본부 인근에서 업무 저녁 1차로 고르기 좋은 식사 후보를 일반 추천과 보헤 저장 맛집으로 나눠 정리한 지도입니다.",
+    "eyebrow": "MG CENTRAL HQ · FIRST ROUND · 2026.08.20",
+    "intro": "기준점은 <strong>새마을금고중앙회 본부</strong>, 서울 강남구 봉은사로114길 20입니다. 오늘 업무 저녁은 <strong>이동 부담, 식사 완성도, 대화하기 좋은 구성</strong>을 기준으로 고르세요.",
+    "source": "SOURCE: Naver Place listing + rendered menu + Bohe saved references · origin: 새마을금고중앙회 본부 · evidence captured 2026.08.17 KST",
+    "notice": "거리는 새마을금고중앙회 본부 기준 직선거리입니다. 네이버 Place 실시간 확인은 접근 제한으로 수행하지 못했으므로, 영업시간·휴무·대기·예약 가능 여부는 출발 전 네이버 지도에서 다시 확인하세요.",
+    "markerHelper": "새마을금고중앙회 본부 기준 직선거리",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "300",
+        "label": "0~300m"
+      },
+      {
+        "value": "700",
+        "label": "300~700m"
+      },
+      {
+        "value": "1000",
+        "label": "700m+"
+      }
+    ]
+  },
+  "modeConfig": {
+    "bohe": {
+      "label": "보헤 추천",
+      "radiusLabel": "≤ 1km",
+      "bestFor": "격식 있는 저녁",
+      "markerTitle": "새마을금고중앙회 본부에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "한우 맡김차림",
+          "venue": "이속우화진",
+          "copy": "코엑스에서 한우 맡김차림으로 격을 갖출 때."
+        },
+        {
+          "title": "예약형 일식",
+          "venue": "스시욘즈",
+          "copy": "조용한 업무 저녁을 예약형 오마카세로 정할 때."
+        },
+        {
+          "title": "중식 식사",
+          "venue": "더라운드 삼성점",
+          "copy": "베이징덕과 세트 요리로 인원을 맞출 때."
+        }
+      ]
+    },
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 1km",
+      "bestFor": "업무 저녁 1차",
+      "markerTitle": "새마을금고중앙회 본부에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "가장 가까운 해산물",
+          "venue": "목포명가 봉은사역점",
+          "copy": "회와 해산물, 식사를 한 번에 맞출 가장 가까운 1차."
+        },
+        {
+          "title": "가벼운 정식",
+          "venue": "호호식당 스타필드코엑스",
+          "copy": "코엑스 안에서 정식으로 부담 없이 시작할 때."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "목포명가 봉은사역점",
+      "distance": 191,
+      "category": "1차 식사",
+      "kind": "생선회",
+      "color": "#1c6973",
+      "signal": "방문자 1,211 · 블로그 2,339",
+      "address": "서울 강남구 봉은사로111길 6",
+      "reason": "본부에서 가장 가까운 해산물·회 중심의 1차 식사 후보.",
+      "rationale": "회·해산물과 식사를 함께 맞출 수 있는 1차. 인원별 메뉴를 나눌 때 좋음.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1635333017/home",
+      "menuEvidence": [
+        {
+          "display": "모듬회",
+          "source": "목포명가 모듬회",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "모듬물회",
+          "source": "여름 모듬물회",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "낙지비빔밥",
+          "source": "낙지비빔밥",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "markerLabel": "목포명가"
+    },
+    {
+      "name": "호호식당 스타필드코엑스",
+      "distance": 632,
+      "category": "1차 식사",
+      "kind": "일식당",
+      "color": "#6955a5",
+      "signal": "방문자 9,439 · 블로그 862",
+      "address": "서울 강남구 영동대로 513 B1층 H103A호",
+      "reason": "코엑스 안에서 정식 중심으로 가볍고 예측 가능한 1차를 고를 때의 후보.",
+      "rationale": "코엑스 안에서 바로 이어갈 수 있는 한식당. 가볍게 식사부터 할 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1047937294/home",
+      "menuEvidence": [
+        {
+          "display": "로스가츠정식",
+          "source": "로스가츠정식",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생선가츠정식",
+          "source": "생선가츠정식",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "스키야키정식",
+          "source": "스키야키정식",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "markerLabel": "호호식당"
+    }
+  ],
+  "bohe": [
+    {
+      "name": "이속우화진",
+      "markerLabel": "이속우화진",
+      "distance": 602,
+      "category": "1차 식사",
+      "kind": "소고기구이",
+      "color": "#7e3d2d",
+      "signal": "네이버 리뷰 100",
+      "address": "서울 강남구 영동대로 513 코엑스몰 스타필드 B1층",
+      "reason": "코엑스 한우 맡김차림으로 저녁을 시작할 때.",
+      "rationale": "한우 맡김차림으로 코엑스 안에서 격을 올리는 선택. 업무 저녁 1차로.",
+      "searchQuery": "이속우화진 코엑스",
+      "menuEvidence": [
+        {
+          "display": "한우 맡김차림",
+          "source": "한우맡김차림",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "savedSource": "https://www.instagram.com/p/CtWJVh4RaOh/"
+    },
+    {
+      "name": "스시욘즈",
+      "markerLabel": "스시욘즈",
+      "distance": 915,
+      "category": "1차 식사",
+      "kind": "일식당",
+      "color": "#765198",
+      "signal": "네이버 리뷰 960",
+      "address": "서울 강남구 삼성로96길 11 1층",
+      "reason": "예약형 오마카세 식사를 고를 때.",
+      "rationale": "런치·디너 오마카세가 분명한 예약형 식당. 조용한 업무 저녁으로.",
+      "searchQuery": "스시욘즈 삼성",
+      "menuEvidence": [
+        {
+          "display": "런치 오마카세",
+          "source": "런치 오마카세",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "디너 오마카세",
+          "source": "디너 오마카세",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "savedSource": "https://www.instagram.com/p/CesbtsOhkV9/"
+    },
+    {
+      "name": "더라운드 삼성점",
+      "markerLabel": "더라운드",
+      "distance": 958,
+      "category": "1차 식사",
+      "kind": "중식당",
+      "color": "#387c54",
+      "signal": "네이버 리뷰 736",
+      "address": "서울 강남구 영동대로 648 삼안빌딩 1층",
+      "reason": "베이징덕 중심으로 격식 있는 중식을 고를 때.",
+      "rationale": "베이징덕과 세트 요리를 고를 수 있는 중식당. 격식 있는 식사 자리에.",
+      "searchQuery": "더라운드 삼성점",
+      "menuEvidence": [
+        {
+          "display": "런치 N세트",
+          "source": "Luncheon N set",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "디너 T세트",
+          "source": "Dinner T set",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "베이징덕",
+          "source": "매콤한 소스와 어우러진 베이징덕",
+          "sourceType": "대표",
+          "kind": "food"
+        }
+      ],
+      "savedSource": "https://www.instagram.com/p/CheOEBFhQ7n/"
+    }
+  ]
+}
