@@ -112,6 +112,11 @@ def script_json(value):
     return json.dumps(value, ensure_ascii=False).replace("</", "<\\/")
 
 
+def title_class(title):
+    """Keep exceptionally long mobile titles on one balanced line."""
+    return "long-title" if len(re.sub(r"\s+", "", title)) >= 12 else ""
+
+
 def main(input_path, output_path):
     data = json.loads(Path(input_path).read_text(encoding="utf-8"))
     if not {"config", "modeConfig", "general"} <= set(data):
@@ -130,6 +135,7 @@ def main(input_path, output_path):
     payload = {"config": config, "modeConfig": {mode: mode_config[mode] for mode in modes}, "venues": modes}
     replacements = {
         "__TITLE__": html.escape(config["title"]),
+        "__TITLE_CLASS__": title_class(config["title"]),
         "__DESCRIPTION__": html.escape(config["description"]),
         "__INTRO__": config["intro"],
         "__PAYLOAD_JSON__": script_json(payload),

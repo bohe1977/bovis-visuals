@@ -38,6 +38,14 @@ def render_payload(tmp_path, payload):
         [sys.executable, str(RENDERER), str(input_path), str(output_path)], cwd=ROOT, text=True, capture_output=True)
 
 
+def test_renderer_applies_compact_mobile_class_to_orphan_prone_titles(tmp_path):
+    payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
+    payload["config"]["title"] = "김인복의광평 삼성본점 2차"
+    result = render_payload(tmp_path, payload)
+    assert result.returncode == 0, result.stderr
+    assert '<h1 class="long-title">김인복의광평 삼성본점 2차</h1>' in (tmp_path / "guide.html").read_text(encoding="utf-8")
+
+
 def test_renderer_rejects_non_concise_marker_labels_and_duplicate_mode_colors(tmp_path):
     payload = json.loads((FIXTURES / "restaurant-general-only.json").read_text(encoding="utf-8"))
     payload["general"][0]["markerLabel"] = "가나다라마바사아자차카타파"

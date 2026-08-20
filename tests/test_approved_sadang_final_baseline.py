@@ -26,6 +26,8 @@ def test_template_uses_approved_sadang_card_anatomy_and_natural_height():
     assert '.top { justify-content:center; }' in TEMPLATE
     assert '.pill { display:none; }' in TEMPLATE
     assert 'h1 { margin:18px 0 0; font-size:42px; }' in TEMPLATE
+    assert 'h1.long-title { font-size:39px; }' in TEMPLATE
+    assert '<h1 class="__TITLE_CLASS__">__TITLE__</h1>' in TEMPLATE
     assert 'min-height:36px' in TEMPLATE
     assert 'padding:0 12px' in TEMPLATE
     assert 'grid-template-rows:3px auto 36px' in TEMPLATE
