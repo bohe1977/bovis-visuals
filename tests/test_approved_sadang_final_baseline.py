@@ -25,6 +25,7 @@ def test_template_uses_approved_sadang_card_anatomy_and_natural_height():
     assert 'min-height:36px' in TEMPLATE
     assert 'padding:0 12px' in TEMPLATE
     assert 'grid-template-rows:3px auto 36px' in TEMPLATE
+    assert 'min-height:46px' not in TEMPLATE
     assert 'font-weight:650' in TEMPLATE
     assert 'margin-top:auto;' in TEMPLATE
 
