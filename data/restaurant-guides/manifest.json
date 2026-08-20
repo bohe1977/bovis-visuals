@@ -35,6 +35,11 @@
       "slug": "mg-central-hq-workweek",
       "data": "data/restaurant-guides/mg-central-hq-workweek.json",
       "output": "2026-08-17-mg-central-hq-workweek-dinner/index.html"
+    },
+    {
+      "slug": "gim-inbok-gwangpyeong-samseong-second-round",
+      "data": "data/restaurant-guides/gim-inbok-gwangpyeong-samseong-second-round.json",
+      "output": "2026-08-20-gim-inbok-gwangpyeong-samseong-second-round/index.html"
     }
   ]
 }
