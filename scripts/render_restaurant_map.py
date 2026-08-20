@@ -59,6 +59,15 @@ def validate_menu_evidence(venue):
     venue["menus"] = [item["display"] for item in evidence]
 
 
+def validate_copy(venue):
+    rationale = venue["rationale"].strip()
+    if not rationale or len(rationale) > 60:
+        fail("rationale must be a concise card-level decision message (maximum 60 characters)")
+    sentence_count = len(re.findall(r"[.!?](?:\s|$)", rationale))
+    if sentence_count > 2:
+        fail("rationale must contain at most two short sentences")
+
+
 def validate_mode(mode, venues, mode_config):
     expected_label = "일반 추천" if mode == "general" else "보헤 추천"
     if mode_config.get("label") != expected_label:
@@ -81,6 +90,7 @@ def validate_mode(mode, venues, mode_config):
         labels.add(label)
         names.add(venue["name"])
         validate_address(venue["address"])
+        validate_copy(venue)
         validate_search_query(venue)
         if mode == "bohe" and not valid_reference_url(venue.get("savedSource")):
             fail("bohe venues require an https savedSource for the reference action")

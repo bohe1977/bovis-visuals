@@ -7,7 +7,10 @@
     "class=\"pill\" id=\"scopePill\"",
     "font-size:clamp(42px,7vw,78px)",
     "class=\"card-head\"",
-    ".card-head { display:flex;",
+    ".card-head { text-align:center;",
+    "min-height:36px",
+    "padding:0 12px",
+    "font-weight:650",
     "function foodGroup(venue)",
     "function conciseSignal(value)"
   ],

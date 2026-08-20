@@ -15,14 +15,20 @@ def test_template_uses_approved_sadang_final_shell_not_intermediate_shell():
 
 def test_template_uses_approved_sadang_card_anatomy_and_natural_height():
     assert 'class="card-head"' in TEMPLATE
-    assert '.card-head { display:flex;' in TEMPLATE
+    assert 'class="rank">${rank}</div><h2>${escapeHtml(venue.name)}</h2>' in TEMPLATE
+    assert '.card-head { display:flex;' not in TEMPLATE
     assert '.card { min-height:486px;' not in TEMPLATE
     assert 'grid-template-rows:3px 46px 40px' not in TEMPLATE
     assert 'function foodGroup(venue)' in TEMPLATE
     assert "'이자카야/사시미'" in TEMPLATE
     assert 'function conciseSignal(value)' in TEMPLATE
+    assert 'min-height:36px' in TEMPLATE
+    assert 'padding:0 12px' in TEMPLATE
+    assert 'font-weight:650' in TEMPLATE
     assert 'margin-top:auto;' in TEMPLATE
 
 
-def test_renderer_allows_up_to_four_source_backed_menu_signals():
+def test_renderer_rejects_long_card_decision_copy():
+    assert 'len(rationale) > 60' in RENDERER
+    assert 'rationale must contain at most two short sentences' in RENDERER
     assert 'if not 1 <= len(evidence) <= 4' in RENDERER
