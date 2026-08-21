@@ -1,0 +1,215 @@
+{
+  "pages": [
+    {
+      "path": "/kbo/",
+      "viewports": [
+        {
+          "width": 390,
+          "height": 844,
+          "title": "2026-08-21 KBO 관심 선수와 전체 팀 경기 결과",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "games": 5,
+          "game_metric": "5",
+          "total_runs": "64",
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "status": "경기 결과",
+          "meta_font": "\"Geist Mono\", ui-monospace, monospace",
+          "winner_bounds": [
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            },
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            }
+          ],
+          "one_rect_per_stat": true,
+          "mobile_one_column": true
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "title": "2026-08-21 KBO 관심 선수와 전체 팀 경기 결과",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "games": 5,
+          "game_metric": "5",
+          "total_runs": "64",
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "status": "경기 결과",
+          "meta_font": "\"Geist Mono\", ui-monospace, monospace",
+          "winner_bounds": [
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            },
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            }
+          ],
+          "one_rect_per_stat": true,
+          "mobile_one_column": true
+        },
+        {
+          "width": 1440,
+          "height": 1200,
+          "title": "2026-08-21 KBO 관심 선수와 전체 팀 경기 결과",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "games": 5,
+          "game_metric": "5",
+          "total_runs": "64",
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "status": "경기 결과",
+          "meta_font": "\"Geist Mono\", ui-monospace, monospace",
+          "winner_bounds": [
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            },
+            {
+              "side": "away",
+              "good": true
+            },
+            {
+              "side": "home",
+              "good": true
+            }
+          ],
+          "one_rect_per_stat": true,
+          "mobile_one_column": true
+        }
+      ]
+    },
+    {
+      "path": "/kbo-players/",
+      "viewports": [
+        {
+          "width": 390,
+          "height": 844,
+          "title": "2026-08-21 KBO 관심 선수 기록 · BOVIS",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "active": 3,
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "badges": [
+            "패",
+            "승리",
+            "출전",
+            "출전",
+            "출전"
+          ]
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "title": "2026-08-21 KBO 관심 선수 기록 · BOVIS",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "active": 3,
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "badges": [
+            "패",
+            "승리",
+            "출전",
+            "출전",
+            "출전"
+          ]
+        },
+        {
+          "width": 1440,
+          "height": 1200,
+          "title": "2026-08-21 KBO 관심 선수 기록 · BOVIS",
+          "no_horizontal_overflow": true,
+          "errors": [],
+          "active": 3,
+          "inactive": [
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음",
+            "등판 없음"
+          ],
+          "badges": [
+            "패",
+            "승리",
+            "출전",
+            "출전",
+            "출전"
+          ]
+        }
+      ]
+    }
+  ]
+}
