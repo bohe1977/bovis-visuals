@@ -55,6 +55,11 @@
       "slug": "gangnam-sinnonhyeon-nonhyeon-sinsa-lunch",
       "data": "data/restaurant-guides/gangnam-sinnonhyeon-nonhyeon-sinsa-lunch.json",
       "output": "2026-08-22-gangnam-sinnonhyeon-nonhyeon-sinsa-lunch/index.html"
+    },
+    {
+      "slug": "gangnam-line-pasta-lunch",
+      "data": "data/restaurant-guides/gangnam-line-pasta-lunch.json",
+      "output": "2026-08-22-gangnam-line-pasta-lunch/index.html"
     }
   ]
 }

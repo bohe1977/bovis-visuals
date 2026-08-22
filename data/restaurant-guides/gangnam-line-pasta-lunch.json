@@ -1,0 +1,277 @@
+{
+  "config": {
+    "title": "강남·신논현·논현·신사 파스타 맛집",
+    "description": "강남·신논현·논현·신사 생활권에서 1인 5만원 이하 파스타를 고르는 점심 가이드입니다.",
+    "eyebrow": "GANGNAM LINE · PASTA GUIDE · 2026.08.22",
+    "intro": "기준은 <strong>강남·신논현·논현·신사 생활권</strong>입니다. <strong>1인 5만원 이하 파스타</strong>가 확인된 곳만 담았습니다.",
+    "source": "SOURCE: Naver Place live listing + rendered menus + Bohe saved references · evidence captured 2026.08.22 KST",
+    "notice": "메뉴 가격과 영업 상태는 2026.08.22 KST 네이버 Place 공개 정보 기준입니다. 운영시간·대기·재료 소진은 출발 전 다시 확인하세요.",
+    "markerHelper": "강남·신논현·논현·신사 파스타 생활권",
+    "distanceMethod": "역 생활권 기준, 거리 수치는 별도 반경 보장이 아닙니다.",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "500",
+        "label": "0~500m"
+      },
+      {
+        "value": "1000",
+        "label": "500~1km"
+      },
+      {
+        "value": "2000",
+        "label": "1km+"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "강남·신논현·논현·신사",
+      "bestFor": "파스타 점심",
+      "markerTitle": "파스타 메뉴 기준",
+      "quickPicks": [
+        {
+          "title": "파스타 중심",
+          "venue": "후추포인트",
+          "copy": "라구·투움바 선택."
+        },
+        {
+          "title": "가로수길",
+          "venue": "어썸로즈",
+          "copy": "1만원대 파스타."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "브리비트 강남역",
+      "markerLabel": "브리비트 강남역",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#7c4d3a",
+      "signal": "방문자 3,693 · 블로그 1,698",
+      "address": "서울 강남구 강남대로102길 31 1층",
+      "reason": "가벼운 파스타 점심을 고를 때.",
+      "rationale": "가벼운 파스타 점심을 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1818558157/home",
+      "searchQuery": "브리비트 강남역",
+      "menuEvidence": [
+        {
+          "display": "연어스테이크파스타",
+          "source": "[signature]연어스테이크파스타 18,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "매콤봉골레",
+          "source": "매콤봉골레 오일 파스타 17,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "도치피자 강남",
+      "markerLabel": "도치피자 강남",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#4d7199",
+      "signal": "방문자 7,862 · 블로그 2,152",
+      "address": "서울 강남구 강남대로98길 27 1층",
+      "reason": "피자와 파스타를 함께 고를 때.",
+      "rationale": "피자와 파스타를 함께 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/20472120/home",
+      "searchQuery": "도치피자 강남",
+      "menuEvidence": [
+        {
+          "display": "감베리크레마",
+          "source": "감베리 크레마 19,500원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "버팔로포모도로",
+          "source": "버팔로 포모도로 22,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "후추포인트",
+      "markerLabel": "후추포인트",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#7a6a3c",
+      "signal": "방문자 5,589 · 블로그 4,829",
+      "address": "서울 강남구 봉은사로6길 30 1층",
+      "reason": "라구와 크림 파스타를 고를 때.",
+      "rationale": "라구와 크림 파스타를 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1007886570/home",
+      "searchQuery": "후추포인트",
+      "menuEvidence": [
+        {
+          "display": "투움바파스타",
+          "source": "투움바 파스타 20,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "화이트라구파스타",
+          "source": "화이트 라구 파스타 19,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "라브리크 서울",
+      "markerLabel": "라브리크 서울",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#536f4b",
+      "signal": "방문자 1,323 · 블로그 2,730",
+      "address": "서울 강남구 봉은사로18길 66",
+      "reason": "브런치 겸 파스타 점심을 할 때.",
+      "rationale": "브런치 겸 파스타 점심을 할 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1498934506/home",
+      "searchQuery": "라브리크 서울",
+      "menuEvidence": [
+        {
+          "display": "피스타치오오일파스타",
+          "source": "피스타치오 오일파스타 23,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "화이트라구파스타",
+          "source": "화이트 라구 파스타 21,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "클로즈키친",
+      "markerLabel": "클로즈키친",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#8a4d65",
+      "signal": "방문자 1,502 · 블로그 270",
+      "address": "서울 강남구 압구정로14길 39 1층 102호",
+      "reason": "정통 파스타를 고를 때.",
+      "rationale": "정통 파스타를 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1594451358/home",
+      "searchQuery": "클로즈키친",
+      "menuEvidence": [
+        {
+          "display": "화이트라구파스타",
+          "source": "화이트라구 파스타 24,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "아마트리치아나",
+          "source": "아마트리치아나 21,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "까브테라스",
+      "markerLabel": "까브테라스",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#4e6e88",
+      "signal": "방문자 717 · 블로그 1,007",
+      "address": "서울 강남구 강남대로156길 27 3층",
+      "reason": "해산물 파스타를 고를 때.",
+      "rationale": "해산물 파스타를 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1594590158/home",
+      "searchQuery": "까브테라스",
+      "menuEvidence": [
+        {
+          "display": "해산물아라비아따",
+          "source": "해산물 아라비아따 33,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "홍새우비스큐",
+          "source": "캐비어 & 홍새우 비스큐 37,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "어썸로즈",
+      "markerLabel": "어썸로즈",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#87623f",
+      "signal": "방문자 5,928 · 블로그 5,125",
+      "address": "서울 강남구 압구정로10길 40 지하1층",
+      "reason": "1만원대 파스타를 고를 때.",
+      "rationale": "1만원대 파스타를 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/83612604/home",
+      "searchQuery": "어썸로즈",
+      "menuEvidence": [
+        {
+          "display": "화이트로즈파스타",
+          "source": "화이트 로즈 파스타 16,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "어썸토마토파스타",
+          "source": "어썸 토마토 파스타 16,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "달링키친",
+      "markerLabel": "달링키친",
+      "distance": 0,
+      "category": "파스타",
+      "kind": "이탈리아음식",
+      "color": "#7b536c",
+      "signal": "방문자 2,765 · 블로그 1,540",
+      "address": "서울 강남구 압구정로14길 34 3층",
+      "reason": "라자냐와 파스타를 함께 고를 때.",
+      "rationale": "라자냐와 파스타를 함께 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/37912230/home",
+      "searchQuery": "달링키친",
+      "menuEvidence": [
+        {
+          "display": "까르보나라",
+          "source": "까르보나라 24,500원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "비프볼로네제",
+          "source": "비프 볼로네제 26,500원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    }
+  ],
+  "bohe": []
+}
