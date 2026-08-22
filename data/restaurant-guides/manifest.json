@@ -45,6 +45,11 @@
       "slug": "mg-central-hq-first-round",
       "data": "data/restaurant-guides/2026-08-20-mg-central-hq-first-round.json",
       "output": "2026-08-20-mg-central-hq-first-round/index.html"
+    },
+    {
+      "slug": "yongsan-station-restaurants",
+      "data": "data/restaurant-guides/yongsan-station-restaurants.json",
+      "output": "2026-08-22-yongsan-station-restaurants/index.html"
     }
   ]
 }
