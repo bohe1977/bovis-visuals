@@ -50,6 +50,11 @@
       "slug": "yongsan-station-restaurants",
       "data": "data/restaurant-guides/yongsan-station-restaurants.json",
       "output": "2026-08-22-yongsan-station-restaurants/index.html"
+    },
+    {
+      "slug": "gangnam-sinnonhyeon-nonhyeon-sinsa-lunch",
+      "data": "data/restaurant-guides/gangnam-sinnonhyeon-nonhyeon-sinsa-lunch.json",
+      "output": "2026-08-22-gangnam-sinnonhyeon-nonhyeon-sinsa-lunch/index.html"
     }
   ]
 }

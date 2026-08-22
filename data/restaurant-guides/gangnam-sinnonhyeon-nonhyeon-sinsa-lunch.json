@@ -1,0 +1,277 @@
+{
+  "config": {
+    "title": "강남·신논현·논현·신사 점심 맛집",
+    "description": "강남·신논현·논현·신사 생활권에서 1인 5만원 이하로 고를 수 있는 점심 가이드입니다.",
+    "eyebrow": "GANGNAM LINE · LUNCH GUIDE · 2026.08.22",
+    "intro": "기준은 <strong>강남·신논현·논현·신사 생활권</strong>입니다. <strong>1인 5만원 이하 점심</strong> 메뉴가 확인된 곳만 담았습니다.",
+    "source": "SOURCE: Naver Place live listing + rendered menus + Bohe saved references · evidence captured 2026.08.22 KST",
+    "notice": "메뉴 가격과 영업 상태는 2026.08.22 KST 네이버 Place 공개 정보 기준입니다. 운영시간·대기·재료 소진은 출발 전 다시 확인하세요.",
+    "markerHelper": "강남·신논현·논현·신사 생활권",
+    "distanceMethod": "역 생활권 기준, 거리 수치는 별도 반경 보장이 아닙니다.",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "500",
+        "label": "0~500m"
+      },
+      {
+        "value": "1000",
+        "label": "500~1km"
+      },
+      {
+        "value": "2000",
+        "label": "1km+"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "강남·신논현·논현·신사",
+      "bestFor": "점심",
+      "markerTitle": "점심 메뉴 기준",
+      "quickPicks": [
+        {
+          "title": "면 점심",
+          "venue": "테보",
+          "copy": "1만원대 우동."
+        },
+        {
+          "title": "격식 있는 점심",
+          "venue": "도정육관 강남본점",
+          "copy": "곰탕·갈비 특선."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "브리비트 강남역",
+      "markerLabel": "브리비트 강남역",
+      "distance": 0,
+      "category": "양식",
+      "kind": "양식",
+      "color": "#7c4d3a",
+      "signal": "방문자 3,693 · 블로그 1,698",
+      "address": "서울 강남구 강남대로102길 31 1층",
+      "reason": "뇨끼로 가벼운 점심을 고를 때.",
+      "rationale": "뇨끼로 가벼운 점심을 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1818558157/home",
+      "searchQuery": "브리비트 강남역",
+      "menuEvidence": [
+        {
+          "display": "포르치니새우뇨끼",
+          "source": "포르치니 새우 뇨끼 17,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "대파크림뇨끼",
+          "source": "대파크림옥수수뇨끼 18,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "도정육관 강남본점",
+      "markerLabel": "도정육관 강남본점",
+      "distance": 0,
+      "category": "한식 점심",
+      "kind": "육류,고기요리",
+      "color": "#4d7199",
+      "signal": "방문자 893 · 블로그 388",
+      "address": "서울 서초구 서초대로78길 42 1층",
+      "reason": "곰탕이나 돼지갈비 점심특선을 고를 때.",
+      "rationale": "곰탕이나 돼지갈비 점심특선을 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/2042863435/home",
+      "searchQuery": "도정육관 강남본점",
+      "menuEvidence": [
+        {
+          "display": "한우누룽지곰탕",
+          "source": "한우 누룽지 곰탕(평일점심) 14,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "돼지갈비점심특선",
+          "source": "本돼지갈비 점심특선 27,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "용가회전훠궈 강남점",
+      "markerLabel": "용가회전훠궈 강남점",
+      "distance": 0,
+      "category": "훠궈",
+      "kind": "중식당",
+      "color": "#7a6a3c",
+      "signal": "방문자 5,650 · 블로그 2,209",
+      "address": "서울 서초구 서초대로77길 43 2층, 3층",
+      "reason": "여럿이 훠궈 점심을 나눌 때.",
+      "rationale": "여럿이 훠궈 점심을 나눌 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1057758076/home",
+      "searchQuery": "용가회전훠궈 강남점",
+      "menuEvidence": [
+        {
+          "display": "평일점심",
+          "source": "평일 점심(~15:00) 19,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "평일저녁",
+          "source": "평일 저녁(15:00~) 23,900원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "테보",
+      "markerLabel": "테보",
+      "distance": 0,
+      "category": "우동",
+      "kind": "우동,소바",
+      "color": "#536f4b",
+      "signal": "방문자 5,402 · 블로그 905",
+      "address": "서울 강남구 압구정로4길 13-3 1층",
+      "reason": "가벼운 우동 점심을 고를 때.",
+      "rationale": "가벼운 우동 점심을 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1932482885/home",
+      "searchQuery": "테보 강남",
+      "menuEvidence": [
+        {
+          "display": "카케우동",
+          "source": "카케우동 10,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "가마바타우동",
+          "source": "가마바타우동+명란+계란+고메버터 14,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "미미면가 가로수길점",
+      "markerLabel": "미미면가 가로수길점",
+      "distance": 0,
+      "category": "소바",
+      "kind": "일식,소바",
+      "color": "#8a4d65",
+      "signal": "방문자 2,952 · 블로그 2,996",
+      "address": "서울 강남구 강남대로160길 29",
+      "reason": "소바 중심으로 가볍게 먹을 때.",
+      "rationale": "소바 중심으로 가볍게 먹을 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/21693586/home",
+      "searchQuery": "미미면가 가로수길점",
+      "menuEvidence": [
+        {
+          "display": "냉온소바",
+          "source": "기본 냉/온소바 10,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "성게알냉소바",
+          "source": "성게알 냉소바 23,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "한성돈까스",
+      "markerLabel": "한성돈까스",
+      "distance": 0,
+      "category": "돈까스",
+      "kind": "돈가스",
+      "color": "#4e6e88",
+      "signal": "방문자 1,880 · 블로그 1,891",
+      "address": "서울 서초구 강남대로97길 10 1층",
+      "reason": "클래식 돈까스를 빠르게 먹을 때.",
+      "rationale": "클래식 돈까스를 빠르게 먹을 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/11684597/home",
+      "searchQuery": "한성돈까스",
+      "menuEvidence": [
+        {
+          "display": "돈까스",
+          "source": "대표 돈까스 13,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "히레까스",
+          "source": "히레까스 15,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "원강",
+      "markerLabel": "원강",
+      "distance": 0,
+      "category": "한우 점심",
+      "kind": "육류,고기요리",
+      "color": "#87623f",
+      "signal": "방문자 644 · 블로그 389",
+      "address": "서울 강남구 학동로6길 16",
+      "reason": "불고기정식과 곰탕을 고를 때.",
+      "rationale": "불고기정식과 곰탕을 고를 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/11678576/home",
+      "searchQuery": "원강 강남",
+      "menuEvidence": [
+        {
+          "display": "불고기정식",
+          "source": "불고기정식(오후 3시 이전) 20,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "나주곰탕",
+          "source": "나주곰탕 13,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    },
+    {
+      "name": "영동그집",
+      "markerLabel": "영동그집",
+      "distance": 0,
+      "category": "돼지고기 점심",
+      "kind": "돼지고기구이",
+      "color": "#7b536c",
+      "signal": "방문자 4,842 · 블로그 2,139",
+      "address": "서울 강남구 봉은사로1길 42-8",
+      "reason": "고기 중심의 점심을 할 때.",
+      "rationale": "고기 중심의 점심을 할 때.",
+      "placeUrl": "https://m.place.naver.com/restaurant/1005495070/home",
+      "searchQuery": "영동그집",
+      "menuEvidence": [
+        {
+          "display": "돼지감자살",
+          "source": "돼지 감자살(150g) 19,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "양념돼지갈비",
+          "source": "수원식 양념돼지갈비(250g) 21,000원",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ]
+    }
+  ],
+  "bohe": []
+}
