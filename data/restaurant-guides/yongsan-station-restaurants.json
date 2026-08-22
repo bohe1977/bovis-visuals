@@ -19,7 +19,7 @@
     "general": {
       "label":"일반 추천",
       "radiusLabel":"≤ 2km",
-      "bestFor":"용산역 식사·저녁",
+      "bestFor":"식사·저녁",
       "markerTitle":"용산역에서 가까운 순서",
       "quickPicks":[
         {"title":"정통 우동","venue":"우동키노야 신용산본점","copy":"냉·온 우동을 빠르게 고를 때."},
@@ -29,7 +29,7 @@
     "bohe": {
       "label":"보헤 추천",
       "radiusLabel":"≤ 2km",
-      "bestFor":"용산역 식사·저녁",
+      "bestFor":"식사·저녁",
       "markerTitle":"용산역에서 가까운 순서",
       "quickPicks":[
         {"title":"파스타 식사","venue":"느루 용산점","copy":"파스타와 뇨끼로 편하게 저녁을 시작할 때."},
