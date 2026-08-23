@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="개인 요리 DB에서 확인한 라면 요리 8개. 영상을 보기 전 준비물과 조리 흐름을 확인하는 카드.">
+  <title>라면 요리 8개 | BOVIS</title>
+  <style>
+    :root { --ink:#242424; --muted:#666; --soft:#898989; --paper:#fff; --wash:#f7f7f7; --line:#e8e8e8; --blue:#0068d6; --shadow:rgba(0,0,0,.08) 0 0 0 1px,rgba(0,0,0,.04) 0 2px 8px; }
+    * { box-sizing:border-box; }
+    html { background:var(--paper); color:var(--ink); font-family:Geist,Pretendard,"Apple SD Gothic Neo",Arial,sans-serif; }
+    body { margin:0; }
+    a { color:inherit; }
+    .wrap { width:min(1100px, calc(100% - 40px)); margin:0 auto; }
+    header { padding:72px 0 38px; text-align:center; border-bottom:1px solid var(--line); }
+    .eyebrow { margin:0 0 14px; color:var(--soft); font:500 12px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.03em; }
+    h1 { margin:0; font-size:clamp(30px,5vw,48px); letter-spacing:-.05em; line-height:1.08; }
+    .lede { width:min(590px,100%); margin:17px auto 0; color:var(--muted); font-size:15px; line-height:1.7; }
+    .rule { display:flex; justify-content:center; gap:8px; margin:26px auto 0; color:#555; font-size:13px; }
+    .rule span { display:inline-flex; align-items:center; min-height:28px; padding:4px 10px; background:var(--wash); border-radius:999px; }
+    main { padding:42px 0 72px; }
+    .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    article { display:flex; flex-direction:column; min-width:0; padding:24px; border-radius:14px; background:#fff; box-shadow:var(--shadow); }
+    .card-head { display:flex; align-items:flex-start; gap:14px; padding-bottom:18px; border-bottom:1px solid var(--line); }
+    .num { flex:0 0 auto; padding-top:2px; color:var(--blue); font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .title-wrap { min-width:0; flex:1; }
+    h2 { margin:0; font-size:20px; letter-spacing:-.035em; line-height:1.3; overflow-wrap:anywhere; }
+    .source { display:inline-flex; align-items:center; justify-content:center; min-height:36px; margin-top:10px; padding:7px 11px; color:var(--blue); font-size:13px; font-weight:600; text-decoration:none; border-radius:7px; background:#f0f7ff; }
+    .source:hover { background:#e3f1ff; }
+    .source:focus-visible { outline:3px solid #9ecbff; outline-offset:2px; }
+    .section { padding-top:19px; }
+    .label { display:block; margin:0 0 8px; color:var(--soft); font:500 11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.04em; text-transform:uppercase; }
+    .ingredients { margin:0; color:#313131; font-size:14px; line-height:1.72; word-break:keep-all; }
+    ol { margin:0; padding:0; list-style:none; counter-reset:recipe; }
+    li { position:relative; min-height:28px; padding:0 0 9px 29px; color:#313131; font-size:14px; line-height:1.65; word-break:keep-all; counter-increment:recipe; }
+    li::before { content:counter(recipe); position:absolute; top:2px; left:0; display:grid; place-items:center; width:19px; height:19px; color:#555; font:500 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace; background:var(--wash); border-radius:50%; }
+    li:last-child { padding-bottom:0; }
+    .watch { margin-top:auto; padding:13px 14px; color:#595959; font-size:13px; line-height:1.55; background:var(--wash); border-radius:8px; }
+    .watch strong { color:#333; }
+    footer { padding:21px 0 36px; color:var(--soft); font-size:12px; line-height:1.65; border-top:1px solid var(--line); }
+    @media (max-width:700px) { .wrap { width:min(100% - 28px, 560px); } header { padding:48px 0 30px; } main { padding:28px 0 48px; } .cards { grid-template-columns:1fr; gap:14px; } article { padding:20px; } .lede { font-size:14px; } }
+    @media (prefers-reduced-motion:no-preference) { article { transition:transform .16s ease,box-shadow .16s ease; } article:hover { transform:translateY(-2px); box-shadow:rgba(0,0,0,.1) 0 0 0 1px,rgba(0,0,0,.07) 0 8px 18px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">PERSONAL RECIPE DB / RAMEN / 08 RECIPES</p>
+      <h1>라면 요리 8개</h1>
+      <p class="lede">영상을 보기 전, 준비할 재료와 전체 조리 흐름을 빠르게 확인하는 카드다. 재료 또는 순서가 원문에서 끝까지 확인되지 않은 경우에만 <strong>영상 확인 필요</strong>로 표시했다.</p>
+      <div class="rule"><span>레퍼런스 → 준비물 → 조리 흐름</span><span>원문 기준</span></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="cards" aria-label="라면 요리 8개">
+      <article>
+        <div class="card-head"><span class="num">01</span><div class="title-wrap"><h2>신라면 마늘참기름</h2><a class="source" href="https://www.instagram.com/reel/DNHeN7kJvQx/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">신라면 1봉, 계란 1개, 다진 마늘, 참기름</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>신라면을 평소대로 끓이기.</li><li>면을 건져 다진 마늘과 참기름에 비비기.</li><li>국물에 계란을 넣어 반숙으로 익히기.</li><li>마늘참기름 면에 국물을 붓기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">02</span><div class="title-wrap"><h2>대게라면 카레</h2><a class="source" href="https://www.instagram.com/reel/DMccovEpOVU/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">대게라면, 카레, 양파, 식용유, 대파</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>양파를 잘게 썰기.</li><li>냄비에 식용유를 두르고 양파를 볶기.</li><li>물을 붓고 카레와 대게라면을 넣어 끓이기.</li><li>대파를 올려 마무리하기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">03</span><div class="title-wrap"><h2>오징어짬뽕 라면</h2><a class="source" href="https://www.instagram.com/reel/DLCSaFExIFe/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">오징어짬뽕 라면, 양파, 청양고추</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>양파와 청양고추를 썰기.</li><li>냄비에 양파와 청양고추를 볶기.</li><li>물을 붓고 끓이기.</li><li>오징어짬뽕 면을 넣고 익히기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">04</span><div class="title-wrap"><h2>부대찌개 라면</h2><a class="source" href="https://www.instagram.com/reel/DIm3_b1TNWJ/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">스팸·프랑크·슬라이스 햄, 돼지 다짐육 100g, 두부, 베이크드빈, 사골육수 500mL, 라면 사리 1개, 치즈 2장<br>양념: 고춧가루 2큰술, 고추장 1큰술, 다진 마늘 2큰술, 국간장 1큰술, 설탕 1/2큰술, 케첩 1큰술, 멸치액젓 1큰술</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>햄 3종을 먹기 좋게 썰고 끓인 물을 부어 씻기.</li><li>양념 재료를 섞어 10분 숙성하기.</li><li>다짐육에 멸치액젓을 넣고 볶아 기름 빼기.</li><li>전골냄비에 햄·두부·양념장·다짐육·베이크드빈을 담기.</li><li>사골육수 500mL를 붓고 5분 끓이기.</li><li>라면 사리와 치즈를 넣고 고춧가루로 마무리하기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">05</span><div class="title-wrap"><h2>오빠게티</h2><a class="source" href="https://www.instagram.com/p/ChJuPjJLJQI/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">오징어짬뽕 1봉, 짜파게티 1봉, 계란후라이 1개</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>물이 끓으면 면 2개와 후레이크를 넣기.</li><li>오징어짬뽕 스프를 넣고 4분 끓이기.</li><li>국물 2국자를 남기고 나머지 물을 버리기.</li><li>짜파게티 스프와 올리브유를 넣고 센 불에 볶기.</li><li>약 30초 뒤 계란후라이를 올리기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">06</span><div class="title-wrap"><h2>로제 신라면</h2><a class="source" href="https://www.instagram.com/p/Cdmw_5WgbOG/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">신라면 1봉, 우유 3컵, 고추장 1큰술, 양파 1/2개, 치즈 1장, 소시지 1줄</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>양파와 소시지를 한입 크기로 썰기.</li><li>넓은 팬에 물 대신 우유 3컵을 붓고 중불로 올리기.</li></ol></div>
+        <p class="watch"><strong>영상 확인 필요</strong><br>원문에서 이후 조리 순서를 확인하지 못함.</p>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">07</span><div class="title-wrap"><h2>순두부열라면</h2><a class="source" href="https://www.instagram.com/reel/DX1dAoiTZ3I/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">물 400mL, 순두부 1개, 라면 1봉, 순두부찌개 양념, 계란 1개</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>냄비에 물 400mL와 순두부 1개를 넣고 끓이기.</li><li>팔팔 끓으면 라면 스프와 순두부찌개 양념을 넣기.</li><li>면을 넣고 2분간 끓이기.</li><li>계란 1개를 넣고 뚜껑을 덮어 1분 30초 더 끓이기.</li></ol></div>
+      </article>
+      <article>
+        <div class="card-head"><span class="num">08</span><div class="title-wrap"><h2>신라면 알리오올리오</h2><a class="source" href="https://www.instagram.com/reel/DX5V2mtBnip/" target="_blank" rel="noopener">레퍼런스 보기 ↗</a></div></div>
+        <div class="section"><span class="label">준비물</span><p class="ingredients">신라면 1봉, 물 200mL, 다진 마늘 1스푼, 편 마늘, 페퍼론치노, 올리브유</p></div>
+        <div class="section"><span class="label">조리 흐름</span><ol><li>전자레인지 용기에 다진 마늘·편 마늘·페퍼론치노·올리브유를 넣기.</li><li>마늘이 잠길 정도로 올리브유를 붓기.</li><li>전자레인지에 3분 돌려 마늘기름 내기.</li><li>면·건더기 스프·물 200mL를 넣기.</li><li>전자레인지에 2분 더 돌리기.</li></ol></div>
+        <p class="watch"><strong>확인 사항</strong><br>전자레인지 사양에 따라 시간 조절 필요.</p>
+      </article>
+    </section>
+  </main>
+  <footer><div class="wrap">개인 요리 DB 기반, 원문 Instagram 캡션·캐러셀·릴에서 확인한 재료와 순서만 표시함. 업데이트: 2026-08-23.</div></footer>
+</body>
+</html>
