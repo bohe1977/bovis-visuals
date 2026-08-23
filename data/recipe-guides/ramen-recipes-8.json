@@ -1,0 +1,18 @@
+{
+  "version": "recipe-card-v1",
+  "title": "라면 요리 8개",
+  "description": "개인 요리 DB에서 확인한 라면 요리 8개. 영상을 보기 전 준비물과 조리 흐름을 빠르게 확인하는 카드.",
+  "eyebrow": "BOVIS · PERSONAL RECIPE DB",
+  "intro": "원문 Instagram에서 확인한 재료와 조리 흐름만 정리했습니다. 준비물과 핵심 순서를 먼저 보고, 필요할 때 원문 영상을 확인하세요.",
+  "footer": "개인 요리 DB 기반, 원문 Instagram 캡션·캐러셀·릴에서 확인한 재료와 순서만 표시함. 업데이트: 2026-08-23.",
+  "recipes": [
+    {"rank": 1, "accent": "#7c4d3a", "title": "신라면 마늘참기름", "reference": "https://www.instagram.com/reel/DNfZ4NQFjFw/", "ingredients": "신라면 1봉, 물 450mL, 마늘 4~5쪽, 참기름 1큰술, 대파 약간, 계란 1개", "steps": ["냄비에 물 450mL를 붓고 끓이기.", "물이 끓으면 면·분말스프·건더기스프를 넣기.", "마늘은 편으로 썰고 대파는 송송 썰기.", "면이 거의 익으면 계란을 넣고 살짝 풀기.", "불을 끄고 참기름·마늘·대파를 넣어 섞기."], "status": "complete", "notice": null},
+    {"rank": 2, "accent": "#9a6a1e", "title": "대게라면 카레", "reference": "https://www.instagram.com/reel/DX5q9OYmV5M/", "ingredients": "대게 1마리, 진라면 매운맛 1봉, 카레가루 1큰술, 된장 1/2큰술, 다진 마늘 1큰술, 홍고추·청양고추·대파 약간", "steps": ["대게는 흐르는 물에 씻고 먹기 좋게 손질하기.", "냄비에 물을 붓고 대게·된장·다진 마늘을 넣기.", "국물이 끓으면 진라면 면·분말스프·건더기스프를 넣기.", "카레가루 1큰술을 넣고 잘 풀기.", "홍고추·청양고추·대파를 넣고 면이 익을 때까지 끓이기."], "status": "complete", "notice": null},
+    {"rank": 3, "accent": "#b14a35", "title": "오징어짬뽕 라면", "reference": "https://www.instagram.com/reel/DX4p2d2B9mO/", "ingredients": "오징어짬뽕 1봉, 오징어 1마리, 양파 1/2개, 대파 1대, 청양고추 1개, 식용유 1큰술, 고춧가루 1큰술", "steps": ["오징어는 내장을 제거해 한입 크기로 썰기.", "양파는 채 썰고 대파·청양고추는 송송 썰기.", "냄비에 식용유를 두르고 대파·양파·고춧가루를 볶기.", "향이 올라오면 물을 붓고 오징어를 넣기.", "국물이 끓으면 면·분말스프·건더기스프를 넣고 끓이기.", "청양고추를 넣고 면이 익으면 마무리하기."], "status": "complete", "notice": null},
+    {"rank": 4, "accent": "#8e3c45", "title": "부대찌개 라면", "reference": "https://www.instagram.com/reel/DX4x7iXzi7f/", "ingredients": "라면 1봉, 스팸·소시지·김치·두부·양파·대파, 양념(고춧가루 2큰술, 고추장 1큰술, 다진 마늘 2큰술, 국간장 1큰술, 설탕 1/2큰술, 케첩 1큰술, 멸치액젓 1큰술)", "steps": ["스팸·소시지·두부·양파·김치를 먹기 좋게 썰기.", "냄비에 양념 재료를 모두 넣고 섞기.", "양파·김치·스팸·소시지·두부를 냄비에 둘러 담기.", "물 또는 육수를 붓고 끓이기.", "국물이 끓으면 라면 면과 스프를 넣기.", "대파를 올리고 면이 익을 때까지 끓이기."], "status": "complete", "notice": null},
+    {"rank": 5, "accent": "#5d5c9d", "title": "오빠게티", "reference": "https://www.instagram.com/reel/DX6CwJQzC7r/", "ingredients": "짜파게티 1봉, 양파 1/2개, 대파 약간, 계란 1개, 식용유 약간", "steps": ["양파는 채 썰고 대파는 송송 썰기.", "팬에 식용유를 두르고 양파·대파를 볶기.", "면을 삶아 물을 조금 남기고 건져 두기.", "볶은 채소에 면·짜장 분말스프·면수를 넣기.", "센 불에 빠르게 볶아 소스가 면에 배게 하기.", "계란후라이를 올려 마무리하기."], "status": "complete", "notice": null},
+    {"rank": 6, "accent": "#b25472", "title": "로제 신라면", "reference": "https://www.instagram.com/p/Cdmw_5WgbOG/", "ingredients": "신라면 1봉, 우유 3컵, 고추장 1큰술, 양파 1/2개, 치즈 1장, 소시지 1줄", "steps": ["양파와 소시지를 한입 크기로 썰기.", "넓은 팬에 물 대신 우유 3컵을 붓고 중불로 올리기."], "status": "followup", "notice": "원문에서 추가 조리사항 확인 필요"},
+    {"rank": 7, "accent": "#3e7c86", "title": "순두부열라면", "reference": "https://www.instagram.com/reel/DX1dAoiTZ3I/", "ingredients": "열라면 1봉, 순두부 1봉, 대파 1대, 다진 마늘 1큰술, 고춧가루 1큰술, 계란 1개", "steps": ["대파는 송송 썰고 순두부는 크게 떠두기.", "냄비에 물을 붓고 다진 마늘·고춧가루·대파를 넣어 끓이기.", "물이 끓으면 면·분말스프·건더기스프를 넣기.", "면이 반쯤 익으면 순두부를 큰 숟가락으로 넣기.", "계란을 넣고 원하는 익힘으로 끓이기."], "status": "complete", "notice": null},
+    {"rank": 8, "accent": "#9f7b20", "title": "신라면 알리오올리오", "reference": "https://www.instagram.com/reel/DX5V2mtBnip/", "ingredients": "신라면 1봉, 물 200mL, 다진 마늘 1스푼, 편 마늘, 페퍼론치노, 올리브유", "steps": ["전자레인지 용기에 다진 마늘·편 마늘·페퍼론치노·올리브유를 넣기.", "마늘이 잠길 정도로 올리브유를 붓기.", "전자레인지에 3분 돌려 마늘기름 내기.", "면·건더기 스프·물 200mL를 넣기.", "전자레인지에 2분 더 돌리기."], "status": "caution", "notice": "전자레인지 사양에 따라 시간 조절 필요"}
+  ]
+}

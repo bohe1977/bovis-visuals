@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="__DESCRIPTION__">
+  <title>__TITLE__ | BOVIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#242424; --muted:#666; --soft:#898989; --paper:#fff; --wash:#f7f7f7; --line:#e8e8e8; }
+    * { box-sizing:border-box; } html { background:var(--paper); color:var(--ink); font-family:Geist,"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif; } body { margin:0; font-family:inherit; } a { color:inherit; font-family:inherit; }
+    .wrap { width:min(1100px,calc(100% - 40px)); margin:0 auto; } header { padding:72px 0 38px; text-align:center; border-bottom:1px solid var(--line); } .eyebrow { margin:0 0 14px; color:var(--soft); font-size:12px; font-weight:600; letter-spacing:.03em; } h1 { margin:0; font-size:clamp(30px,5vw,48px); letter-spacing:-.05em; line-height:1.08; } .lede { width:min(590px,100%); margin:17px auto 0; color:var(--muted); font-size:15px; line-height:1.7; } .rule { display:flex; justify-content:center; gap:8px; margin:26px auto 0; color:#555; font-size:13px; } .rule span { display:inline-flex; align-items:center; min-height:28px; padding:4px 10px; background:var(--wash); border-radius:999px; }
+    main { padding:42px 0 72px; } .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; } .recipe-card { display:flex; flex-direction:column; min-width:0; padding:24px; border:1px solid var(--line); border-radius:14px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.025); } .card-head { display:block; padding-bottom:18px; text-align:center; border-bottom:3px solid var(--accent); } .rank { display:grid; place-items:center; width:38px; height:38px; margin:0 auto; color:#fff; background:var(--accent); border-radius:50%; font-size:14px; font-weight:700; line-height:1; } h2 { margin:14px 0 0; font-size:20px; letter-spacing:-.035em; line-height:1.3; overflow-wrap:anywhere; } .reference { display:inline-flex; align-items:center; justify-content:center; min-height:36px; margin-top:10px; padding:7px 12px; color:#fff; font-size:13px; font-weight:700; text-decoration:none; border-radius:8px; background:#171717; } .reference:hover { background:#000; } .reference:focus-visible { outline:3px solid #7eb6ff; outline-offset:3px; }
+    .section { padding-top:19px; } .label { display:block; margin:0 0 8px; color:#555; font-size:13px; font-weight:700; letter-spacing:-.01em; } .ingredients { margin:0; color:#313131; font-size:14px; line-height:1.72; word-break:keep-all; } ol { margin:0; padding:0; list-style:none; counter-reset:recipe; } li { position:relative; min-height:28px; padding:0 0 9px 29px; color:#313131; font-size:14px; line-height:1.65; word-break:keep-all; counter-increment:recipe; } li::before { content:counter(recipe); position:absolute; top:2px; left:0; display:grid; place-items:center; width:19px; height:19px; color:#111; font-size:11px; font-weight:700; line-height:1; background:#f1f1f1; border-radius:50%; } li:last-child { padding-bottom:0; } .notice { margin:31px 0 0; padding:13px 14px; color:#595959; font-size:13px; line-height:1.55; text-align:left; background:var(--wash); border-radius:8px; } .notice strong { display:block; margin-bottom:3px; color:#333; font-size:13px; font-weight:700; }
+    footer { padding:21px 0 36px; color:var(--soft); font-size:12px; line-height:1.65; border-top:1px solid var(--line); } @media (max-width:700px) { .wrap { width:min(100% - 28px,560px); } header { padding:48px 0 30px; } main { padding:28px 0 48px; } .cards { grid-template-columns:1fr; gap:14px; } .recipe-card { padding:20px; } .lede { font-size:14px; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><p class="eyebrow">__EYEBROW__</p><h1>__TITLE__</h1><p class="lede">__INTRO__</p><div class="rule"><span>레퍼런스 → 준비물 → 조리 흐름</span><span>원문 기준</span></div></div></header>
+  <main class="wrap"><section class="cards" aria-label="__TITLE__">__CARDS__</section></main>
+  <footer><div class="wrap">__FOOTER__</div></footer>
+</body>
+</html>

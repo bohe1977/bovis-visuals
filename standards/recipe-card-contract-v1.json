@@ -1,0 +1,24 @@
+{
+  "version": "recipe-card-v1",
+  "purpose": "영상 시청 전 준비물과 조리 흐름을 파악하는 개인 요리 DB 카드",
+  "recommendation_card_count": 8,
+  "required_card_fields": ["rank", "title", "accent", "reference", "ingredients", "steps", "status"],
+  "visual_rules": {
+    "rank": "카드별 고유 색의 중앙 원형 순번",
+    "top_accent_band": false,
+    "accent_rule": "레퍼런스 아래의 내부 색 줄만 사용",
+    "reference_label": "레퍼런스",
+    "reference_button": "검은색",
+    "font": "Geist, Malgun Gothic, Apple SD Gothic Neo, Arial",
+    "step_number_color": "#111"
+  },
+  "notice_rules": {
+    "allowed_statuses": ["complete", "followup", "caution"],
+    "followup_notice": "원문에서 추가 조리사항 확인 필요",
+    "layout": "조리 흐름 뒤 31px 여백, 회색 확인 사항 박스"
+  },
+  "content_rules": {
+    "source_backed_only": true,
+    "steps": "번호형, 짧은 명령형, 존댓말 금지"
+  }
+}
