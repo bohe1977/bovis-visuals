@@ -33,6 +33,13 @@
     const esc = value => String(value ?? '—').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
     const metric = (value,label) => `<div class="stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`;
     const dateKo = value => { const [y,m,d]=value.split('-'); return `${y}년 ${Number(m)}월 ${Number(d)}일`; };
+    const syncEffortPanelHeights = () => {
+      const panels = [...document.querySelectorAll('[data-report-game] .effort')];
+      panels.forEach(panel => { panel.style.height = ''; });
+      if (panels.length < 2 || !window.matchMedia('(min-width: 801px)').matches) return;
+      const height = Math.max(...panels.map(panel => Math.ceil(panel.getBoundingClientRect().height)));
+      panels.forEach(panel => { panel.style.height = `${height}px`; });
+    };
     fetch('./data.json?rev=20260806-pitcher-record-v4', {cache:'no-store'}).then(r => {if(!r.ok) throw new Error('data'); return r.json();}).then(data => {
       document.title=`${data.report_date_kst} MLB 선수·주요 팀 리포트 · BOVIS`;
       const actualTeamGames=data.team_games.filter(g=>g.game_pk!==null);
@@ -72,6 +79,8 @@
         <section class="section" aria-labelledby="batters"><div class="section-head"><h2 id="batters">타자</h2><span>출전 ${data.batters.filter(p=>p.status==='출전').length} · 비출전/연기 ${data.batters.filter(p=>p.status!=='출전').length}</span></div>${batterCards?`<div class="player-grid">${batterCards}</div>`:''}</section>
         <section class="verification"><h2>출처 및 검증</h2><p>${esc(data.verification.method)}</p><ul>${data.verification.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="source-links">${links.map(([label,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`).join('')}</div></section>`;
       const t=new Date(data.generated_at); document.getElementById('generated').textContent=`${new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(t)} KST 생성`;
+      requestAnimationFrame(syncEffortPanelHeights);
+      window.addEventListener('resize', syncEffortPanelHeights, {passive:true});
     }).catch(()=>{document.getElementById('report').innerHTML='<p class="error">데이터를 불러오지 못했습니다.</p>';});
   </script>
 </body>
