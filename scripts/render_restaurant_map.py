@@ -20,8 +20,10 @@ def valid_reference_url(value):
 
 
 def validate_address(value):
-    if not isinstance(value, str) or "\n" in value or not re.match(r"^서울\s+\S+구\s+.+\d", value):
-        fail("address must be one-line Seoul road address with district and building number")
+    # Restaurant guides are nationwide. Require a one-line Korean road address
+    # with a locality and building number; do not hard-code Seoul-only data.
+    if not isinstance(value, str) or "\n" in value or not re.match(r"^(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)\s+\S+(?:구|시|군)\s+.+\d", value):
+        fail("address must be a one-line Korean road address with locality and building number")
 
 
 def validate_search_query(venue):

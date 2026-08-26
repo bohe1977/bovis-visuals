@@ -1,0 +1,55 @@
+{
+  "config": {
+    "title": "부산역 근처 맛집",
+    "description": "부산역 기준 일반 식사와 보헤 저장 후보를 비교하는 인터랙티브 맛집 지도",
+    "eyebrow": "BUSAN STATION · FOOD GUIDE",
+    "intro": "기준점은 <strong>부산역</strong>입니다. 네이버 Place에서 메뉴·영업 신호가 확인된 <strong>도보권 식사 후보</strong>와 보헤 저장 후보를 함께 비교합니다.",
+    "source": "SOURCE: Naver Map + Place menu · origin: Busan Station · observed 2026-08-26 KST",
+    "notice": "직선거리 기준이며, 메뉴·영업 상태·라스트오더는 2026-08-26 네이버 Place 관측값입니다. 출발 전 네이버 지도에서 다시 확인하세요.",
+    "markerHelper": "부산역 기준 직선거리 · 10m 단위 반올림",
+    "distanceFilters": [
+      {"value": "all", "label": "전체"},
+      {"value": "200", "label": "0~200m"},
+      {"value": "300", "label": "200~300m"},
+      {"value": "500", "label": "300~500m"}
+    ],
+    "distanceMethod": "부산역 좌표(35.1152034, 129.0415499) 기준 Haversine 직선거리, 10m 단위 반올림"
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "부산역 도보권",
+      "bestFor": "도착 직후 한 끼",
+      "markerTitle": "부산역에서 가까운 순서",
+      "quickPicks": [
+        {"title": "가장 가까운 국밥", "venue": "안목 부산역점", "copy": "돼지국밥과 섞어국밥을 빠르게 고르기 좋은 후보입니다."},
+        {"title": "면 요리", "venue": "달임재", "copy": "밀면과 족발을 함께 주문하고 싶을 때 맞습니다."},
+        {"title": "늦은 식사·술", "venue": "소담", "copy": "뭉티기와 전골 메뉴, 늦은 라스트오더를 확인하세요."}
+      ]
+    },
+    "bohe": {
+      "label": "보헤 추천",
+      "radiusLabel": "부산역 도보권",
+      "bestFor": "도착 직후 한 끼",
+      "markerTitle": "보헤 저장 후보 · 가까운 순서",
+      "quickPicks": [
+        {"title": "수육 한 끼", "venue": "평산옥", "copy": "수육과 국수, 계절 열무국수가 확인된 한식 후보입니다."},
+        {"title": "중식 식사", "venue": "원향재", "copy": "간짜장·해물짬뽕·탕수육 메뉴를 비교하세요."}
+      ]
+    }
+  },
+  "general": [
+    {"name":"안목 부산역점","distance":170,"category":"국밥","kind":"한식","color":"#9c2f61","signal":"방문자 2,898 · 블로그 781","address":"부산 동구 중앙대로214번길 3-10 1층","reason":"부산역 앞 돼지국밥 식사 후보.","rationale":"돼지국밥·섞어국밥의 대표 메뉴가 확인됩니다.","menuEvidence":[{"display":"돼지국밥","source":"돼지국밥","sourceType":"대표","kind":"food"},{"display":"섞어국밥","source":"섞어국밥","sourceType":"대표","kind":"food"},{"display":"고기국수","source":"고기국수","sourceType":"등록","kind":"food"}],"markerLabel":"안목","searchQuery":"안목 부산역점","coordinates":{"lat":35.1166953,"lng":129.0414536}},
+    {"name":"달임재","distance":220,"category":"밀면","kind":"면 식사","color":"#c26500","signal":"방문자 5,065 · 블로그 862","address":"부산 동구 중앙대로221번길 1","reason":"부산역 맞은편 밀면 식사 후보.","rationale":"골동밀면·물밀면과 족발 메뉴를 함께 고를 수 있습니다.","menuEvidence":[{"display":"골동밀면","source":"골동밀면","sourceType":"대표","kind":"food"},{"display":"물밀면","source":"물밀면","sourceType":"등록","kind":"food"},{"display":"달임족발","source":"달임족발","sourceType":"대표","kind":"food"}],"markerLabel":"달임재","coordinates":{"lat":35.1168144,"lng":129.0401982}},
+    {"name":"정짓간 부산역점","distance":240,"category":"국밥","kind":"한식","color":"#2365cc","signal":"방문자 7,177 · 블로그 1,001","address":"부산 동구 중앙대로209번길 11 1층, 2층","reason":"국밥 종류를 넓게 고를 수 있는 후보.","rationale":"방아국밥·마늘국밥·수육백반이 대표 메뉴로 등록됐습니다.","menuEvidence":[{"display":"방아국밥","source":"방아국밥(고기+방아잎)","sourceType":"대표","kind":"food"},{"display":"의성마늘국밥","source":"의성마늘국밥(고기+의성다진마늘)","sourceType":"대표","kind":"food"},{"display":"수육백반","source":"항정살 수육백반","sourceType":"대표","kind":"food"}],"markerLabel":"정짓간","coordinates":{"lat":35.116022,"lng":129.03911}},
+    {"name":"융캉찌에 부산역직영점","distance":250,"category":"대만식","kind":"중식/아시아","color":"#27863c","signal":"방문자 702 · 블로그 169","address":"부산 동구 대영로243번길 73-9 1층","reason":"면·덮밥 위주의 대만식 식사 후보.","rationale":"우육탕면·탄탄면·동파육덮밥이 대표 메뉴로 확인됩니다.","menuEvidence":[{"display":"우육탕면","source":"우육탕면","sourceType":"대표","kind":"food"},{"display":"탄탄면","source":"탄탄면","sourceType":"대표","kind":"food"},{"display":"동파육덮밥","source":"동파육덮밥","sourceType":"대표","kind":"food"}],"markerLabel":"융캉찌에","coordinates":{"lat":35.1157441,"lng":129.0389335}},
+    {"name":"신발원 외전","distance":260,"category":"딤섬","kind":"중식/아시아","color":"#7352aa","signal":"방문자 2,846 · 블로그 871","address":"부산 동구 대영로243번길 64","reason":"가볍게 만두 중심으로 먹기 좋은 후보.","rationale":"고기·군·새우만두가 등록 메뉴로 확인됩니다.","menuEvidence":[{"display":"고기만두","source":"고기만두(1인분 4개)","sourceType":"등록","kind":"food"},{"display":"군만두","source":"군만두(1인분 4개)","sourceType":"등록","kind":"food"},{"display":"새우만두","source":"새우만두(1인분 4개)","sourceType":"등록","kind":"food"}],"markerLabel":"신발원 외전","coordinates":{"lat":35.1148906,"lng":129.0387224}},
+    {"name":"소담","distance":260,"category":"요리주점","kind":"한식 주점","color":"#bb4d26","signal":"방문자 2,784 · 블로그 1,560","address":"부산 동구 중앙대로180번길 9 1층","reason":"식사와 술자리를 함께 고려할 때 후보.","rationale":"뭉티기·육회·소고기전골이 대표 메뉴로 확인됩니다.","menuEvidence":[{"display":"뭉티기","source":"뭉티기","sourceType":"대표","kind":"food"},{"display":"육회","source":"육회","sourceType":"대표","kind":"food"},{"display":"소고기전골","source":"소고기전골","sourceType":"등록","kind":"food"}],"markerLabel":"소담","searchQuery":"소담 부산역","coordinates":{"lat":35.1131861,"lng":129.0400799}},
+    {"name":"샤브야키 부산역점","distance":350,"category":"샤브샤브","kind":"뷔페/샤브","color":"#00838f","signal":"방문자 993 · 블로그 185","address":"부산 동구 충장대로 160 A동 1층","reason":"여럿이 샤브와 초밥을 함께 먹을 때 후보.","rationale":"샤브샤브·월남쌈·초밥 무제한 구성이 메뉴에 등록됐습니다.","menuEvidence":[{"display":"샤브샤브","source":"평일 런치(성인) 샤브샤브+월남쌈+7종 핫푸드","sourceType":"등록","kind":"food"},{"display":"월남쌈","source":"평일 런치(성인) 샤브샤브+월남쌈+7종 핫푸드","sourceType":"등록","kind":"food"},{"display":"초밥 무제한","source":"평일 디너(성인) 기본초밥 50여종 무제한","sourceType":"등록","kind":"food"}],"markerLabel":"샤브야키","coordinates":{"lat":35.1162756,"lng":129.0452015}},
+    {"name":"장만옥","distance":420,"category":"중식","kind":"중식/아시아","color":"#4e7d36","signal":"방문자 2,182 · 블로그 160","address":"부산 동구 대영로243번길 23 1층","reason":"면·요리를 함께 주문하는 중식 후보.","rationale":"짜장면·짬뽕·꿔바로우가 메뉴에 등록됐습니다.","menuEvidence":[{"display":"짜장면","source":"장만옥 짜장면","sourceType":"등록","kind":"food"},{"display":"짬뽕","source":"장만옥 짬뽕","sourceType":"등록","kind":"food"},{"display":"꿔바로우","source":"꿔바로우","sourceType":"등록","kind":"food"}],"markerLabel":"장만옥","coordinates":{"lat":35.1133161,"lng":129.0375766}}
+  ],
+  "bohe": [
+    {"name":"평산옥","distance":420,"category":"한식","kind":"한식","color":"#a43c2d","signal":"리뷰 2,974 · 방문자·블로그 분리 미노출","address":"부산 동구 초량중로 26","reason":"보헤 저장 한식 후보.","rationale":"수육·국수·열무국수의 등록 메뉴를 확인했습니다.","menuEvidence":[{"display":"수육","source":"수육","sourceType":"등록","kind":"food"},{"display":"국수","source":"국수","sourceType":"등록","kind":"food"},{"display":"열무국수","source":"열무국수(계절메뉴)","sourceType":"등록","kind":"food"}],"markerLabel":"평산옥","coordinates":{"lat":35.114287,"lng":129.0371006},"savedSource":"https://www.instagram.com/p/CputbWOOl2F/"},
+    {"name":"원향재","distance":270,"category":"중식","kind":"중식/아시아","color":"#4a5bb7","signal":"리뷰 955 · 방문자·블로그 분리 미노출","address":"부산 동구 대영로243번길 60","reason":"보헤 저장 중식 식사 후보.","rationale":"간짜장·해물짬뽕·탕수육의 대표 메뉴가 확인됩니다.","menuEvidence":[{"display":"간짜장","source":"간짜장","sourceType":"대표","kind":"food"},{"display":"해물짬뽕","source":"해물짬뽕","sourceType":"대표","kind":"food"},{"display":"탕수육","source":"탕수육","sourceType":"대표","kind":"food"}],"markerLabel":"원향재","coordinates":{"lat":35.1147675,"lng":129.0386469},"savedSource":"https://www.instagram.com/p/CgYUHxFhqNP/"}
+  ]
+}

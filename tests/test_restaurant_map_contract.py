@@ -90,6 +90,7 @@ def test_canonical_template_keeps_mobile_info_and_menu_contracts():
     assert menu_contract["mobileRendering"] == "Render at most three verified menu chips with normal centered wrapping. Do not shrink chips or use a horizontal swipe rail unless the user explicitly approves it."
     assert "fewer than three" in menu_contract["selection"][-1]
     assert ".menu { padding:5px 8px; font-size:11px; }" not in template
+    assert "const category = venue.category || '기타'; return [category, category];" in template
 
 
 def test_sadang_candidates_have_verified_nonzero_distances():

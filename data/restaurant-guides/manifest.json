@@ -60,6 +60,11 @@
       "slug": "gangnam-line-pasta-lunch",
       "data": "data/restaurant-guides/gangnam-line-pasta-lunch.json",
       "output": "2026-08-22-gangnam-line-pasta-lunch/index.html"
+    },
+    {
+      "slug": "busan-station-restaurants",
+      "data": "data/restaurant-guides/busan-station-restaurants.json",
+      "output": "2026-08-26-busan-station-restaurants/index.html"
     }
   ]
 }
