@@ -65,6 +65,11 @@
       "slug": "busan-station-restaurants",
       "data": "data/restaurant-guides/busan-station-restaurants.json",
       "output": "2026-08-26-busan-station-restaurants/index.html"
+    },
+    {
+      "slug": "sinnonhyeon-station-restaurants",
+      "data": "data/restaurant-guides/sinnonhyeon-station-restaurants.json",
+      "output": "2026-08-26-sinnonhyeon-station-restaurants/index.html"
     }
   ]
 }

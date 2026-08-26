@@ -1,0 +1,39 @@
+{
+  "config": {
+    "title": "신논현역 근처 맛집",
+    "description": "신논현역 인근 식사·저녁 후보를 현재 Naver Place 신호로 비교하는 인터랙티브 가이드",
+    "eyebrow": "SINNONHYEON STATION · FOOD GUIDE",
+    "intro": "기준점은 <strong>신논현역</strong>입니다. Naver Place에서 메뉴·영업 신호가 확인된 <strong>직선 700m 이내 후보 8곳</strong>을 비교합니다. 보헤 저장 DB에는 이 범위의 후보가 확인되지 않았습니다.",
+    "source": "SOURCE: Naver Map + Place · distance origin: Sinnonhyeon Station · observed 2026-08-26 KST",
+    "notice": "직선거리 기준이며, 메뉴·영업 상태·라스트오더는 2026-08-26 Naver Place 관측값입니다. 영업 상태는 실시간으로 바뀔 수 있으니 출발 전 다시 확인하세요.",
+    "markerHelper": "신논현역 기준 직선거리 · 10m 단위 반올림",
+    "candidateUnit": "곳",
+    "distanceFilters": [{"value":"all","label":"전체"},{"value":"300","label":"0~300m"},{"value":"500","label":"300~500m"},{"value":"700","label":"500~700m"}],
+    "distanceMethod": "OpenStreetMap에 표기된 신논현역 인근 좌표(37.502104, 127.025869)와 Naver Map Place 좌표 기준 Haversine 직선거리, 10m 단위 반올림"
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "신논현역 700m",
+      "bestFor": "식사부터 늦은 저녁까지",
+      "markerTitle": "신논현역에서 가까운 순서",
+      "quickPicks": [
+        {"title":"가까운 철판요리","venue":"오몬자","copy":"몬자야끼 단품을 중심으로 가볍게 식사하기 좋은 후보입니다."},
+        {"title":"점심 갈비탕","venue":"우복금생갈비 신논현서울본점","copy":"11:30–15:00 판매 표기가 있는 갈비탕을 확인한 후보입니다."},
+        {"title":"늦은 해산물","venue":"산호초 논현점","copy":"17:00–익일 05:00 운영 표기와 04:00 라스트오더를 확인했습니다."}
+      ]
+    },
+    "bohe": {"label":"보헤 추천","radiusLabel":"신논현역 700m","bestFor":"저장 후보 없음","markerTitle":"보헤 저장 후보","quickPicks":[]}
+  },
+  "general": [
+    {"name":"오몬자","distance":170,"category":"일식당","kind":"철판요리","color":"#9c2f61","signal":"방문자 5,811 · 블로그 597","address":"서울 강남구 봉은사로2길 19 1층","reason":"가까운 철판요리 식사 후보.","rationale":"명란모찌·돼지김치 몬자야끼가 등록 메뉴로 확인됩니다. 관측 시 영업 종료, 11:30 시작 표기입니다.","menuEvidence":[{"display":"명란모찌 몬자야끼","source":"명란모찌몬자야끼 21,800원","sourceType":"등록","kind":"food"},{"display":"돼지김치 몬자야끼","source":"돼지김치몬자야끼 20,800원","sourceType":"등록","kind":"food"}],"markerLabel":"오몬자","coordinates":{"lat":37.5035726,"lng":127.0261977}},
+    {"name":"자매수산 강남본점","distance":260,"category":"생선회","kind":"해산물","color":"#2365cc","signal":"방문자 2,194 · 블로그 1,587","address":"서울 서초구 사평대로56길 12 1층","reason":"회 메뉴 중심의 가까운 저녁 후보.","rationale":"대방어회·광어+연어가 메뉴에 등록됐고, 관측 시 03:30 영업 종료 표기입니다.","menuEvidence":[{"display":"대방어회","source":"대방어회 69,000원","sourceType":"등록","kind":"food"},{"display":"광어+연어","source":"광어+연어 49,000원","sourceType":"등록","kind":"food"}],"markerLabel":"자매수산","coordinates":{"lat":37.5029246,"lng":127.0231299}},
+    {"name":"루프808","distance":260,"category":"양식","kind":"양식","color":"#7352aa","signal":"방문자 1,331 · 블로그 1,281","address":"서울 강남구 강남대로 470 16층","reason":"스테이크와 라이스 메뉴를 함께 고를 때 후보.","rationale":"가든 스테이크·잠발라야 라이스가 등록됐습니다. 관측 시 23:00 라스트오더 표기입니다.","menuEvidence":[{"display":"가든 스테이크","source":"[프라임등급] 시그니처 가든 스테이크 62,000원","sourceType":"등록","kind":"food"},{"display":"잠발라야 라이스","source":"잠발라야 라이스 33,000원","sourceType":"등록","kind":"food"}],"markerLabel":"루프808","coordinates":{"lat":37.5043479,"lng":127.0250552}},
+    {"name":"우복금생갈비 신논현서울본점","distance":400,"category":"소갈비","kind":"고기/구이","color":"#c26500","signal":"방문자 555 · 블로그 354","address":"서울 강남구 봉은사로5길 6 1층","reason":"갈비 식사와 점심 갈비탕을 함께 비교할 때 후보.","rationale":"소 생갈비·한돈 돼지 생갈비와 11:30–15:00 판매 표기의 갈비탕이 확인됩니다.","menuEvidence":[{"display":"소 생갈비","source":"소 생갈비(한접시) 450g 58,000원","sourceType":"등록","kind":"food"},{"display":"우복금 갈비탕","source":"[점심]우복금 갈비탕 15,000원, 11:30–15:00","sourceType":"등록","kind":"food"}],"markerLabel":"우복금","coordinates":{"lat":37.5056534,"lng":127.0263871}},
+    {"name":"동명닭집 논현직영점","distance":460,"category":"한식","kind":"닭요리","color":"#27863c","signal":"방문자 3,767 · 블로그 669","address":"서울 강남구 강남대로116길 8 1층, 2층","reason":"닭요리로 식사와 술자리를 함께 잡을 때 후보.","rationale":"닭매운탕·묵은지매운탕이 등록됐고, 매일 11:00–익일 03:00 운영 표기입니다.","menuEvidence":[{"display":"닭매운탕","source":"닭매운탕(중) 35,000원","sourceType":"등록","kind":"food"},{"display":"묵은지매운탕","source":"묵은지매운탕 38,000원","sourceType":"등록","kind":"food"}],"markerLabel":"동명닭집","coordinates":{"lat":37.5061152,"lng":127.0247474}},
+    {"name":"일광상회","distance":560,"category":"요리주점","kind":"한식 주점","color":"#bb4d26","signal":"방문자 1,881 · 블로그 225","address":"서울 강남구 봉은사로1길 34 101호","reason":"한식 안주와 술자리를 함께 고려할 때 후보.","rationale":"이복식 한상·강경 포구 알탕이 확인됐고, 관측 시 02:30 라스트오더 표기입니다.","menuEvidence":[{"display":"이복식 한상","source":"이복식 한상 59,000원","sourceType":"등록","kind":"food"},{"display":"강경 포구 알탕","source":"강경 포구 알탕 29,000원","sourceType":"등록","kind":"food"}],"markerLabel":"일광상회","coordinates":{"lat":37.5070086,"lng":127.0243413}},
+    {"name":"영동그집","distance":610,"category":"돼지고기구이","kind":"고기/구이","color":"#00838f","signal":"방문자 4,859 · 블로그 2,139","address":"서울 강남구 봉은사로1길 42-8","reason":"돼지고기 구이 메뉴를 넓게 고를 때 후보.","rationale":"가리비살·감자살·수원식 양념돼지갈비가 메뉴에 등록됐습니다. 관측 시 16:30 시작 표기입니다.","menuEvidence":[{"display":"돼지 가리비","source":"돼지 가리비(300g) 39,000원","sourceType":"등록","kind":"food"},{"display":"수원식 양념돼지갈비","source":"수원식 양념돼지갈비(250g) 21,000원","sourceType":"등록","kind":"food"}],"markerLabel":"영동그집","coordinates":{"lat":37.507466,"lng":127.0244451}},
+    {"name":"산호초 논현점","distance":670,"category":"해물·생선","kind":"해산물","color":"#4e7d36","signal":"방문자 3,054 · 블로그 387","address":"서울 강남구 학동로2길 56 1층 101호, 102호","reason":"늦은 저녁 해산물 메뉴 후보.","rationale":"활고등어회·모둠 숙성회가 등록됐고, 매일 17:00–익일 05:00 및 04:00 라스트오더 표기입니다.","menuEvidence":[{"display":"활고등어회","source":"미나리무침+활고등어회+초밥밥 44,000원","sourceType":"등록","kind":"food"},{"display":"모둠 숙성회","source":"쉐프 추천 모둠 숙성회 49,000원","sourceType":"등록","kind":"food"}],"markerLabel":"산호초","coordinates":{"lat":37.5078928,"lng":127.0236825}}
+  ],
+  "bohe": []
+}

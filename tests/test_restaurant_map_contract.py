@@ -91,6 +91,7 @@ def test_canonical_template_keeps_mobile_info_and_menu_contracts():
     assert "fewer than three" in menu_contract["selection"][-1]
     assert ".menu { padding:5px 8px; font-size:11px; }" not in template
     assert "const category = venue.category || '기타'; return [category, category];" in template
+    assert "config.candidateUnit ? `${list.length}${config.candidateUnit}`" in template
 
 
 def test_sadang_candidates_have_verified_nonzero_distances():
