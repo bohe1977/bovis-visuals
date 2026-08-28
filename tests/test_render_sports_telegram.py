@@ -22,10 +22,17 @@ def test_kbo_renderer_outputs_current_verified_date_link_and_watchlist_lines():
     players = json.loads((ROOT / "kbo-players" / "data.json").read_text(encoding="utf-8"))
     report_date = games["date"]
 
-    assert result.returncode == 0, result.stderr
     assert players["report_date"] == report_date
+    final_games = [game for game in games["games"] if game.get("status") == "경기 종료"]
+    if not final_games:
+        # Delivery suppresses a wholly cancelled slate rather than fabricating a score briefing.
+        assert result.returncode != 0
+        assert result.stderr == "KBO has no final games\n"
+        return
+
+    assert result.returncode == 0, result.stderr
     assert f"## ⚾ KBO 전날 경기, {report_date}" in result.stdout
-    for game in games["games"]:
+    for game in final_games:
         assert f"{game['away']} {game['away_score']} : {game['home_score']} {game['home']}" in result.stdout
     for pitcher in players["pitchers"]:
         assert f"- {pitcher['name']}({pitcher['team']})" in result.stdout
