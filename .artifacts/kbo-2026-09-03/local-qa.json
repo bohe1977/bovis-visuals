@@ -1,0 +1,149 @@
+[
+  {
+    "kind": "integrated",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 4,
+    "metrics": [
+      "4",
+      "35",
+      "4",
+      "2"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  },
+  {
+    "kind": "integrated",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 4,
+    "metrics": [
+      "4",
+      "35",
+      "4",
+      "2"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  },
+  {
+    "kind": "integrated",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 4,
+    "metrics": [
+      "4",
+      "35",
+      "4",
+      "2"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  },
+  {
+    "kind": "players",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  },
+  {
+    "kind": "players",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  },
+  {
+    "kind": "players",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "출전 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true
+  }
+]

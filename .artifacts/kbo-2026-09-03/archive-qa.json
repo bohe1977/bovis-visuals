@@ -1,0 +1,56 @@
+[
+  {
+    "kind": "kbo",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "games": 4,
+    "date": true,
+    "single": true
+  },
+  {
+    "kind": "kbo",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "games": 4,
+    "date": true,
+    "single": true
+  },
+  {
+    "kind": "kbo",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "games": 4,
+    "date": true,
+    "single": true
+  },
+  {
+    "kind": "players",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "games": 0,
+    "date": true,
+    "single": true
+  },
+  {
+    "kind": "players",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "games": 0,
+    "date": true,
+    "single": true
+  },
+  {
+    "kind": "players",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "games": 0,
+    "date": true,
+    "single": true
+  }
+]
