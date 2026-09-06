@@ -1,0 +1,296 @@
+[
+  {
+    "kind": "latest-integrated",
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "latest-integrated",
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "latest-integrated",
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "latest-players",
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "latest-players",
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "latest-players",
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 390,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 768,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 1440,
+    "status": 200,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": 5,
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  }
+]
