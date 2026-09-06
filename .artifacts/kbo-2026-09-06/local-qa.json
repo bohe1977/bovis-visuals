@@ -1,0 +1,356 @@
+[
+  {
+    "kind": "integrated",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "integrated",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "integrated",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "players",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "players",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "players",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-integrated",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 5,
+    "metrics": [
+      "5",
+      "66",
+      "6",
+      "3"
+    ],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 390,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 768,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  },
+  {
+    "kind": "archive-players",
+    "width": 1440,
+    "errors": [],
+    "overflow": true,
+    "date": true,
+    "games": 0,
+    "metrics": [],
+    "inactive": [
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음",
+      "등판 없음"
+    ],
+    "metaMono": true,
+    "winnerOrder": true,
+    "numeric": true,
+    "decisions": {
+      "로드리게스": "패",
+      "임찬규": "패",
+      "정해영": "홀드",
+      "김원중": null,
+      "박정민": null,
+      "박영현": null
+    }
+  }
+]

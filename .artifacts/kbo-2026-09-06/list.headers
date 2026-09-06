@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Transfer-Encoding: chunked
+Content-Type: text/plain; charset=UTF-8
+Server: 
+Set-Cookie: ASP.NET_SessionId=p4of4zixm1shd3hbnfnuqetg; path=/; secure; HttpOnly; SameSite=Lax
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Date: Sun, 06 Sep 2026 21:22:37 GMT
+

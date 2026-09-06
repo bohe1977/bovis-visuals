@@ -1,0 +1,117 @@
+[
+  {
+    "id": "20260906NCWO0",
+    "date": "2026-09-06T00:00:00.000Z",
+    "startTime": "14:00",
+    "stadium": "고척",
+    "homeTeam": "키움",
+    "awayTeam": "NC",
+    "homePitcher": "알칸타라 ",
+    "awayPitcher": "구창모 ",
+    "winPitcher": "알칸타라",
+    "losePitcher": "구창모",
+    "savePitcher": "조영건",
+    "status": "FINISHED",
+    "score": {
+      "home": 4,
+      "away": 2
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SPOTV2"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260906SSLG0",
+    "date": "2026-09-06T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "잠실",
+    "homeTeam": "LG",
+    "awayTeam": "삼성",
+    "homePitcher": "임찬규 ",
+    "awayPitcher": "후라도 ",
+    "winPitcher": "후라도",
+    "losePitcher": "임찬규",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 4,
+      "away": 10
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "MBC SPORTS+"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260906HHLT0",
+    "date": "2026-09-06T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "사직",
+    "homeTeam": "롯데",
+    "awayTeam": "한화",
+    "homePitcher": "로드리게스 ",
+    "awayPitcher": "화이트 ",
+    "winPitcher": "화이트",
+    "losePitcher": "로드리게스",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 2,
+      "away": 8
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SBS SPORTS"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260906OBSK0",
+    "date": "2026-09-06T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "문학",
+    "homeTeam": "SSG",
+    "awayTeam": "두산",
+    "homePitcher": "최민준 ",
+    "awayPitcher": "잭로그 ",
+    "winPitcher": "잭로그",
+    "losePitcher": "최민준",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 9,
+      "away": 16
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SPOTV"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260906KTHT0",
+    "date": "2026-09-06T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "광주",
+    "homeTeam": "KIA",
+    "awayTeam": "KT",
+    "homePitcher": "네일 ",
+    "awayPitcher": "대니엘 ",
+    "winPitcher": "네일",
+    "losePitcher": "대니엘",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 8,
+      "away": 3
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "KBS N SPORTS"
+    ],
+    "season": 2026
+  }
+]
