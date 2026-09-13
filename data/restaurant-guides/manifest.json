@@ -70,6 +70,11 @@
       "slug": "sinnonhyeon-station-restaurants",
       "data": "data/restaurant-guides/sinnonhyeon-station-restaurants.json",
       "output": "2026-08-26-sinnonhyeon-station-restaurants/index.html"
+    },
+    {
+      "slug": "songpa-jamsil-izakaya-2026-09-13",
+      "data": "data/restaurant-guides/songpa-jamsil-izakaya-2026-09-13.json",
+      "output": "2026-09-13-songpa-jamsil-izakaya/index.html"
     }
   ]
 }
