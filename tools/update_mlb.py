@@ -17,7 +17,7 @@ END=START+timedelta(days=1)-timedelta(seconds=1)
 PLAYER_SPECS=[
  ('오타니 쇼헤이',660271,'batter'),('이정후',808982,'batter'),('바비 위트 주니어',677951,'batter'),('마이크 트라웃',545361,'batter'),
  ('무라카미 무네타카',808959,'batter'),('후안 소토',665742,'batter'),('송성문',823550,'batter'),('김하성',673490,'batter'),('김혜성',808975,'batter'),
- ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher'),('고우석',808970,'pitcher')]
+ ('오타니 쇼헤이',660271,'pitcher'),('폴 스킨스',694973,'pitcher')]
 TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Cleveland Guardians':'클리블랜드','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Cincinnati Reds':'신시내티','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀','Minnesota Twins':'미네소타','St. Louis Cardinals':'세인트루이스','Washington Nationals':'워싱턴','Miami Marlins':'마이애미'}
 PLAYER_KO={'Juan Soto':'후안 소토','Lake Bachar':'레이크 바카','AJ Smith-Shawver':'AJ 스미스쇼버','Andrew Abbott':'앤드루 애벗','Brandon Eisert':'브랜든 아이서트','Jared Triolo':'재러드 트리올로','Joshua Báez':'조슈아 바에스','Khristian Curtis':'크리스천 커티스','Luke Weaver':'루크 위버','Austin Riley':'오스틴 라일리','Braxton Roxby':'브랙스턴 록스비','Brent Suter':'브렌트 수터','Brewer Hicklen':'브루어 힉클런','Brock Burke':'브록 버크','Bryce Elder':'브라이스 엘더','Buddy Kennedy':'버디 케네디','Chris Sale':'크리스 세일','Christian Koss':'크리스천 코스','Dane Myers':'데인 마이어스','Dominic Smith':'도미닉 스미스','Elly De La Cruz':'엘리 데 라 크루즈','Emilio Pagán':'에밀리오 파간','Eugenio Suárez':'유헤니오 수아레스','Grant Holmes':'그랜트 홈스','Grant McCray':'그랜트 맥크레이','Gordon Graceffo':'고든 그라세포','Hunter Feduccia':'헌터 페두시아','Héctor Rodríguez':'엑토르 로드리게스','Ivan Johnson':'아이번 존슨','JJ Bleday':'JJ 블리데이','Jose Trevino':'호세 트레비노','Jose Cabrera':'호세 카브레라','Justin Bruihl':'저스틴 브루일','Julian Garcia':'훌리안 가르시아',"Ke'Bryan Hayes":'키브라이언 헤이스','Lane Thomas':'레인 토머스','Luis Mey':'루이스 메이','Martín Pérez':'마르틴 페레스','Matt McLain':'맷 맥클레인','Matt Olson':'맷 올슨','Mauricio Dubón':'마우리시오 두본','Michael Harris II':'마이클 해리스 2세','Miguel Rojas':'미겔 로하스','Mike Yastrzemski':'마이크 야스트렘스키','Nate Furman':'네이트 퍼먼','Nick Lodolo':'닉 로돌로','Osleivis Basabe':'오슬레이비스 바사베','Pierce Johnson':'피어스 존슨','Ray Kerr':'레이 커','Rhett Lowder':'렛 로더',"Riley O'Brien":'라일리 오브라이언','Roki Sasaki':'사사키 로키','Ronald Acuña Jr.':'로널드 아쿠냐 주니어','Ryne Stanek':'라인 스타넥','Sam Moll':'샘 몰','Sean Murphy':'션 머피','Shay Whitcomb':'셰이 휘트컴','Spencer Bivens':'스펜서 비븐스','Spencer Horwitz':'스펜서 호위츠','TJ Friedl':'TJ 프리들','Tejay Antone':'티제이 앤톤','Tony Santillan':'토니 산티얀','Turner Hill':'터너 힐','Tyler Glasnow':'타일러 글래스노','Tyler Mahle':'타일러 말리','Will Banfield':'윌 밴필드','Yoshinobu Yamamoto':'야마모토 요시노부','Drake Baldwin':'드레이크 볼드윈','Didier Fuentes':'디디에르 푸엔테스','Ha-Seong Kim':'김하성','Brandon Lowe':'브랜던 로','Jonah Cox':'조나 콕스','Jake Bennett':'제이크 베넷','Matt Wilkinson':'맷 윌킨슨','Tyron Guerrero':'타이론 게레로','Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Gabriel Moreno':'가브리엘 모레노','Blade Tidwell':'블레이드 티드웰','Blake Snell':'블레이크 스넬','Tomoyuki Sugano':'스가노 도모유키','Mookie Betts':'무키 베츠','Max Muncy':'맥스 먼시','Gregory Soto':'그레고리 소토','Tommy Edman':'토미 에드먼','Sonny Gray':'소니 그레이','Logan Webb':'로건 웹','Aroldis Chapman':'아롤디스 채프먼','Jung Hoo Lee':'이정후','Oneil Cruz':'오닐 크루즈','Drew Gilbert':'드루 길버트','Willson Contreras':'윌슨 콘트레라스','Erik Miller':'에릭 밀러','Alec Gamboa':'알렉 감보아','Shohei Ohtani':'오타니 쇼헤이','Evan Phillips':'에번 필립스','Bryce Eldridge':'브라이스 엘드리지','Jo Adell':'조 아델','Eric Lauer':'에릭 라우어','Ryan Feltner':'라이언 펠트너','Tanner Scott':'태너 스콧','Jack Dreyer':'잭 드레이어','Edgardo Henriquez':'에드가르도 엔리케스','Kyle Tucker':'카일 터커','Willi Castro':'윌리 카스트로','Trent Harris':'트렌트 해리스','Reiver Sanmartin':'레이버 산마르틴','Carson Whisenhunt':'카슨 위즌헌트','Craig Yoho':'크레이그 요호','Matt Festa':'맷 페스타','Tim Herrin':'팀 헤린','Foster Griffin':'포스터 그리핀','Enrique Hernández':'엔리케 에르난데스','Kyle Hurt':'카일 허트','Brock Stewart':'브록 스튜어트','Alex Vesia':'알렉스 베시아','Adrian Houser':'에이드리언 하우저','Parker Messick':'파커 메식','Dylan Smith':'딜런 스미스','Victor Bericoto':'빅터 베리코토','Freddie Freeman':'프레디 프리먼','Framber Valdez':'프램버 발데스','Seth Halvorsen':'세스 할보르센','Angel Martínez':'앙헬 마르티네스','Willy Adames':'윌리 아다메스','Gavin Williams':'개빈 윌리엄스','Landen Roupp':'랜든 루프','Cade Smith':'케이드 스미스','Patrick Bailey':'패트릭 베일리','Erik Sabrowski':'에릭 사브로스키','Hunter Gaddis':'헌터 개디스','José Ramírez':'호세 라미레즈','Yohan Ramírez':'요한 라미레스','Andrew Knizner':'앤드루 니즈너','Wyatt Olds':'와이엇 올즈','Nick Sogard':'닉 소가드','Ceddanne Rafaela':'세단 라파엘라','Wilyer Abreu':'윌리어 아브레우','Adley Rutschman':'애들리 러치맨','Caleb Durbin':'케일럽 더빈','Jarren Duran':'재런 듀란','Jahmai Jones':'자마이 존스','Andruw Monasterio':'앤드루 모나스테리오','Mickey Gasper':'미키 개스퍼','Eli White':'일라이 화이트','Patrick Sandoval':'패트릭 산도발','Greg Weissert':'그렉 와이서트','Jovani Morán':'조바니 모란','Teoscar Hernández':'테오스카 에르난데스','Alek Thomas':'알렉 토머스','Ben Rortvedt':'벤 로트베트','Jason Foley':'제이슨 폴리','Chase Burns':'체이스 번스','Ryan Walker':'라이언 워커','Carson Seymour':'카슨 시모어','Tyler Stephenson':'타일러 스티븐슨','Alex Call':'알렉스 콜','Dylan Dodd':'딜런 도드','Raisel Iglesias':'라이셀 이글레시아스','Ozzie Albies':'오지 앨비스','Anthony Molina':'앤서니 몰리나','Brady Singer':'브래디 싱어','Drew Cavanaugh':'드루 캐버노','Dylan Lee':'딜런 리','Sal Stewart':'살 스튜어트','Victor Mederos':'빅터 메데로스','Kenley Jansen':'켄리 잰슨','Gleyber Torres':'글레이버 토레스','Tyler Holton':'타일러 홀턴','Andrew Sears':'앤드루 시어스','Kevin McGonigle':'케빈 맥고니글','Merrill Kelly':'메릴 켈리','Lars Nootbaar':'라스 눗바','Brandyn Garcia':'브랜딘 가르시아','Luis Gastelum':'루이스 가스텔럼','Michael McGreevy':'마이클 맥그리비','Ramón Urías':'라몬 우리아스','Ryan Fernandez':'라이언 페르난데스','Thomas Saggese':'토머스 사제시','Camilo Doval':'카밀로 도발','Mason Montgomery':'메이슨 몽고메리','Rafael Flores Jr.':'라파엘 플로레스 주니어'}
 PLAYER_KO.update({
@@ -57,6 +57,8 @@ PLAYER_KO.update({
   'Adrian Morejon':'아드리안 모레혼',
   'Bradgley Rodriguez':'브래들리 로드리게스',
   'Freddy Fermin':'프레디 페르민',
+  'Quinn Mathews':'퀸 매슈스',
+  'Leo Bernal':'레오 베르날',
 })
 def ko_team(name):
   if name in TEAM_KO:return TEAM_KO[name]
@@ -434,7 +436,6 @@ def main():
         st={};pos='—'; status='비출전' if tg else '팀 경기 없음'; note='MLB 공식 boxscore: 타격 기록 없음' if tg else 'KST 대상일 현재 팀 경기 없음'
       batters.append({'name':name,'team':team,'mlbam_id':pid,'status':status,'position':pos,'at_bats':st.get('atBats'),'hits':st.get('hits'),'rbi':st.get('rbi'),'runs':st.get('runs'),'home_runs':st.get('homeRuns'),'walks':st.get('baseOnBalls'),'strikeouts':st.get('strikeOuts'),'avg':fmt_stat(season.get('avg')),'obp':fmt_stat(season.get('obp')),'ops':fmt_stat(season.get('ops')),'season_stats_cutoff':cutoff,'daily_note':note})
     pitchers=[]
-    go_gamelog_verified=None
     for name,pid,kind in PLAYER_SPECS:
       if kind!='pitcher':
         continue
@@ -468,17 +469,6 @@ def main():
           elif st.get('blownSaves',0): game_decision='블론'
         pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':True,'status':'등판','role':role,'game_decision':game_decision,'daily_innings':st.get('inningsPitched'),'daily_hits':st.get('hits'),'daily_runs':st.get('runs'),'daily_earned_runs':st.get('earnedRuns'),'daily_walks_hbp':st.get('baseOnBalls',0)+st.get('hitByPitch',0),'daily_strikeouts':st.get('strikeOuts'),'daily_home_runs':st.get('homeRuns'),'daily_pitches':st.get('numberOfPitches'),'season_record':f"{season.get('wins')}승 {season.get('losses')}패" if season.get('wins') is not None and season.get('losses') is not None else '—','era':fmt_stat(season.get('era'))})
       elif all(game_status(g)=='경기 종료' for g in tg.values()):
-        if pid==808970:
-          # A separate official game log is required before calling Go's absence verified.
-          try:
-            gl=api(f'people/{pid}/stats',stats='gameLog',group='pitching',season=REPORT.year).get('stats',[{}])[0].get('splits',[])
-            logged={x.get('game',{}).get('gamePk') for x in gl}
-            go_gamelog_verified=not bool(logged.intersection(tg))
-          except Exception:
-            go_gamelog_verified=False
-          if not go_gamelog_verified:
-            pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':False,'status':'상태 미검증'})
-            continue
         pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':False,'status':'등판 없음'})
       else:
         pitchers.append({'name':name,'team':team,'mlbam_id':pid,'appeared':False,'status':'경기 진행/예정'})
@@ -503,8 +493,6 @@ def main():
       f'다저스·자이언츠의 실제 대상 경기 {verified_targets}/{len(actual_team_games)}경기를 네이버·다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 공개 API는 {naver_check} 응답을 확인했다.',
       '투수 등판 여부는 MLBAM ID를 각 현재 팀의 KST 대상 gamePk 전체 boxscore 투수 객체와 대조했다.'
     ]
-    if go_gamelog_verified is not None:
-      notes.append('고우석 gameLog와 팀 gamePk 대조: '+('기록 없음으로 미등판 교차확인.' if go_gamelog_verified else '해당 없음 또는 미검증.'))
     data={
       'report_date_kst':REPORT.isoformat(),
       'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),
@@ -524,7 +512,7 @@ def main():
     # Preflight immutable snapshots before changing the mutable latest path.
     # A same-date mismatch is a hard failure, not a reason to overwrite either copy.
     archive_data=ROOT/'mlb'/REPORT.isoformat()/'data.json'
-    if archive_data.exists() and archive_data.read_text(encoding='utf-8') != rendered and not os.environ.get('BOVIS_MLB_REPLACE_ARCHIVE'):
+    if archive_data.exists() and archive_data.read_text(encoding='utf-8') != rendered and not (os.environ.get('BOVIS_MLB_REPLACE_ARCHIVE') or os.environ.get('BOVIS_MLB_SKIP_ARCHIVE')):
         raise SystemExit(f'immutable archive conflict: {archive_data}')
     OUT.write_text(rendered,encoding='utf-8')
     if not os.environ.get('BOVIS_MLB_SKIP_ARCHIVE'):

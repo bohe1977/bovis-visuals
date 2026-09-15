@@ -234,17 +234,12 @@ def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appe
     assert "const batterCards=activeBatterCards+inactiveBatterRows;" in mlb
 
 
-def test_mlb_current_report_marks_minor_league_pitcher_go_woosuk_as_no_mlb_appearance():
+def test_mlb_watchlist_excludes_go_woosuk_after_kbo_return():
     data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
-    mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
-    go = next(player for player in data["pitchers"] if player["name"] == "고우석")
+    collector = (ROOT / "tools" / "update_mlb.py").read_text(encoding="utf-8")
 
-    assert go["minor_league_excluded"] is True
-    assert go["status"] == "출전 없음"
-    assert go["daily_note"] == "MLB 경기 출전 없음"
-    assert "const inactivePitcherRows=inactivePitchers.map(p=>`<div class=\"inactive-row\"" in mlb
-    assert "${p.team?`<small>${esc(p.team)}</small>`:''}" in mlb
-    assert "data.json?rev=20260806-pitcher-record-v4" in mlb
+    assert "고우석" not in {player["name"] for player in data["pitchers"]}
+    assert "('고우석',808970,'pitcher')" not in collector
 
 
 def test_active_closer_fixture_keeps_verified_save_count_separate_from_inactive_shape():
