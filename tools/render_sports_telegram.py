@@ -60,7 +60,10 @@ def kbo_report(root: Path) -> str:
             decision = pitcher.get("game_decision") or "등판"
             saves = pitcher.get("season_saves")
             season = pitcher.get("season_record", "")
-            season_text = f"시즌 {season}" + (f" {saves}세이브" if saves is not None else "")
+            # season_record is the canonical displayed line when it already includes saves.
+            season_text = f"시즌 {season}"
+            if saves is not None and f"{saves}세이브" not in season:
+                season_text += f" {saves}세이브"
             lines.append(
                 f"- {name}({team}), {decision}, {pitcher.get('innings')}이닝, {pitcher.get('hits')}피안타, {pitcher.get('runs')}실점, {season_text}"
             )
@@ -97,8 +100,11 @@ def mlb_report(root: Path, *, expected_date: str | None = None) -> str:
     require_archive(root, "mlb", report_date)
     lines = [f"## ⚾ MLB 오늘 경기 브리핑, {report_date} KST", ""]
     for game in data.get("team_games", []):
+        lines.append(f"**{game.get('section_title')}**")
+        if game.get("game_pk") is None:
+            lines.extend([f"- {game.get('headline') or game.get('status')}", ""])
+            continue
         lines.extend([
-            f"**{game.get('section_title')}**",
             f"- {game.get('away')} {game.get('away_score')} : {game.get('home_score')} {game.get('home')}, {game.get('headline')}",
             f"- 투수 기록: {game.get('pitcher_record')}",
         ])
