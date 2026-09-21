@@ -71,7 +71,7 @@ pitchers = [
     {"name": "박영현", "team": "KT", "appeared": False},
 ]
 batters = [
-    {"name": "강백호", "team": "한화", "appeared": True, "at_bats": 3, "hits": 0, "rbi": 0, "runs": 0, "home_runs": 0, "walks": 1, "strikeouts": 1, "avg": "0.286", "obp": None, "ops": None},
+    {"name": "강백호", "team": "한화", "appeared": True, "at_bats": 3, "hits": 0, "rbi": 0, "runs": 0, "home_runs": 0, "walks": 1, "strikeouts": 1, "avg": "0.286", "obp": "0.355", "ops": "0.900"},
     {"name": "노시환", "team": "한화", "appeared": False}, {"name": "김도영", "team": "KIA", "appeared": False},
 ]
 

@@ -50,12 +50,14 @@ def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season
     assert "inactive=(p,s)" in integrated
 
     assert "class=\"season-record\"" in integrated
-    assert "${p.season_record} ${p.season_saves}세이브" in integrated
-    assert "${p.season_record} · ${p.season_saves}세이브" not in integrated
-    assert "${p.season_record} ${p.season_saves}세이브" in player_page
-    assert "${p.season_record} · ${p.season_saves}세이브" not in player_page
-    assert "stat(p.season_record,'시즌 성적')" in integrated
-    assert "s(p.season_record,'시즌 성적')" in player_page
+    assert "const seasonLine=p=>" in integrated
+    assert "const seasonLine=p=>" in player_page
+    assert "seasonLine(p)" in integrated
+    assert "seasonLine(p)" in player_page
+    assert "includes(`${p.season_saves}세이브`)" in integrated
+    assert "includes(`${p.season_saves}세이브`)" in player_page
+    assert "esc(seasonLine(p))" in integrated
+    assert "s(seasonLine(p),'시즌 성적','season-record')" in player_page
     assert "시즌 승패" not in integrated
     assert "시즌 승패" not in player_page
     assert "strong.season-record{font-size:17px" in integrated
@@ -65,6 +67,15 @@ def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season
     assert "'시즌 성적','season-record'" in player_page
     assert ".stat b.season-record{font-size:inherit" in player_page
     assert ".stat b.season-record.compact{font-size:13px" in player_page
+
+
+def test_active_kbo_batters_require_source_backed_obp_and_ops():
+    batters = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["batters"]
+    active = [batter for batter in batters if batter["appeared"]]
+    assert active
+    for batter in active:
+        assert isinstance(batter.get("obp"), str) and batter["obp"].startswith("0.")
+        assert isinstance(batter.get("ops"), str) and batter["ops"].startswith("0.")
 
 
 def test_pitcher_badges_use_verified_role_specific_game_decisions():
