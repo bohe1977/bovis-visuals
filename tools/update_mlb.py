@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build BOVIS MLB daily data from MLB Stats API using a KST game-start window."""
 from __future__ import annotations
-import json, os, sys, urllib.parse, urllib.request
+import json, os, re, sys, time, unicodedata, urllib.parse, urllib.request
+from urllib.error import URLError
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -21,6 +22,11 @@ PLAYER_SPECS=[
 TEAM_KO={'Los Angeles Dodgers':'LA 다저스','San Francisco Giants':'샌프란시스코','Colorado Rockies':'콜로라도','Cleveland Guardians':'클리블랜드','Houston Astros':'휴스턴','Arizona Diamondbacks':'애리조나','Detroit Tigers':'디트로이트','Boston Red Sox':'보스턴','New York Mets':'뉴욕 메츠','Philadelphia Phillies':'필라델피아','Kansas City Royals':'캔자스시티','Pittsburgh Pirates':'피츠버그','Cincinnati Reds':'신시내티','Los Angeles Angels':'LA 에인절스','Chicago White Sox':'시카고 화이트삭스','San Diego Padres':'샌디에이고','Atlanta Braves':'애틀랜타','Milwaukee Brewers':'밀워키','Seattle Mariners':'시애틀','Minnesota Twins':'미네소타','St. Louis Cardinals':'세인트루이스','Washington Nationals':'워싱턴','Miami Marlins':'마이애미'}
 PLAYER_KO={'Juan Soto':'후안 소토','Lake Bachar':'레이크 바카','AJ Smith-Shawver':'AJ 스미스쇼버','Andrew Abbott':'앤드루 애벗','Brandon Eisert':'브랜든 아이서트','Jared Triolo':'재러드 트리올로','Joshua Báez':'조슈아 바에스','Khristian Curtis':'크리스천 커티스','Luke Weaver':'루크 위버','Austin Riley':'오스틴 라일리','Braxton Roxby':'브랙스턴 록스비','Brent Suter':'브렌트 수터','Brewer Hicklen':'브루어 힉클런','Brock Burke':'브록 버크','Bryce Elder':'브라이스 엘더','Buddy Kennedy':'버디 케네디','Chris Sale':'크리스 세일','Christian Koss':'크리스천 코스','Dane Myers':'데인 마이어스','Dominic Smith':'도미닉 스미스','Elly De La Cruz':'엘리 데 라 크루즈','Emilio Pagán':'에밀리오 파간','Eugenio Suárez':'유헤니오 수아레스','Grant Holmes':'그랜트 홈스','Grant McCray':'그랜트 맥크레이','Gordon Graceffo':'고든 그라세포','Hunter Feduccia':'헌터 페두시아','Héctor Rodríguez':'엑토르 로드리게스','Ivan Johnson':'아이번 존슨','JJ Bleday':'JJ 블리데이','Jose Trevino':'호세 트레비노','Jose Cabrera':'호세 카브레라','Justin Bruihl':'저스틴 브루일','Julian Garcia':'훌리안 가르시아',"Ke'Bryan Hayes":'키브라이언 헤이스','Lane Thomas':'레인 토머스','Luis Mey':'루이스 메이','Martín Pérez':'마르틴 페레스','Matt McLain':'맷 맥클레인','Matt Olson':'맷 올슨','Mauricio Dubón':'마우리시오 두본','Michael Harris II':'마이클 해리스 2세','Miguel Rojas':'미겔 로하스','Mike Yastrzemski':'마이크 야스트렘스키','Nate Furman':'네이트 퍼먼','Nick Lodolo':'닉 로돌로','Osleivis Basabe':'오슬레이비스 바사베','Pierce Johnson':'피어스 존슨','Ray Kerr':'레이 커','Rhett Lowder':'렛 로더',"Riley O'Brien":'라일리 오브라이언','Roki Sasaki':'사사키 로키','Ronald Acuña Jr.':'로널드 아쿠냐 주니어','Ryne Stanek':'라인 스타넥','Sam Moll':'샘 몰','Sean Murphy':'션 머피','Shay Whitcomb':'셰이 휘트컴','Spencer Bivens':'스펜서 비븐스','Spencer Horwitz':'스펜서 호위츠','TJ Friedl':'TJ 프리들','Tejay Antone':'티제이 앤톤','Tony Santillan':'토니 산티얀','Turner Hill':'터너 힐','Tyler Glasnow':'타일러 글래스노','Tyler Mahle':'타일러 말리','Will Banfield':'윌 밴필드','Yoshinobu Yamamoto':'야마모토 요시노부','Drake Baldwin':'드레이크 볼드윈','Didier Fuentes':'디디에르 푸엔테스','Ha-Seong Kim':'김하성','Brandon Lowe':'브랜던 로','Jonah Cox':'조나 콕스','Jake Bennett':'제이크 베넷','Matt Wilkinson':'맷 윌킨슨','Tyron Guerrero':'타이론 게레로','Logan Henderson':'로건 헨더슨','Tarik Skubal':'타릭 스쿠발','Andy Pages':'앤디 파헤스','Nick Frasso':'닉 프라소','Sam Hentges':'샘 헨지스','Rafael Devers':'라파엘 데버스','Jake Bauers':'제이크 바우어스','Jackson Chourio':'잭슨 추리오','Brett Sullivan':'브렛 설리번','Adael Amador':'에이다엘 아마도르','Mickey Moniak':'미키 모니악','Cole Carrigg':'콜 캐리그','Jake McCarthy':'제이크 매카시','Chad Patrick':'채드 패트릭','Aaron Ashby':'애런 애슈비','Parker Mushinski':'파커 머신스키','Jimmy Herget':'지미 허겟','Zach Agnos':'잭 애그노스','Gabriel Hughes':'가브리엘 휴스','Gabriel Moreno':'가브리엘 모레노','Blade Tidwell':'블레이드 티드웰','Blake Snell':'블레이크 스넬','Tomoyuki Sugano':'스가노 도모유키','Mookie Betts':'무키 베츠','Max Muncy':'맥스 먼시','Gregory Soto':'그레고리 소토','Tommy Edman':'토미 에드먼','Sonny Gray':'소니 그레이','Logan Webb':'로건 웹','Aroldis Chapman':'아롤디스 채프먼','Jung Hoo Lee':'이정후','Oneil Cruz':'오닐 크루즈','Drew Gilbert':'드루 길버트','Willson Contreras':'윌슨 콘트레라스','Erik Miller':'에릭 밀러','Alec Gamboa':'알렉 감보아','Shohei Ohtani':'오타니 쇼헤이','Evan Phillips':'에번 필립스','Bryce Eldridge':'브라이스 엘드리지','Jo Adell':'조 아델','Eric Lauer':'에릭 라우어','Ryan Feltner':'라이언 펠트너','Tanner Scott':'태너 스콧','Jack Dreyer':'잭 드레이어','Edgardo Henriquez':'에드가르도 엔리케스','Kyle Tucker':'카일 터커','Willi Castro':'윌리 카스트로','Trent Harris':'트렌트 해리스','Reiver Sanmartin':'레이버 산마르틴','Carson Whisenhunt':'카슨 위즌헌트','Craig Yoho':'크레이그 요호','Matt Festa':'맷 페스타','Tim Herrin':'팀 헤린','Foster Griffin':'포스터 그리핀','Enrique Hernández':'엔리케 에르난데스','Kyle Hurt':'카일 허트','Brock Stewart':'브록 스튜어트','Alex Vesia':'알렉스 베시아','Adrian Houser':'에이드리언 하우저','Parker Messick':'파커 메식','Dylan Smith':'딜런 스미스','Victor Bericoto':'빅터 베리코토','Freddie Freeman':'프레디 프리먼','Framber Valdez':'프램버 발데스','Seth Halvorsen':'세스 할보르센','Angel Martínez':'앙헬 마르티네스','Willy Adames':'윌리 아다메스','Gavin Williams':'개빈 윌리엄스','Landen Roupp':'랜든 루프','Cade Smith':'케이드 스미스','Patrick Bailey':'패트릭 베일리','Erik Sabrowski':'에릭 사브로스키','Hunter Gaddis':'헌터 개디스','José Ramírez':'호세 라미레즈','Yohan Ramírez':'요한 라미레스','Andrew Knizner':'앤드루 니즈너','Wyatt Olds':'와이엇 올즈','Nick Sogard':'닉 소가드','Ceddanne Rafaela':'세단 라파엘라','Wilyer Abreu':'윌리어 아브레우','Adley Rutschman':'애들리 러치맨','Caleb Durbin':'케일럽 더빈','Jarren Duran':'재런 듀란','Jahmai Jones':'자마이 존스','Andruw Monasterio':'앤드루 모나스테리오','Mickey Gasper':'미키 개스퍼','Eli White':'일라이 화이트','Patrick Sandoval':'패트릭 산도발','Greg Weissert':'그렉 와이서트','Jovani Morán':'조바니 모란','Teoscar Hernández':'테오스카 에르난데스','Alek Thomas':'알렉 토머스','Ben Rortvedt':'벤 로트베트','Jason Foley':'제이슨 폴리','Chase Burns':'체이스 번스','Ryan Walker':'라이언 워커','Carson Seymour':'카슨 시모어','Tyler Stephenson':'타일러 스티븐슨','Alex Call':'알렉스 콜','Dylan Dodd':'딜런 도드','Raisel Iglesias':'라이셀 이글레시아스','Ozzie Albies':'오지 앨비스','Anthony Molina':'앤서니 몰리나','Brady Singer':'브래디 싱어','Drew Cavanaugh':'드루 캐버노','Dylan Lee':'딜런 리','Sal Stewart':'살 스튜어트','Victor Mederos':'빅터 메데로스','Kenley Jansen':'켄리 잰슨','Gleyber Torres':'글레이버 토레스','Tyler Holton':'타일러 홀턴','Andrew Sears':'앤드루 시어스','Kevin McGonigle':'케빈 맥고니글','Merrill Kelly':'메릴 켈리','Lars Nootbaar':'라스 눗바','Brandyn Garcia':'브랜딘 가르시아','Luis Gastelum':'루이스 가스텔럼','Michael McGreevy':'마이클 맥그리비','Ramón Urías':'라몬 우리아스','Ryan Fernandez':'라이언 페르난데스','Thomas Saggese':'토머스 사제시','Camilo Doval':'카밀로 도발','Mason Montgomery':'메이슨 몽고메리','Rafael Flores Jr.':'라파엘 플로레스 주니어'}
 PLAYER_KO.update({
+  'Edwin Díaz':'에드윈 디아스',
+  'Tristan Beck':'트리스탄 벡',
+  'Zebby Matthews':'제비 매튜스',
+  'Brooks Lee':'브룩스 리',
+  'Landon Knack':'랜던 낵',
   'Alec Burleson':'알렉 벌레슨',
   'Blake Treinen':'블레이크 트라이넨',
   'Bo Bichette':'보 비셋',
@@ -33,6 +39,35 @@ PLAYER_KO.update({
   'Nate Lavender':'네이트 라벤더',
   'Tobias Myers':'토바이어스 마이어스',
   'Will Dion':'윌 디온',
+  'Will Smith':'윌 스미스',
+  'Alex Freeland':'알렉스 프리랜드',
+  'Brett Harris':'브렛 해리스',
+  'Bryan Torres':'브라이언 토레스',
+  'Brycen Mautz':'브라이슨 모츠',
+  'Cade Winquest':'케이드 윈퀴스트',
+  'Carlos Jorge':'카를로스 호르헤',
+  'Cesar Perdomo':'세사르 페르도모',
+  'Cooper Hjerpe':'쿠퍼 허페',
+  'Eliezer Alfonzo':'엘리저 알폰소',
+  'Graham Ashcraft':'그레이엄 애시크래프트',
+  'Iván Herrera':'이반 에레라',
+  'JJ Wetherholt':'JJ 웨더홀트',
+  'Joel Kuhnel':'조엘 쿠넬',
+  'Jordan Walker':'조던 워커',
+  'José Fermín':'호세 페르민',
+  'Juan Brito':'후안 브리토',
+  'Justin Wrobleski':'저스틴 로블레스키',
+  'Kris Bubic':'크리스 부빅',
+  'Kyle Leahy':'카일 리히',
+  'Masyn Winn':'메이슨 윈',
+  'Matthew Liberatore':'매슈 리베라토어',
+  'Nathan Church':'네이선 처치',
+  'Nolan Gorman':'놀런 고먼',
+  'Pedro Pagés':'페드로 파헤스',
+  'Philip Abner':'필립 앱너',
+  'Scott Bandura':'스콧 밴듀라',
+  'Victor Scott II':'빅터 스콧 2세',
+  'Yunior Marte':'유니오르 마르테',
   'Jackson Kent':'잭슨 켄트',
   'Josue De Paula':'호수에 데 파울라',
   'James Wood':'제임스 우드',
@@ -55,25 +90,48 @@ PLAYER_KO.update({
   'Dax Fulton':'댁스 풀턴',
   'Yuki Matsui':'마쓰이 유키',
   'Adrian Morejon':'아드리안 모레혼',
+  'Andre Pallante':'안드레 팔란테',
   'Bradgley Rodriguez':'브래들리 로드리게스',
   'Freddy Fermin':'프레디 페르민',
   'Quinn Mathews':'퀸 매슈스',
   'Leo Bernal':'레오 베르날',
 })
+# Canonical labels win.  The fallback prevents a newly surfaced player from
+# blocking an otherwise verified report or leaking raw English into Korean copy.
+FALLBACK_PLAYER_KO = {}
+_FALLBACK_LETTER_KO = {
+  'a':'아','b':'비','c':'시','d':'디','e':'이','f':'에프','g':'지','h':'에이치',
+  'i':'아이','j':'제이','k':'케이','l':'엘','m':'엠','n':'엔','o':'오','p':'피',
+  'q':'큐','r':'알','s':'에스','t':'티','u':'유','v':'브이','w':'더블유','x':'엑스',
+  'y':'와이','z':'지',
+}
+def korean_reading_fallback(name):
+  normalized=unicodedata.normalize('NFKD', name).encode('ascii','ignore').decode('ascii').lower()
+  words=re.findall(r'[a-z]+', normalized)
+  if not words:
+    return '이름 미확인'
+  return ' '.join(''.join(_FALLBACK_LETTER_KO[letter] for letter in word) for word in words)
 def ko_team(name):
   if name in TEAM_KO:return TEAM_KO[name]
   raise ValueError(f'Missing Korean team-name mapping: {name}')
 def ko_person(name):
-    """Never silently publish an English MLB player name in Korean copy."""
+    """Prefer a verified Korean label; otherwise use and cache a Korean reading."""
     if not name:
         return name
-    try:
+    if name in PLAYER_KO:
         return PLAYER_KO[name]
-    except KeyError as exc:
-        raise ValueError(f'Missing Korean player-name mapping: {name}') from exc
+    if name not in FALLBACK_PLAYER_KO:
+        FALLBACK_PLAYER_KO[name] = korean_reading_fallback(name)
+    return FALLBACK_PLAYER_KO[name]
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'BOVIS MLB daily collector/1.0'})
-    with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
+    for attempt in range(3):
+      try:
+        with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
+      except (TimeoutError, URLError):
+        if attempt == 2: raise
+        time.sleep(2**attempt)
+    raise RuntimeError('MLB API retry loop exhausted')
 def api(path,**q):return get('https://statsapi.mlb.com/api/v1/'+path+('?' + urllib.parse.urlencode(q,doseq=True) if q else ''))
 def public_status(url):
     try:
@@ -374,6 +432,7 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     naver_verified=bool(naver and str(naver.get('awayTeamScore'))==str(aw) and str(naver.get('homeTeamScore'))==str(hw) and (naver.get('statusCode')=='RESULT')==(status=='경기 종료'))
     return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':ko_person(winner),'loser_pitcher':ko_person(loser),'save_pitcher':ko_person(save) if save else None,'pitcher_record':record,'headline':headline,'game_points':game_points,'opponent_label':(focus_team if not focus_won else loser_team),'opponent_effort':effort,'daum_verified':verified,'naver_verified':naver_verified}
 def main():
+    FALLBACK_PLAYER_KO.clear()
     # `currentTeam` is only present when explicitly hydrated; do not infer it from a roster name.
     people={}
     for pid in sorted({x[1] for x in PLAYER_SPECS}):
@@ -507,9 +566,10 @@ def main():
       'official_date_mlb':(REPORT-timedelta(days=1)).isoformat(),
       'generated_at':datetime.now(KST).isoformat(timespec='seconds'),
       'verification':{
-        'status':'MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회',
-        'method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.',
-        'notes':notes
+      'status':'MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회',
+      'method':f'KST {REPORT} UTC 창({START.isoformat().replace("+00:00","Z")}–{END.isoformat().replace("+00:00","Z")})에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.',
+      'normalization_fallbacks':FALLBACK_PLAYER_KO,
+      'notes':notes
       },
       'team_games':targets,
       'batters':batters,

@@ -127,3 +127,35 @@ def test_mlb_renderer_refuses_stale_report_for_expected_delivery_date(tmp_path: 
 
     assert result.returncode != 0
     assert "date mismatch" in result.stderr
+
+
+def test_mlb_renderer_uses_compact_status_for_team_without_game(tmp_path: Path):
+    report_date = "2026-08-31"
+    archive = tmp_path / "mlb" / report_date
+    archive.mkdir(parents=True)
+    (archive / "index.html").write_text("ok", encoding="utf-8")
+    (archive / "data.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "mlb" / "data.json").write_text(
+        json.dumps(
+            {
+                "report_date_kst": report_date,
+                "team_games": [
+                    {"game_pk": 1, "section_title": "LA 다저스 경기", "status": "경기 종료", "away": "LA 다저스", "home": "디트로이트", "away_score": 6, "home_score": 1, "headline": "검증된 승리", "pitcher_record": "투수 승리", "game_points": [], "opponent_effort": ""},
+                    {"game_pk": None, "section_title": "샌프란시스코 자이언츠 경기", "status": "팀 경기 없음", "headline": "KST 대상일 팀 경기 없음", "game_points": []},
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [sys.executable, str(RENDERER), "--kind", "mlb", "--root", str(tmp_path), "--allow-stale"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "- KST 대상일 팀 경기 없음" in result.stdout
+    assert "None" not in result.stdout
+    assert "투수 기록:" not in result.stdout.split("**샌프란시스코 자이언츠 경기**", 1)[1]

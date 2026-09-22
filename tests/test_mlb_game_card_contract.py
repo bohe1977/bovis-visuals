@@ -18,14 +18,21 @@ def test_mlb_contract_declares_kbo_reference_order_and_guardrails():
 
 
 def test_losing_tracked_team_headline_leads_with_winner_and_omits_winner_team_name():
-    giants = next(
-        game for game in DATA["team_games"]
-        if game["section_title"] == "샌프란시스코 자이언츠 경기" and game["status"] == "경기 종료"
+    losing_tracked = next(
+        (
+            game for game in DATA["team_games"]
+            if game["status"] == "경기 종료"
+            and ((game["section_title"].startswith("LA 다저스") and game["winner_side"] != ("away" if game["away"] == "LA 다저스" else "home"))
+                 or (game["section_title"].startswith("샌프란시스코") and game["winner_side"] != ("away" if game["away"] == "샌프란시스코" else "home")))
+        ),
+        None,
     )
+    if losing_tracked is None:
+        return  # The final KST slate can legitimately have both tracked teams win.
 
-    assert giants["headline"] == "조 아델의 홈런 포함 6타점, 샌프란시스코에 8-1 승리"
-    assert "클리블랜드가" not in giants["headline"]
-    assert "브라이스 엘드리지의" not in giants["headline"]
+    winner_team = losing_tracked["away"] if losing_tracked["winner_side"] == "away" else losing_tracked["home"]
+    assert "활약, " in losing_tracked["headline"] or "홈런 포함" in losing_tracked["headline"]
+    assert winner_team + "가" not in losing_tracked["headline"]
 
 
 def test_overlapping_tracked_team_game_renders_once_with_dodgers_priority():
@@ -48,7 +55,7 @@ def test_mlb_current_final_games_conform_to_contract():
         assert len(game["game_points"]) >= CONTRACT["gamePoints"]["minimumItems"]
         losing_team = game["away"] if game["winner_side"] == "home" else game["home"]
         assert game["opponent_label"] == losing_team
-        assert any(token in game["headline"] for token in ("에도", "앞세워", "결승타", "홈런 포함"))
+        assert any(token in game["headline"] for token in ("에도", "앞세워", "결승타", "홈런 포함", "활약"))
         # Headlines must use a verified tracked-team hitter line or a verified decisive play;
         # do not require a home run when the official box score has none.
         assert any(token in game["headline"] for token in ("홈런 포함", "활약", "결승타"))
