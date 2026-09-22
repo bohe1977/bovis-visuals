@@ -1,0 +1,95 @@
+[
+  {
+    "id": "20260922NCSS0",
+    "date": "2026-09-22T00:00:00.000Z",
+    "startTime": "18:30",
+    "stadium": "대구",
+    "homeTeam": "삼성",
+    "awayTeam": "NC",
+    "homePitcher": "페덱 ",
+    "awayPitcher": "클레빈저 ",
+    "winPitcher": "페덱",
+    "losePitcher": "신영우",
+    "savePitcher": "김재윤",
+    "status": "FINISHED",
+    "score": {
+      "home": 8,
+      "away": 5
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "KBS N SPORTS"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260922KTSK0",
+    "date": "2026-09-22T00:00:00.000Z",
+    "startTime": "18:30",
+    "stadium": "문학",
+    "homeTeam": "SSG",
+    "awayTeam": "KT",
+    "homePitcher": "아빌라 ",
+    "awayPitcher": "배제성 ",
+    "winPitcher": "전용주",
+    "losePitcher": "아빌라",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 2,
+      "away": 8
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SPOTV2"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260922LTHH0",
+    "date": "2026-09-22T00:00:00.000Z",
+    "startTime": "18:30",
+    "stadium": "대전",
+    "homeTeam": "한화",
+    "awayTeam": "롯데",
+    "homePitcher": "류현진 ",
+    "awayPitcher": "비슬리 ",
+    "winPitcher": "비슬리",
+    "losePitcher": "류현진",
+    "savePitcher": "",
+    "status": "FINISHED",
+    "score": {
+      "home": 0,
+      "away": 7
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SBS SPORTS"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260922OBWO0",
+    "date": "2026-09-22T00:00:00.000Z",
+    "startTime": "18:30",
+    "stadium": "고척",
+    "homeTeam": "키움",
+    "awayTeam": "두산",
+    "homePitcher": "전준표 ",
+    "awayPitcher": "벤자민 ",
+    "winPitcher": "벤자민",
+    "losePitcher": "전준표",
+    "savePitcher": "이영하",
+    "status": "FINISHED",
+    "score": {
+      "home": 3,
+      "away": 5
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "MBC SPORTS+",
+      "SPOTV"
+    ],
+    "season": 2026
+  }
+]

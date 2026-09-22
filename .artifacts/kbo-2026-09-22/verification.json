@@ -1,0 +1,18 @@
+{
+  "report_date": "2026-09-22",
+  "games": 4,
+  "total_runs": 38,
+  "source_status": {
+    "kbo_game": "FINISHED x4",
+    "kbo_official": "code=100 x4",
+    "naver": "statusCode=4 x4",
+    "daum": "gameStatus=END x4"
+  },
+  "watched_pitchers": [
+    "류현진",
+    "제레미 비슬리"
+  ],
+  "watched_batters": [
+    "강백호"
+  ]
+}
