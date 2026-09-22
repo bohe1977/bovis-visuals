@@ -69,6 +69,22 @@ def test_mlb_renderer_outputs_current_dated_team_report_and_archive_link():
     assert f"https://bohe1977.github.io/bovis-visuals/mlb/{report_date}/" in result.stdout
 
 
+def test_mlb_renderer_refuses_mirrored_tracked_team_game(tmp_path: Path):
+    report_date = "2026-08-19"
+    report_dir = tmp_path / "mlb" / report_date
+    report_dir.mkdir(parents=True)
+    (report_dir / "index.html").write_text("ok", encoding="utf-8")
+    (report_dir / "data.json").write_text("{}", encoding="utf-8")
+    shared = {"game_pk": 1, "section_title": "LA 다저스 경기", "status": "경기 종료"}
+    duplicate = {**shared, "section_title": "샌프란시스코 자이언츠 경기"}
+    (tmp_path / "mlb" / "data.json").write_text(json.dumps({"report_date_kst": report_date, "team_games": [shared, duplicate]}), encoding="utf-8")
+
+    result = subprocess.run([sys.executable, str(RENDERER), "--kind", "mlb", "--root", str(tmp_path), "--allow-stale"], text=True, capture_output=True, check=False)
+
+    assert result.returncode != 0
+    assert "duplicate tracked-team game" in result.stderr
+
+
 def test_mlb_renderer_refuses_nonfinal_report_even_when_archive_exists(tmp_path: Path):
     report_date = "2026-08-19"
     report_dir = tmp_path / "mlb" / report_date

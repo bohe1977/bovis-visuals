@@ -83,6 +83,9 @@ def kbo_report(root: Path) -> str:
 
 def require_mlb_final(data: dict) -> None:
     active = [game for game in data.get("team_games", []) if game.get("game_pk") is not None]
+    game_ids = [game["game_pk"] for game in active]
+    if len(game_ids) != len(set(game_ids)):
+        fail("MLB report contains duplicate tracked-team game")
     nonfinal = [game for game in active if game.get("status") != "경기 종료"]
     if nonfinal:
         labels = ", ".join(f"{game.get('section_title', '경기')} ({game.get('status')})" for game in nonfinal)
