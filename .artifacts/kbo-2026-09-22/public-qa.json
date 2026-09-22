@@ -1,0 +1,20 @@
+{
+  "commit": "afc2e41",
+  "report_date": "2026-09-22",
+  "public_base": "https://bohe1977.github.io/bovis-visuals",
+  "integrated": {
+    "390": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1},
+    "768": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1},
+    "1440": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1}
+  },
+  "players": {
+    "390": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": []},
+    "768": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": []},
+    "1440": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": []}
+  },
+  "archive": {
+    "390": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1},
+    "768": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1},
+    "1440": {"date": true, "error": false, "overflow": true, "numericSingleRect": true, "errors": [], "games": 4, "runs": true, "awayBadge": 3, "homeBadge": 1}
+  }
+}
