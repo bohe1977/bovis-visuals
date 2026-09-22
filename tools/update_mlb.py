@@ -475,9 +475,18 @@ def main():
     daum_rows,daum_api=daum_schedule()
     naver_rows,naver_api=naver_schedule()
     targets=[]
+    seen_game_pks=set()
     for title,teamid in [('LA 다저스 경기',119),('샌프란시스코 자이언츠 경기',137)]:
       ts=[g for g in mlb_games.values() if teamid in (g['teams']['away']['team']['id'],g['teams']['home']['team']['id'])]
-      if ts: targets.append(build_game(ts[0],title,daum_rows,naver_rows,box=box(ts[0]['gamePk']),feed=feed(ts[0]['gamePk'])))
+      if ts:
+        game=ts[0]
+        game_pk=game['gamePk']
+        # A Dodgers–Giants matchup belongs to the Dodgers priority lane only.
+        # Do not emit a mirrored second card under the Giants lane.
+        if game_pk in seen_game_pks:
+          continue
+        seen_game_pks.add(game_pk)
+        targets.append(build_game(game,title,daum_rows,naver_rows,box=box(game_pk),feed=feed(game_pk)))
       else: targets.append({'section_title':title,'game_pk':None,'officialDate':None,'game_date_utc':None,'naver_game_id':None,'daum_game_id':None,'venue':'—','start_time_kst':'—','status':'팀 경기 없음','away':'LA 다저스' if teamid==119 else '샌프란시스코','home':'—','winner_side':None,'away_score':None,'home_score':None,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'pitcher_record':'','headline':'KST 대상일 팀 경기 없음','game_points':['MLB 공식 schedule의 KST gameDate 기준.'],'opponent_label':'—','opponent_effort':'—'})
     # Cross-check endpoints are retained as provenance. Dynamic Naver game IDs are not guessed.
     src=['https://statsapi.mlb.com/api/v1/schedule?sportId=1&date='+d.isoformat() for d in (REPORT-timedelta(days=1),REPORT)]

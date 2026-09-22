@@ -46,41 +46,6 @@
       "opponent_effort": "빅터 베리코토 4타수 1안타 1타점의 분전에도 샌프란시스코는 2안타 1득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
-    },
-    {
-      "section_title": "샌프란시스코 자이언츠 경기",
-      "game_pk": 823896,
-      "officialDate": "2026-09-20",
-      "game_date_utc": "2026-09-20T20:10:00Z",
-      "naver_game_id": "20260921SFLA0",
-      "daum_game_id": 80105627,
-      "venue": "UNIQLO Field at Dodger Stadium",
-      "start_time_kst": "05:10",
-      "status": "경기 종료",
-      "away": "샌프란시스코",
-      "home": "LA 다저스",
-      "winner_side": "home",
-      "away_score": 1,
-      "home_score": 3,
-      "away_hits": 2,
-      "home_hits": 11,
-      "away_errors": 0,
-      "home_errors": 2,
-      "winner_pitcher": "크리스 부빅",
-      "loser_pitcher": "샘 헨지스",
-      "save_pitcher": "태너 스콧",
-      "pitcher_record": "크리스 부빅 승리, 샘 헨지스 패전, 태너 스콧 세이브",
-      "headline": "토미 에드먼의 홈런 포함 1타점, 샌프란시스코에 3-1 승리",
-      "game_points": [
-        "LA 다저스 선발 크리스 부빅은 0.2이닝 0피안타 무실점 1탈삼진으로 승리했다.",
-        "7회 LA 다저스 엔리케 에르난데스의 2루타가 결승타가 됐다.",
-        "LA 다저스는 토미 에드먼 4타수 1안타 1홈런 1타점 1득점의 활약으로 타선을 이끌었다.",
-        "에밋 시한·브록 스튜어트·태너 스콧가 7⅓이닝 무실점으로 이어 던졌고, 브록 스튜어트가 홀드를 기록했다."
-      ],
-      "opponent_label": "샌프란시스코",
-      "opponent_effort": "빅터 베리코토 4타수 1안타 1타점의 활약에도 샌프란시스코는 2안타 1득점에 그쳤다.",
-      "daum_verified": true,
-      "naver_verified": true
     }
   ],
   "batters": [

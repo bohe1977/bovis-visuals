@@ -28,6 +28,16 @@ def test_losing_tracked_team_headline_leads_with_winner_and_omits_winner_team_na
     assert "브라이스 엘드리지의" not in giants["headline"]
 
 
+def test_overlapping_tracked_team_game_renders_once_with_dodgers_priority():
+    final_games = [game for game in DATA["team_games"] if game["status"] == "경기 종료"]
+    game_ids = [game["game_pk"] for game in final_games]
+    assert len(game_ids) == len(set(game_ids)), "one MLB game must never create mirrored team cards"
+    shared = [game for game in final_games if game["away"] in {"LA 다저스", "샌프란시스코"} and game["home"] in {"LA 다저스", "샌프란시스코"}]
+    if shared:
+        assert len(shared) == 1
+        assert shared[0]["section_title"] == "LA 다저스 경기"
+
+
 def test_mlb_current_final_games_conform_to_contract():
     required = set(CONTRACT["collectorRequiredFields"])
     final_games = [game for game in DATA["team_games"] if game["status"] == "경기 종료"]
