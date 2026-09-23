@@ -7,6 +7,8 @@ import re
 from datetime import datetime
 from html import unescape
 from pathlib import Path
+
+from kbo_card_content import subject_particle, topic_particle
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
@@ -39,6 +41,39 @@ def official_pitchers(box: dict) -> dict[str, dict[str, str]]:
 
 def official_hitters(box: dict) -> set[str]:
     return {cells(row)[2] for team in box["arrHitter"] for row in json.loads(team["table1"])["rows"] if len(cells(row)) >= 3}
+
+def official_game_fact(box: dict, label: str) -> str | None:
+    table = json.loads(box['tableEtc'])
+    for row in table['rows']:
+        values = cells(row)
+        if len(values) >= 2 and values[0] == label:
+            return values[1]
+    return None
+
+
+def inning_turning_point(board: dict, winnerside: str, win_team: str, lose_team: str) -> str:
+    table = json.loads(board['table2'])
+    innings = [cell['Text'] for cell in table['headers'][0]['row']]
+    away_runs = [0 if cell['Text'] in ('-', '') else int(cell['Text']) for cell in table['rows'][0]['row']]
+    home_runs = [0 if cell['Text'] in ('-', '') else int(cell['Text']) for cell in table['rows'][1]['row']]
+    winner_runs, loser_runs = (away_runs, home_runs) if winnerside == 'away' else (home_runs, away_runs)
+    running_winner = running_loser = 0
+    prior_winner = prior_loser = 0
+    candidates = []
+    for index, inning in enumerate(innings):
+        running_winner += winner_runs[index]
+        running_loser += loser_runs[index]
+        if winner_runs[index] > 0:
+            candidates.append((index, inning, winner_runs[index], prior_winner, prior_loser, running_winner, running_loser))
+        prior_winner, prior_loser = running_winner, running_loser
+    assert candidates, 'winner recorded no scoring inning'
+    # Prefer the earliest lead change that the winner never relinquishes; otherwise use the largest scoring inning.
+    permanent = [item for item in candidates if item[5] > item[6] and all(sum(winner_runs[:future + 1]) > sum(loser_runs[:future + 1]) for future in range(item[0], len(innings)))]
+    chosen = permanent[0] if permanent else max(candidates, key=lambda item: (item[2], -item[0]))
+    _, inning, runs, before_winner, before_loser, after_winner, after_loser = chosen
+    verb = '역전하며' if before_winner < before_loser and after_winner > after_loser else '달아나며'
+    return f'{win_team}은 {inning}회 {runs}득점으로 {after_winner}-{after_loser} {verb} 흐름을 잡았다.'
+
 
 def inning_text(value: str) -> str:
     return value.replace(" ", "")
@@ -93,13 +128,22 @@ for kg in finished:
     starter = pitchers[winnerside][0]
     productive = sorted(batters[winnerside], key=lambda x: (x["rbi"], x["hr"], x["hit"], x["run"]), reverse=True)[:2]
     leading_loser = max(batters[loserside], key=lambda x: (x["rbi"], x["hr"], x["hit"], x["run"]))
-    p_line = f"{starter['name']}은 {inning_text(starter['inn'])}이닝 {starter['hit']}피안타 {starter['bbhp']}사사구 {starter['kk']}탈삼진 {starter['r']}실점"
-    hitters = "·".join(f"{x['name']} {x['ab']}타수 {x['hit']}안타 {x['rbi']}타점" for x in productive)
-    bullpen = f"{save}이 마무리했다" if save else "불펜이 리드를 지켰다"
+    p_line = f"{starter['name']}{topic_particle(starter['name'])} {inning_text(starter['inn'])}이닝 {starter['hit']}피안타 {starter['bbhp']}사사구 {starter['kk']}탈삼진 {starter['r']}실점"
+    hitter_line = ', '.join(f"{x['name']}{topic_particle(x['name'])} {x['ab']}타수 {x['hit']}안타 {x['rbi']}타점" for x in productive)
+    decisive = official_game_fact(box, '결승타')
+    decisive_point = inning_turning_point(board, winnerside, win_team, lose_team) if decisive in (None, '', '없음') else f"공식 결승타는 {decisive}였다."
+    if save:
+        finisher = next(p for p in pitchers[winnerside] if p['name'] == save)
+        bullpen = f"{save}{subject_particle(save)} {inning_text(finisher['inn'])}이닝 {finisher['hit']}피안타 {finisher['bbhp']}사사구 {finisher['kk']}탈삼진 {finisher['r']}실점으로 세이브를 기록했다."
+    else:
+        relievers = pitchers[winnerside][1:]
+        assert relievers, f'{gid}: no verified winning reliever for bullpen point'
+        finisher = relievers[-1]
+        bullpen = f"{finisher['name']}{subject_particle(finisher['name'])} {inning_text(finisher['inn'])}이닝 {finisher['hit']}피안타 {finisher['bbhp']}사사구 {finisher['kk']}탈삼진 {finisher['r']}실점으로 마지막 이닝을 책임졌다."
     sources = [{"label": "KBO 공식", "url": f"{KBO}/Schedule/GameCenter/Main.aspx?gameDate={COMPACT}&gameId={gid}&section=REVIEW"}, {"label": "네이버 기록", "url": f"https://api-gw.sports.naver.com/schedule/games/{gid}2026/record"}, {"label": "다음 기록", "url": f"https://sports.daum.net/match/{dg['gameId']}"}]
     last_code = ord(win_team[-1]) - ord("가")
     subject = "이" if 0 <= last_code <= 11171 and last_code % 28 else "가"
-    games.append({"id": gid, "stadium": kg["stadium"], "start_time": kg["startTime"], "status": "경기 종료", "away": away, "home": home, "away_score": kg["score"]["away"], "home_score": kg["score"]["home"], "winner_pitcher": winner, "loser_pitcher": loser, "save_pitcher": save, "headline": f"{win_team}{subject} {lose_team}에 {max(kg['score'].values())}-{min(kg['score'].values())} 승리", "winner_points": [f"{win_team} 선발 {p_line}으로 승리의 발판을 놓았다.", f"{hitters}을 기록하며 공격을 이끌었다.", f"{bullpen} 최종 스코어를 지켰다."], "opponent_effort": f"{lose_team}는 {leading_loser['name']}이 {leading_loser['ab']}타수 {leading_loser['hit']}안타 {leading_loser['rbi']}타점으로 분전했지만 승부를 뒤집지 못했다.", "sources": sources})
+    games.append({"id": gid, "stadium": kg["stadium"], "start_time": kg["startTime"], "status": "경기 종료", "away": away, "home": home, "away_score": kg["score"]["away"], "home_score": kg["score"]["home"], "winner_pitcher": winner, "loser_pitcher": loser, "save_pitcher": save, "headline": f"{win_team}{subject} {lose_team}에 {max(kg['score'].values())}-{min(kg['score'].values())} 승리", "winner_points": [f"{win_team} 선발 {p_line}으로 승리를 기록했다.", decisive_point, f"{hitter_line}을 기록했다.", bullpen], "opponent_effort": f"{lose_team}{topic_particle(lose_team)} {leading_loser['name']}{subject_particle(leading_loser['name'])} {leading_loser['ab']}타수 {leading_loser['hit']}안타 {leading_loser['rbi']}타점으로 분전했지만 승부를 뒤집지 못했다.", "sources": sources})
 
 pitchers = []
 for name, team in WATCHED_PITCHERS:
