@@ -95,22 +95,37 @@ PLAYER_KO.update({
   'Freddy Fermin':'프레디 페르민',
   'Quinn Mathews':'퀸 매슈스',
   'Leo Bernal':'레오 베르날',
+  # Korean sports-style labels for the 2026-09-23 report's newly surfaced players.
+  'Michael King':'마이클 킹',
+  'Luis Campusano':'루이스 캄푸사노',
+  'Taj Bradley':'타지 브래들리',
+  'Jeff Hoffman':'제프 호프먼',
+  'Walker Jenkins':'워커 젠킨스',
+  'Kody Funderburk':'코디 펀더버크',
+  'Andrew Morris':'앤드루 모리스',
+  'A.J. Minter':'에이제이 민터',
 })
-# Canonical labels win.  The fallback prevents a newly surfaced player from
-# blocking an otherwise verified report or leaking raw English into Korean copy.
+# Canonical labels win. A reading fallback is word-based—not alphabet-name
+# spelling—so a missing mapping can never render "더블유… 제이…" in user copy.
 FALLBACK_PLAYER_KO = {}
-_FALLBACK_LETTER_KO = {
-  'a':'아','b':'비','c':'시','d':'디','e':'이','f':'에프','g':'지','h':'에이치',
-  'i':'아이','j':'제이','k':'케이','l':'엘','m':'엠','n':'엔','o':'오','p':'피',
-  'q':'큐','r':'알','s':'에스','t':'티','u':'유','v':'브이','w':'더블유','x':'엑스',
-  'y':'와이','z':'지',
+_FALLBACK_WORD_KO = {
+  'nova':'노바',
+  'quell':'퀠',
 }
 def korean_reading_fallback(name):
   normalized=unicodedata.normalize('NFKD', name).encode('ascii','ignore').decode('ascii').lower()
   words=re.findall(r'[a-z]+', normalized)
   if not words:
     return '이름 미확인'
-  return ' '.join(''.join(_FALLBACK_LETTER_KO[letter] for letter in word) for word in words)
+  readings=[]
+  for word in words:
+    reading=_FALLBACK_WORD_KO.get(word)
+    if reading is None:
+      # Unknown spellings retain neither raw English nor letter-by-letter output.
+      # The collector records this cache entry for later Korean-label enrichment.
+      reading='음역 미확인'
+    readings.append(reading)
+  return ' '.join(readings)
 def ko_team(name):
   if name in TEAM_KO:return TEAM_KO[name]
   raise ValueError(f'Missing Korean team-name mapping: {name}')

@@ -1,20 +1,11 @@
 {
   "report_date_kst": "2026-09-23",
   "official_date_mlb": "2026-09-22",
-  "generated_at": "2026-09-23T16:50:42+09:00",
+  "generated_at": "2026-09-23T20:01:23+09:00",
   "verification": {
     "status": "MLB 공식 Stats API/Gameday 기준 · 다음 KST 일정 교차조회",
     "method": "KST 2026-09-23 UTC 창(2026-09-22T15:00:00Z–2026-09-23T14:59:59Z)에 실제 gameDate가 속한 경기만 미국 현지 전날·당일 schedule에서 선별했다. 시즌 누계는 MLB Stats API byDateRange의 각 경기 officialDate cutoff을 사용했다. 다음 공개 KST schedule API의 팀·시각·점수·종료 상태로 대상 팀 경기를 교차대조했다.",
-    "normalization_fallbacks": {
-      "Michael King": "엠아이시에이치아이엘 케이아이엔지",
-      "Luis Campusano": "엘유아이에스 시아엠피유에스아엔오",
-      "Taj Bradley": "티아제이 비알아디엘이와이",
-      "Jeff Hoffman": "제이이에프에프 에이치오에프에프엠아엔",
-      "Walker Jenkins": "더블유아엘케이이알 제이이엔케이아이엔에스",
-      "Kody Funderburk": "케이오디와이 에프유엔디이알비유알케이",
-      "Andrew Morris": "아엔디알이더블유 엠오알알아이에스",
-      "A.J. Minter": "아 제이 엠아이엔티이알"
-    },
+    "normalization_fallbacks": {},
     "notes": [
       "MLB 공식 schedule에서 KST 대상 창에 16개 MLB 경기를 확인했고, 네이버·다음 KST schedule API는 각각 16개·16개로 일치했다.",
       "다저스·자이언츠의 실제 대상 경기 2/2경기를 네이버·다음 KST 일정의 점수·종료 상태와 대조했다. 네이버 공개 API는 HTTP 200 응답을 확인했다.",
@@ -42,9 +33,9 @@
       "away_errors": 0,
       "home_errors": 1,
       "winner_pitcher": "저스틴 로블레스키",
-      "loser_pitcher": "엠아이시에이치아이엘 케이아이엔지",
+      "loser_pitcher": "마이클 킹",
       "save_pitcher": null,
-      "pitcher_record": "저스틴 로블레스키 승리, 엠아이시에이치아이엘 케이아이엔지 패전",
+      "pitcher_record": "저스틴 로블레스키 승리, 마이클 킹 패전",
       "headline": "프레디 프리먼의 2안타 활약, 샌디에이고에 7-0 승리",
       "game_points": [
         "LA 다저스 선발 저스틴 로블레스키는 1이닝 1피안타 무실점 0탈삼진으로 승리했다.",
@@ -53,7 +44,7 @@
         "블레이크 트라이넨·사사키 로키·에드윈 디아스·카일 허트·알렉스 베시아·잭 드레이어가 7이닝 무실점으로 이어 던져 승리를 지켰다."
       ],
       "opponent_label": "샌디에이고",
-      "opponent_effort": "엘유아이에스 시아엠피유에스아엔오 4타수 2안타의 분전에도 샌디에이고는 5안타 0득점에 그쳤다.",
+      "opponent_effort": "루이스 캄푸사노 4타수 2안타의 분전에도 샌디에이고는 5안타 0득점에 그쳤다.",
       "daum_verified": true,
       "naver_verified": true
     },
@@ -76,16 +67,16 @@
       "home_hits": 6,
       "away_errors": 1,
       "home_errors": 1,
-      "winner_pitcher": "티아제이 비알아디엘이와이",
+      "winner_pitcher": "타지 브래들리",
       "loser_pitcher": "앤서니 몰리나",
-      "save_pitcher": "제이이에프에프 에이치오에프에프엠아엔",
-      "pitcher_record": "티아제이 비알아디엘이와이 승리, 앤서니 몰리나 패전, 제이이에프에프 에이치오에프에프엠아엔 세이브",
-      "headline": "더블유아엘케이이알 제이이엔케이아이엔에스의 홈런 포함 1타점, 샌프란시스코에 3-2 승리",
+      "save_pitcher": "제프 호프먼",
+      "pitcher_record": "타지 브래들리 승리, 앤서니 몰리나 패전, 제프 호프먼 세이브",
+      "headline": "워커 젠킨스의 홈런 포함 1타점, 샌프란시스코에 3-2 승리",
       "game_points": [
-        "미네소타 선발 티아제이 비알아디엘이와이는 6이닝 3피안타 1실점 6탈삼진으로 승리했다.",
+        "미네소타 선발 타지 브래들리는 6이닝 3피안타 1실점 6탈삼진으로 승리했다.",
         "6회 미네소타 브룩스 리의 안타가 결승타가 됐다.",
-        "미네소타는 더블유아엘케이이알 제이이엔케이아이엔에스 4타수 1안타 1홈런 1타점 1득점의 활약으로 타선을 이끌었다.",
-        "케이오디와이 에프유엔디이알비유알케이·아엔디알이더블유 엠오알알아이에스·아 제이 엠아이엔티이알가 2이닝 무실점으로 이어 던졌고, 각각 홀드를 기록했다."
+        "미네소타는 워커 젠킨스 4타수 1안타 1홈런 1타점 1득점의 활약으로 타선을 이끌었다.",
+        "코디 펀더버크·앤드루 모리스·에이제이 민터가 2이닝 무실점으로 이어 던졌고, 각각 홀드를 기록했다."
       ],
       "opponent_label": "샌프란시스코",
       "opponent_effort": "조나 콕스 4타수 0안타 1타점의 활약에도 샌프란시스코는 6안타 2득점에 그쳤다.",

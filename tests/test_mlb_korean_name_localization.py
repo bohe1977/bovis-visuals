@@ -110,14 +110,32 @@ def test_juan_soto_is_batter_watchlist_before_song_seong_mun():
     assert batter_names.index("후안 소토") == batter_names.index("송성문") - 1
 
 
-def test_unknown_person_name_uses_korean_reading_fallback_and_records_provenance():
+@pytest.mark.parametrize(
+    ("english", "korean"),
+    [
+        ("Michael King", "마이클 킹"),
+        ("Luis Campusano", "루이스 캄푸사노"),
+        ("Taj Bradley", "타지 브래들리"),
+        ("Jeff Hoffman", "제프 호프먼"),
+        ("Walker Jenkins", "워커 젠킨스"),
+        ("Kody Funderburk", "코디 펀더버크"),
+        ("Andrew Morris", "앤드루 모리스"),
+        ("A.J. Minter", "에이제이 민터"),
+    ],
+)
+def test_newly_seen_mlb_names_use_natural_korean_readings(english: str, korean: str):
+    assert UPDATE_MLB.ko_person(english) == korean
+
+
+def test_unknown_person_name_uses_word_reading_fallback_and_records_provenance():
     unknown = "Nova Quell"
     UPDATE_MLB.FALLBACK_PLAYER_KO.pop(unknown, None)
 
     rendered = UPDATE_MLB.ko_person(unknown)
 
-    assert rendered
+    assert rendered == "노바 퀠"
     assert re.fullmatch(r"[가-힣 ]+", rendered)
+    assert "더블유" not in rendered
     assert UPDATE_MLB.FALLBACK_PLAYER_KO[unknown] == rendered
 
 
