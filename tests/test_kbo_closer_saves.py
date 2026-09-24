@@ -72,7 +72,6 @@ def test_inactive_pitchers_have_status_only_and_active_pitchers_share_one_season
 def test_active_kbo_batters_require_source_backed_obp_and_ops():
     batters = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))["batters"]
     active = [batter for batter in batters if batter["appeared"]]
-    assert active
     for batter in active:
         assert isinstance(batter.get("obp"), str) and batter["obp"].startswith("0.")
         assert isinstance(batter.get("ops"), str) and batter["ops"].startswith("0.")

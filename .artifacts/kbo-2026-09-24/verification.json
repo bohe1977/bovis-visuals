@@ -1,0 +1,17 @@
+{
+  "report_date": "2026-09-24",
+  "games": 3,
+  "total_runs": 24,
+  "source_status": {
+    "kbo_game": "FINISHED x3",
+    "kbo_official": "code=100 x3",
+    "naver": "statusCode=4 x3",
+    "daum": "gameStatus=END x3"
+  },
+  "watched_pitchers": [
+    "김원중",
+    "박정민",
+    "로드리게스"
+  ],
+  "watched_batters": []
+}

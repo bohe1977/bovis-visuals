@@ -1,0 +1,73 @@
+[
+  {
+    "id": "20260924LTLG0",
+    "date": "2026-09-24T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "잠실",
+    "homeTeam": "LG",
+    "awayTeam": "롯데",
+    "homePitcher": "톨허스트 ",
+    "awayPitcher": "로드리게스 ",
+    "winPitcher": "로드리게스",
+    "losePitcher": "톨허스트",
+    "savePitcher": "이이무라",
+    "status": "FINISHED",
+    "score": {
+      "home": 4,
+      "away": 6
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SPOTV"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260924SSSK0",
+    "date": "2026-09-24T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "문학",
+    "homeTeam": "SSG",
+    "awayTeam": "삼성",
+    "homePitcher": "김민준 ",
+    "awayPitcher": "후라도 ",
+    "winPitcher": "후라도",
+    "losePitcher": "김민준",
+    "savePitcher": "김재윤",
+    "status": "FINISHED",
+    "score": {
+      "home": 4,
+      "away": 5
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "KBS N SPORTS",
+      "SBS SPORTS"
+    ],
+    "season": 2026
+  },
+  {
+    "id": "20260924NCKT0",
+    "date": "2026-09-24T00:00:00.000Z",
+    "startTime": "17:00",
+    "stadium": "수원",
+    "homeTeam": "KT",
+    "awayTeam": "NC",
+    "homePitcher": "대니엘 ",
+    "awayPitcher": "송명기 ",
+    "winPitcher": "대니엘",
+    "losePitcher": "송명기",
+    "savePitcher": "김정운",
+    "status": "FINISHED",
+    "score": {
+      "home": 3,
+      "away": 2
+    },
+    "currentInning": 9,
+    "broadcastServices": [
+      "SPOTV2",
+      "MBC SPORTS+"
+    ],
+    "season": 2026
+  }
+]
