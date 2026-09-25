@@ -127,6 +127,35 @@ def test_newly_seen_mlb_names_use_natural_korean_readings(english: str, korean: 
     assert UPDATE_MLB.ko_person(english) == korean
 
 
+def test_naver_boxscore_labels_resolve_every_newly_seen_rendered_player_before_fallback():
+    UPDATE_MLB.SOURCE_PLAYER_KO.clear()
+    box = {
+        "teams": {
+            "away": {
+                "batters": [1],
+                "pitchers": [2],
+                "players": {
+                    "ID1": {"person": {"fullName": "Ethan Salas"}, "stats": {"batting": {"atBats": 3, "hits": 2, "rbi": 1, "runs": 1, "homeRuns": 0, "baseOnBalls": 0, "strikeOuts": 1, "stolenBases": 0}}},
+                    "ID2": {"person": {"fullName": "Jason Adam"}, "stats": {"pitching": {"inningsPitched": "1.0", "hits": 0, "runs": 0, "earnedRuns": 0, "baseOnBalls": 0, "strikeOuts": 0, "homeRuns": 0, "holds": 1}}},
+                },
+            },
+            "home": {"batters": [], "pitchers": [], "players": {}},
+        }
+    }
+    record = {
+        "awayBatter": [{"name": "살라스", "ab": 3, "hit": 2, "rbi": 1, "run": 1, "hr": 0, "bb": 0, "so": 1, "sb": 0}],
+        "awayPitcher": [{"name": "아담", "inn": "1.0", "hit": 0, "r": 0, "er": 0, "bb": 0, "so": 0, "hr": 0, "wls": "홀"}],
+        "homeBatter": [],
+        "homePitcher": [],
+    }
+
+    UPDATE_MLB.register_naver_player_labels(box, record)
+
+    assert UPDATE_MLB.ko_person("Ethan Salas") == "살라스"
+    assert UPDATE_MLB.ko_person("Jason Adam") == "아담"
+    assert "음역 미확인" not in (UPDATE_MLB.ko_person("Ethan Salas") + UPDATE_MLB.ko_person("Jason Adam"))
+
+
 def test_unknown_person_name_uses_word_reading_fallback_and_records_provenance():
     unknown = "Nova Quell"
     UPDATE_MLB.FALLBACK_PLAYER_KO.pop(unknown, None)
@@ -136,7 +165,14 @@ def test_unknown_person_name_uses_word_reading_fallback_and_records_provenance()
     assert rendered == "노바 퀠"
     assert re.fullmatch(r"[가-힣 ]+", rendered)
     assert "더블유" not in rendered
+    assert "음역 미확인" not in rendered
     assert UPDATE_MLB.FALLBACK_PLAYER_KO[unknown] == rendered
+
+
+
+def test_korean_subject_particle_applies_to_source_label_surnames():
+    assert UPDATE_MLB.subject_particle("아담") == "아담이"
+    assert UPDATE_MLB.subject_particle("살라스") == "살라스가"
 
 
 def test_unknown_team_name_fails_generation_instead_of_leaking_english():

@@ -105,8 +105,10 @@ PLAYER_KO.update({
   'Andrew Morris':'앤드루 모리스',
   'A.J. Minter':'에이제이 민터',
 })
-# Canonical labels win. A reading fallback is word-based—not alphabet-name
-# spelling—so a missing mapping can never render "더블유… 제이…" in user copy.
+# Canonical labels win; Naver boxscore labels then cover newly surfaced players.
+# A reading fallback is word-based—not alphabet-name spelling—so a missing mapping
+# can never render "더블유… 제이…" in user copy.
+SOURCE_PLAYER_KO = {}
 FALLBACK_PLAYER_KO = {}
 _FALLBACK_WORD_KO = {
   'nova':'노바',
@@ -121,11 +123,41 @@ def korean_reading_fallback(name):
   for word in words:
     reading=_FALLBACK_WORD_KO.get(word)
     if reading is None:
-      # Unknown spellings retain neither raw English nor letter-by-letter output.
-      # The collector records this cache entry for later Korean-label enrichment.
-      reading='음역 미확인'
+      # This branch is only permitted after Naver's Korean record surface was
+      # unavailable or could not be joined. It stays Korean-only for provenance.
+      reading='이름 미확인'
     readings.append(reading)
   return ' '.join(readings)
+def _same_number(left,right):
+  try:return int(left or 0)==int(right or 0)
+  except (TypeError,ValueError):return False
+def _same_innings(left,right):
+  return str(left).rstrip('0').rstrip('.') == str(right).rstrip('0').rstrip('.')
+def _unique_match(rows, predicate):
+  matches=[row for row in rows if predicate(row)]
+  return matches[0] if len(matches)==1 else None
+def register_naver_player_labels(box, record):
+  """Join the Naver Korean game-record labels to MLB boxscore players by final stat line."""
+  if not box or not record:return
+  for side in ('away','home'):
+    team=box.get('teams',{}).get(side,{})
+    for pid in team.get('batters',[]):
+      player=team.get('players',{}).get('ID'+str(pid),{})
+      name=player.get('person',{}).get('fullName'); stat=player.get('stats',{}).get('batting',{})
+      if not name or name in PLAYER_KO:continue
+      row=_unique_match(record.get(f'{side}Batter',[]), lambda row: all((_same_number(stat.get(source),row.get(target)) for source,target in (
+        ('atBats','ab'),('hits','hit'),('rbi','rbi'),('runs','run'),('homeRuns','hr'),('baseOnBalls','bb'),('strikeOuts','so'),('stolenBases','sb'),
+      ))))
+      if row and row.get('name'):SOURCE_PLAYER_KO[name]=row['name']
+    for pid in team.get('pitchers',[]):
+      player=team.get('players',{}).get('ID'+str(pid),{})
+      name=player.get('person',{}).get('fullName'); stat=player.get('stats',{}).get('pitching',{})
+      if not name or name in PLAYER_KO:continue
+      expected_result='홀' if stat.get('holds',0) else ''
+      row=_unique_match(record.get(f'{side}Pitcher',[]), lambda row: _same_innings(stat.get('inningsPitched','0'),row.get('inn','0')) and all((_same_number(stat.get(source),row.get(target)) for source,target in (
+        ('hits','hit'),('runs','r'),('earnedRuns','er'),('baseOnBalls','bb'),('strikeOuts','so'),('homeRuns','hr'),
+      ))) and (not expected_result or row.get('wls')==expected_result))
+      if row and row.get('name'):SOURCE_PLAYER_KO[name]=row['name']
 def ko_team(name):
   if name in TEAM_KO:return TEAM_KO[name]
   raise ValueError(f'Missing Korean team-name mapping: {name}')
@@ -135,6 +167,8 @@ def ko_person(name):
         return name
     if name in PLAYER_KO:
         return PLAYER_KO[name]
+    if name in SOURCE_PLAYER_KO:
+        return SOURCE_PLAYER_KO[name]
     if name not in FALLBACK_PLAYER_KO:
         FALLBACK_PLAYER_KO[name] = korean_reading_fallback(name)
     return FALLBACK_PLAYER_KO[name]
@@ -197,6 +231,13 @@ def naver_match(game,rows):
       if row.get('gameDateTime','').endswith('T'+start+':00') and row.get('awayTeamName','').replace(' ','')==away and row.get('homeTeamName','').replace(' ','')==home:
         return row
     return None
+def naver_record(game_id):
+    """Read the Korean player labels that Naver exposes for a verified game record."""
+    if not game_id:return {}
+    try:
+      return get(f'https://api-gw.sports.naver.com/schedule/games/{game_id}/record').get('result',{}).get('recordData',{})
+    except Exception:
+      return {}
 def iso(s):return datetime.fromisoformat(s.replace('Z','+00:00'))
 def games_for_date(date,sport=1,team=None):
     q={'sportId':sport,'date':date.isoformat(),'hydrate':'linescore,decisions'}
@@ -296,6 +337,11 @@ def topic_particle(team):
     last=next((c for c in reversed(team) if '가'<=c<='힣'), '')
     return team+('은' if last and (ord(last)-ord('가'))%28 else '는')
 
+def subject_particle(label):
+    """Korean subject particle for a player/team label."""
+    last=next((c for c in reversed(label) if '가'<=c<='힣'), '')
+    return label+('이' if last and (ord(last)-ord('가'))%28 else '가')
+
 def pitching_line(box,name):
     """Return a verified compact pitching line by official full name, never infer a stat."""
     if not box or not name:return None
@@ -369,10 +415,10 @@ def bullpen_point(box,side,exclude_name=None):
     names=f'{relievers[0][0]}과 {relievers[1][0]}' if len(relievers)==2 else '·'.join(item[0] for item in relievers)
     hold_names=[item[0] for item in relievers if item[2]]
     if len(hold_names)==len(relievers) and len(relievers)>1:
-      return f'{names}가 {innings} 무실점으로 이어 던졌고, 각각 홀드를 기록했다.'
+      return f'{subject_particle(names)} {innings} 무실점으로 이어 던졌고, 각각 홀드를 기록했다.'
     if hold_names:
-      return f'{names}가 {innings} 무실점으로 이어 던졌고, {"·".join(hold_names)}가 홀드를 기록했다.'
-    return f'{names}가 {innings} 무실점으로 이어 던져 승리를 지켰다.'
+      return f'{subject_particle(names)} {innings} 무실점으로 이어 던졌고, {subject_particle("·".join(hold_names))} 홀드를 기록했다.'
+    return f'{subject_particle(names)} {innings} 무실점으로 이어 던져 승리를 지켰다.'
 
 def permanent_lead_point(feed,winner_side):
     if not feed:return None
@@ -396,6 +442,9 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
     if aw is not None and hw is not None and aw!=hw:ws='away' if aw>hw else 'home'
     a=ko_team(away['team']['name']); h=ko_team(home['team']['name']); status=game_status(g)
     winner=decision(g,'winner'); loser=decision(g,'loser'); save=decision(g,'save')
+    naver=naver_match(g,naver_rows)
+    if box and naver:
+      register_naver_player_labels(box, naver_record(naver.get('gameId')))
     if status!='경기 종료':
       return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':None,'daum_game_id':None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':None,'away_score':aw,'home_score':hw,'away_hits':None,'home_hits':None,'away_errors':None,'home_errors':None,'winner_pitcher':None,'loser_pitcher':None,'save_pitcher':None,'pitcher_record':'','headline':f'{a}–{h} {status}','game_points':[],'opponent_label':None,'opponent_effort':None,'daum_verified':False,'naver_verified':False}
     outcome=(f'{a}, {h}에 {aw}–{hw} 승리' if ws=='away' else f'{a}, {h}에 {aw}–{hw} 패배' if ws=='home' else f'{a}–{h} {status}')
@@ -442,7 +491,6 @@ def build_game(g,title,daum_rows,naver_rows,box=None,feed=None):
       headline=f'{pitching_headline_line(box,winner)}, {loser_team}에 {winner_runs}-{loser_runs} 승리'
     effort=(f'{focus_leader}의 활약에도 {topic_particle(focus_team)} {focus_hits}안타 {focus_runs}득점에 그쳤다.' if not focus_won and focus_leader else f'{batting_leader(box,"home" if winner_side=="away" else "away") if box else loser_team}의 분전에도 {topic_particle(loser_team)} {loser_hits}안타 {loser_runs}득점에 그쳤다.')
     daum=daum_match(g,daum_rows)
-    naver=naver_match(g,naver_rows)
     verified=bool(daum and str(daum.get('awayResult'))==str(aw) and str(daum.get('homeResult'))==str(hw) and (daum.get('gameStatus')=='END')==(status=='경기 종료'))
     naver_verified=bool(naver and str(naver.get('awayTeamScore'))==str(aw) and str(naver.get('homeTeamScore'))==str(hw) and (naver.get('statusCode')=='RESULT')==(status=='경기 종료'))
     return {'section_title':title,'game_pk':g['gamePk'],'officialDate':g['officialDate'],'game_date_utc':g['gameDate'],'naver_game_id':naver.get('gameId') if naver else None,'daum_game_id':daum.get('gameId') if daum else None,'venue':g.get('venue',{}).get('name','—'),'start_time_kst':iso(g['gameDate']).astimezone(KST).strftime('%H:%M'),'status':status,'away':a,'home':h,'winner_side':ws,'away_score':aw,'home_score':hw,'away_hits':ls.get('teams',{}).get('away',{}).get('hits'),'home_hits':ls.get('teams',{}).get('home',{}).get('hits'),'away_errors':ls.get('teams',{}).get('away',{}).get('errors'),'home_errors':ls.get('teams',{}).get('home',{}).get('errors'),'winner_pitcher':ko_person(winner),'loser_pitcher':ko_person(loser),'save_pitcher':ko_person(save) if save else None,'pitcher_record':record,'headline':headline,'game_points':game_points,'opponent_label':(focus_team if not focus_won else loser_team),'opponent_effort':effort,'daum_verified':verified,'naver_verified':naver_verified}
