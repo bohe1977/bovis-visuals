@@ -77,6 +77,16 @@ def test_active_kbo_batters_require_source_backed_obp_and_ops():
         assert isinstance(batter.get("ops"), str) and 0 < float(batter["ops"]) < 4
 
 
+def test_current_kbo_official_full_word_hold_is_preserved():
+    data = json.loads(PLAYER_DATA.read_text(encoding="utf-8"))
+    if data["report_date"] == "2026-09-29":
+        wonjung = next(p for p in data["pitchers"] if p["name"] == "김원중")
+        assert wonjung["role"] == "reliever"
+        assert wonjung["game_decision"] == "홀드"
+        assert wonjung["season_record"] == "1승 5패"
+        assert wonjung["season_saves"] == 5
+
+
 def test_pitcher_badges_use_verified_role_specific_game_decisions():
     pitchers = json.loads((ROOT / "kbo" / "2026-08-16" / "players.json").read_text(encoding="utf-8"))["pitchers"]
     integrated = INTEGRATED.read_text(encoding="utf-8")

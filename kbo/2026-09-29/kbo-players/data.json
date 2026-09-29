@@ -1,6 +1,6 @@
 {
   "report_date": "2026-09-29",
-  "generated_at": "2026-09-30T06:23:34+09:00",
+  "generated_at": "2026-09-30T06:26:31+09:00",
   "verification": {
     "status": "KBO 공식 기준 · kbo-game·네이버·다음 대조",
     "sources": [
@@ -9,7 +9,7 @@
       "네이버스포츠 공개 기록 API",
       "다음스포츠 일정·박스스코어"
     ],
-    "details": "2026-09-29 KST 편성 5경기는 kbo-game FINISHED, KBO 공식 게임센터 GetScoreBoardScroll·GetBoxScoreScroll(code=100), 네이버 기록 API(statusCode=4), 다음 일정 API(gameStatus=END)로 종료 상태와 스코어를 대조했다. 종료 5경기 합계는 49득점이다. 실제 등판 관심 투수 박세웅(starter·결정 없음)·김원중(reliever·결정 없음)·박정민(reliever·결정 없음)·정해영(reliever·결정 없음)·박영현(reliever·결정 없음)의 당일 라인·시즌 승패·ERA·세이브는 KBO 공식 투수표와 네이버 행으로 대조했고, 역할과 당일 결정은 KBO 공식 결과를 기준으로 분류했다. 실제 출전 관심 타자 강백호·노시환·김도영의 시즌 OBP·OPS는 KBO 공식 선수 상세기록으로 확인했다. 미등판·미출전 관심 선수는 해당 완료 경기의 KBO 공식·네이버 전체 명단 부재 또는 팀 경기 없음으로 계약상 최소 객체로 보존했다. 다음 타자 표의 사사구 표기 범위 차이로 볼넷 독립 일치값은 주장하지 않았다.",
+    "details": "2026-09-29 KST 편성 5경기는 kbo-game FINISHED, KBO 공식 게임센터 GetScoreBoardScroll·GetBoxScoreScroll(code=100), 네이버 기록 API(statusCode=4), 다음 일정 API(gameStatus=END)로 종료 상태와 스코어를 대조했다. 종료 5경기 합계는 49득점이다. 실제 등판 관심 투수 박세웅(starter·결정 없음)·김원중(reliever·홀드)·박정민(reliever·결정 없음)·정해영(reliever·결정 없음)·박영현(reliever·결정 없음)의 당일 라인·시즌 승패·ERA·세이브는 KBO 공식 투수표와 네이버 행으로 대조했고, 역할과 당일 결정은 KBO 공식 결과를 기준으로 분류했다. 실제 출전 관심 타자 강백호·노시환·김도영의 시즌 OBP·OPS는 KBO 공식 선수 상세기록으로 확인했다. 미등판·미출전 관심 선수는 해당 완료 경기의 KBO 공식·네이버 전체 명단 부재 또는 팀 경기 없음으로 계약상 최소 객체로 보존했다. 다음 타자 표의 사사구 표기 범위 차이로 볼넷 독립 일치값은 주장하지 않았다.",
     "conflicts": []
   },
   "pitchers": [
@@ -66,7 +66,7 @@
       "season_record": "1승 5패",
       "era": "4.64",
       "role": "reliever",
-      "game_decision": null,
+      "game_decision": "홀드",
       "season_saves": 5
     },
     {

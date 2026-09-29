@@ -176,7 +176,7 @@ for name, team in WATCHED_PITCHERS:
     assert str(p["hit"]) == official["피안타"] and str(p["bbhp"]) == official["4사구"] and str(p["kk"]) == official["삼진"] and str(p["r"]) == official["실점"] and str(p["er"]) == official["자책"] and str(p["bf"]) == official["투구수"] and str(p["w"]) == official["승"] and str(p["l"]) == official["패"] and p["era"] == official["평균자책점"]
     role = "starter" if official["등판"] == "선발" else "reliever"
     official_result = official["결과"]
-    decision = ("승" if official_result == "승" else "패" if official_result == "패" else "세이브" if official_result == "세" else "홀드" if official_result == "홀" else "블론" if official_result == "블" else None)
+    decision = ({"승": "승", "패": "패", "세": "세이브", "세이브": "세이브", "홀": "홀드", "홀드": "홀드", "블": "블론", "블론": "블론"}).get(official_result)
     if role == "starter" and decision not in ("승", "패"): decision = None
     if role == "reliever" and decision not in ("세이브", "홀드", "블론"): decision = None
     item = {"name": name, "team": team, "appeared": True, "innings": inning_text(p["inn"]), "hits": p["hit"], "runs": p["r"], "earned_runs": p["er"], "walks_hbp": p["bbhp"], "strikeouts": p["kk"], "home_runs": p["hr"], "pitches": p["bf"], "season_record": f"{p['w']}승 {p['l']}패", "era": p["era"], "role": role, "game_decision": decision}
