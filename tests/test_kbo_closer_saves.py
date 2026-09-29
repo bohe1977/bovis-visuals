@@ -74,7 +74,7 @@ def test_active_kbo_batters_require_source_backed_obp_and_ops():
     active = [batter for batter in batters if batter["appeared"]]
     for batter in active:
         assert isinstance(batter.get("obp"), str) and batter["obp"].startswith("0.")
-        assert isinstance(batter.get("ops"), str) and batter["ops"].startswith("0.")
+        assert isinstance(batter.get("ops"), str) and 0 < float(batter["ops"]) < 4
 
 
 def test_pitcher_badges_use_verified_role_specific_game_decisions():
