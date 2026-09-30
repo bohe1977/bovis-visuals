@@ -240,7 +240,8 @@ def test_mlb_current_batting_line_and_team_result_are_normalized_from_official_d
 
 
 def test_mlb_minor_league_batting_lines_are_excluded_and_rendered_as_no_mlb_appearance():
-    data = json.loads(MLB_DATA.read_text(encoding="utf-8"))
+    # Historical fixture: the live MLB report may legitimately have no MiLB exclusions.
+    data = json.loads((ROOT / "mlb" / "2026-09-29" / "data.json").read_text(encoding="utf-8"))
     mlb = MLB_INTEGRATED.read_text(encoding="utf-8")
     excluded = [player for player in data["batters"] if player.get("minor_league_excluded")]
 
