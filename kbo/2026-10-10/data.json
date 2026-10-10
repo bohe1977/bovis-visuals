@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-10",
+  "generated_at": "2026-10-11T06:20:57+09:00",
+  "source_urls": {
+    "kbo_official": [
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261010",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010LGLT0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010SKHT0&section=REVIEW",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010NCHH0&section=REVIEW",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=68050",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=69737",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
+    ],
+    "naver": [
+      "https://api-gw.sports.naver.com/schedule/games/20261010LGLT02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20261010SKHT02026/record",
+      "https://api-gw.sports.naver.com/schedule/games/20261010NCHH02026/record"
+    ],
+    "daum": [
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261010&toDate=20261010",
+      "https://sports.daum.net/match/80110827",
+      "https://sports.daum.net/match/80110829",
+      "https://sports.daum.net/match/80110828"
+    ]
+  },
+  "games": [
+    {
+      "id": "20261010LGLT0",
+      "stadium": "사직",
+      "start_time": "14:00",
+      "status": "경기 종료",
+      "away": "LG",
+      "home": "롯데",
+      "away_score": 4,
+      "home_score": 3,
+      "winner_pitcher": "이우찬",
+      "loser_pitcher": "이이무라",
+      "save_pitcher": null,
+      "headline": "LG가 롯데에 4-3 승리",
+      "winner_points": [
+        "LG 선발 톨허스트는 5이닝 4피안타 0사사구 0탈삼진 1실점; 롯데 선발 나균안은 7이닝 7피안타 2사사구 5탈삼진 3실점을 기록했다.",
+        "공식 결승타는 송찬의(10회 1사 1,3루서 3루수 안타)였다.",
+        "문정빈은 5타수 5안타 2타점, 송찬의는 5타수 2안타 2타점을 기록했다.",
+        "이우찬이 1⅓이닝 1피안타 0사사구 1탈삼진 0실점으로 마지막 이닝을 책임졌다."
+      ],
+      "opponent_effort": "롯데는 나승엽이 5타수 1안타 2타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "sources": [
+        {
+          "label": "KBO 공식",
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010LGLT0&section=REVIEW"
+        },
+        {
+          "label": "네이버 기록",
+          "url": "https://api-gw.sports.naver.com/schedule/games/20261010LGLT02026/record"
+        },
+        {
+          "label": "다음 기록",
+          "url": "https://sports.daum.net/match/80110827"
+        }
+      ]
+    },
+    {
+      "id": "20261010SKHT0",
+      "stadium": "광주",
+      "start_time": "17:00",
+      "status": "경기 종료",
+      "away": "SSG",
+      "home": "KIA",
+      "away_score": 5,
+      "home_score": 8,
+      "winner_pitcher": "이의리",
+      "loser_pitcher": "최민준",
+      "save_pitcher": "전상현",
+      "headline": "KIA가 SSG에 8-5 승리",
+      "winner_points": [
+        "SSG 선발 최민준은 2⅓이닝 5피안타 1사사구 3탈삼진 4실점; KIA 선발 시라카와는 4이닝 4피안타 2사사구 2탈삼진 3실점을 기록했다.",
+        "공식 결승타는 김도영(3회 1사 1루서 좌중월 홈런)였다.",
+        "카스트로는 4타수 2안타 4타점, 김도영은 3타수 1안타 2타점을 기록했다.",
+        "전상현이 1이닝 0피안타 0사사구 0탈삼진 0실점으로 세이브를 기록했다."
+      ],
+      "opponent_effort": "SSG는 박성한이 5타수 2안타 2타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "sources": [
+        {
+          "label": "KBO 공식",
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010SKHT0&section=REVIEW"
+        },
+        {
+          "label": "네이버 기록",
+          "url": "https://api-gw.sports.naver.com/schedule/games/20261010SKHT02026/record"
+        },
+        {
+          "label": "다음 기록",
+          "url": "https://sports.daum.net/match/80110829"
+        }
+      ]
+    },
+    {
+      "id": "20261010NCHH0",
+      "stadium": "대전",
+      "start_time": "17:00",
+      "status": "경기 종료",
+      "away": "NC",
+      "home": "한화",
+      "away_score": 9,
+      "home_score": 8,
+      "winner_pitcher": "클레빈저",
+      "loser_pitcher": "황준서",
+      "save_pitcher": "김재열",
+      "headline": "NC가 한화에 9-8 승리",
+      "winner_points": [
+        "NC 선발 클레빈저는 5⅓이닝 5피안타 6사사구 5탈삼진 3실점; 한화 선발 황준서는 3⅓이닝 4피안타 3사사구 4탈삼진 5실점을 기록했다.",
+        "공식 결승타는 김휘집(3회 2사 1,2루서 좌월 홈런)였다.",
+        "김휘집은 5타수 3안타 4타점, 이우성은 3타수 2안타 4타점을 기록했다.",
+        "김재열이 0⅓이닝 0피안타 0사사구 0탈삼진 0실점으로 세이브를 기록했다."
+      ],
+      "opponent_effort": "한화는 최인호가 6타수 4안타 3타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "sources": [
+        {
+          "label": "KBO 공식",
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261010&gameId=20261010NCHH0&section=REVIEW"
+        },
+        {
+          "label": "네이버 기록",
+          "url": "https://api-gw.sports.naver.com/schedule/games/20261010NCHH02026/record"
+        },
+        {
+          "label": "다음 기록",
+          "url": "https://sports.daum.net/match/80110828"
+        }
+      ]
+    }
+  ]
+}
