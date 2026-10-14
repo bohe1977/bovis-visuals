@@ -1,91 +1,52 @@
 {
-  "date": "2026-10-11",
-  "generated_at": "2026-10-12T06:21:14+09:00",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-15T06:23:29+09:00",
   "source_urls": {
     "kbo_official": [
-      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261011",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261011&gameId=20261011KTSS0&section=REVIEW",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261011&gameId=20261011LTHT0&section=REVIEW",
-      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261014",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261014&gameId=20261014OBLG0&section=REVIEW"
     ],
     "naver": [
-      "https://api-gw.sports.naver.com/schedule/games/20261011KTSS02026/record",
-      "https://api-gw.sports.naver.com/schedule/games/20261011LTHT02026/record"
+      "https://api-gw.sports.naver.com/schedule/games/44441014OBLG02026/record"
     ],
     "daum": [
-      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261011&toDate=20261011",
-      "https://sports.daum.net/match/80110830",
-      "https://sports.daum.net/match/80110831"
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261014&toDate=20261014",
+      "https://sports.daum.net/match/80110870"
     ]
   },
   "games": [
     {
-      "id": "20261011KTSS0",
-      "stadium": "대구",
-      "start_time": "14:00",
+      "id": "20261014OBLG0",
+      "stadium": "잠실",
+      "start_time": "18:30",
       "status": "경기 종료",
-      "away": "KT",
-      "home": "삼성",
-      "away_score": 12,
-      "home_score": 3,
-      "winner_pitcher": "고영표",
-      "loser_pitcher": "후라도",
-      "save_pitcher": null,
-      "headline": "KT가 삼성에 12-3 승리",
+      "away": "두산",
+      "home": "LG",
+      "away_score": 1,
+      "home_score": 4,
+      "winner_pitcher": "카라스코",
+      "loser_pitcher": "곽빈",
+      "save_pitcher": "김강률",
+      "headline": "LG가 두산에 4-1 승리",
       "winner_points": [
-        "KT 선발 고영표는 5이닝 4피안타 0사사구 5탈삼진 1실점; 삼성 선발 후라도는 4이닝 6피안타 4사사구 2탈삼진 6실점을 기록했다.",
-        "공식 결승타는 한승택(2회 1사 1,3루서 1루수 희생번트)였다.",
-        "힐리어드는 6타수 3안타 5타점, 한승택은 3타수 1안타 3타점을 기록했다.",
-        "오원석이 1이닝 0피안타 1사사구 1탈삼진 0실점으로 마지막 이닝을 책임졌다."
+        "두산 선발 곽빈은 6이닝 3피안타 4사사구 10탈삼진 2실점; LG 선발 카라스코는 6이닝 4피안타 1사사구 3탈삼진 1실점을 기록했다.",
+        "공식 결승타는 오스틴(1회 1사 1루서 좌월 홈런)였다.",
+        "오스틴은 4타수 1안타 2타점, 신민재는 4타수 2안타 1타점을 기록했다.",
+        "김강률이 1이닝 0피안타 0사사구 0탈삼진 0실점으로 세이브를 기록했다."
       ],
-      "opponent_effort": "삼성은 전병우가 4타수 2안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "opponent_effort": "두산은 양석환이 0타수 0안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
       "sources": [
         {
           "label": "KBO 공식",
-          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261011&gameId=20261011KTSS0&section=REVIEW"
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261014&gameId=20261014OBLG0&section=REVIEW"
         },
         {
           "label": "네이버 기록",
-          "url": "https://api-gw.sports.naver.com/schedule/games/20261011KTSS02026/record"
+          "url": "https://api-gw.sports.naver.com/schedule/games/44441014OBLG02026/record"
         },
         {
           "label": "다음 기록",
-          "url": "https://sports.daum.net/match/80110830"
-        }
-      ]
-    },
-    {
-      "id": "20261011LTHT0",
-      "stadium": "광주",
-      "start_time": "14:00",
-      "status": "경기 종료",
-      "away": "롯데",
-      "home": "KIA",
-      "away_score": 4,
-      "home_score": 1,
-      "winner_pitcher": "김진욱",
-      "loser_pitcher": "올러",
-      "save_pitcher": null,
-      "headline": "롯데가 KIA에 4-1 승리",
-      "winner_points": [
-        "롯데 선발 김진욱은 6이닝 3피안타 2사사구 6탈삼진 0실점; KIA 선발 올러는 5⅔이닝 6피안타 2사사구 5탈삼진 4실점을 기록했다.",
-        "공식 결승타는 한동희(6회 2사 만루서 중월 홈런)였다.",
-        "한동희는 4타수 1안타 4타점, 레이예스는 4타수 2안타 0타점을 기록했다.",
-        "이이무라가 1이닝 2피안타 0사사구 1탈삼진 1실점으로 마지막 이닝을 책임졌다."
-      ],
-      "opponent_effort": "KIA는 김선빈이 3타수 0안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
-      "sources": [
-        {
-          "label": "KBO 공식",
-          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261011&gameId=20261011LTHT0&section=REVIEW"
-        },
-        {
-          "label": "네이버 기록",
-          "url": "https://api-gw.sports.naver.com/schedule/games/20261011LTHT02026/record"
-        },
-        {
-          "label": "다음 기록",
-          "url": "https://sports.daum.net/match/80110831"
+          "url": "https://sports.daum.net/match/80110870"
         }
       ]
     }
