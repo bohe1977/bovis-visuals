@@ -1,52 +1,53 @@
 {
-  "date": "2026-10-14",
-  "generated_at": "2026-10-15T06:23:29+09:00",
+  "date": "2026-10-17",
+  "generated_at": "2026-10-18T06:21:17+09:00",
   "source_urls": {
     "kbo_official": [
-      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261014",
-      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261014&gameId=20261014OBLG0&section=REVIEW"
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261017",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261017&gameId=20261017LGHT0&section=REVIEW",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
     ],
     "naver": [
-      "https://api-gw.sports.naver.com/schedule/games/44441014OBLG02026/record"
+      "https://api-gw.sports.naver.com/schedule/games/33331017LGHT02026/record"
     ],
     "daum": [
-      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261014&toDate=20261014",
-      "https://sports.daum.net/match/80110870"
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261017&toDate=20261017",
+      "https://sports.daum.net/match/80110899"
     ]
   },
   "games": [
     {
-      "id": "20261014OBLG0",
-      "stadium": "잠실",
-      "start_time": "18:30",
+      "id": "20261017LGHT0",
+      "stadium": "광주",
+      "start_time": "14:00",
       "status": "경기 종료",
-      "away": "두산",
-      "home": "LG",
+      "away": "LG",
+      "home": "KIA",
       "away_score": 1,
-      "home_score": 4,
-      "winner_pitcher": "카라스코",
-      "loser_pitcher": "곽빈",
-      "save_pitcher": "김강률",
-      "headline": "LG가 두산에 4-1 승리",
+      "home_score": 5,
+      "winner_pitcher": "네일",
+      "loser_pitcher": "톨허스트",
+      "save_pitcher": "전상현",
+      "headline": "KIA가 LG에 5-1 승리",
       "winner_points": [
-        "두산 선발 곽빈은 6이닝 3피안타 4사사구 10탈삼진 2실점; LG 선발 카라스코는 6이닝 4피안타 1사사구 3탈삼진 1실점을 기록했다.",
-        "공식 결승타는 오스틴(1회 1사 1루서 좌월 홈런)였다.",
-        "오스틴은 4타수 1안타 2타점, 신민재는 4타수 2안타 1타점을 기록했다.",
-        "김강률이 1이닝 0피안타 0사사구 0탈삼진 0실점으로 세이브를 기록했다."
+        "LG 선발 톨허스트는 5이닝 3피안타 2사사구 3탈삼진 3실점; KIA 선발 네일은 7이닝 4피안타 2사사구 6탈삼진 1실점을 기록했다.",
+        "공식 결승타는 김도영(4회 1사서 좌월 홈런)였다.",
+        "김도영은 3타수 2안타(2홈런) 4타점, 카스트로는 4타수 2안타 1타점을 기록했다.",
+        "전상현이 1⅓이닝 2피안타 0사사구 0탈삼진 0실점으로 세이브를 기록했다."
       ],
-      "opponent_effort": "두산은 양석환이 0타수 0안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "opponent_effort": "LG는 송찬의가 4타수 2안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
       "sources": [
         {
           "label": "KBO 공식",
-          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261014&gameId=20261014OBLG0&section=REVIEW"
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261017&gameId=20261017LGHT0&section=REVIEW"
         },
         {
           "label": "네이버 기록",
-          "url": "https://api-gw.sports.naver.com/schedule/games/44441014OBLG02026/record"
+          "url": "https://api-gw.sports.naver.com/schedule/games/33331017LGHT02026/record"
         },
         {
           "label": "다음 기록",
-          "url": "https://sports.daum.net/match/80110870"
+          "url": "https://sports.daum.net/match/80110899"
         }
       ]
     }
