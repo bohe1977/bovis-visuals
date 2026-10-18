@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-18",
+  "generated_at": "2026-10-19T06:22:04+09:00",
+  "source_urls": {
+    "kbo_official": [
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261018",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261018&gameId=20261018LGHT0&section=REVIEW",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
+    ],
+    "naver": [
+      "https://api-gw.sports.naver.com/schedule/games/33331018LGHT02026/record"
+    ],
+    "daum": [
+      "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=kbo&seasonKey=2026&fromDate=20261018&toDate=20261018",
+      "https://sports.daum.net/match/80110900"
+    ]
+  },
+  "games": [
+    {
+      "id": "20261018LGHT0",
+      "stadium": "광주",
+      "start_time": "14:00",
+      "status": "경기 종료",
+      "away": "LG",
+      "home": "KIA",
+      "away_score": 3,
+      "home_score": 6,
+      "winner_pitcher": "올러",
+      "loser_pitcher": "임찬규",
+      "save_pitcher": "전상현",
+      "headline": "KIA가 LG에 6-3 승리",
+      "winner_points": [
+        "LG 선발 임찬규는 0⅓이닝 6피안타 1사사구 1탈삼진 5실점; KIA 선발 올러는 6이닝 6피안타 1사사구 8탈삼진 2실점을 기록했다.",
+        "공식 결승타는 카스트로(1회 1사 1,2루서 우전 안타)였다.",
+        "나성범은 3타수 1안타 2타점, 김선빈은 3타수 1안타 2타점을 기록했다.",
+        "전상현이 1⅓이닝 0피안타 0사사구 3탈삼진 0실점으로 세이브를 기록했다."
+      ],
+      "opponent_effort": "LG는 박해민이 4타수 3안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "sources": [
+        {
+          "label": "KBO 공식",
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261018&gameId=20261018LGHT0&section=REVIEW"
+        },
+        {
+          "label": "네이버 기록",
+          "url": "https://api-gw.sports.naver.com/schedule/games/33331018LGHT02026/record"
+        },
+        {
+          "label": "다음 기록",
+          "url": "https://sports.daum.net/match/80110900"
+        }
+      ]
+    }
+  ]
+}
