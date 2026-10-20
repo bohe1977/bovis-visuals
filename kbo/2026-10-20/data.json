@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-20",
+  "generated_at": "2026-10-21T06:22:27+09:00",
+  "source_urls": {
+    "kbo_official": [
+      "https://www.koreabaseball.com/Schedule/ScoreBoard.aspx?gameDate=20261020",
+      "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261020&gameId=20261020HTLG0&section=REVIEW",
+      "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=52605"
+    ],
+    "naver": [
+      "https://api-gw.sports.naver.com/schedule/games/33331020HTLG02026/record"
+    ],
+    "daum": [
+      "https://sports.daum.net/api/arms/SPORTS_SCHEDULE?leagueCode=kbo&seasonKey=2026&fromDate=20261020&toDate=20261020",
+      "https://sports.daum.net/match/80110901"
+    ]
+  },
+  "games": [
+    {
+      "id": "20261020HTLG0",
+      "stadium": "잠실",
+      "start_time": "18:30",
+      "status": "경기 종료",
+      "away": "KIA",
+      "home": "LG",
+      "away_score": 13,
+      "home_score": 1,
+      "winner_pitcher": "시라카와",
+      "loser_pitcher": "카라스코",
+      "save_pitcher": null,
+      "headline": "KIA가 LG에 13-1 승리",
+      "winner_points": [
+        "KIA 선발 시라카와는 5이닝 4피안타 0사사구 9탈삼진 1실점; LG 선발 카라스코는 1⅓이닝 3피안타 2사사구 0탈삼진 5실점을 기록했다.",
+        "공식 결승타는 나성범(2회 무사서 중월 홈런)였다.",
+        "김도영은 4타수 1안타 4타점, 나성범은 4타수 2안타 2타점을 기록했다.",
+        "황동하가 1이닝 1피안타 0사사구 0탈삼진 0실점으로 마지막 이닝을 책임졌다."
+      ],
+      "opponent_effort": "LG는 오스틴이 4타수 0안타 1타점으로 분전했지만 승부를 뒤집지 못했다.",
+      "sources": [
+        {
+          "label": "KBO 공식",
+          "url": "https://www.koreabaseball.com/Schedule/GameCenter/Main.aspx?gameDate=20261020&gameId=20261020HTLG0&section=REVIEW"
+        },
+        {
+          "label": "네이버 기록",
+          "url": "https://api-gw.sports.naver.com/schedule/games/33331020HTLG02026/record"
+        },
+        {
+          "label": "다음 기록",
+          "url": "https://sports.daum.net/match/80110901"
+        }
+      ]
+    }
+  ]
+}
