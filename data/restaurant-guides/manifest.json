@@ -3,6 +3,11 @@
   "siteBase": "/bovis-visuals/",
   "guides": [
     {
+      "slug": "sejong-jungang-2026-11-04",
+      "data": "data/restaurant-guides/sejong-jungang-2026-11-04.json",
+      "output": "2026-11-04-sejong-jungang-restaurants/index.html"
+    },
+    {
       "slug": "bohe-seongsu-station",
       "data": "data/restaurant-guides/bohe-seongsu-station.json",
       "output": "2026-08-02-bohe-seongsu-station-restaurants/index.html",

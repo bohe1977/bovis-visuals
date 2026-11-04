@@ -1,0 +1,1677 @@
+{
+  "config": {
+    "title": "세종 중앙타운 맛집",
+    "description": "세종 어진동 중앙타운과 바로 인접한 식당 8곳을 메뉴와 거리로 비교합니다.",
+    "eyebrow": "SEJONG JUNGANG TOWN · FOOD GUIDE · 2026.11.04",
+    "intro": "기준점은 <strong>세종중앙타운, 세종 절재로 194</strong>입니다. <strong>건물 안 식당 6곳과 바로 인접한 2곳</strong>을 점심·저녁 메뉴에 맞춰 고르세요.",
+    "source": "SOURCE: Naver Place 실페이지·등록 메뉴 + 세종시·세종시문화관광재단 · 조사 2026-11-04 KST",
+    "notice": "거리는 중앙타운 건물 좌표 기준 Haversine 직선거리, 10m 단위 반올림입니다. 건물 안 10~30m 표시는 좌표 차이이며 층간 이동·출입구 동선을 반영하지 않습니다. 영업시간·휴게·가격은 네이버 Place 등록값으로 방문 전 재확인하세요. 스시이조의 메뉴 신호는 Place에 노출된 배달 메뉴이며 매장 가격을 뜻하지 않습니다. 보헤 DB의 세종 저장 식당 1곳은 약 1.95km 떨어져 이번 500m 범위에서 제외했습니다. 121번가는 Place 등록 메뉴 1개를 표시했으며 추가 메뉴 특징은 세종시·문화관광재단 자료로 대조했습니다. 가맹모집 체인으로 확인되는 후보는 제외했으며 독립점·직영 여부를 단정하지 않습니다.",
+    "markerHelper": "중앙타운 건물 좌표 기준 직선거리 · 건물 내 층간 동선 제외",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "100",
+        "label": "0~100m"
+      },
+      {
+        "value": "500",
+        "label": "100~500m"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "점심 또는 저녁",
+      "markerTitle": "중앙타운에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "우동·덮밥 한 끼",
+          "venue": "고쿠",
+          "copy": "따뜻한 우동이나 부드러운 돼지고기 덮밥이 당길 때."
+        },
+        {
+          "title": "든든한 국물 식사",
+          "venue": "윤가 한웃국",
+          "copy": "맑은 국과 얼큰한 국 중 취향대로 고를 수 있습니다."
+        },
+        {
+          "title": "초밥 정식 약속",
+          "venue": "오롯이 세종본점",
+          "copy": "사시미를 곁들인 정식으로 차분하게 식사할 때."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "고쿠",
+      "markerLabel": "고쿠",
+      "distance": 10,
+      "category": "면 식사",
+      "kind": "일식",
+      "color": "#2365cc",
+      "signal": "방문자 273 · 블로그 66",
+      "address": "세종 절재로 194 2층",
+      "menuEvidence": [
+        {
+          "display": "부타가쿠니덮밥",
+          "source": "부타가쿠니 덮밥",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "연어냉우동",
+          "source": "연어 아보카도 냉우동",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "닭대파우동",
+          "source": "구운 닭대파 우동",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "중앙타운 안에서 우동과 일본식 덮밥을 고를 때.",
+      "rationale": "부타가쿠니 덮밥 16,000원. 14:30~17:00 휴게.",
+      "searchQuery": "고쿠 세종 어진동",
+      "coordinates": {
+        "lat": 36.5082343,
+        "lng": 127.2624604
+      },
+      "naverPlaceId": "1694129783",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/1694129783/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EA%B3%A0%EC%BF%A0%20%EC%96%B4%EC%A7%84%EB%8F%99%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 절재로 194 2층 210호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "14시 30분에 브레이크타임",
+            "description": "14:30에 브레이크타임",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "15:30"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "14:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": ""
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "윤가 한웃국",
+      "markerLabel": "윤가 한웃국",
+      "distance": 10,
+      "category": "국물 식사",
+      "kind": "한식",
+      "color": "#9c2f61",
+      "signal": "방문자 112 · 블로그 81",
+      "address": "세종 절재로 194 2층",
+      "menuEvidence": [
+        {
+          "display": "얼큰 한웃국",
+          "source": "얼큰 한웃국",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "육회비빔밥",
+          "source": "육회비빔밥(간장)",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "사태수육",
+          "source": "사태수육",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "따뜻한 한우 뭇국이나 육회비빔밥으로 든든한 한 끼.",
+      "rationale": "얼큰·맑은 한웃국 각 14,000원. 14:00~17:00 휴게.",
+      "searchQuery": "윤가 한웃국 세종 어진동",
+      "coordinates": {
+        "lat": 36.5082343,
+        "lng": 127.2624604
+      },
+      "naverPlaceId": "2045230235",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/2045230235/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%9C%A4%EA%B0%80%20%ED%95%9C%EC%9B%83%EA%B5%AD%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 절재로 194 2층 211호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "14시 0분에 브레이크타임",
+            "description": "14:00에 브레이크타임",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": ""
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "121번가",
+      "markerLabel": "121번가",
+      "distance": 10,
+      "category": "경양식",
+      "kind": "양식",
+      "color": "#c26500",
+      "signal": "방문자 935 · 블로그 368",
+      "address": "세종 절재로 194 2층",
+      "menuEvidence": [
+        {
+          "display": "수제 돈까스",
+          "source": "수제 돈까스",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "돈가스 중심 경양식으로 가족 식사나 편한 점심 약속.",
+      "rationale": "수제 돈까스 16,900원. 평일 15:30~17:30 휴게.",
+      "searchQuery": "121번가 세종 어진동",
+      "coordinates": {
+        "lat": 36.5082343,
+        "lng": 127.2624604
+      },
+      "naverPlaceId": "83295197",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/83295197/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=121%EB%B2%88%EA%B0%80%20%EC%84%B8%EC%A2%85",
+      "fullAddress": "세종 절재로 194 중앙타운 202호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "14시 30분에 라스트오더",
+            "description": "14:30에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "14:30"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "14:30"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "14:30"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "15:00"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "15:00"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "14:30"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "휴게시간",
+                  "time": "14:30"
+                },
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": ""
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "정민복집",
+      "markerLabel": "정민복집",
+      "distance": 10,
+      "category": "복요리",
+      "kind": "한식",
+      "color": "#27863c",
+      "signal": "방문자 24 · 블로그 1",
+      "address": "세종 절재로 194 3층",
+      "menuEvidence": [
+        {
+          "display": "복지리",
+          "source": "복지리",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "복튀김",
+          "source": "복튀김",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "복샤브샤브",
+          "source": "복샤브샤브(1인)",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "복불고기",
+          "source": "복불고기(1인)",
+          "sourceType": "대표",
+          "kind": "food"
+        }
+      ],
+      "reason": "맑은 복지리나 복튀김을 곁들인 식사를 원할 때.",
+      "rationale": "복지리 23,000원, 런치세트 29,000원.",
+      "searchQuery": "정민복집 세종 어진동",
+      "coordinates": {
+        "lat": 36.5082343,
+        "lng": 127.2624604
+      },
+      "naverPlaceId": "1489259628",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/1489259628/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%A0%95%EB%AF%BC%EB%B3%B5%EC%A7%91%20%EC%84%B8%EC%A2%85%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 절재로 194 중앙타운.318호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "21시 0분에 라스트오더",
+            "description": "21:00에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "당분간 토요일은 사전예약에 한해서 영업을 하고있습니다"
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "스시이조",
+      "markerLabel": "스시이조",
+      "distance": 10,
+      "category": "초밥",
+      "kind": "일식",
+      "color": "#7352aa",
+      "signal": "방문자 216 · 블로그 21",
+      "address": "세종 절재로 194 1층",
+      "menuEvidence": [
+        {
+          "display": "광어",
+          "source": "광어",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "참돔",
+          "source": "참돔",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "간장새우",
+          "source": "간장새우",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "연어",
+          "source": "연어",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "중앙타운 1층에서 취향에 맞는 초밥을 골라 먹을 때.",
+      "rationale": "10:30~22:00, 라스트오더 21:30. 배달 가격은 별도.",
+      "searchQuery": "스시이조 세종 어진동",
+      "coordinates": {
+        "lat": 36.5083928,
+        "lng": 127.2624836
+      },
+      "naverPlaceId": "2096770066",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/2096770066/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%8A%A4%EC%8B%9C%EC%9D%B4%EC%A1%B0%20%EC%84%B8%EC%A2%85%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 절재로 194 1층 116호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "21시 30분에 라스트오더",
+            "description": "21:30에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:30",
+                "end": "22:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:30"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": ""
+        }
+      ],
+      "menuProvider": "Naver Place 내 배달의민족 등록 메뉴"
+    },
+    {
+      "name": "두번째 동카 세종 청사점",
+      "markerLabel": "두번째 동카",
+      "distance": 30,
+      "category": "돈가스·카레",
+      "kind": "일식",
+      "color": "#bb4d26",
+      "signal": "방문자 120 · 블로그 37",
+      "address": "세종 절재로 194 2층",
+      "menuEvidence": [
+        {
+          "display": "등심카츠",
+          "source": "등심카츠",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "카레치킨",
+          "source": "카레치킨",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "리코타샐러드",
+          "source": "리코타샐러드",
+          "sourceType": "대표",
+          "kind": "food"
+        }
+      ],
+      "reason": "등심카츠와 카레를 고를 수 있는 중앙타운 B동 식사.",
+      "rationale": "등심카츠 14,000원, 카레세트 16,000원. 14~17시 휴게.",
+      "searchQuery": "두번째 동카 세종 청사점 세종 어진동",
+      "coordinates": {
+        "lat": 36.5081788,
+        "lng": 127.262728
+      },
+      "naverPlaceId": "1324173708",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/1324173708/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%91%90%EB%B2%88%EC%A7%B8%20%EB%8F%99%EC%B9%B4%20%EC%84%B8%EC%A2%85%20%EC%B2%AD%EC%82%AC%EC%A0%90%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 절재로 194 중앙타운 B동 2층 219호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "14시 0분에 브레이크타임",
+            "description": "14:00에 브레이크타임",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "23:59"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "23:59"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "14:30"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "23:59"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "23:59"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "저녁 라스트 오더 20:00"
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "진짜우리집식당",
+      "markerLabel": "진짜우리집",
+      "distance": 70,
+      "category": "한식·구이",
+      "kind": "한식",
+      "color": "#00838f",
+      "signal": "방문자 133 · 블로그 12",
+      "address": "세종 도움8로 11-11",
+      "menuEvidence": [
+        {
+          "display": "집밥",
+          "source": "집밥(점심)",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "제육볶음",
+          "source": "제육볶음",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생오겹살",
+          "source": "생오겹살",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "항정살",
+          "source": "항정살",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "옆 건물에서 점심 집밥이나 저녁 돼지고기를 먹을 때.",
+      "rationale": "점심 집밥 15,000원. 14~17시 휴게, 주말 휴무.",
+      "searchQuery": "진짜우리집식당 세종 어진동",
+      "coordinates": {
+        "lat": 36.5077047,
+        "lng": 127.262849
+      },
+      "naverPlaceId": "1485086343",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/1485086343/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%A7%84%EC%A7%9C%EC%9A%B0%EB%A6%AC%EC%A7%91%EC%8B%9D%EB%8B%B9%20%EC%84%B8%EC%A2%85%20%EB%A9%94%EB%89%B4",
+      "fullAddress": "세종 도움8로 11-11",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "14시 0분에 브레이크타임",
+            "description": "14:00에 브레이크타임",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "14:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:30"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    },
+    {
+      "name": "오롯이 세종본점",
+      "markerLabel": "오롯이",
+      "distance": 120,
+      "category": "초밥",
+      "kind": "일식",
+      "color": "#4e7d36",
+      "signal": "방문자 238 · 블로그 252",
+      "address": "세종 한누리대로 499 2층",
+      "menuEvidence": [
+        {
+          "display": "초밥정식",
+          "source": "초밥정식",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "사시미정식",
+          "source": "사시미초밥정식A",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "새우튀김",
+          "source": "수제 새우 튀김 5pcs",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "조금 더 차려진 초밥·사시미 정식으로 식사 약속.",
+      "rationale": "초밥정식 27,000원. 15~17시 휴게, 일요일 휴무.",
+      "searchQuery": "오롯이 세종본점 세종 어진동",
+      "coordinates": {
+        "lat": 36.5080759,
+        "lng": 127.2611239
+      },
+      "naverPlaceId": "1930422479",
+      "placeUrl": "https://pcmap.place.naver.com/restaurant/1930422479/home",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%98%A4%EB%A1%AF%EC%9D%B4%20%EC%84%B8%EC%A2%85%EB%B3%B8%EC%A0%90",
+      "fullAddress": "세종 한누리대로 499 202호 203-1호",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "15시 0분에 브레이크타임",
+            "description": "15:00에 브레이크타임",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:30",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "21:00"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": ""
+        }
+      ],
+      "menuProvider": "Naver Place 등록 메뉴"
+    }
+  ],
+  "bohe": [],
+  "originEvidence": {
+    "id": "37693191",
+    "name": "세종중앙타운",
+    "address": "세종특별자치시 절재로 194",
+    "x": 127.2624668,
+    "y": 36.5082994,
+    "source": "https://m.search.naver.com/search.naver?query=세종%20중앙타운"
+  },
+  "researchDate": "2026-11-04"
+}
