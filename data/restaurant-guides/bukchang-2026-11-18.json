@@ -1,0 +1,3023 @@
+{
+  "config": {
+    "title": "북창동 맛집",
+    "description": "북창동 골목 식당 8곳과 인접한 보헤 저장 식당 2곳을 메뉴와 거리로 비교합니다.",
+    "eyebrow": "BUKCHANG-DONG / FOOD GUIDE / 2026.11.18",
+    "intro": "<strong>북창동 먹자골목 일대</strong>의 한 끼부터 함께 나누는 저녁까지. 거리 기준점은 골목 안 <strong>신성식당, 서울 중구 세종대로14길 22-3</strong>이며 반경 <strong>500m</strong>를 살폈습니다.",
+    "source": "SOURCE: Naver Place 등록 메뉴·지도 + 서울 공식 관광정보 / 조사 2026-11-18 KST",
+    "notice": "거리는 신성식당의 검증된 네이버 좌표에서 Haversine(지구 반경 6,371km)으로 계산한 직선거리, 10m 반올림입니다. 도보 이동·횡단보도 동선과 다릅니다. 일반 추천은 북창동 6곳과 태평로2가 경계 2곳, 보헤 추천은 소공동·남대문시장 인접권의 실제 저장 식당 2곳입니다. 보헤 탭은 저장 후보 수를 그대로 표시하며 일반 식당으로 채우지 않았습니다. 농민백암순대는 11/18 수요일 15:00 주문마감으로 오늘 저녁에는 제외하세요. 영업·휴게·가격·품절은 방문 전 지도에서 재확인하세요. 공개 가맹모집 근거가 확인된 후보는 제외했으며 나머지의 독립 소유·직영 여부를 단정하지 않습니다.",
+    "markerHelper": "신성식당 기준 직선거리 / 보헤 추천은 북창동 인접권 포함",
+    "distanceFilters": [
+      {
+        "value": "all",
+        "label": "전체"
+      },
+      {
+        "value": "100",
+        "label": "0~100m"
+      },
+      {
+        "value": "300",
+        "label": "100~300m"
+      },
+      {
+        "value": "500",
+        "label": "300~500m"
+      }
+    ]
+  },
+  "modeConfig": {
+    "general": {
+      "label": "일반 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "점심 또는 저녁",
+      "markerTitle": "북창동 골목에서 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "곰탕 한 그릇",
+          "venue": "애성회관한우곰탕",
+          "copy": "맑은 국물과 수육을 좋아할 때."
+        },
+        {
+          "title": "함께 먹는 저녁",
+          "venue": "남매집",
+          "copy": "돼지고추장구이와 꼼장어구이를 나눌 때."
+        },
+        {
+          "title": "가벼운 면 식사",
+          "venue": "현대칼국수",
+          "copy": "칼국수에 물만두를 곁들이고 싶을 때."
+        }
+      ]
+    },
+    "bohe": {
+      "label": "보헤 추천",
+      "radiusLabel": "≤ 500m",
+      "bestFor": "점심 또는 저녁",
+      "markerTitle": "저장 식당 중 가까운 순서",
+      "quickPicks": [
+        {
+          "title": "한식 식사·안주",
+          "venue": "무월 서울시청점",
+          "copy": "보쌈과 감자전 등 여러 한식 메뉴를 고를 때."
+        },
+        {
+          "title": "곰탕·도가니탕",
+          "venue": "은호식당",
+          "copy": "남대문시장 쪽으로 이동해 국물 식사할 때."
+        }
+      ]
+    }
+  },
+  "general": [
+    {
+      "name": "전주유할머니비빔밥",
+      "markerLabel": "유할머니비빔밥",
+      "distance": 50,
+      "distanceExact": 46.10818880343374,
+      "category": "한식",
+      "kind": "비빔밥",
+      "signal": "방문자 572 / 블로그 197",
+      "address": "서울 중구 세종대로14길 27-2",
+      "menuEvidence": [
+        {
+          "display": "전주돌솥비빔밥",
+          "source": "전주돌솥비빔밥",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "콩나물국밥",
+          "source": "콩나물국밥",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "돌솥비빔밥과 콩나물국밥 중 가볍게 한 끼 고를 때.",
+      "rationale": "돌솥비빔밥 12,000원. 콩나물국밥 9,000원.",
+      "searchQuery": "전주유할머니비빔밥 북창동",
+      "coordinates": {
+        "lat": 37.5629704,
+        "lng": 126.9783798
+      },
+      "naverPlaceId": "11727564",
+      "placeUrl": "https://m.place.naver.com/restaurant/11727564/home",
+      "fullAddress": "서울 중구 세종대로14길 27-2",
+      "legalAddress": "서울 중구 북창동 12-2",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "22시 0분에 영업 종료",
+            "description": "22:00에 영업 종료",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:00",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": "영업 중 · 22:00에 영업 종료",
+      "observedAt": "2026-11-18T17:35:42.196265+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EC%A0%84%EC%A3%BC%EC%9C%A0%ED%95%A0%EB%A8%B8%EB%8B%88%EB%B9%84%EB%B9%94%EB%B0%A5+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "kk6mpzWcpWzLkn6CG8mK",
+          "type": "normal",
+          "name": "천겹살(항정살)",
+          "description": "항정살의 전주집 메뉴는 천겹살입니다. 천겹살맛집으로 통합니다",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20230404_101/1680566211141suivI_PNG/Cap_2023-04-04_08-39-23-222.png",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "19,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20230404_101/1680566211141suivI_PNG/Cap_2023-04-04_08-39-23-222.png",
+              "width": 642,
+              "height": 738
+            },
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20221122_209/1669103008823uf5fa_PNG/1664867549561.png",
+              "width": 497,
+              "height": 694
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "pLJbdFMMKjFkKWwc9rcG",
+          "type": "normal",
+          "name": "갈비삼겹살",
+          "description": "전주집만의 시그니쳐메뉴인 갈비삼겹살입니다",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20230404_214/1680566171004hpmSy_PNG/Cap_2023-04-04_08-38-41-729.png",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "18,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20230404_214/1680566171004hpmSy_PNG/Cap_2023-04-04_08-38-41-729.png",
+              "width": 1364,
+              "height": 862
+            },
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20221122_16/1669102981289hrusX_PNG/1664867551523.png",
+              "width": 497,
+              "height": 694
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "qfcJbKzwjMckzHMDmnnf",
+          "type": "normal",
+          "name": "전주돌솥비빔밥",
+          "description": "계절 야채가 풍성한 전주직 직접 담근 태양초 고추장 돌솥비빔밥이 대표 메뉴입니다",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20230404_231/1680566109827Cf4yK_PNG/Cap_2023-04-04_08-41-53-672.png",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "12,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20230404_231/1680566109827Cf4yK_PNG/Cap_2023-04-04_08-41-53-672.png",
+              "width": 613,
+              "height": 743
+            },
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210827_69/1630048714833CTwIP_JPEG/5qNF_EEy6o29YQwPnH_k7MX9.jpg",
+              "width": 1440,
+              "height": 1440
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "RPK8RNDg8hk9jRwHHwRM",
+          "type": "normal",
+          "name": "콩나물국밥",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20230404_210/1680566140469WofYO_JPEG/Cap_2023-04-04_08-43-17-443.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "9,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20230404_210/1680566140469WofYO_JPEG/Cap_2023-04-04_08-43-17-443.jpg",
+              "width": 611,
+              "height": 700
+            },
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20221122_159/1669102941124NCMQj_JPEG/1664867581504.jpg",
+              "width": 600,
+              "height": 895
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "rczhwd6CFRKr686jKbjC",
+          "type": "normal",
+          "name": "열무비빔밥(여름)",
+          "description": "계절메뉴 입니다",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "11,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "rrtpLCgj7LqLjdLcP7zd",
+          "type": "normal",
+          "name": "콩나물굴국밥(겨울)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "11,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "LcHRm7Cz9mKC8JwL6kdF",
+          "type": "normal",
+          "name": "김치찌개",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "9,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#2365cc"
+    },
+    {
+      "name": "풍년닭도리탕 본점",
+      "markerLabel": "풍년닭도리탕",
+      "distance": 60,
+      "distanceExact": 62.30184622141759,
+      "category": "닭요리",
+      "kind": "닭도리탕",
+      "signal": "방문자 1,750 / 블로그 1,044",
+      "address": "서울 중구 세종대로14길 17-5",
+      "menuEvidence": [
+        {
+          "display": "닭도리탕",
+          "source": "닭도리탕(소)",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "볶음밥",
+          "source": "볶음밥",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "여럿이 닭도리탕을 나누고 볶음밥으로 마무리할 때.",
+      "rationale": "닭도리탕 소 32,000원. 볶음밥 3,000원.",
+      "searchQuery": "풍년닭도리탕 본점 북창동",
+      "coordinates": {
+        "lat": 37.5631111,
+        "lng": 126.9777041
+      },
+      "naverPlaceId": "1830532166",
+      "placeUrl": "https://m.place.naver.com/restaurant/1830532166/home",
+      "fullAddress": "서울 중구 세종대로14길 17-5",
+      "legalAddress": "서울 중구 북창동 18-7",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "22시 0분에 영업 종료",
+            "description": "22:00에 영업 종료",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "16:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "16:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "16:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 토요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "16:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "22:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:00",
+                  "end": "16:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": "영업 중 · 22:00에 영업 종료",
+      "observedAt": "2026-11-18T17:35:32.331624+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%ED%92%8D%EB%85%84%EB%8B%AD%EB%8F%84%EB%A6%AC%ED%83%95+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "zt8H8P7QTrm8j9pqzRJC",
+          "type": "normal",
+          "name": "쫄면",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "2,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "QdkJcGrQgfjdjHqwRWgw",
+          "type": "normal",
+          "name": "라면",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "2,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "8p7JbLchdhhC7RJTMJPD",
+          "type": "normal",
+          "name": "볶음밥",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "3,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "Q8rLcdLKjh7tbJNq9bc7",
+          "type": "normal",
+          "name": "닭도리탕(소)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "32,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "9QLFMmQBhNwcKnKwWz9H",
+          "type": "normal",
+          "name": "닭도리탕(중)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "39,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "MWMdgCTCFQGKgtJzTwb8",
+          "type": "normal",
+          "name": "닭도리탕(대)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "44,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#dc6b35"
+    },
+    {
+      "name": "부산갈매기",
+      "markerLabel": "부산갈매기",
+      "distance": 60,
+      "distanceExact": 64.62211446013899,
+      "category": "생선탕",
+      "kind": "생태·대구",
+      "signal": "방문자 569 / 블로그 215",
+      "address": "서울 중구 남대문로 25-20",
+      "menuEvidence": [
+        {
+          "display": "생태찌개",
+          "source": "생태찌개(2인분)",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "생대구매운탕",
+          "source": "생대구 매운탕 - 소",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "생태찌개와 대구매운탕 중 국물 취향대로.",
+      "rationale": "생태찌개 2인분 28,000원. 생대구매운탕 소 45,000원.",
+      "searchQuery": "부산갈매기 북창동",
+      "coordinates": {
+        "lat": 37.562107,
+        "lng": 126.9783839
+      },
+      "naverPlaceId": "11721655",
+      "placeUrl": "https://m.place.naver.com/restaurant/11721655/home",
+      "fullAddress": "서울 중구 남대문로 25-20",
+      "legalAddress": "서울 중구 북창동 94-42",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "21시 30분에 영업 종료",
+            "description": "21:30에 영업 종료",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:30"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": "영업 중 · 21:30에 영업 종료",
+      "observedAt": "2026-11-18T17:35:14.423347+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EB%B6%80%EC%82%B0%EA%B0%88%EB%A7%A4%EA%B8%B0+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "7wQ6N7rr8fcfN9dPhMKQ",
+          "type": "normal",
+          "name": "생대구 매운탕 대",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "70,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "cHBPknTnQGfqJNBfkpHN",
+          "type": "normal",
+          "name": "생대구 매운탕 중",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "60,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "R8dTNkfLB6rnbcHhLGrk",
+          "type": "normal",
+          "name": "생태찌개(2인분)",
+          "description": "점심특선",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "28,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "BFTqthq7TgjmCHpqKNT7",
+          "type": "normal",
+          "name": "생태매운탕(소)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "45,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "jf6TjDNmFdBFgt77LBR8",
+          "type": "normal",
+          "name": "생태매운탕(중)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "60,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "n9qfJpCBQhPFLDmhPNrN",
+          "type": "normal",
+          "name": "생태매운탕(대)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "70,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "JJRtpLHNRkMWcmRGb6Dq",
+          "type": "normal",
+          "name": "생대구 매운탕 - 소",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "45,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#168b72"
+    },
+    {
+      "name": "농민백암순대 시청직영점",
+      "markerLabel": "농민백암순대",
+      "distance": 70,
+      "distanceExact": 72.26430390927388,
+      "category": "국밥",
+      "kind": "순댓국",
+      "signal": "방문자 4,083 / 블로그 2,115",
+      "address": "서울 중구 남대문로1길 33",
+      "menuEvidence": [
+        {
+          "display": "국밥",
+          "source": "국밥",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "토종순대",
+          "source": "토종순대",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "순댓국 한 끼 후보, 오늘 저녁이 아닌 점심 방문에.",
+      "rationale": "국밥 11,000원. 11/18은 15:00 주문마감, 저녁 제외.",
+      "searchQuery": "농민백암순대 시청직영점 북창동",
+      "coordinates": {
+        "lat": 37.5626099,
+        "lng": 126.977255
+      },
+      "naverPlaceId": "37882995",
+      "placeUrl": "https://m.place.naver.com/restaurant/37882995/home",
+      "fullAddress": "서울 중구 남대문로1길 33",
+      "legalAddress": "서울 중구 북창동 19-4",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 종료",
+            "blindDescription": "11시 0분에 영업 시작",
+            "description": "11:00에 영업 시작",
+            "showEndsNextDay": null
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수(11/18)",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "15:30"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "15:30"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "15:00"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "11:00",
+                "end": "21:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "주 중 공휴일 없는 수요일 15:00 주문마감합니다."
+        }
+      ],
+      "observedStatus": "영업 종료 · 11:00에 영업 시작",
+      "observedAt": "2026-11-18T17:35:33.185719+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EB%86%8D%EB%AF%BC%EB%B0%B1%EC%95%94%EC%88%9C%EB%8C%80+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "bn6HnM9rKjGmmkqQKzJn",
+          "type": "normal",
+          "name": "국밥",
+          "description": null,
+          "badges": [
+            "repr"
+          ],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20251124_270/1763969865476bliyb_JPEG/IMG_7948.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "11,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20251124_270/1763969865476bliyb_JPEG/IMG_7948.jpeg",
+              "width": 3024,
+              "height": 4032
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "Hc97zLD9jdkjDpnhm89L",
+          "type": "normal",
+          "name": "술국",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "19,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "HhnbpWTgGR7BzHgH6bWz",
+          "type": "normal",
+          "name": "모둠수육",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "39,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "knrBCWQhGLB6RGjhcrNw",
+          "type": "normal",
+          "name": "오소리감투",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "19,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "wkpCJbGC7KmMGHHqrkHp",
+          "type": "normal",
+          "name": "토종순대",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "13,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "tGG7fmKGzrLT8TNjL7t6",
+          "type": "normal",
+          "name": "국밥(특)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "13,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "NfrGWPdLrh7J7Kw88wjg",
+          "type": "normal",
+          "name": "국밥(정식)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "17,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "남매집",
+      "markerLabel": "남매집",
+      "distance": 80,
+      "distanceExact": 80.49918641371043,
+      "category": "고기",
+      "kind": "양념구이",
+      "signal": "방문자 550 / 블로그 301",
+      "address": "서울 중구 남대문로1길 41",
+      "menuEvidence": [
+        {
+          "display": "돼지고추장구이",
+          "source": "돼지고추장구이(210g)",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "꼼장어구이",
+          "source": "꼼장어구이(양념)",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "매콤한 돼지고추장구이를 나누며 저녁 먹을 때.",
+      "rationale": "돼지고추장구이 210g 19,000원. 꼼장어구이도 선택 가능.",
+      "searchQuery": "남매집 북창동",
+      "coordinates": {
+        "lat": 37.5629,
+        "lng": 126.977225
+      },
+      "naverPlaceId": "19873699",
+      "placeUrl": "https://m.place.naver.com/restaurant/19873699/home",
+      "fullAddress": "서울 중구 남대문로1길 41",
+      "legalAddress": "서울 중구 북창동 19-1",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "23시 0분에 영업 종료",
+            "description": "23:00에 영업 종료",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "12:30",
+                "end": "23:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": "영업 중 · 23:00에 영업 종료",
+      "observedAt": "2026-11-18T17:35:13.618052+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EB%82%A8%EB%A7%A4%EC%A7%91+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "HhP6rgh9dGGGnbp6PNBw",
+          "type": "normal",
+          "name": "돼지고추장구이(210g)",
+          "description": "돼지등심 양념구이입니다. 동그랑땡은 모양이 동그랗게 생겨 단골들이 불러주시는 애칭입니다.",
+          "badges": [
+            "repr"
+          ],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20211010_294/1633869454623HfYqw_JPEG/7WyUA5KTTGP1w2c22ZGzvSNQ.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "19,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20211010_294/1633869454623HfYqw_JPEG/7WyUA5KTTGP1w2c22ZGzvSNQ.jpg",
+              "width": null,
+              "height": null
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "7zPH7QJf8JdzBkPRnTdj",
+          "type": "normal",
+          "name": "꼼장어구이(양념)",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20231211_38/1702278498828caR8W_JPEG/E7000BC1-77BA-44A2-B746-41AA9B228811.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "17,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20231211_38/1702278498828caR8W_JPEG/E7000BC1-77BA-44A2-B746-41AA9B228811.jpeg",
+              "width": 480,
+              "height": 320
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "J6KLFc9wzdTGkGCq7PRB",
+          "type": "normal",
+          "name": "돼지 목살",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20231211_112/1702278418013Phmv0_JPEG/7A12F1C9-F97A-4E9D-80D8-E43403A45FF7.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "16,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20231211_112/1702278418013Phmv0_JPEG/7A12F1C9-F97A-4E9D-80D8-E43403A45FF7.jpeg",
+              "width": 2880,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#d14973"
+    },
+    {
+      "name": "애성회관한우곰탕",
+      "markerLabel": "애성회관",
+      "distance": 80,
+      "distanceExact": 83.47459854769137,
+      "category": "국밥",
+      "kind": "곰탕",
+      "signal": "방문자 2,239 / 블로그 2,106",
+      "address": "서울 중구 남대문로5길 23 1층",
+      "menuEvidence": [
+        {
+          "display": "한우곰탕",
+          "source": "한우곰탕",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "한우수육",
+          "source": "한우수육",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "맑은 곰탕 한 그릇이나 수육을 곁들인 식사에.",
+      "rationale": "한우곰탕 10,000원. 14:30~17:00 휴게, 일요일 휴무.",
+      "searchQuery": "애성회관한우곰탕 북창동",
+      "coordinates": {
+        "lat": 37.5624396,
+        "lng": 126.9789891
+      },
+      "naverPlaceId": "32770171",
+      "placeUrl": "https://m.place.naver.com/restaurant/32770171/home",
+      "fullAddress": "서울 중구 남대문로5길 23 세창빌딩 1층",
+      "legalAddress": "서울 중구 북창동 93-36",
+      "scope": "북창동 핵심권",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "21시 0분에 영업 종료",
+            "description": "21:00에 영업 종료",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "20:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "15:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "10:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": null,
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "공휴일은 토요일과 동일하게 운영"
+        }
+      ],
+      "observedStatus": "영업 중 · 21:00에 영업 종료",
+      "observedAt": "2026-11-18T17:35:13.561031+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EC%95%A0%EC%84%B1%ED%9A%8C%EA%B4%80+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "H9h76cDD9KLqTCLhg6m6",
+          "type": "normal",
+          "name": "한우곰탕",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "10,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "KPkbCw89RgPdHhKBtzQj",
+          "type": "normal",
+          "name": "한우특곰탕",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "12,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "dKz6fF9WmcNLbgWdFMmm",
+          "type": "normal",
+          "name": "한우와 낙지",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "40,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "w6RbLqd7TtPhwndPLRrh",
+          "type": "normal",
+          "name": "낙지볶음",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "38,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "mFBBmkw6G7ckchpPBHNd",
+          "type": "normal",
+          "name": "한우수육",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "48,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "fbfTDpQBCTRPtrbTwK9p",
+          "type": "normal",
+          "name": "한우불고기",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "60,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "6kkR9D89gmBndwKkFc9F",
+          "type": "normal",
+          "name": "냉콩국수",
+          "description": null,
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": null,
+          "hasImage": false,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "12,000원"
+          },
+          "images": [],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#ad7d22"
+    },
+    {
+      "name": "현대칼국수",
+      "markerLabel": "현대칼국수",
+      "distance": 100,
+      "distanceExact": 96.47825980642106,
+      "category": "면 식사",
+      "kind": "칼국수",
+      "signal": "방문자 1,913 / 블로그 713",
+      "address": "서울 중구 세종대로 76",
+      "menuEvidence": [
+        {
+          "display": "섞어칼국수",
+          "source": "섞어칼국수",
+          "sourceType": "등록",
+          "kind": "food"
+        },
+        {
+          "display": "물만두",
+          "source": "물만두",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "따뜻한 칼국수에 물만두를 곁들이고 싶을 때.",
+      "rationale": "섞어칼국수 9,500원. 물만두 5,000원, 태평로2가 인접권.",
+      "searchQuery": "현대칼국수 북창동",
+      "coordinates": {
+        "lat": 37.5628,
+        "lng": 126.977
+      },
+      "naverPlaceId": "11727915",
+      "placeUrl": "https://m.place.naver.com/restaurant/11727915/home",
+      "fullAddress": "서울 중구 세종대로 76 청남빌딩",
+      "legalAddress": "서울 중구 태평로2가 69-3",
+      "scope": "인접권 · 태평로2가 먹자골목 경계",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "20시 20분에 라스트오더",
+            "description": "20:20에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:20"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:20"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:20"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "19:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "18:20"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": null,
+              "breakHours": null,
+              "description": "정기휴무 (매주 일요일)",
+              "lastOrderTimes": null,
+              "showEndsNextDay": null
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:20"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "16:30",
+                  "end": "17:30"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:20"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": "영업 중 · 20:20에 라스트오더",
+      "observedAt": "2026-11-18T17:37:43.402143+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%ED%98%84%EB%8C%80%EC%B9%BC%EA%B5%AD%EC%88%98+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "7qkWTD6bBwfTLWPnPjhh",
+          "type": "normal",
+          "name": "칼국수",
+          "description": "멸치육수 베이스의 시원한 맛!",
+          "badges": [
+            "repr"
+          ],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20231104_253/1699065000089q3wPe_JPEG/IMG_3137.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "9,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20231104_253/1699065000089q3wPe_JPEG/IMG_3137.jpeg",
+              "width": 3024,
+              "height": 3024
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "fnFNhGq9NR7KHDmMqbBt",
+          "type": "normal",
+          "name": "섞어칼국수",
+          "description": "만두도 먹고싶은데,,할 땐 섞어칼국수!",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20231104_218/1699065382976xRiwc_JPEG/IMG_8170.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "9,500원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20231104_218/1699065382976xRiwc_JPEG/IMG_8170.jpeg",
+              "width": 1496,
+              "height": 1496
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "GGqH6hGcHCkpTmpTPWpB",
+          "type": "normal",
+          "name": "물만두",
+          "description": "알알이 귀여운 물만두",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20231104_166/1699074283332QzlX6_JPEG/IMG_8173.jpeg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "5,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20231104_166/1699074283332QzlX6_JPEG/IMG_8173.jpeg",
+              "width": 1496,
+              "height": 1496
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "tJzJBpzNWTrH9kQz6pTd",
+          "type": "normal",
+          "name": "현대 콩국수",
+          "description": "(여름메뉴) 매일 아침 국산콩으로만! 직접 삶고 갈아만든 콩국물로 제공합니다!",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20240521_203/1716265969107mev3O_PNG/%B0%A9%BA%D0%C4%E1%B1%B9%BC%F6.png",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "11,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20240521_203/1716265969107mev3O_PNG/%B0%A9%BA%D0%C4%E1%B1%B9%BC%F6.png",
+              "width": 674,
+              "height": 750
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#0d93a6"
+    },
+    {
+      "name": "장안삼계탕",
+      "markerLabel": "장안삼계탕",
+      "distance": 130,
+      "distanceExact": 134.40535381604005,
+      "category": "닭요리",
+      "kind": "삼계탕",
+      "signal": "방문자 1,048 / 블로그 234",
+      "address": "서울 중구 세종대로18길 8",
+      "menuEvidence": [
+        {
+          "display": "삼계탕",
+          "source": "삼계탕",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "전기구이통닭",
+          "source": "전기구이통닭",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "삼계탕 한 그릇이나 전기구이통닭이 당길 때.",
+      "rationale": "삼계탕·전기구이통닭 각 20,000원. 태평로2가 인접권.",
+      "searchQuery": "장안삼계탕 북창동",
+      "coordinates": {
+        "lat": 37.5637587,
+        "lng": 126.9775163
+      },
+      "naverPlaceId": "11712473",
+      "placeUrl": "https://m.place.naver.com/restaurant/11712473/home",
+      "fullAddress": "서울 중구 세종대로18길 8 장안삼계탕",
+      "legalAddress": "서울 중구 태평로2가 53",
+      "scope": "인접권 · 태평로2가 먹자골목 경계",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "20시 30분에 라스트오더",
+            "description": "20:30에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "매일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "09:00",
+                "end": "21:00"
+              },
+              "breakHours": [],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:30"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "1년 365일 영업합니다. (명절포함) 감사합니다."
+        }
+      ],
+      "observedStatus": "영업 중 · 20:30에 라스트오더",
+      "observedAt": "2026-11-18T17:35:32.592785+09:00",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%B6%81%EC%B0%BD%EB%8F%99+%EC%9E%A5%EC%95%88%EC%82%BC%EA%B3%84%ED%83%95+%EB%A9%94%EB%89%B4",
+      "registeredMenus": [
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "GwQdNWzW7F7h8d9QgqBD",
+          "type": "normal",
+          "name": "능이전복삼계탕",
+          "description": "능이 그리고 전복 그리고 삼계탕의 조화로 최고의 보양식",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_160/1630382988770Ojhvt_JPEG/pO37DV9uL4G02hjsD65kchB3.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "29,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_160/1630382988770Ojhvt_JPEG/pO37DV9uL4G02hjsD65kchB3.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "Bdkh9kT7CBWtRHddR8Qb",
+          "type": "normal",
+          "name": "전복삼계탕",
+          "description": "완도 큰 전복이 두마리 들어가 다 드시면 원기회복에 최고 !",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200213_85/1581520974934EMtrk_JPEG/bxUPaxIe0Qep5LmC-vwdkC7q.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "28,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_85/1581520974934EMtrk_JPEG/bxUPaxIe0Qep5LmC-vwdkC7q.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "j7C6dbPcHmdDDzDLJK6k",
+          "type": "normal",
+          "name": "능이삼계탕",
+          "description": "능이버섯의 향이 가득가득 몸보신에 최고 !",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_60/1630382950133zIxAW_JPEG/NylUXoDtIkf7sM6HEMJFFnj-.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "25,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_60/1630382950133zIxAW_JPEG/NylUXoDtIkf7sM6HEMJFFnj-.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "QhHB6BRh7Q686T8BfPtg",
+          "type": "normal",
+          "name": "들깨삼계탕",
+          "description": "걸쭉한 국물로 맛있고 든든하게 !",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_285/1630382925565hdzfj_JPEG/4O_4WiM6XhICZMMOBsmcI9Rq.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "23,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_285/1630382925565hdzfj_JPEG/4O_4WiM6XhICZMMOBsmcI9Rq.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "PNbHjdRMjWGWmC7nJFmQ",
+          "type": "normal",
+          "name": "삼계탕",
+          "description": "50년 전통의 방식으로 삶아낸 한국 최고의 보양식",
+          "badges": [
+            "repr"
+          ],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200114_86/15790057470200IAjQ_JPEG/j2slKyDVSm9dekccEAlMJ4bn.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "20,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200114_86/15790057470200IAjQ_JPEG/j2slKyDVSm9dekccEAlMJ4bn.jpg",
+              "width": 4000,
+              "height": 2667
+            },
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_47/1581520919212UtuG1_JPEG/13wprz1w5ho7nRcNo3zhe2J0.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "NQq7w6KFgh9jLRPkTpLD",
+          "type": "normal",
+          "name": "능이전복오골계",
+          "description": "능이의 향과 오골계의 담백함 그리고 전복의 조화",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_134/163038297615695mIe_JPEG/eh17QsiQjbGR8DO5PBi-w_B8.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "35,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_134/163038297615695mIe_JPEG/eh17QsiQjbGR8DO5PBi-w_B8.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "FdhzkrCmTnRCjhMFDkhD",
+          "type": "normal",
+          "name": "전복오골계",
+          "description": "담백한 오골계와 큰 전복 두마리의 조화",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200213_201/1581520996347rk2XI_JPEG/ht4xZCcomggZeZSKmJcSlYOv.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "34,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_201/1581520996347rk2XI_JPEG/ht4xZCcomggZeZSKmJcSlYOv.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "f6wJC6wbFHpMqh9ddmnK",
+          "type": "normal",
+          "name": "능이오골계",
+          "description": "능이버섯의 향이 가득가득",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_50/1630382962611UFWIL_JPEG/6Pjvpkkz1vVR_f7VhkBlynf0.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "31,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_50/1630382962611UFWIL_JPEG/6Pjvpkkz1vVR_f7VhkBlynf0.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "ztgfngmPgrqBLLQjFqq8",
+          "type": "normal",
+          "name": "들깨오골계",
+          "description": "걸쭉한 국물로 맛있고 든든하게 !",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20210831_277/1630382938453LcqbC_JPEG/fPar0AOpnDGYtAMtQxZE6Rqb.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "29,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20210831_277/1630382938453LcqbC_JPEG/fPar0AOpnDGYtAMtQxZE6Rqb.jpg",
+              "width": 2160,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "RdFtBbkTGr768h9PHdDf",
+          "type": "normal",
+          "name": "오골계",
+          "description": "삼계탕보다 담백한 맛을 원하신다면 오골계탕",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200213_132/1581520986166KQp7K_JPEG/mNsxcUlcN5_ScGWNUUW0gKs2.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "26,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_132/1581520986166KQp7K_JPEG/mNsxcUlcN5_ScGWNUUW0gKs2.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "wg6j9Cbbt8qLgwcP8twQ",
+          "type": "normal",
+          "name": "전기구이통닭",
+          "description": "담백한 술안주",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200213_79/1581521056483LgU2e_JPEG/qvfuAs9RPcNKnzS8kRh3wces.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "20,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_79/1581521056483LgU2e_JPEG/qvfuAs9RPcNKnzS8kRh3wces.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "BQ8NPWJKFLHGWFRTgfpN",
+          "type": "normal",
+          "name": "닭날개튀김",
+          "description": "카레향이 솔솔 닭 날개 튀김",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200114_9/1579005941383bc6yr_JPEG/vCdKCSU0mjtnQdACOG0wTCdK.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "20,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200114_9/1579005941383bc6yr_JPEG/vCdKCSU0mjtnQdACOG0wTCdK.jpg",
+              "width": 4000,
+              "height": 2667
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "kzk7fHDpmtBfcJgFPhdD",
+          "type": "normal",
+          "name": "인삼튀김",
+          "description": "금산 인삼을 통으로 튀겨낸 인삼튀김",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200729_91/1596022110685SOoEY_JPEG/2pruIXRid2OAlhp8-QOJJJsR.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "20,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200729_91/1596022110685SOoEY_JPEG/2pruIXRid2OAlhp8-QOJJJsR.jpg",
+              "width": 2880,
+              "height": 2160
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        },
+        {
+          "__typename": "PlaceMenuItem",
+          "id": "LFMhBj76pTqPRFPjKgn6",
+          "type": "normal",
+          "name": "닭모래집",
+          "description": "닭똥집 볶음 술안주로 최고",
+          "badges": [],
+          "labels": [],
+          "thumbnailUrl": "https://ldb-phinf.pstatic.net/20200213_34/1581520851253yaMA5_JPEG/wsI2yVAaZApjKpYJlO8_3sW9.jpg",
+          "hasImage": true,
+          "isSetMenu": false,
+          "price": {
+            "__typename": "PlaceMenuPrice",
+            "priceType": "fixed",
+            "displayText": "18,000원"
+          },
+          "images": [
+            {
+              "__typename": "PlaceMenuImage",
+              "url": "https://ldb-phinf.pstatic.net/20200213_34/1581520851253yaMA5_JPEG/wsI2yVAaZApjKpYJlO8_3sW9.jpg",
+              "width": 1500,
+              "height": 1500
+            }
+          ],
+          "optionGroups": [],
+          "course": null
+        }
+      ],
+      "color": "#64748b"
+    }
+  ],
+  "bohe": [
+    {
+      "name": "무월 서울시청점",
+      "markerLabel": "무월 시청",
+      "distance": 250,
+      "distanceExact": 251.89074962321314,
+      "category": "한식",
+      "kind": "식사·안주",
+      "color": "#2365cc",
+      "signal": "방문자 662 / 블로그 132",
+      "address": "서울 중구 소공로 116 1층",
+      "menuEvidence": [
+        {
+          "display": "한방보쌈",
+          "source": "한방 보쌈과 제철쌈",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "치즈불고기감자전",
+          "source": "치즈불고기 감자전",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "들기름메밀국수",
+          "source": "들기름 메밀국수",
+          "sourceType": "등록",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤가 저장한 한식 식사·안주 후보, 소공동 인접권.",
+      "rationale": "한방 보쌈과 제철쌈 17,000원. 14:30~17:00 휴게.",
+      "searchQuery": "무월 서울시청점",
+      "savedSource": "https://m.blog.naver.com/sweetmocha77/224393992329",
+      "naverPlaceId": "2026619835",
+      "placeUrl": "https://m.place.naver.com/restaurant/2026619835/home",
+      "coordinates": {
+        "lat": 37.564806,
+        "lng": 126.9788852
+      },
+      "fullAddress": "서울 중구 소공로 116 UH컨티넨탈호텔 1층",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EB%AC%B4%EC%9B%94%20%EC%84%9C%EC%9A%B8%EC%8B%9C%EC%B2%AD%EC%A0%90",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "22시 30분에 라스트오더",
+            "description": "22:30에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "매일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "23:00"
+              },
+              "breakHours": [
+                {
+                  "__typename": "StartEndTime",
+                  "start": "14:30",
+                  "end": "17:00"
+                }
+              ],
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "22:30"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": "명절에는 단축 영업이 시행될 수 있습니다."
+        }
+      ],
+      "observedStatus": {
+        "__typename": "BusinessStatusDescription",
+        "status": "영업 중",
+        "blindDescription": "22시 30분에 라스트오더",
+        "description": "22:30에 라스트오더",
+        "showEndsNextDay": false
+      },
+      "dbId": 568
+    },
+    {
+      "name": "은호식당",
+      "markerLabel": "은호식당",
+      "distance": 410,
+      "distanceExact": 413.3844089248093,
+      "category": "국밥",
+      "kind": "곰탕",
+      "color": "#dc6b35",
+      "signal": "방문자 794 / 블로그 1,167",
+      "address": "서울 중구 남대문시장4길 28-4",
+      "menuEvidence": [
+        {
+          "display": "꼬리곰탕",
+          "source": "90년 역사를 이어가는 [꼬리곰탕]",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "설렁탕",
+          "source": "남대문 맛집 은호식당의 [설렁탕]",
+          "sourceType": "대표",
+          "kind": "food"
+        },
+        {
+          "display": "도가니탕",
+          "source": "남대문시장 맛집 [도가니탕]",
+          "sourceType": "대표",
+          "kind": "food"
+        }
+      ],
+      "reason": "보헤가 저장한 남대문시장 곰탕 후보, 북창동 인접권.",
+      "rationale": "꼬리곰탕 33,000원. 설렁탕 14,000원, 도가니탕 22,000원.",
+      "searchQuery": "은호식당",
+      "savedSource": "https://www.instagram.com/p/Cn23VzeSUnW/",
+      "naverPlaceId": "11717851",
+      "placeUrl": "https://m.place.naver.com/restaurant/11717851/home",
+      "coordinates": {
+        "lat": 37.5590023,
+        "lng": 126.9770705
+      },
+      "fullAddress": "서울 중구 남대문시장4길 28-4 은호식당",
+      "evidenceUrl": "https://m.search.naver.com/search.naver?query=%EC%9D%80%ED%98%B8%EC%8B%9D%EB%8B%B9%20%EB%82%A8%EB%8C%80%EB%AC%B8",
+      "weeklyHours": [
+        {
+          "__typename": "NewBusinessHour",
+          "name": "기본",
+          "businessStatusDescription": {
+            "__typename": "BusinessStatusDescription",
+            "status": "영업 중",
+            "blindDescription": "20시 40분에 라스트오더",
+            "description": "20:40에 라스트오더",
+            "showEndsNextDay": false
+          },
+          "businessHours": [
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "수",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "목",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "금",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "토",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "16:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "15:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "일",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "16:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "15:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "월",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:40"
+                }
+              ],
+              "showEndsNextDay": false
+            },
+            {
+              "__typename": "WorkingHoursInfo",
+              "day": "화",
+              "businessHours": {
+                "__typename": "StartEndTime",
+                "start": "08:00",
+                "end": "21:00"
+              },
+              "breakHours": null,
+              "description": null,
+              "lastOrderTimes": [
+                {
+                  "__typename": "LastOrderTimes",
+                  "type": "영업시간",
+                  "time": "20:40"
+                }
+              ],
+              "showEndsNextDay": false
+            }
+          ],
+          "comingIrregularClosedDays": [],
+          "comingRegularClosedDays": "",
+          "freeText": null
+        }
+      ],
+      "observedStatus": {
+        "__typename": "BusinessStatusDescription",
+        "status": "영업 중",
+        "blindDescription": "20시 40분에 라스트오더",
+        "description": "20:40에 라스트오더",
+        "showEndsNextDay": false
+      },
+      "dbId": 380
+    }
+  ],
+  "originEvidence": {
+    "kind": "verified exact restaurant as neighborhood-center origin",
+    "name": "신성식당",
+    "place_id": "20967264",
+    "address": "서울 중구 세종대로14길 22-3",
+    "coordinates": {
+      "longitude": 126.9780743,
+      "latitude": 37.5626338,
+      "raw": {
+        "__typename": "Coordinate",
+        "x": "126.9780743",
+        "y": "37.5626338",
+        "mapZoomLevel": 12
+      }
+    },
+    "source_url": "https://m.place.naver.com/restaurant/20967264/home",
+    "source_evidence": "/opt/data/outputs/bukchang-20261118-research/북창동_신성식당_메뉴.html",
+    "note": "Restaurant coordinate chosen explicitly, not a fabricated 먹자골목 landmark. Parent may compute distances."
+  },
+  "dataMethod": {
+    "radius_m": 500,
+    "distanceMethod": "Haversine, earth radius 6371000m",
+    "observation": "2026-11-18T17:41:25.788770+09:00",
+    "liveScope": "북창동 6, 태평로2가 인접 2",
+    "dbPreflight": "Read-only canonical DB, neighborhood/address/alias/source/coordinate reconciliation; 2 verified qualifying saved venues",
+    "sourcePriorityOrder": [
+      "Naver Map browser",
+      "Naver integrated-search fallback",
+      "DiningCode",
+      "Google",
+      "booking sites",
+      "official/local",
+      "recent blogs"
+    ]
+  }
+}
