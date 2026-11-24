@@ -3,6 +3,11 @@
   "siteBase": "/bovis-visuals/",
   "guides": [
     {
+      "slug": "hakdong-2026-11-24",
+      "data": "data/restaurant-guides/hakdong-2026-11-24.json",
+      "output": "2026-11-24-hakdong-restaurants/index.html"
+    },
+    {
       "slug": "bukchang-2026-11-18",
       "data": "data/restaurant-guides/bukchang-2026-11-18.json",
       "output": "2026-11-18-bukchang-restaurants/index.html"
